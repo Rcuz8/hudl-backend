@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e18e173-fe61-4d53-8c9c-6a58ddf881e6" name="Default Changelist" comment="" />
+    <list default="true" id="5e18e173-fe61-4d53-8c9c-6a58ddf881e6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hudl_server/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hudl_server/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hudl_server/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hudl_server/fb.py" beforeDir="false" afterPath="$PROJECT_DIR$/hudl_server/fb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hudl_server/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hudl_server/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hudl_server/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/hudl_server$Flask.coverage" NAME="Flask Coverage Results" MODIFIED="1594619541072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hudl_server$Dropper.coverage" NAME="Dropper Coverage Results" MODIFIED="1594407013330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/main/core/ai/utils/data" />
+    <SUITE FILE_PATH="coverage/hudl_server$Unnamed.coverage" NAME="Flask Coverage Results" MODIFIED="1594319226255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/hudl_server$server.coverage" NAME="server Coverage Results" MODIFIED="1594604351875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hudl_server" />
+    <SUITE FILE_PATH="coverage/hudl_server$fb.coverage" NAME="fb Coverage Results" MODIFIED="1594604044661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hudl_server" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -15,62 +33,107 @@
     <session id="-1921398973">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="60" />
+          <entry key="py" value="7825" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="60" />
+          <entry key="Python" value="7825" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="2" />
+          <entry key="json" value="1" />
+          <entry key="py" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="2" />
+          <entry key="JSON" value="1" />
+          <entry key="Python" value="37" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hudl_server/settings.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hudl_server/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hudl_server/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="68" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="68" />
+            <state relative-caret-position="337">
+              <caret line="116" column="21" selection-start-line="116" selection-start-column="21" selection-end-line="116" selection-end-column="21" />
               <folding>
-                <element signature="e#2#11#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#367#409#0" />
+                <element signature="e#386#1261#0" />
+                <element signature="e#890#1002#0" />
+                <element signature="e#1417#1604#0" />
+                <element signature="e#1547#1640#0" />
+                <element signature="e#1587#1906#0" />
+                <element signature="e#1578#1736#0" />
+                <element signature="e#1747#1905#0" />
+                <element signature="e#2068#2242#0" />
+                <element signature="e#2439#2599#0" />
+                <element signature="e#2446#2555#0" />
+                <marker date="1594619528650" expanded="true" signature="2911:3190" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hudl_server/fb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+            <state relative-caret-position="416">
+              <caret line="54" column="7" lean-forward="true" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="39" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#72#0" expanded="true" />
+                <element signature="e#539#1317#0" />
+                <element signature="e#1400#1652#0" />
+                <element signature="e#1706#2029#0" />
+                <marker date="1594619524401" expanded="false" signature="331:332" ph="..." />
+                <marker date="1594619524401" expanded="true" signature="1638:1643" ph="..." />
+                <marker date="1594619524401" expanded="true" signature="1701:2275" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/Builder.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2162">
+              <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#62#0" expanded="true" />
+                <element signature="e#408#1407#0" />
+                <element signature="e#1505#1556#0" />
+                <element signature="e#1615#1666#0" />
+                <marker date="1594618508613" expanded="true" signature="1710:1716" ph="..." />
+                <marker date="1594618508613" expanded="true" signature="2625:2631" ph="..." />
+                <marker date="1594618508613" expanded="true" signature="5058:5064" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/Utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1486">
+              <caret line="395" column="93" selection-start-line="395" selection-start-column="93" selection-end-line="395" selection-end-column="93" />
+              <folding>
+                <element signature="e#0#52#0" expanded="true" />
+                <marker date="1594618857235" expanded="true" signature="1062:1064" ph="..." />
               </folding>
             </state>
           </provider>
@@ -78,12 +141,42 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>impu</find>
+      <find>read_csv</find>
+      <find>Dropp</find>
+      <find>data_ab</find>
+      <find>du.</find>
+      <find>read_</find>
+      <find>dfs_f</find>
+      <find>dropper.</find>
+      <find>experi</find>
+      <find>train_b</find>
+      <find>injected_</find>
+      <find>clients</find>
+      <find>stringio</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src/main/core/ai/utils/data</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/hudl_server/urls.py" />
         <option value="$PROJECT_DIR$/hudl_server/__init__.py" />
+        <option value="$PROJECT_DIR$/src/main/core/ai/utils/data/Input.py" />
+        <option value="$PROJECT_DIR$/src/main/core/ai/utils/data/Dropper.py" />
+        <option value="$PROJECT_DIR$/src/main/core/ai/utils/model/CustomCallbacks.py" />
+        <option value="$PROJECT_DIR$/constants.py" />
+        <option value="$PROJECT_DIR$/src/main/core/ai/utils/data/Builder.py" />
+        <option value="$PROJECT_DIR$/src/main/core/ai/utils/data/Utils.py" />
         <option value="$PROJECT_DIR$/hudl_server/fb.py" />
+        <option value="$PROJECT_DIR$/hudl_server/server.py" />
       </list>
     </option>
   </component>
@@ -94,10 +187,12 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="505" />
     <option name="y" value="23" />
-    <option name="width" value="1440" />
+    <option name="width" value="935" />
     <option name="height" value="877" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -115,6 +210,61 @@
               <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
               <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
               <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -140,7 +290,73 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Flask server.Flask">
+    <configuration name="Dropper" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="hudl_server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/core/ai/utils/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/core/ai/utils/data/Dropper.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="fb" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="hudl_server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hudl_server" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hudl_server/fb.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="hudl_server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hudl_server" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hudl_server/server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="hudl_server" type="Python.DjangoServer" factoryName="Django server">
       <module name="hudl_server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -165,6 +381,37 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Flask" type="Python.FlaskServer" factoryName="Flask server">
+      <option name="additionalOptions" value="" />
+      <option name="application" value="" />
+      <module name="hudl_server" />
+      <option name="target" value="$PROJECT_DIR$/hudl_server/server.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Django server.hudl_server" />
+      <item itemvalue="Flask server.Flask" />
+      <item itemvalue="Python.server" />
+      <item itemvalue="Python.Dropper" />
+      <item itemvalue="Python.fb" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.server" />
+        <item itemvalue="Python.fb" />
+        <item itemvalue="Python.Dropper" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -180,30 +427,31 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <frame x="505" y="23" width="935" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21724524" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.5007153" side_tool="true" visible="true" weight="0.3299363" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.3299363" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3299363" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.87267524" weight="0.5388535" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.12732475" side_tool="true" weight="0.5388535" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.3299363" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,36 +461,156 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hudl_server/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/hudl_server/urls.py" />
+    <entry file="file://$PROJECT_DIR$/hudl_server/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/hudl_server/settings.py" />
+    <entry file="file://$PROJECT_DIR$/hudl_server/fbpk.json">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/hudl_server/settings.py">
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/Sanitizer.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/hn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
+        <state relative-caret-position="644">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hudl_server/__init__.py">
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/Imputer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="68" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="68" />
+        <state>
           <folding>
-            <element signature="e#2#11#0" expanded="true" />
+            <element signature="e#0#62#0" expanded="true" />
+            <element signature="e#443#831#0" />
+            <element signature="e#896#1006#0" />
+            <element signature="e#1143#3682#0" />
+            <element signature="e#3821#4429#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/Aggregator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/model/Predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3078" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/Input.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/model/CustomCallbacks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1094">
+          <caret line="75" column="37" lean-forward="true" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3733">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/Dropper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+            <element signature="e#463#1164#0" />
+            <element signature="e#1099#1122#0" />
+            <element signature="e#1714#3304#0" />
+            <element signature="e#3715#4912#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/model/Builder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/Builder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2162">
+          <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#62#0" expanded="true" />
+            <element signature="e#408#1407#0" />
+            <element signature="e#1505#1556#0" />
+            <element signature="e#1615#1666#0" />
+            <marker date="1594618508613" expanded="true" signature="1710:1716" ph="..." />
+            <marker date="1594618508613" expanded="true" signature="2625:2631" ph="..." />
+            <marker date="1594618508613" expanded="true" signature="5058:5064" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/Utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1486">
+          <caret line="395" column="93" selection-start-line="395" selection-start-column="93" selection-end-line="395" selection-end-column="93" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+            <marker date="1594618857235" expanded="true" signature="1062:1064" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hudl_server/fb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+        <state relative-caret-position="416">
+          <caret line="54" column="7" lean-forward="true" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="39" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#72#0" expanded="true" />
+            <element signature="e#539#1317#0" />
+            <element signature="e#1400#1652#0" />
+            <element signature="e#1706#2029#0" />
+            <marker date="1594619524401" expanded="false" signature="331:332" ph="..." />
+            <marker date="1594619524401" expanded="true" signature="1638:1643" ph="..." />
+            <marker date="1594619524401" expanded="true" signature="1701:2275" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hudl_server/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="116" column="21" selection-start-line="116" selection-start-column="21" selection-end-line="116" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#367#409#0" />
+            <element signature="e#386#1261#0" />
+            <element signature="e#890#1002#0" />
+            <element signature="e#1417#1604#0" />
+            <element signature="e#1547#1640#0" />
+            <element signature="e#1587#1906#0" />
+            <element signature="e#1578#1736#0" />
+            <element signature="e#1747#1905#0" />
+            <element signature="e#2068#2242#0" />
+            <element signature="e#2439#2599#0" />
+            <element signature="e#2446#2555#0" />
+            <marker date="1594619528650" expanded="true" signature="2911:3190" ph="..." />
           </folding>
         </state>
       </provider>
