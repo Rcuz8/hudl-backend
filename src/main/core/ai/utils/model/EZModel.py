@@ -105,6 +105,9 @@ class Modeler:
         print(self.mb.model.summary())
         return self
 
+    def get_keras_model(self):
+        return self.mb.model
+
     @classmethod
     def __k_for(cls, epochs, num_notifications):
         return epochs / num_notifications
@@ -123,6 +126,9 @@ class Modeler:
 
     def train(self, epochs=1000, plot=True, batch_size=8,
               notif_every=50):
+
+        print('Keras model:\n', self.mb.model)
+        print('Keras model metrix:\n', self.mb.model.metrics_names)
 
         callback = CustomCallbacks.ProgressCallback(epochs, k=notif_every) \
             .add_test_info(self.mb.model, self.test_x, self.test_y)
@@ -184,7 +190,6 @@ class Modeler:
         self.predictor = Predictor(model, input_encoders, output_encoders, input_scalers, output_scalers,
                                    in_col_df_indices, out_col_df_indices, dictionary, columns=columns)
         return self
-
 
     def eval(self):
         print('Testing')

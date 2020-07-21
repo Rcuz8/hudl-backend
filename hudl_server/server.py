@@ -1,7 +1,8 @@
-from flask import Flask, request, flash
+
+from flask import Flask, request, flash,json
 from flask_cors import CORS
-from hudl_server.fb import user_info,new_client,get_clients, qa
-# from constants import test_files
+from hudl_server.fb import user_info,new_client,get_clients, qa, get_games, generate_model
+from constants import TKN_3
 import phonenumbers
 app = Flask(__name__)
 CORS(app)
@@ -47,7 +48,7 @@ def filedata(agg_data_str):
             if (ds.index("'") > -1):
                 full.append([item.split(',') for item in ds.split("'")[1::2]])
         except:
-            full.append([item.split(',') for item in ds.split("'")[1::2]])
+            full.append([item.split(',') for item in ds.split('"')[1::2]])
 
         agg_data_str = agg_data_str[end + 1:]
 
@@ -62,11 +63,16 @@ def svr_user_info():
 @app.route('/clients')
 def svr_clients():
     # clients = get_clients()
-    clients = [{'hudl_pass': 'Pablothepreacher71', 'name': 'Ryan Cocuzzo', 'games': [], 'hudl_email': 'rcocuzzo@u.rochester.edu',
-      'id': 'giP0g470mUeEe76VXCwlrCpT1xt2'},{'hudl_pass': 'Pablothepreacher71', 'name': 'Ryan Cocuzzo', 'games': [], 'hudl_email': 'rcocuzzo@u.rochester.edu',
-      'id': 'giP0g470mUeEe76VXCwlrCpT1xt2'}]
+    clients = [{'name': 'Ryan Cocuzzo', 'games': ['e27e4763-834a-4594-b78f-219d271a0b62'], 'hudl_email': 'rcocuzzo@u.rochester.edu', 'hudl_pass': 'Pablothepreacher71', 'id': 'giP0g470mUeEe76VXCwlrCpT1xt2'}]
     print('Found Clients: \n', clients)
     return {'data':clients}
+
+@app.route('/games')
+def svr_games():
+    uid = request.args.get('client_id')
+    games = get_games(uid)
+    print('Serving Games for uid (', uid, ')..  :\n', games)
+    return {'data': games}
 
 
 @app.route('/newclient')
@@ -99,6 +105,26 @@ def svr_new_client():
     else:
         return json.dumps({"error": 'Unknown submission error'}), 500
 
+@app.route('/new_model', methods=['GET', 'POST'])
+def svr_gen_model():
+
+    if request.method == 'POST':
+        print('New Model Creation Request:')
+
+        game_id = request.form['game_id']
+        test_film_index = request.form['test_film_index']
+
+        try:
+            test_film_index = int(test_film_index)
+        except:
+            return 'invalid film index', 405
+
+        print('\tGame ID            :', game_id)
+        print('\tIndex of test film :', test_film_index, '(', type(test_film_index), ')')
+
+        return generate_model(game_id, test_film_index)
+
+
 
 
 @app.route('/new_qa', methods=['GET', 'POST'])
@@ -107,28 +133,23 @@ def svr_perform_qa():
     if request.method == 'POST':
         print('New QA Analysis Request:')
 
+        name = request.form['name']
         names = request.form['names']
         datum_ = request.form['data']
         headers = request.form['headers']
         client_id = request.form['client_id']
 
         # Check valid
-        if not (names and datum_ and headers and client_id):
+        if not (name and names and datum_ and headers and client_id):
             print('\tFailed!')
             return 'invalid input'
 
-        datum = filedata(datum_)
+        # print(datum_)
+        datum = datum_.split(TKN_3)
         names = names.split(',')
         headers = headers.split(',')
 
-        print('\tnames     :', names)
-        print('\theaders   :', headers)
-        print('\tclient id :', client_id)
-        print('\tdatum     :')
-        for i in range(len(datum)):
-            print(i, ':\t', datum[i] )
-
-        return qa(names, datum, headers, client_id)
+        return qa(name, names, datum, headers, client_id)
 
 
 

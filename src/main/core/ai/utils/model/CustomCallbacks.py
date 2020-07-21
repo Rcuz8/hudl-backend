@@ -25,12 +25,13 @@ class ProgressCallback(tf.keras.callbacks.Callback):
         self.model_ = model
         self.test_x = test_x
         self.test_y = test_y
-        self.evals = pd.DataFrame(columns=model.metrics_names)
         return self
 
     def add_col(self,col):
-        if (self.evals is not None):
-            self.evals.loc[len(self.evals.index)] = col
+        if self.evals is None:
+            self.evals = pd.DataFrame(columns=self.model_.metrics_names)
+            print('Created callbacks attribute "evals" = (DataFrame)\n ', self.evals)
+        self.evals.loc[len(self.evals.index)] = col
 
     def dismiss_k(self):
         self.use_k = False

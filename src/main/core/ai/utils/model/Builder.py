@@ -1,3 +1,4 @@
+
 from src.main.core.ai.utils.model.CustomCallbacks import ProgressCallback
 from keras.layers import Dense, Dropout, LeakyReLU, ReLU
 from sklearn.model_selection import RepeatedKFold
@@ -95,7 +96,9 @@ class MB:
 
         # Compile
         model.compile(optimizer=optimizer, loss=lossnames, loss_weights=lossweights,
-                           metrics=metrics)
+                      metrics=[keras.metrics.Accuracy()])
+
+        print('Builder generated model with metrics:', model.metrics_names)
 
         self.model = model
         return self

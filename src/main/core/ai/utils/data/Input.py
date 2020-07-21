@@ -30,55 +30,41 @@ class InputChefHelpers:
 class InputChef:
 
     @classmethod
-    def generate_aggregate_dataframe(cls, filenames: list, input_params:list, output_params:list,
+    def generate_aggregate_dataframe(cls, sources: list, input_params=[], output_params=[],
                    addtl_heuristic_fn=None, parse_tkns=[',', '!!!'],
                    impute_threshold=0.7,_type='json', per_file_heuristic_fn=None,
-                                     injected_headers=None):
-        """
-            Generates an aggregate dataframe:
-                ✅ Parsed
-                ✅ Trimmed (addtl columns)
-                🛑 Unclean
-        :param filenames:           ['a.txt',..]
+                                     injected_headers=None, relevent_columns_override=None,
+                                     dont_remove_cols=[]):
 
-        :param addtl_heuristic_fn:  some_trimming_fn()
-            This is for additional header/data value replacements that should be done before proceeding.
-            - Should accept the dataframe as a param
-        :param parse_tkns:          tokens the json data should be parsed using
-        :return: One aggregate dataframe
-        """
-        dfs = None
-        # 1. Parse  (Get dataframes)
-        if _type == 'json':
-            dfs = du.dfs_from_json_files(filenames, parse_tkns)
-        elif _type == 'string':
-            dfs = du.dfs_from_strings(filenames, injected_headers) # NOTE: filenames = data list
-        else:
-            dfs = du.dfs_from_csvs(filenames)
+        print('Generating aggregate dataframe..')
+        print('recieved sources: ')
+        print(sources)
+        print('Relevent columns: ', injected_headers)
 
+        # 1. Parse  (Sources -> DataFrames)
+        dfs = du.dfs_from_sources(sources, _type, injected_headers, parse_tkns)
+
+        print('Generated DataFrames: ')
+        print(dfs)
+
+        # 1a. Manipulate DataFrames
         if per_file_heuristic_fn is not None:
-            per_file_heuristic_fn(dfs)
+            for df in dfs:
+                per_file_heuristic_fn(df)
+
+        print('Post-hn(files) DataFrames: ')
+        print(dfs)
+
         # 2. Merge  (all dataframes)
         df = pd.concat(dfs)
 
-        # 5. (Optionally) Apply an additional trimming/cleaning heuristic
-        old_num_vals = len(df.values)
-        if (addtl_heuristic_fn is not None):
-            addtl_heuristic_fn(df)
-            df.reset_index(drop=True, inplace=True)
-        new_num_vals = len(df.values)
-        # print('Aggregate dataframe (before trim & clean): \n', df.values)
-        # print('Aggregate dataframe (before trim & clean): ', new_num_vals, 'rows  ( heuristic trimmed', (old_num_vals - new_num_vals),
-        #       'rows )')
+        print('Post-concat DataFrame: ')
+        print(df)
 
-        # 3. Pre-process  (headers)
-        du.preprocess_df(df)
-        # 4. Trim   (addtl columns, bad rows, bad cols)
-        Dropper.drop_unused_columns(df, input_params, output_params)
-        Dropper.drop_k_plus_nans(df, 2)
-        Dropper.drop_bad_cols(df, impute_threshold)
-        input_params, output_params = Dropper.check_droppings(df,impute_threshold,input_params, output_params)
-        return df, input_params, output_params
+        return du.df_power_wash(df, input_params, output_params,addtl_heuristic_fn,
+                                impute_threshold, relevent_columns_override, dont_remove_cols)
+
+
     @classmethod
     def mp_copy(cls, mp:dict):
         return mp.copy()
@@ -107,11 +93,11 @@ class InputChef:
         # 2. Get each column's entropy metric
         entropy = InputChefHelpers.entropize(output_params)
 
-        # print('Activations: ', activation)
-        # print('Entropies: ', entropy)
-        # print('Dict: ', dictionary)
-        # print('Inputs: ', inputs)
-        # print('Input params: ', input_params)
+        print('Activations: ', activation)
+        print('Entropies: ', entropy)
+        print('Dict: ', dictionary)
+        print('Inputs: ', inputs)
+        print('Input params: ', input_params)
 
         # Prepare result
         result = {
@@ -130,7 +116,12 @@ class InputChef:
                 item_unique_values = len(value)  # Get item's unique values
 
             if name not in inputs:
-                item_activation = activation[name]  # Get item's activation
+                print('Getting activation for (', name, ')')
+                try:
+                    item_activation = activation[name]  # Get item's activation
+                except:
+                    err_msg = 'Cuz-handled error. Could not find activation for ' + name
+                    raise Exception(err_msg)
                 item_entropy = entropy[name]  # Get item's entropy
                 result['outputs'].append((name, item_unique_values, item_activation, item_entropy))
             else:

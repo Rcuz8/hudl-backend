@@ -2,14 +2,18 @@ from src.main.core.ai.utils.data.Aggregator import DataHandler
 from src.main.core.ai.utils.data.Dropper import Dropper
 from src.main.core.ai.utils.data.Imputer import Imputer
 from src.main.core.ai.utils.data.Input import InputChef
-from src.main.core.ai.utils.data.Utils import analyze_data_quality
+from src.main.core.ai.utils.data.Utils import analyze_data_quality, rows
 
 
 class huncho_data_bldr:
 
-    def __init__(self, input_params:list, output_params:list, thresh=0.7):
-        self.output_column_names = [col for col,_,_ in output_params]
-        self.output_plaintext_names = [ptxt for _,ptxt,_ in output_params]
+    def __init__(self, input_params:list, output_params:list, thresh=0.6):
+        if output_params:
+            self.input_column_names = [col for col,_,_ in input_params]
+            self.output_column_names = [col for col,_,_ in output_params]
+            self.all_column_names = list(set(self.input_column_names + self.output_column_names))
+            self.all_column_names.sort()
+            self.output_plaintext_names = [ptxt for _,ptxt,_ in output_params]
         self.input_params = input_params
         self.output_params = output_params
         self.impute_threshold = thresh
@@ -34,6 +38,8 @@ class huncho_data_bldr:
         self.dataframe_columns = None
         self.injected_headers = None
         self.injected_filenames = None
+        self.relevent_columns_override = None
+        self.protect_columns = []
 
 
     def of_type(self, type='json'):
@@ -46,6 +52,16 @@ class huncho_data_bldr:
 
     def inject_filenames(self, filenames: list):
         self.injected_filenames = filenames
+        return self
+
+    def dont_remove_columns(self, cols):
+        '''NOTE: FOR COMPILE ONLY'''
+        self.protect_columns = cols
+        return self
+
+    def declare_relevent_columns(self, columns):
+        self.relevent_columns_override = columns
+        print(self.relevent_columns_override)
         return self
 
     def train(self, filename):
@@ -89,15 +105,28 @@ class huncho_data_bldr:
         self.training, in_params, out_params = self.data_gen_fn(
             self.training_files, self.input_params,self.output_params,
             self.parse_heuristic_fn,self.parse_tkns, self.impute_threshold, self.type,
-            self.per_file_heuristic_fn_train, injected_headers=self.injected_headers)
+            self.per_file_heuristic_fn_train, injected_headers=self.injected_headers,
+            dont_remove_cols=self.protect_columns)
         # NOTE: Params CAN change here, may be an issue if data's getting deleted here too
         # NOTE UPDATE: Handled via ensure_column_compatibility(), although it's not ideal
         self.test, self.input_params, self.output_params = self.data_gen_fn(
             self.test_files, in_params, out_params,
             self.parse_heuristic_fn,self.parse_tkns, self.impute_threshold,self.type,
-            self.per_file_heuristic_fn_test, injected_headers=self.injected_headers)
+            self.per_file_heuristic_fn_test, injected_headers=self.injected_headers,
+            dont_remove_cols=self.protect_columns)
+
+        # Drop protected columns
+        drop_columns = [col for col in self.protect_columns if col not in self.all_column_names]
+        Dropper.drop_cols(self.training, drop_columns)
+        Dropper.drop_cols(self.test, drop_columns)
+
         self.didCompile = True
         print("\n-- Done Compiling Data --\n")
+        print('Quick Compile metrics:')
+        print('\tTrain data: ', rows(self.training), 'rows')
+        print(self.training)
+        print('\tTest data : ', rows(self.test), 'rows')
+        print(self.test)
         return self
 
     def __impute(self, power='high'):
@@ -124,10 +153,12 @@ class huncho_data_bldr:
         self.dataframe_columns = self.training.columns # Assume they are identical, after dropper ensured compat.
         return self
 
-    def analyze_data_quality(self):
-        return analyze_data_quality([..., self.training_files, self.test_files],
+    def analyze_data_quality(self, preprocessing_fn=None):
+        return analyze_data_quality(self.training_files + self.test_files,
                                         self.impute_threshold, self.injected_headers,
                                         injected_filenames=self.injected_filenames,
+                                        preprocessing_fn=preprocessing_fn,
+                                        relevent_columns_override=self.relevent_columns_override,
                                         data_format=self.type)
 
     def scalers(self):
@@ -177,3 +208,7 @@ class huncho_data_bldr:
     @classmethod
     def empty(cls):
         return cls(None, None)
+
+    @classmethod
+    def from_config(cls, config, thresh=0.6):
+        return cls(config['input'], config['output'],thresh=thresh)

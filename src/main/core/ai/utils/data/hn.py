@@ -18,8 +18,6 @@ def files_heuristic_tr(dfs:list):
         if i in THEIR_FILMS_TR:
             odk_swap(df)
 
-
-
 def files_heuristic_tst(dfs:list):
     for i in range(len(dfs)):
         df:pd.DataFrame = dfs[i]
@@ -31,13 +29,13 @@ def hx_setup(df: pd.DataFrame):
     # Fill Nulls
     df['RESULT'].fillna('none', inplace=True)
     df['ODK'].fillna('none', inplace=True)
-    df['PLAY TYPE'].fillna('none', inplace=True)
+    df['PLAY_TYPE'].fillna('none', inplace=True)
     df['DN'].fillna(0, inplace=True)
 
     # Make case-insensitive
     df['RESULT'] = df['RESULT'].str.lower()
     df['ODK'] = df['ODK'].str.lower()
-    df['PLAY TYPE'] = df['PLAY TYPE'].str.lower()
+    df['PLAY_TYPE'] = df['PLAY_TYPE'].str.lower()
 
     df.query('ODK != "s"', inplace=True)
     df.reset_index(drop=True,inplace=True)
@@ -47,24 +45,24 @@ def hx_setup(df: pd.DataFrame):
 def hx_field_create(df: pd.DataFrame):
 
     # More Field Creation
-    df['PREV PLAY TYPE'] = df['PLAY TYPE'].shift()
-    df['NEXT PLAY TYPE'] = df['PLAY TYPE'].shift(-1)
-    df['NEXT NEXT PLAY TYPE'] = df['PLAY TYPE'].shift(-2)
-    df['PREV ODK'] = df['ODK'].shift()
-    df['NEXT ODK'] = df['ODK'].shift(-1)
-    df['NEXT NEXT ODK'] = df['ODK'].shift(-2)
-    df['NEXT RESULT'] = df['RESULT'].shift(-1) # unused?
-    df['NEXT DN'] = df['DN'].shift(-1)
+    df['PREV_PLAY_TYPE'] = df['PLAY_TYPE'].shift()
+    df['NEXT_PLAY_TYPE'] = df['PLAY_TYPE'].shift(-1)
+    df['NEXT_NEXT_PLAY_TYPE'] = df['PLAY_TYPE'].shift(-2)
+    df['PREV_ODK'] = df['ODK'].shift()
+    df['NEXT_ODK'] = df['ODK'].shift(-1)
+    df['NEXT_NEXT_ODK'] = df['ODK'].shift(-2)
+    df['NEXT_RESULT'] = df['RESULT'].shift(-1) # unused?
+    df['NEXT_DN'] = df['DN'].shift(-1)
 
     # .. fill each
-    df['PREV PLAY TYPE'].fillna('none', inplace=True)
-    df['NEXT PLAY TYPE'].fillna('none', inplace=True)
-    df['NEXT NEXT PLAY TYPE'].fillna('none', inplace=True)
-    df['PREV ODK'].fillna('none', inplace=True)
-    df['NEXT ODK'].fillna('none', inplace=True)
-    df['NEXT NEXT ODK'].fillna('none', inplace=True)
-    df['NEXT RESULT'].fillna('none', inplace=True)
-    df['NEXT DN'].fillna('none', inplace=True)
+    df['PREV_PLAY_TYPE'].fillna('none', inplace=True)
+    df['NEXT_PLAY_TYPE'].fillna('none', inplace=True)
+    df['NEXT_NEXT_PLAY_TYPE'].fillna('none', inplace=True)
+    df['PREV_ODK'].fillna('none', inplace=True)
+    df['NEXT_ODK'].fillna('none', inplace=True)
+    df['NEXT_NEXT_ODK'].fillna('none', inplace=True)
+    df['NEXT_RESULT'].fillna('none', inplace=True)
+    df['NEXT_DN'].fillna('none', inplace=True)
     df['HASH'].ffill(inplace=True)
 
 def hx_big_scores(df: pd.DataFrame):
@@ -96,12 +94,12 @@ def hx_big_scores(df: pd.DataFrame):
 
     onOffense = (df['ODK'] == 'o')
     onDefense = (df['ODK'] == 'd')
-    kickingXP = ((df['NEXT PLAY TYPE'] == 'xp') | ((df['NEXT PLAY TYPE'] == 'fg') & (df['NEXT DN'] == 0)))
-    blockingXP = ((df['NEXT PLAY TYPE'] == 'xp block') | ((df['NEXT PLAY TYPE'] == 'fg block') & (df['NEXT DN'] == 0)))
-    twoConsecutiveKicks = (df['NEXT ODK'] == 'k') & (df['NEXT NEXT ODK'] == 'k')
-    notPunting = (df['NEXT PLAY TYPE'] != 'punt') & (df['NEXT PLAY TYPE'] != 'punt rec')
-    notFG = (df['PLAY TYPE'] != 'fg') & (df['PLAY TYPE'] != 'fg block')
-    wont_be_fg = (df['NEXT PLAY TYPE'] != 'fg') & (df['NEXT PLAY TYPE'] != 'fg block')
+    kickingXP = ((df['NEXT_PLAY_TYPE'] == 'xp') | ((df['NEXT_PLAY_TYPE'] == 'fg') & (df['NEXT_DN'] == 0)))
+    blockingXP = ((df['NEXT_PLAY_TYPE'] == 'xp block') | ((df['NEXT_PLAY_TYPE'] == 'fg block') & (df['NEXT_DN'] == 0)))
+    twoConsecutiveKicks = (df['NEXT_ODK'] == 'k') & (df['NEXT_NEXT_ODK'] == 'k')
+    notPunting = (df['NEXT_PLAY_TYPE'] != 'punt') & (df['NEXT_PLAY_TYPE'] != 'punt rec')
+    notFG = (df['PLAY_TYPE'] != 'fg') & (df['PLAY_TYPE'] != 'fg block')
+    wont_be_fg = (df['NEXT_PLAY_TYPE'] != 'fg') & (df['NEXT_PLAY_TYPE'] != 'fg block')
     tdp6_con = [
         NO_INPUT & onOffense & kickingXP,
         NO_INPUT & onDefense & kickingXP,
@@ -120,8 +118,8 @@ def hx_big_scores(df: pd.DataFrame):
 
     df['RESULT'].fillna('none', inplace=True)
 
-    df['PREV RESULT'] = df['RESULT'].shift()
-    df['PREV RESULT'].fillna('none', inplace=True)
+    df['PREV_RESULT'] = df['RESULT'].shift()
+    df['PREV_RESULT'].fillna('none', inplace=True)
 
 def hx_fg(df: pd.DataFrame):
 
@@ -148,33 +146,33 @@ def hx_fg(df: pd.DataFrame):
 
         '''
 
-    # Fill in XP / XP Block as Play Types with simple rules
+    # Fill in XP / XP Block as PLAY_TYPEs with simple rules
     cond = [
-        ((df['PLAY TYPE'] == 'none') | (df['PLAY TYPE'] == 'fg') | (df['PLAY TYPE'] == 'fg block')) &
-        (df['PREV RESULT'] == 'td' ) & ( df['PREV ODK'] == 'o'),
-        ((df['PLAY TYPE'] == 'none') | (df['PLAY TYPE'] == 'fg') | (df['PLAY TYPE'] == 'fg block')) &
-        (df['PREV RESULT'] == 'p6' ) & ( df['PREV ODK'] == 'o'),
-        ((df['PLAY TYPE'] == 'none') | (df['PLAY TYPE'] == 'fg') | (df['PLAY TYPE'] == 'fg block')) &
-        (df['PREV RESULT'] == 'td' ) & ( df['PREV ODK'] == 'd'),
-        (df['PLAY TYPE'] == 'none') & (df['PREV RESULT'] == 'p6' ) & ( df['PREV ODK'] == 'd'),
+        ((df['PLAY_TYPE'] == 'none') | (df['PLAY_TYPE'] == 'fg') | (df['PLAY_TYPE'] == 'fg block')) &
+        (df['PREV_RESULT'] == 'td' ) & ( df['PREV_ODK'] == 'o'),
+        ((df['PLAY_TYPE'] == 'none') | (df['PLAY_TYPE'] == 'fg') | (df['PLAY_TYPE'] == 'fg block')) &
+        (df['PREV_RESULT'] == 'p6' ) & ( df['PREV_ODK'] == 'o'),
+        ((df['PLAY_TYPE'] == 'none') | (df['PLAY_TYPE'] == 'fg') | (df['PLAY_TYPE'] == 'fg block')) &
+        (df['PREV_RESULT'] == 'td' ) & ( df['PREV_ODK'] == 'd'),
+        (df['PLAY_TYPE'] == 'none') & (df['PREV_RESULT'] == 'p6' ) & ( df['PREV_ODK'] == 'd'),
     ]
     play_types = [ 'xp', 'xp block', 'xp block', 'xp']
 
-    df['PLAY TYPE'] = np.select(cond, play_types, default=df['PLAY TYPE'])
-    df['PLAY TYPE'].fillna('none', inplace=True)
+    df['PLAY_TYPE'] = np.select(cond, play_types, default=df['PLAY_TYPE'])
+    df['PLAY_TYPE'].fillna('none', inplace=True)
 
     # Fill in the results of XPs/FGs
 
     df['RESULT'] = np.where(
         (df['RESULT'] == 'none') &
-        (((df['PLAY TYPE'] == 'xp') | (df['PLAY TYPE'] == 'xp block')) |
-         (((df['PLAY TYPE'] == 'fg') | (df['PLAY TYPE'] == 'fg block')) & (df['DN'] == 0)))
+        (((df['PLAY_TYPE'] == 'xp') | (df['PLAY_TYPE'] == 'xp block')) |
+         (((df['PLAY_TYPE'] == 'fg') | (df['PLAY_TYPE'] == 'fg block')) & (df['DN'] == 0)))
         # = nothing entered, and it's an XP
         , 'good', df['RESULT'])
 
     df['RESULT'] = np.where(
         (df['RESULT'] == 'none') &
-        (((df['PLAY TYPE'] == 'fg') | (df['PLAY TYPE'] == 'fg block')) & (df['DN'] != 0))
+        (((df['PLAY_TYPE'] == 'fg') | (df['PLAY_TYPE'] == 'fg block')) & (df['DN'] != 0))
         # = nothing entered, and it's a FG
         , 'good', df['RESULT'])
 
@@ -182,55 +180,60 @@ def hx_fg(df: pd.DataFrame):
 def hx_cop(df: pd.DataFrame):
 
     df['RESULT'] = np.where(
-        (df['ODK'] == 'o' ) & ( df['DN'] != 4 ) & ( df['NEXT ODK'] == 'd'),
+        (df['ODK'] == 'o' ) & ( df['DN'] != 4 ) & ( df['NEXT_ODK'] == 'd'),
         'int', df['RESULT'])
     df['RESULT'] = np.where(
-        (df['ODK'] == 'd' ) & ( df['DN'] != 4 ) & ( df['NEXT ODK'] == 'o'),
+        (df['ODK'] == 'd' ) & ( df['DN'] != 4 ) & ( df['NEXT_ODK'] == 'o'),
         'int', df['RESULT'])
     df['RESULT'] = np.where(
-        (df['ODK'] == 'o' ) & ( df['DN'] == 4 ) & ( df['NEXT ODK'] == 'd'),
+        (df['ODK'] == 'o' ) & ( df['DN'] == 4 ) & ( df['NEXT_ODK'] == 'd'),
         'tod', df['RESULT'])
     df['RESULT'] = np.where(
-        (df['ODK'] == 'd' ) & ( df['DN'] == 4 ) & ( df['NEXT ODK'] == 'o'),
+        (df['ODK'] == 'd' ) & ( df['DN'] == 4 ) & ( df['NEXT_ODK'] == 'o'),
         'tod', df['RESULT'])
 
-    df['PREV RESULT'] = df['RESULT'].shift()
-    df['PREV RESULT'].fillna('none', inplace=True)
+    df['PREV_RESULT'] = df['RESULT'].shift()
+    df['PREV_RESULT'].fillna('none', inplace=True)
 
 def hx_score_diff(df: pd.DataFrame):
 
-    df.drop(columns=['OFF STR', 'PLAY DIR', 'GAP', 'PASS ZONE', 'DEF FRONT', 'COVERAGE', 'BLITZ'], inplace=True)
+    # for col in ['OFF STR', 'PLAY DIR', 'GAP', 'PASS ZONE', 'DEF FRONT', 'COVERAGE', 'BLITZ']:
+    #     try:
+    #         if df.columns.index(col) >= 0:
+    #             df.drop(columns=[col], inplace=True)
+    #     except:
+    #         pass
 
     we_score_conditions = [
         (df['ODK'] == 'o') & ((df['RESULT'] == 'touchdown') | (df['RESULT'] == 'td')),
         # touchdown
-        ((df['PLAY TYPE'] == 'xp') | ((df['PLAY TYPE'] == 'fg') & (df['DN'] == 0))) & (df['RESULT'] == 'good'),  # extra point
-        (df['PREV ODK'] == 'o') & (df['RESULT'] == '2p'),  # 2pt conv
-        (df['PREV ODK'] == 'd') & (df['RESULT'] == 'saf'),  # safety
+        ((df['PLAY_TYPE'] == 'xp') | ((df['PLAY_TYPE'] == 'fg') & (df['DN'] == 0))) & (df['RESULT'] == 'good'),  # extra point
+        (df['PREV_ODK'] == 'o') & (df['RESULT'] == '2p'),  # 2pt conv
+        (df['PREV_ODK'] == 'd') & (df['RESULT'] == 'saf'),  # safety
         (df['ODK'] == 'd') & (df['RESULT'] == 'p6'),  # pick 6
-        (df['PLAY TYPE'] == 'punt') & (df['RESULT'] == 'td'), # punt fake for TD
-        (df['PLAY TYPE'] == 'punt rec') & (df['RESULT'] == 'rtd'),  # punt return for TD
-        (df['PLAY TYPE'] == 'ko rec') & (df['RESULT'] == 'rtd'),  # punt return for TD
-        (df['PLAY TYPE'] == 'fg') & (df['DN'] != 0) & (df['RESULT'] == 'good'),  # field goal
+        (df['PLAY_TYPE'] == 'punt') & (df['RESULT'] == 'td'), # punt fake for TD
+        (df['PLAY_TYPE'] == 'punt rec') & (df['RESULT'] == 'rtd'),  # punt return for TD
+        (df['PLAY_TYPE'] == 'ko rec') & (df['RESULT'] == 'rtd'),  # punt return for TD
+        (df['PLAY_TYPE'] == 'fg') & (df['DN'] != 0) & (df['RESULT'] == 'good'),  # field goal
     ]
     they_score_conditions = [
         (df['ODK'] == 'd') & ((df['RESULT'] == 'touchdown') | (df['RESULT'] == 'td')),
         # touchdown
-        ((df['PLAY TYPE'] == 'xp block') | ((df['PLAY TYPE'] == 'fg block') & (df['DN'] == 0))) & (df['RESULT'] == 'good'),  # extra point
-        (df['PREV ODK'] == 'd') & (df['RESULT'] == '2p'),  # 2pt conv
-        (df['PREV ODK'] == 'o') & (df['RESULT'] == 'saf'),  # safety
+        ((df['PLAY_TYPE'] == 'xp block') | ((df['PLAY_TYPE'] == 'fg block') & (df['DN'] == 0))) & (df['RESULT'] == 'good'),  # extra point
+        (df['PREV_ODK'] == 'd') & (df['RESULT'] == '2p'),  # 2pt conv
+        (df['PREV_ODK'] == 'o') & (df['RESULT'] == 'saf'),  # safety
         (df['ODK'] == 'o') & (df['RESULT'] == 'p6'),  # pick 6
-        (df['PLAY TYPE'] == 'punt') & (df['RESULT'] == 'rtd'),  # punt return for TD
-        (df['PLAY TYPE'] == 'punt rec') & (df['RESULT'] == 'td'),  # punt fake for TD
-        (df['PLAY TYPE'] == 'ko') & (df['RESULT'] == 'rtd'),  # punt return for TD
-        (df['PLAY TYPE'] == 'fg block') & (df['DN'] != 0) & (df['RESULT'] == 'good'),  # field goal
+        (df['PLAY_TYPE'] == 'punt') & (df['RESULT'] == 'rtd'),  # punt return for TD
+        (df['PLAY_TYPE'] == 'punt rec') & (df['RESULT'] == 'td'),  # punt fake for TD
+        (df['PLAY_TYPE'] == 'ko') & (df['RESULT'] == 'rtd'),  # punt return for TD
+        (df['PLAY_TYPE'] == 'fg block') & (df['DN'] != 0) & (df['RESULT'] == 'good'),  # field goal
     ]
     score_choices = [6, 1, 2, 2, 6, 6, 6, 6, 3]
     df['OUR_SCORE'] = np.select(we_score_conditions, score_choices, default=0)
     df['THEIR_SCORE'] = np.select(they_score_conditions, score_choices, default=0)
     df['OUR_SCORE'] = df['OUR_SCORE'].cumsum()
     df['THEIR_SCORE'] = df['THEIR_SCORE'].cumsum()
-    df['SCORE DIFF'] = df['OUR_SCORE'] - df['THEIR_SCORE']
+    df['SCORE_DIFF'] = df['OUR_SCORE'] - df['THEIR_SCORE']
 
 def hx_id_penalties(df: pd.DataFrame):
     '''
@@ -244,9 +247,9 @@ def hx_id_penalties(df: pd.DataFrame):
 def hx_renullify(df: pd.DataFrame):
 
     # Fill Nulls
-    df['RESULT'].replace('none', np.nan, inplace=True)
+    # df['RESULT'].replace('none', np.nan, inplace=True)
     df['ODK'].replace('none', np.nan, inplace=True)
-    df['PLAY TYPE'].replace('none', np.nan, inplace=True)
+    df['PLAY_TYPE'].replace('none', np.nan, inplace=True)
 
 def hx(df: pd.DataFrame):
 
@@ -257,7 +260,7 @@ def hx(df: pd.DataFrame):
         (3) Make RESULT
 
             Columns needed:
-                -  Next Play Type
+                -  Next PLAY_TYPE
                 - Next ODK
                 - Next Next ODK
                 - Prev Result
@@ -271,10 +274,10 @@ def hx(df: pd.DataFrame):
             - ODK = D & Next PT = FG Block  ? TD     -> ALWAYS HOLDS
             - Next ODK=K & Next ODK != Punt & Next Next ODK=K ? TD     -> USUALLY
                 - I think this works with double-PAT (penalty, etc), but be careful
-            - PREV RES=TD & PREV ODK=O      ? PT=FG        -> ALWAYS HOLDS
-            - PREV RES=P6 & PREV ODK=O      ? PT=FG Block  -> ALWAYS HOLDS
-            - PREV RES=TD & PREV ODK=D      ? PT=FG Block  -> ALWAYS HOLDS
-            - PREV RES=P6 & PREV ODK=D      ? PT=FG        -> ALWAYS HOLDS
+            - PREV_RES=TD & PREV_ODK=O      ? PT=FG        -> ALWAYS HOLDS
+            - PREV_RES=P6 & PREV_ODK=O      ? PT=FG Block  -> ALWAYS HOLDS
+            - PREV_RES=TD & PREV_ODK=D      ? PT=FG Block  -> ALWAYS HOLDS
+            - PREV_RES=P6 & PREV_ODK=D      ? PT=FG        -> ALWAYS HOLDS
 
             * We now definitely have TD/P6 logged correctly *
             * We now definitely have FG/FG Block logged correctly *
@@ -282,8 +285,8 @@ def hx(df: pd.DataFrame):
             (B) Fill out Change of possession (logged as INT)
                 - NOTE: TOD = Turnover on downs
 
-            - ODK=O & DWN != 4 & NEXT ODK=D   ? RES=INT        -> USUALLY
-            - ODK=O & DWN = 4 & NEXT ODK=D    ? RES=TOD        -> USUALLY
+            - ODK=O & DWN != 4 & NEXT_ODK=D   ? RES=INT        -> USUALLY
+            - ODK=O & DWN = 4 & NEXT_ODK=D    ? RES=TOD        -> USUALLY
             (also add flipside of this)
 
             * We now definitely have INT/TOD logged pretty well *
@@ -313,11 +316,13 @@ def hx(df: pd.DataFrame):
     hx_setup(df)
 
     #  Make Distance to Endzone
-    dist_cond = [df['YARD LN'] >= 0, df['YARD LN'] < 0]
-    dist_vals = [df['YARD LN'], 50 + (50 - abs(df['YARD LN']))]
+    dist_cond = [df['YARD_LN'] >= 0, df['YARD_LN'] < 0]
+    dist_vals = [df['YARD_LN'], 50 + (50 - abs(df['YARD_LN']))]
     df['D2E'] = np.select(dist_cond, dist_vals, default=0)
-    df['NEXT D2E'] = df['D2E'].shift(-1)
-    df['NEXT D2E'].fillna(-1, inplace=True)
+    df['NEXT_D2E'] = df['D2E'].shift(-1)
+    df['NEXT_D2E'].fillna(-1, inplace=True)
+
+    # print('Step 1: -> df=..\n', df)
 
     # Create relevent fields for result/score assessment
     hx_field_create(df)
@@ -325,11 +330,17 @@ def hx(df: pd.DataFrame):
     # Fill out TD/P6
     hx_big_scores(df)
 
+    # print('Step 2: -> df=..\n', df)
+
+
     # Fill out FG/FG Block
     hx_fg(df)
 
     # Fill out change of possession
     hx_cop(df)
+
+    # print('Step 3: -> df=..\n', df)
+
 
     # Fill out GN/LS
     glc = [
@@ -339,7 +350,7 @@ def hx(df: pd.DataFrame):
     glr = [df['D2E'], 0]
 
     df['GN/LS'] = np.select(glc,glr,
-                            default=df['D2E']-df['NEXT D2E'])
+                            default=df['D2E']-df['NEXT_D2E'])
 
     # Fill out QTR
 
@@ -361,15 +372,21 @@ def hx(df: pd.DataFrame):
         print('WARNING: Incomplete QTR entries. Deleting the column.')
         df.drop(columns=['QTR'], inplace=True)
 
+    # print('Step 4: -> df=..\n', df)
+
+
     hx_score_diff(df)
 
-    df.drop(columns=[ 'YARD LN', 'NEXT D2E','NEXT RESULT', 'NEXT DN', 'OUR_SCORE','THEIR_SCORE',
-                      'NEXT NEXT PLAY TYPE',
-                     'NEXT PLAY TYPE', 'PREV RESULT', 'PREV ODK', 'NEXT ODK', 'NEXT NEXT ODK'], inplace=True)
+    df.drop(columns=[ 'YARD_LN', 'NEXT_D2E','NEXT_RESULT', 'NEXT_DN', 'OUR_SCORE','THEIR_SCORE',
+                      'NEXT_NEXT_PLAY_TYPE',
+                     'NEXT_PLAY_TYPE', 'PREV_RESULT', 'PREV_ODK', 'NEXT_ODK', 'NEXT_NEXT_ODK'], inplace=True)
 
-    # df.drop(columns=[ 'YARD LN', 'NEXT D2E','NEXT RESULT', 'HASH', 'GN/LS', 'NEXT DN', 'SCORE DIFF',
-    #                  'NEXT PLAY TYPE', 'PREV RESULT', 'PREV ODK', 'NEXT ODK', 'NEXT NEXT ODK'], inplace=True)
+    # For now, we don't need Gain/Loss
+    df.drop(columns=['GN/LS'], inplace=True)
+
 
     df.query('ODK == "o"', inplace=True)
+
+    # print('hx return:\n', df)
 
     hx_renullify(df)

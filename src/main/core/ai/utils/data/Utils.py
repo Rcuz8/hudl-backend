@@ -1,20 +1,20 @@
-from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
+from sklearn.model_selection import train_test_split
+from constants import relevent_data_headers
 from sklearn.model_selection import KFold
 from keras.utils import np_utils
 from statistics import mode
 from statistics import mean
 from heapq import nlargest
 from io import StringIO
-import tensorflow as tf
 import pandas as pd
 import numpy as np
-import statistics
-import time
 import json
 import re
 
 # Play regexes
+from src.main.core.ai.utils.data.Dropper import Dropper
+
 iz_regex = re.compile(re.escape(',izr'), re.IGNORECASE)
 
 def rows(df:pd.DataFrame):
@@ -39,7 +39,7 @@ def reg_replace(regex, _for:str, in_string:str):
     return regex.sub(_for, in_string)
 
 # pre-process dataframe
-def preprocess_df(dataframe):
+def preprocess_df_headers(dataframe):
     dataframe.columns = dataframe.columns.str.strip()
     dataframe.columns = dataframe.columns.str.replace(" ", "_")
     dataframe.columns = dataframe.columns.str.replace("#", "NUM")
@@ -93,7 +93,11 @@ def col_encode(df, _list, dictionary, boundaries):
             G = G.astype(float)
             encoders[colname] = None
             # Scale
-            bounds = boundaries[colname]
+            try:
+                bounds = boundaries[colname]
+            except:
+                exc_string = 'Cuz-handled Error. No boundaries generated for column (' + colname + ').'
+                raise Exception(exc_string)
             scaler = custom_scaler(bounds[0], bounds[1])
             G = scaler.transform([G])[0]  # Put into & take out of a list (to fit transform)
             scalers[colname] = scaler
@@ -102,14 +106,22 @@ def col_encode(df, _list, dictionary, boundaries):
             G = G.astype(int)
             encoders[colname] = None
             # Scale
-            bounds = boundaries[colname]
+            try:
+                bounds = boundaries[colname]
+            except:
+                exc_string = 'Cuz-handled Error. No boundaries generated for column (' + colname + ').'
+                raise Exception(exc_string)
             scaler = custom_scaler(bounds[0], bounds[1])
             G = scaler.transform([G])[0]  # Put into & take out of a list (to fit transform)
             scalers[colname] = scaler
         elif encode_as == 'one-hot':
             # convert integers to dummy variables (i.e. one hot encoded)
             if dictionary is not None:
-                uniques = dictionary[colname]
+                try:
+                    uniques = dictionary[colname]
+                except:
+                    exc_string = 'Cuz-handled Error. No dictionary generated for column ('+colname+ ').'
+                    raise Exception(exc_string)
                 # encode class values as integers
                 encoder = LabelEncoder()
                 encoder.fit(uniques)
@@ -153,7 +165,7 @@ def apply_heuristic(df:pd.DataFrame):
     df.replace('iz', 'izr', inplace=True)
     return df
 
-def df_from_json_file(named, parse_tkns=[',', '!!!']):
+def df_from_json_file(named, parse_tkns=[',', '\n']):
     with open(named) as json_file:
         TKN1 = parse_tkns[0]
         TKN2 = parse_tkns[1]
@@ -169,9 +181,12 @@ def df_from_json_file(named, parse_tkns=[',', '!!!']):
 
 def df_from_str_data(data, headers):
     strdata = StringIO(data) # wrap the string data in StringIO function
-    return pd.read_csv(strdata, engine='python', columns=headers)
+    return pd.read_csv(strdata, engine='python', names=headers)
 
-def dfs_from_json_files(filenames:list, parse_tkns=[',', '!!!']):
+def df_from_csv(fname):
+    return pd.read_csv(fname)
+
+def dfs_from_json_files(filenames:list, parse_tkns=[',', '\n']):
     return [df_from_json_file(fn, parse_tkns) for fn in filenames]
 
 def dfs_from_csvs(filenames:list):
@@ -181,6 +196,22 @@ def dfs_from_strings(datalist:list, headers):
     if headers is None or len(headers) == 0:
         raise ValueError('Cannot generate dataframes (from strings) when headers list is empty!')
     return [df_from_str_data(datum, headers) for datum in datalist]
+
+def dfs_from_raw(datalist:list, headers):
+    print('DFs from sou')
+    if not isinstance(datalist[0][0], list):
+        datalist = [datalist]
+    return [pd.DataFrame(data=data, columns=headers) for data in datalist]
+
+def dfs_from_sources(sources:list, src_data_type, injected_headers=None,json_parse_tkns=[',', '\n']):
+    if src_data_type == 'json':
+        return dfs_from_json_files(sources, json_parse_tkns)
+    elif src_data_type == 'string':
+        return dfs_from_strings(sources, injected_headers)
+    elif src_data_type == 'raw':
+        return dfs_from_raw(sources, injected_headers)
+    else:
+        return dfs_from_csvs(sources)
 
 def custom_scaler(_min, _max):
     scaler = MinMaxScaler()
@@ -195,6 +226,9 @@ def build_dictionary_for(df: pd.DataFrame):
     :return: {col_1: <data values set>, col_2: None, col_k: <data values set>,  ... }
     """
     res = {}
+    if rows(df) == 0:
+        print('build_dictionary_for() WARN. DataFrame is empty. Not generating dictionary.')
+        return res
     colnames_numerics_only = df.select_dtypes(include=np.number).columns.tolist()
     for col in df.columns:
         if col in colnames_numerics_only:
@@ -211,6 +245,9 @@ def build_boundaries_for(df: pd.DataFrame):
     :return: {col_1: (min, max), col_2: None, col_k: (min, max),  ... }
     """
     res = {}
+    if rows(df) == 0:
+        print('build_boundaries_for() WARN. DataFrame is empty. Not generating boundaries.')
+        return res
     colnames_numerics_only = df.select_dtypes(include=np.number).columns.tolist()
     for col in df.columns:
         if col in colnames_numerics_only:
@@ -251,16 +288,20 @@ def missing_data_splits(df:pd.DataFrame, input_params:list, output_params:list):
     splits = [ins_outs_split(input_params, output_params, [column]) for column in missing_columns]
     return splits
 
+
 # All elements who have less than 'threshold' % of complete data
-def data_absence(df:pd.DataFrame, threshold=1.0):
+def data_absence(df:pd.DataFrame, threshold=1.0, as_map=False):
     absences = []
-    i = 0
+    if as_map:
+        absences = {}
     for col in df.columns:
         pct_missing = np.mean(df[col].isnull())
         pct_present = 1 - pct_missing
         if (pct_present < threshold):
-            absences.append(col)
-        i = i + 1
+            if as_map:
+                absences[col] = pct_missing
+            else:
+                absences.append(col)
     return absences
 
 
@@ -282,6 +323,12 @@ def split_and_encode_data(df:pd.DataFrame, input_params, output_params, dictiona
     :param output_params:           [('C', 'Cee', 'int'), ('D', 'D col', 'one-hot'), ...]
     :return: input_data ( [ ['a',32,..], ... ] ), output_data (same format)
     """
+    print('split_and_encode_data() inputs:')
+    print('Dictionary: ', dictionary)
+    print('Boundaries: ', boundaries)
+    print('DataFrame : \n', df)
+
+
     # Get names & formal column indices for each input/output column
     output_column_names = [col for col, _, _ in output_params]
     input_column_names = [col for col, _, _ in input_params]
@@ -344,9 +391,58 @@ def rolling_avg(_list:list):
     moving_averages = windows.mean()
     return moving_averages.tolist()
 
+def df_power_wash(df, input_params=[], output_params=[],addtl_heuristic_fn=None,
+                  impute_threshold=0.5, relevent_columns_override=None, dont_remove_cols=[]):
 
-def analyze_data_quality(data_locations, thresh, injected_headers=None, injected_filenames=None, data_format='csv'):
+    df.replace('', np.nan, inplace=True)
+
+    if relevent_columns_override is None:
+        Dropper.drop_unused_columns(df, input_params, output_params, dont_remove_cols=dont_remove_cols)
+    else:
+        Dropper.drop_irrelevent_columns(df, relevent_columns_override, dont_remove_cols=dont_remove_cols)
+
+    print('Power wash recieved (post-trim): \n', df)
+    # 1. Apply an additional trimming/cleaning heuristic
+    if (addtl_heuristic_fn is not None):
+        addtl_heuristic_fn(df)
+        df.reset_index(drop=True, inplace=True)
+
+
+    # 2. Pre-process  (headers)
+    preprocess_df_headers(df)
+
+    # print('Power wash post-process headers: \n', df)
+
+    # 3. Trim   (addtl columns, bad rows, bad cols)
+
+    Dropper.drop_k_plus_nans(df, 1)
+    Dropper.drop_bad_cols(df, impute_threshold)
+
+    # Ensure all is well
+    # & Return
+
+    print('df after adjustment:\n', df)
+
+    if relevent_columns_override is None:
+        input_params, output_params = Dropper.check_droppings(df, impute_threshold, input_params, output_params)
+        return df, input_params, output_params
+    else:
+        return df
+
+
+def analyze_data_quality(data_locations, thresh, injected_headers=None, preprocessing_fn=None,
+                         injected_filenames=None, data_format='csv',  relevent_columns_override=[], parse_tkns=[',','\n']):
+    if not isinstance(relevent_columns_override, list):
+        raise ValueError('Rel cols should be list!')
+
+    # print('DL = ', data_locations)
+    # print('THR = ', thresh)
+    # print('IH = ', injected_headers)
+    # print('IF = ', injected_filenames)
+    # print('DFO = ', data_format)
+
     res = []
+    columns = []
     k = -1
     for loc in data_locations:
 
@@ -372,69 +468,48 @@ def analyze_data_quality(data_locations, thresh, injected_headers=None, injected
         if data_format == 'csv':
             df = pd.read_csv(loc)
         elif data_format == 'string':
+            print('* String Data. *')
             df = df_from_str_data(loc, injected_headers)
         elif data_format == 'json':
-            raise Exception('Unimplemented : adq, json. ')
+            df = df_from_json_file(loc,parse_tkns)
+        elif data_format == 'raw':
+            print('* Raw Data. *')
+            df = df_from_str_data(loc, injected_headers)
         else:
             raise Exception('Should select data format.')
 
+        print('DataFrame (' + str(len(df.index)) + ') rows')
+
         #  * Clean *  DataFrame + Get Data-absence
+        full_reference_df = df.copy()
+        full_reference_df['ODK'] = full_reference_df['ODK'].str.lower()
+        ttl_rows = rows(full_reference_df.query('ODK == "o"'))
+        absences = data_absence(full_reference_df, as_map=True)
+        missings = {item: round(value, 2) for item, value in list(absences.items())}         # mapmax(absences, 5, inplace=True) -> Take 5 most absent columns
 
-        ttl_rows = rows(df)
-        absences = data_absence(df, 0)
-        mapmax(absences, 3, inplace=True) # Take 3 most absent columns
-        # Now let's trim it
-        data_drop_k_plus_nans(df, 2)
-        data_drop_bad_cols(df, thresh)
+        qualities = []
 
-        # Assemble more values
+        for relevent_columns_configuration in relevent_columns_override:
 
-        good_rows = rows(df)
-        quality = round(ttl_rows / good_rows, 2)
-        missings = {item:1-value for item, value in list(absences.items())}
+            name = relevent_columns_configuration['name']
+            config = relevent_columns_configuration['columns']
+            # Wash the DataFrame
+            df_clone = df_power_wash(df.copy(), addtl_heuristic_fn=preprocessing_fn, impute_threshold=thresh,
+                               relevent_columns_override=config)
 
-        res.append({'name': fname, 'quality': quality, 'missing': missings, 'data': df.values})
+            good_rows = rows(df_clone)
+            quality = round(good_rows / ttl_rows, 2)
+
+            qualities.append({'name': name, 'quality': quality})
+
+        res.append({'name': fname, 'quality_evaluations': qualities, 'missing': missings, 'data': df.values.tolist()})
 
     return res
 
 
-# Dropper Utils
-
-def data_drop_k_plus_nans(df, k=2):
-    nans = __query_k_plus_nans(df, k)
-    if (nans is not None and len(nans) > 0):
-        df.drop(nans, inplace=True)
-        df.reset_index(drop=True, inplace=True)
-
-def __row_nan_sums(df):
-    sums = []
-    for row in df.values:
-        sum = 0
-        for el in row:
-            if el != el:  # np.nan is never equal to itself
-                sum += 1
-        sums.append(sum)
-    return sums
-
-def __query_k_plus_nans(df, k):
-    sums = __row_nan_sums(df)
-    indices = []
-    i = 0
-    for sum in sums:
-        if (sum >= k):
-            indices.append(i)
-        i += 1
-    return indices
-
-def data_drop_bad_cols(df, impute_threshold=0.7):
-    old_cols = df.columns.copy()
-    df.dropna(axis=1, thresh=int(impute_threshold * len(df)), subset=None, inplace=True)
-    print('Dropper drop_bad_cols() dropped : ', [col for col in old_cols if col not in df.columns])
-    print('Remaining columns : ', df.columns)
-    df.reset_index(drop=True, inplace=True)
-
-
-
+#
+# def drop_uneccessary(df):
+#     drop_cols(df, ['BLITZ', 'COVERAGE', 'DEF FRONT', 'GAP', 'PLAY DIR', 'PASS ZONE'])
 
 
 
