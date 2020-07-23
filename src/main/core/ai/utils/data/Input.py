@@ -1,6 +1,8 @@
 import src.main.core.ai.utils.data.Utils as du
+import src.main.core.ai.utils.data.Tiny_utils as tu
 from src.main.core.ai.utils.data.Dropper import Dropper
 import pandas as pd
+
 
 class InputChefHelpers:
 
@@ -42,7 +44,7 @@ class InputChef:
         print('Relevent columns: ', injected_headers)
 
         # 1. Parse  (Sources -> DataFrames)
-        dfs = du.dfs_from_sources(sources, _type, injected_headers, parse_tkns)
+        dfs = tu.dfs_from_sources(sources, _type, injected_headers, parse_tkns)
 
         print('Generated DataFrames: ')
         print(dfs)

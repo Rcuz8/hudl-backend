@@ -24,6 +24,10 @@ def files_heuristic_tst(dfs:list):
         if i in THEIR_FILMS_TST:
             odk_swap(df)
 
+def odk_filter(df: pd.DataFrame):
+    df['ODK'] = df['ODK'].str.lower()
+    df.query('ODK == "o"', inplace=True)
+
 def hx_setup(df: pd.DataFrame):
 
     # Fill Nulls
@@ -390,3 +394,6 @@ def hx(df: pd.DataFrame):
     # print('hx return:\n', df)
 
     hx_renullify(df)
+
+
+

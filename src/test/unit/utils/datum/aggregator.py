@@ -4,8 +4,9 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 
+
 def sc(x, _min, _max):
-    return (x-1) * (1/(_max-_min))
+    return (x - 1) * (1 / (_max - _min))
 
 
 c1_min = 1
@@ -21,19 +22,24 @@ c2mm.fit([[c2_min], [c2_max]])
 c4mm = MinMaxScaler()
 c4mm.fit([[c4_min], [c4_max]])
 
+
 def custom_scaler(_min, _max):
     scaler = MinMaxScaler()
     scaler.fit([[_min], [_max]])
     return scaler
 
+
 def c1_sc(x):
     return c1mm.transform([[x]])[0][0]
+
 
 def c2_sc(x):
     return c2mm.transform([[x]])[0][0]
 
+
 def c4_sc(x):
     return c4mm.transform([[x]])[0][0]
+
 
 tr = pd.DataFrame(
     [[1, 2, 'hi', 4],
@@ -66,10 +72,12 @@ exp_test_res = {
               [c1_sc(4), c4_sc(12)],
               [c1_sc(8), c4_sc(11)],
               [c1_sc(8), c4_sc(11)]],
-             {'C': [c_enc['quavo'], c_enc['big dog'], c_enc['icon'],c_enc['huncho']],
+             {'C': [c_enc['quavo'], c_enc['big dog'], c_enc['icon'], c_enc['huncho']],
               'B': np.asarray([c2_sc(2), c2_sc(5), c2_sc(9), c2_sc(9)])}),
-    'label_encoders_null': ({'A':True, 'D':True}, {'B':True, 'C':False}),  # Notice not exact same, but cannot recreate exact dictionary
-    'scalers_null': ({'A':False, 'D':False}, {'B':False, 'C':True}),  # Notice not exact same, but cannot recreate exact scalers
+    'label_encoders_null': ({'A': True, 'D': True}, {'B': True, 'C': False}),
+# Notice not exact same, but cannot recreate exact dictionary
+    'scalers_null': ({'A': False, 'D': False}, {'B': False, 'C': True}),
+# Notice not exact same, but cannot recreate exact scalers
     'shapes': (2, 7),  # IMPORTANT, Should be this exactly to reflect ENTIRE dictionary
     'df_index_lists': ([0, 3], [2, 1]),
     'column_names': (['A', 'D'], ['C', 'B'])
@@ -80,13 +88,16 @@ exp_tr_res = {
               [c1_sc(4), c4_sc(7)],
               [c1_sc(8), c4_sc(11)]],
              {'C': [c_enc['hi'], c_enc['hello'],
-            c_enc['huncho']], 'B': np.asarray([c2_sc(2), c2_sc(5), c2_sc(9)])}),
-    'label_encoders_null': ({'A':True, 'D':True}, {'B':True, 'C':False}),  # Notice not exact same, but cannot recreate exact dictionary
-    'scalers_null': ({'A':False, 'D':False}, {'B':False, 'C':True}),  # Notice not exact same, but cannot recreate exact scalers
+                    c_enc['huncho']], 'B': np.asarray([c2_sc(2), c2_sc(5), c2_sc(9)])}),
+    'label_encoders_null': ({'A': True, 'D': True}, {'B': True, 'C': False}),
+# Notice not exact same, but cannot recreate exact dictionary
+    'scalers_null': ({'A': False, 'D': False}, {'B': False, 'C': True}),
+# Notice not exact same, but cannot recreate exact scalers
     'shapes': (2, 7),  # IMPORTANT, Should be this exactly to reflect ENTIRE dictionary
     'df_index_lists': ([0, 3], [2, 1]),
     'column_names': (['A', 'D'], ['C', 'B'])
 }
+
 
 class Aux:
     def __init__(self):
@@ -95,14 +106,14 @@ class Aux:
 
 aux = Aux()
 
-class Tester(unittest.TestCase):
+
+class TestAggregator(unittest.TestCase):
 
     def test_smtg(self):
         start = 4
         st_scaled = c4_sc(start)
         st_unscaled = c4mm.inverse_transform([[st_scaled]])[0][0]
         self.assertEqual(start, st_unscaled, 'Unscaling is fine.')
-
 
     def test_builds_aggregate_dictionary(self):
         dictionary = DataHandler.DataHandler.build_aggregate_dictionary(tr, tst)
@@ -112,7 +123,6 @@ class Tester(unittest.TestCase):
         aux.instance = dictionary
 
     def test_split_and_encode(self):
-
         # Run Split / Encode
         tr_res, tst_res, _dict = DataHandler.DataHandler.split_and_encode(tr, tst, input_params, output_params)
 
@@ -152,8 +162,3 @@ class Tester(unittest.TestCase):
         # Verify column names OK
         self.assertEqual(tr_res['column_names'], exp_tr_res['column_names'], 'DF Col. Names (tr) are equal')
         self.assertEqual(tst_res['column_names'], exp_test_res['column_names'], 'DF Col. Names (tst) are equal')
-
-
-
-
-

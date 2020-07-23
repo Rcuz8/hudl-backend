@@ -153,12 +153,14 @@ class huncho_data_bldr:
         self.dataframe_columns = self.training.columns # Assume they are identical, after dropper ensured compat.
         return self
 
-    def analyze_data_quality(self, preprocessing_fn=None):
+
+    def analyze_data_quality(self, preprocessing_fn=None, evaluation_frame_filter_fn=None):
         return analyze_data_quality(self.training_files + self.test_files,
                                         self.impute_threshold, self.injected_headers,
+                                        evaluation_frame_filter_fn=evaluation_frame_filter_fn,
                                         injected_filenames=self.injected_filenames,
                                         preprocessing_fn=preprocessing_fn,
-                                        relevent_columns_override=self.relevent_columns_override,
+                                        relevent_columns_configs=self.relevent_columns_override,
                                         data_format=self.type)
 
     def scalers(self):

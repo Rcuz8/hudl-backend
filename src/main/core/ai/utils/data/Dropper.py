@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import math
 
 class Dropper:
 
@@ -142,9 +143,10 @@ class Dropper:
     @classmethod
     def __data_drop_bad_cols(cls, df, impute_threshold=0.7):
         old_cols = df.columns.copy()
-        df.dropna(axis=1, thresh=int(impute_threshold * len(df.index)), subset=None, inplace=True)
+        must_have = cls.normal_round(impute_threshold * len(df.index)) # rows
+        df.dropna(axis=1, thresh=must_have, subset=None, inplace=True)
         print('Dropper drop_bad_cols() dropped : ', [col for col in old_cols if col not in df.columns], 'thresh:',
-              impute_threshold)
+              impute_threshold, '( ' + str(must_have) + ' rows )')
         # print('Remaining columns : ', df.columns)
         df.reset_index(drop=True, inplace=True)
 
@@ -166,6 +168,12 @@ class Dropper:
                 else:
                     absences.append(col)
         return absences
+
+    @classmethod
+    def normal_round(cls, n):
+        if n - math.floor(n) < 0.5:
+            return math.floor(n)
+        return math.ceil(n)
 
 
 

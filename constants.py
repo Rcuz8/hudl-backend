@@ -317,8 +317,8 @@ TKN_3 = '###'
 
 # Test
 
-config = model_gen_configs.pre_align_form
-print(config.io.inputs.eval())
+# config = model_gen_configs.pre_align_form
+# print(config.io.inputs.eval())
 
 
 

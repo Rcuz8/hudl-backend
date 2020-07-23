@@ -1,0 +1,2168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.8.4" />
+<title>utils.data.Utils API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>utils.data.Utils</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from sklearn.preprocessing import LabelEncoder
+from keras.utils import np_utils
+from statistics import mode
+from statistics import mean
+from heapq import nlargest
+import pandas as pd
+import numpy as np
+
+from src.main.core.ai.utils.data.Tiny_utils import custom_scaler, dfs_from_sources
+from src.main.core.ai.utils.data.Dropper import Dropper
+
+
+#  -----------------------
+#  |        CORE         |
+#  -----------------------
+
+def split_and_encode_data(df: pd.DataFrame, input_params, output_params, dictionary, boundaries):
+    &#34;&#34;&#34;Splits a dataframe into Input and Output data and returns, along with the data,
+    a suite of useful information on the Input and Output columns
+
+    Parameters
+    ----------
+    df : Pandas.DataFrame
+    input_params : list(Tuple)
+        The inputs of the model as a list of ColumnName-Type tuples.
+        .. note:: The column&#39;s provided type must be one of the following:
+            float, int, or one-hot
+
+    &gt;&gt;&gt; input_params = [(&#39;A&#39;, &#39;Col A&#39;, &#39;int&#39;), (&#39;B&#39;, &#39;Bee&#39;, &#39;one-hot&#39;)]
+
+    output_params : list(Tuple)
+        The outputs of the model as a list of ColumnName-Type tuples.
+        .. note:: The column&#39;s provided type must be one of the following:
+            float, int, or one-hot
+
+
+    &gt;&gt;&gt; output_params = [(&#39;C&#39;, &#39;Cee&#39;, &#39;int&#39;), (&#39;D&#39;, &#39;D col&#39;, &#39;one-hot&#39;), ...]
+
+    dictionary : dict
+        Maps each categorical DataFrame column to it&#39;s unique possible outcomes.
+        Should contain None for numerical columns
+
+    &gt;&gt;&gt; dictionary = {&#39;name&#39;: [&#39;Jerry&#39;, &#39;Berry&#39;, &#39;Carry&#39;], &#39;number&#39;: None}
+
+    boundaries : dict
+        Maps each numerical DataFrame column to it&#39;s **min** and **max** possible values.
+        Should contain None for categorical columns
+
+    &gt;&gt;&gt; boundaries = {&#39;name&#39;: None, &#39;number&#39;: (1, 1000)}
+
+    Returns
+    -------
+    dict
+
+    &gt;&gt;&gt; {  &#39;data&#39;: (X, Y),
+    &gt;&gt;&gt;    &#39;encoders&#39;: (input_encoders, output_encoders),
+    &gt;&gt;&gt;    &#39;shapes&#39;: (input_shape, output_shapes),
+    &gt;&gt;&gt;    &#39;df_index_lists&#39;: (in_col_df_indices, out_col_df_indices),
+    &gt;&gt;&gt;    &#39;column_names&#39;: (input_column_names, output_column_names),
+    &gt;&gt;&gt;    &#39;scalers&#39;: (input_scalers, output_scalers)
+    &gt;&gt;&gt; }
+
+
+    &#34;&#34;&#34;
+
+    print(&#39;split_and_encode_data() inputs:&#39;)
+    print(&#39;Dictionary: &#39;, dictionary)
+    print(&#39;Boundaries: &#39;, boundaries)
+    print(&#39;DataFrame : \n&#39;, df)
+
+    # Get names &amp; formal column indices for each input/output column
+    output_column_names = [col for col, _, _ in output_params]
+    input_column_names = [col for col, _, _ in input_params]
+    in_col_df_indices = [df.columns.get_loc(colname) for colname in input_column_names]
+    out_col_df_indices = [df.columns.get_loc(colname) for colname in output_column_names]
+
+    &#34;&#34;&#34;
+    (2/2) Prepare &amp; encode inputs
+    &#34;&#34;&#34;
+    # Trim input params from 3-tuple to 2-tuple
+    #      to comply with &#39;df_encode_and_scale_columns()&#39;
+    shortened_input_params = [(colname, rep) for colname, _, rep in input_params]
+    # Encode each input column, get the data and each encoder
+    X, input_encoders, input_scalers = df_encode_and_scale_columns(df, shortened_input_params, dictionary, boundaries)
+    # Store the shape of the input column
+    input_shape = X.shape[1]
+
+    Y = {}
+    # Stores each of the encoders used for the outputs
+    output_encoders = {}
+    output_scalers = {}
+    for colname, _, rep in output_params:
+        # Encode the individual column, get it&#39;s data and it&#39;s encoder
+        data, enc, scaler = df_encode_and_scale_columns(df, [(colname, rep)], dictionary, boundaries)
+        Y[colname] = data
+        for name, value in enc.items():
+            output_encoders[name] = value
+        for name, value in scaler.items():
+            output_scalers[name] = value
+
+    &#34;&#34;&#34;
+       Finish data preparation (network info, etc)
+    &#34;&#34;&#34;
+    # Store the shape used for each output column
+    output_shapes = {}
+    for name, enc in Y.items():
+        if len(enc.shape) &gt; 1:
+            output_shapes[name] = enc.shape[1]
+        else:
+            output_shapes[name] = 1
+
+    &#34;&#34;&#34;
+        Store in a clean result
+    &#34;&#34;&#34;
+    result = {
+        &#39;data&#39;: (X, Y),
+        &#39;encoders&#39;: (input_encoders, output_encoders),
+        &#39;shapes&#39;: (input_shape, output_shapes),
+        &#39;df_index_lists&#39;: (in_col_df_indices, out_col_df_indices),
+        &#39;column_names&#39;: (input_column_names, output_column_names),
+        &#39;scalers&#39;: (input_scalers, output_scalers)
+    }
+
+    return result
+
+
+def df_power_wash(df: pd.DataFrame, input_params=[], output_params=[], addtl_heuristic_fn=None,
+                  impute_threshold=0.5, relevent_columns_override=None, dont_remove_cols=[],
+                  drop_scarce_columns=False):
+    &#34;&#34;&#34;Cleans a dataframe.
+
+    Process
+    -------
+
+    Abstract:
+        - (1/2) Prepare the DataFrame ( Format, Drop unnecessary columns )
+        - Allow for a user-defined heuristic
+        - (2/2) Prepare the DataFrame ( Headers )
+        - Clean the DataFrame
+        - Double check the DataFrame
+
+    Complete:
+        - Replace empty cells with NaN
+        - Drop unused/irrelevent columns ( will not drop `dont_remove_cols` )
+        - Apply additional trimming/cleaning heuristic
+        - Pre-process DataFrame headers
+        - Trim
+            - bad cols (data presence &lt; impute threshold), pending value of `drop_scarce_columns`
+            - bad rows (contains an Empty cell)
+        - Confirm nothing important was dropped
+
+
+    Parameters
+    ----------
+    df : Pandas.DataFrame
+    input_params : list(Tuple)
+        The inputs of the model as a list of ColumnName-Type tuples.
+        .. note:: The column&#39;s provided type must be one of the following:
+            float, int, or one-hot
+
+    &gt;&gt;&gt; input_params = [(&#39;A&#39;, &#39;Col A&#39;, &#39;int&#39;), (&#39;B&#39;, &#39;Bee&#39;, &#39;one-hot&#39;)]
+
+    output_params : list(Tuple)
+        The outputs of the model as a list of ColumnName-Type tuples.
+        .. note:: The column&#39;s provided type must be one of the following:
+            float, int, or one-hot
+
+
+    &gt;&gt;&gt; output_params = [(&#39;C&#39;, &#39;Cee&#39;, &#39;int&#39;), (&#39;D&#39;, &#39;D col&#39;, &#39;one-hot&#39;), ...]
+
+    addtl_heuristic_fn : function( Pandas.DataFrame )
+        Apply any adjustment to the DataFrame with this function.
+        ..note:: All changed must be done **inplace**, the return value will not be considered.
+    impute_threshold : The threshold at which a column&#39;s data must be present, or it will be removed entirely.
+    relevent_columns_override : list
+        The relevent columns to the data set (overriding the input/output parameter as the default)
+        This is used when you don&#39;t want certain columns to be removed, despite them not being an input or output.
+    dont_remove_cols : list
+        The columns to protect before going into the heuristic function. This is useful when there is a scarce,
+        yet important column, that you&#39;d like filled out in the heuristic function.
+    drop_scarce_columns: bool
+        Drop columns that are scarce? (Presence &lt; Impute threshold)
+        .. WARNING::  This is a &#34;blind drop&#34; in that id **does not protect input/output nor relevent columns**
+
+    Returns
+    -------
+    Pandas.DataFrame or Pandas.DataFrame, list(Tuple), list(Tuple)
+        If overriding the input/output parameters, just the DataFrame will be returned.
+        Otherwise, both the DataFrame and the new input/output parameters will be returned
+        (because relevent columns could have been dropped, so they may have changed).
+
+
+    Sample Usage
+    ------------
+
+    Setup
+
+        inputs  = [(&#39;A&#39;, &#39;Col A&#39;, &#39;one-hot&#39;)]
+        outputs = [(&#39;C&#39;, &#39;Cee&#39;, &#39;float&#39;), (&#39;D&#39;, &#39;Dee&#39;, &#39;int&#39;)]
+        columns = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+
+        &#39;&#39;&#39;        80%     60%     40%     0%   &#39;&#39;&#39;
+        data = [[&#39;a&#39;,    1,      2.0,    3     ],
+                [&#39;b&#39;,    4,      5.0,    np.nan],
+                [&#39;c&#39;,    6,      np.nan, np.nan],
+                [&#39;d&#39;,    np.nan, np.nan, np.nan],
+                [np.nan, np.nan, np.nan, np.nan]
+            ]
+
+        frame = pd.DataFrame(data, columns=columns)
+
+        def double(df: pd.DataFrame):
+            df[&#39;A&#39;] *= 2
+            df[&#39;B&#39;] *= 2
+            df[&#39;C&#39;] *= 2
+            df[&#39;D&#39;] *= 2
+
+    Execute
+
+    &gt;&gt;&gt; df_power_wash(frame, inputs, outputs, double, relevent_columns_override=columns, drop_scarce_columns=True)
+    Pandas.DataFrame ([
+            [&#39;aa&#39;, 2.0],
+            [&#39;bb&#39;, 8.0],
+            [&#39;cc&#39;, 12.0]
+        ])
+
+
+    &#34;&#34;&#34;
+
+    # Empties -&gt; NaN
+
+    df.replace(&#39;&#39;, np.nan, inplace=True)
+
+    # Drop Irrelevent Columns
+
+    if relevent_columns_override is None:
+        Dropper.drop_unused_columns(df, input_params, output_params, dont_remove_cols=dont_remove_cols)
+    else:
+        Dropper.drop_irrelevent_columns(df, relevent_columns_override, dont_remove_cols=dont_remove_cols)
+
+    print(&#39;Power wash : trimming DataFrame below. \n&#39;, df)
+
+    # 1. Apply an additional trimming/cleaning heuristic
+    if (addtl_heuristic_fn is not None):
+        addtl_heuristic_fn(df)
+        df.reset_index(drop=True, inplace=True)
+
+    print(&#39;Power wash : preprocessing headers for DataFrame below. \n&#39;, df)
+
+    # 2. Pre-process  (headers)
+    preprocess_df_headers(df)
+
+    # 3. Trim  (bad rows, bad cols)
+
+    if drop_scarce_columns:
+        Dropper.drop_bad_cols(df, impute_threshold)
+    Dropper.drop_k_plus_nans(df, 1)
+
+    # Ensure all is well
+    # &amp; Return
+
+    print(&#39;df after adjustment:\n&#39;, df)
+
+    if relevent_columns_override is None:
+        # Confirm nothing important was dropped
+        input_params, output_params = Dropper.check_droppings(df, impute_threshold, input_params, output_params)
+        return df, input_params, output_params
+    else:
+        return df
+
+
+def analyze_data_quality(sources: list, thresh=0.5, injected_headers=None, preprocessing_fn=None,
+                         evaluation_frame_filter_fn=None, injected_filenames=None, data_format=&#39;csv&#39;,
+                         relevent_columns_configs=[], parse_tkns=[&#39;,&#39;, &#39;\n&#39;], drop_scarce_columns=False):
+    &#34;&#34;&#34;Analyzes the data quality of the data sources.
+
+    Constructs a report that will return the following for each data source:
+
+         { &#39;name&#39;: &#39;Source Name&#39;,
+           &#39;quality_evaluations&#39;: [{&#39;name&#39;: &#39;IO Config A&#39;, &#39;quality&#39;: 0.34}, {&#39;name&#39;: &#39;IO Config B&#39;, &#39;quality&#39;: 0.56}, ...],
+           &#39;missing&#39;: {&#39;colA&#39;: 0.12, &#39;colB&#39;: 0.34, ... },
+           &#39;data&#39;: [[...],[...],...] # Unclean
+         }
+
+
+    Process (per source):
+        - Convert (source + peripheral info) =&gt; DataFrame
+        - TEMPORARY: Small DataFrame adjustment
+        - Get Data Absence ( = Missing )
+        - For each config, copy &amp; clean the DataFrame,
+        then Save the size difference between the two DataFrames ( = Quality Evaluation )
+
+
+    Parameters
+    ----------
+    sources : list
+        The data sources. Supported sources thus far are all those in :func:`~Tiny_utils.dfs_from_sources`
+
+            raw_data = [
+                [&#39;a&#39;,    1,      2.0,    3     ],
+                [&#39;b&#39;,    4,      5.0,    np.nan],
+                [&#39;c&#39;,    6,      np.nan, np.nan],
+                [&#39;d&#39;,    np.nan, np.nan, np.nan],
+                [np.nan, np.nan, np.nan, np.nan]
+            ]
+    &gt;&gt;&gt; sources  = [raw_data,...]
+
+    thresh : float, optional
+        The impute threshold, or, in this case, the threshold at which columns will be cut off the DataFrame.
+
+    injected_headers : list, optional
+        The headers for the data set, to be used if the sources are raw data, not parsed.
+        :note:: CSV Data must have headers in the data set at the moment.
+        This option is primarily for the `raw` data type.
+
+    &gt;&gt;&gt; injected_headers = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+
+    preprocessing_fn : function( Pandas.DataFrame ), optional
+        Apply any adjustment to the DataFrame with this function.
+        ..note:: All changed must be done **inplace**, the return value will not be considered.
+
+        Example:
+
+            def double(df: pd.DataFrame):
+                df[&#39;A&#39;] *= 2
+                df[&#39;B&#39;] *= 2
+                df[&#39;C&#39;] *= 2
+                df[&#39;D&#39;] *= 2
+
+    evaluation_frame_filter_fn : function ( Pandas.DataFrame )
+        Useful to filter out (in-place) data you do not want considered in the analysis.
+
+    injected_filenames : list, optional
+        The file names of the sources, useful if they are `raw` sources, which do not have file names
+
+    data_format : str
+        The data&#39;s format, amongst the covered circumstances. Has a default value, but must be set.
+
+    relevent_columns_configs : list
+        The list of input/output column configurations to be assessed. An IO configuration being some permutation
+        of the DataFrame&#39;s columns where each column is either an input param, output param, or neither.
+
+            configs = [
+                {
+                    &#39;name&#39;: &#39;Config 1&#39;,
+                    &#39;columns&#39;: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+                },
+                {
+                    &#39;name&#39;: &#39;Config 2&#39;,
+                    &#39;columns&#39;: [&#39;A&#39;, &#39;B&#39;, &#39;D&#39;]
+                }
+            ]
+
+        .. note:: Different than `injected_headers`.
+
+            If this sounds similar `injected_headers`, note that Injected Headers are simply &#34;plopped&#34; on top of
+            the data frames as the column names. These configurations deal with which columns are relevant to the
+            dataframe, and, if it&#39;s defined, columns omitted will be deleted.
+
+
+    parse_tkns : list, optional
+        The parse tokens for parsing a JSON response&#39;s data. The first token representing the outermost parse token,
+        the second being the next (and innermost, by definition) token.
+
+    drop_scarce_columns: bool
+        Drop columns that are scarce? (Presence &lt; Impute threshold)
+        .. WARNING:: This is a &#34;blind drop&#34; in that id **does not protect input/output nor relevent columns**
+
+
+    Returns
+    -------
+    list
+        An analysis for each data source, with the following:
+            - Its parsed data (unclean)
+            - A quality evaluation for each IO Column configuration ( How much data can be used )
+            - The missing data % per row
+
+    &#34;&#34;&#34;
+
+    if not isinstance(relevent_columns_configs, list):
+        raise ValueError(&#39;Rel cols should be list!&#39;)
+
+    res = []
+    k = 0
+    for loc in sources:
+
+        # ---------
+        # | Setup |
+        # ---------
+
+        # Grab filename (for ref later)
+
+        if injected_filenames is not None:
+            try:
+                fname = injected_filenames[k]
+            except:
+                fname = &#39;File_&#39; + str(k)
+        else:
+            # Trim path from filename result (if exists)
+            try:
+                if isinstance(loc, str):
+                    fname = loc[loc.rindex(&#39;/&#39;) + 1:]
+                else:
+                    fname = &#39;File_&#39; + str(k)
+            except:
+                fname = loc
+
+        # --------
+        # | Core |
+        # --------
+
+        # File/Data -&gt; DataFrame
+
+        df = dfs_from_sources([loc], data_format, injected_headers, parse_tkns)
+
+        # Check  -  Verify not list
+        if isinstance(df, list):
+            df = df[0]
+
+        print(&#39;DataFrame (&#39; + str(len(df.index)) + &#39;) rows&#39;)
+
+        #  * Clean *  DataFrame + Get Data-absence
+        full_reference_df = df.copy()
+
+        if evaluation_frame_filter_fn is not None:
+            evaluation_frame_filter_fn(full_reference_df)
+
+        ttl_rows = rows(full_reference_df)
+
+        absences = data_absence(full_reference_df, as_map=True)
+        missings = {item: round(value, 2) for item, value in
+                    list(absences.items())}  # mapmax(absences, 5, inplace=True) -&gt; Take 5 most absent columns
+
+        qualities = []
+
+        for column_config in relevent_columns_configs:
+            name = column_config[&#39;name&#39;]
+            config = column_config[&#39;columns&#39;]
+            # Wash the DataFrame
+            df_clone = df_power_wash(df.copy(), addtl_heuristic_fn=preprocessing_fn, impute_threshold=thresh,
+                                     relevent_columns_override=config, drop_scarce_columns=drop_scarce_columns)
+
+            good_rows = rows(df_clone)
+            quality = round(good_rows / ttl_rows, 2)
+
+            qualities.append({&#39;name&#39;: name, &#39;quality&#39;: quality})
+
+        res.append({&#39;name&#39;: fname, &#39;quality_evaluations&#39;: qualities, &#39;missing&#39;: missings, &#39;data&#39;: df.values.tolist()})
+
+        k += 1
+
+
+    return res
+
+
+#  -----------------------
+#  |        HELPER       |
+#  -----------------------
+
+
+# Helpers - Miscellaneous
+
+def rows(df: pd.DataFrame):
+    &#34;&#34;&#34;Counts the rows in the pandas dataframe&#34;&#34;&#34;
+    return len(df.index)
+
+
+def mapmax(mapping, k=1, inplace=False):
+    &#34;&#34;&#34;Gets highest-value elements from dictionary
+
+    Parameters
+    ----------
+    mapping : dictionary
+    k : int
+        How many maxes to pull out
+    inplace: bool
+        Should we modify the dictionary itself?
+        If not, the highest-value keys will be returned as a list
+
+    Returns
+    -------
+    int/dict
+        The highest-value elements
+
+    Examples
+    --------
+
+    Inline changes ON
+
+    &gt;&gt;&gt; mapmax({&#39;a&#39;:4,&#39;b&#39;:3,&#39;c&#39;:5}, 2, True)
+    {&#39;a&#39;:4,&#39;c&#39;:5}
+
+    Inline changes OFF
+
+    &gt;&gt;&gt; mapmax({&#39;a&#39;:4,&#39;b&#39;:3,&#39;c&#39;:5}, 2, False)
+    [(&#39;a&#39;,4),(&#39;c&#39;,5)]
+
+    &#34;&#34;&#34;
+    if not inplace:
+        return nlargest(k, mapping, key=mapping.get)
+    else:
+        all_keys = list(mapping.keys())
+        largest_value_keys = nlargest(k, mapping, key=mapping.get)
+        del_keys = [key for key in all_keys if key not in largest_value_keys]
+        for key in del_keys:
+            del mapping[key]
+
+
+def mc(df, col):
+    &#34;&#34;&#34;Get the average value of the dataframe column.
+
+        Numerical   - mean
+        Categorical - Mode
+
+    &#34;&#34;&#34;
+    if df.dtypes[col].name.find(&#39;int&#39;) &gt;= 0 or df.dtypes[col].name.find(&#39;float&#39;) &gt;= 0:
+        mn = mean(df[col].ravel())
+        return mn
+    else:
+        md = mode(df[col].ravel())
+        return md
+
+
+def one_hot(number, _range):
+    &#34;&#34;&#34;One-hot encode a number
+
+    Parameters
+    ----------
+    number : int
+        The number to generate the encoding of
+    _range : int
+        The maximum possible value ( = the length of the encoding )
+
+    Returns
+    -------
+    list(int)
+        The one-hot encoding
+
+    &#34;&#34;&#34;
+    nlist = [0 for _ in range(_range)]
+    nlist[number] = 1
+    return nlist
+
+
+def data_absence(df: pd.DataFrame, threshold=1.0, as_map=False):
+    &#34;&#34;&#34;Retrieves all elements who have less than &#39;threshold&#39; % of complete data
+
+    Parameters
+    ----------
+    df : Pandas.DataFrame
+    threshold : float
+        The threshold at which a column&#39;s data presence % must exceed
+    as_map : bool
+        Result formatted as a dictionary? If not, it will be a list.
+
+    Returns
+    -------
+
+    &#34;&#34;&#34;
+    absences = []
+    if as_map:
+        absences = {}
+    for col in df.columns:
+        pct_missing = np.mean(df[col].isnull())
+        pct_present = 1 - pct_missing
+        if (pct_present &lt; threshold):
+            if as_map:
+                absences[col] = pct_missing
+            else:
+                absences.append(col)
+    return absences
+
+
+# Pre-process dataframe
+
+def preprocess_df_headers(dataframe: pd.DataFrame):
+    &#34;&#34;&#34;Preprocess a Pandas DataFrame headers so they will be keras-compliant
+
+        Also will replace all blank cells with an NaN value (Numpy)
+    &#34;&#34;&#34;
+    dataframe.columns = dataframe.columns.str.strip()
+    dataframe.columns = dataframe.columns.str.replace(&#34; &#34;, &#34;_&#34;)
+    dataframe.columns = dataframe.columns.str.replace(&#34;#&#34;, &#34;NUM&#34;)
+    dataframe.columns = dataframe.columns.str.replace(&#34;/&#34;, &#34;_&#34;)
+    dataframe.replace(&#39;&#39;, np.nan, inplace=True)
+
+
+def preprocess_df_header(_string: str):
+    if _string == &#39;&#39;:
+        return np.nan
+    return _string.strip().replace(&#34; &#34;, &#34;_&#34;).replace(&#34;#&#34;, &#34;NUM&#34;).replace(&#34;/&#34;, &#34;_&#34;)
+
+
+# Transform the DataFrame
+
+def df_encode_and_scale_columns(df, _list, dictionary, boundaries):
+    &#34;&#34;&#34;Transforms dataframe columns via Encoding and Scaling
+
+    Parameters
+    ----------
+    df : Pandas.DataFrame
+        The DataFrame to be transformed
+    _list : list(Tuple)
+        The list of ColumnName-Type tuples to be transformed
+        .. note:: The column&#39;s provided type must be one of the following:
+            float, int, or one-hot
+    dictionary : dict
+        Maps each categorical DataFrame column to it&#39;s unique possible outcomes.
+        Should contain None for numerical columns
+
+    &gt;&gt;&gt; dictionary = {&#39;name&#39;: [&#39;Jerry&#39;, &#39;Berry&#39;, &#39;Carry&#39;], &#39;number&#39;: None}
+
+    boundaries : dict
+        Maps each numerical DataFrame column to it&#39;s **min** and **max** possible values.
+        Should contain None for categorical columns
+
+    &gt;&gt;&gt; boundaries = {&#39;name&#39;: None, &#39;number&#39;: (1, 1000)}
+
+    Returns
+    -------
+    list(list(...))
+        The transformed dataframe&#39;s data from the provided columns as a matrix.
+    dict
+        The encoders (LabelEncoder) used for the dataframe&#39;s categorical data
+    dict
+        The scalers (MinMaxScaler) used for the dataframe&#39;s numerical data
+
+    &#34;&#34;&#34;
+    X = None
+    encoders = {}
+    scalers = {}
+    for colname, encode_as in _list:
+        # reshape column as array
+        G = df[colname].ravel()
+        # Encode G
+        if encode_as == &#39;float&#39;:
+            # Ensure float
+            G = G.astype(float)
+            encoders[colname] = None
+            # Scale
+            try:
+                bounds = boundaries[colname]
+            except:
+                exc_string = &#39;Cuz-handled Error. No boundaries generated for column (&#39; + colname + &#39;).&#39;
+                raise Exception(exc_string)
+            scaler = custom_scaler(bounds[0], bounds[1])
+            G = scaler.transform([G])[0]  # Put into &amp; take out of a list (to fit transform)
+            scalers[colname] = scaler
+        elif encode_as == &#39;int&#39;:
+            # Ensure float
+            G = G.astype(int)
+            encoders[colname] = None
+            # Scale
+            try:
+                bounds = boundaries[colname]
+            except:
+                exc_string = &#39;Cuz-handled Error. No boundaries generated for column (&#39; + colname + &#39;).&#39;
+                raise Exception(exc_string)
+            scaler = custom_scaler(bounds[0], bounds[1])
+            G = scaler.transform([G])[0]  # Put into &amp; take out of a list (to fit transform)
+            scalers[colname] = scaler
+        elif encode_as == &#39;one-hot&#39;:
+            # convert integers to dummy variables (i.e. one hot encoded)
+            if dictionary is not None:
+                try:
+                    uniques = dictionary[colname]
+                except:
+                    exc_string = &#39;Cuz-handled Error. No dictionary generated for column (&#39; + colname + &#39;).&#39;
+                    raise Exception(exc_string)
+                # encode class values as integers
+                encoder = LabelEncoder()
+                encoder.fit(uniques)
+                dummy_y = np_utils.to_categorical(encoder.transform(G), len(uniques))
+                encoders[colname] = encoder
+                scalers[colname] = None
+            else:
+                # encode class values as integers
+                encoder = LabelEncoder()
+                encoder.fit(G)
+                encoded_G = encoder.transform(G)
+                encoders[colname] = encoder
+                dummy_y = np_utils.to_categorical(encoded_G)
+                scalers[colname] = None
+            G = dummy_y
+            # elif encode_as == &#39;embedded&#39;:
+            #   G = ds[:, _min: _max].astype(int)
+            # Append G
+        else:
+            exc_string = &#39;Provided invalid column type to df_encode_and_scale_columns() (&#39; + encode_as + &#39;)&#39;
+            raise Exception(exc_string)
+        if X is None:
+            X = G
+        else:
+            X = np.column_stack((X, G))
+    return X, encoders, scalers
+
+
+# Build DataFrame-adjacent components
+# - Dictionary
+# - Boundaries
+
+def build_dictionary_for(df: pd.DataFrame):
+    &#34;&#34;&#34;
+        build dictionary of uniques for each column of the dataframe
+    :param df: pandas dataframe
+    :return: {col_1: &lt;data values set&gt;, col_2: None, col_k: &lt;data values set&gt;,  ... }
+    &#34;&#34;&#34;
+    res = {}
+    if rows(df) == 0:
+        print(&#39;build_dictionary_for() WARN. DataFrame is empty. Not generating dictionary.&#39;)
+        return res
+    colnames_numerics_only = df.select_dtypes(include=np.number).columns.tolist()
+    for col in df.columns:
+        if col in colnames_numerics_only:
+            res[preprocess_df_header(col)] = None
+        else:
+            un = [val for val in df[col].unique() if val == val and val is not None]  # filter out NaN
+            res[preprocess_df_header(col)] = un
+    return res
+
+
+def build_boundaries_for(df: pd.DataFrame):
+    &#34;&#34;&#34;
+        build scalers for each numerical column of the dataframe
+    :param df: pandas dataframe
+    :return: {col_1: (min, max), col_2: None, col_k: (min, max),  ... }
+    &#34;&#34;&#34;
+    res = {}
+    if rows(df) == 0:
+        print(&#39;build_boundaries_for() WARN. DataFrame is empty. Not generating boundaries.&#39;)
+        return res
+    colnames_numerics_only = df.select_dtypes(include=np.number).columns.tolist()
+    for col in df.columns:
+        if col in colnames_numerics_only:
+            G = df[col].ravel()
+            _min = G.min()
+            _max = G.max()
+            res[preprocess_df_header(col)] = (_min, _max)
+        else:
+            res[preprocess_df_header(col)] = None
+
+    return res
+
+
+# Imputation Helpers
+
+def missing_data_splits(df: pd.DataFrame, input_params: list, output_params: list):
+    &#34;&#34;&#34;Formats the columns with missing data rows as the outputs for use in regression (imputation helper)
+
+    Parameters
+    ----------
+    df : Pandas.DataFrame
+    input_params : list(Tuple)
+        The inputs of the model as a list of ColumnName-Type tuples.
+        .. note:: The column&#39;s provided type must be one of the following:
+            float, int, or one-hot
+
+    &gt;&gt;&gt; a = [(&#39;A&#39;, &#39;Col A&#39;, &#39;int&#39;), (&#39;B&#39;, &#39;Bee&#39;, &#39;one-hot&#39;)]
+
+    output_params : list(Tuple)
+        The outputs of the model as a list of ColumnName-Type tuples.
+        .. note:: The column&#39;s provided type must be one of the following:
+            float, int, or one-hot
+
+    &gt;&gt;&gt; a = [(&#39;A&#39;, &#39;Col A&#39;, &#39;int&#39;), (&#39;B&#39;, &#39;Bee&#39;, &#39;one-hot&#39;)]
+
+    Returns
+    -------
+    list(list(list)))
+        An array of input param (list) / output param (list) tuples (formatted as arrays)
+
+    &gt;&gt;&gt; [  [[inp_params],[output_param]], [[inp_params],[output_param]],... ]
+
+
+    &#34;&#34;&#34;
+
+    # get any missing data
+    missing_columns = data_absence(df)
+
+    # filter to only relevent
+
+    #  Make list of all relevent column names
+    allcols = input_params.copy()
+    allcols.extend(output_params)
+    allcols = [colname for colname, _, _ in allcols]
+    # filter to only those
+    missing_columns = [missing for missing in missing_columns if missing in allcols]
+
+    # for each missing output, construct an input-output split where the missing index is the only output
+    splits = [__ins_outs_split(input_params, output_params, [column]) for column in missing_columns]
+    return splits
+
+
+def __ins_outs_split(input_params: list, output_params: list, output_data_columns: list):
+    &#34;&#34;&#34;Converts current input/output parameters to inputs, with only one select column
+
+        as the output param. (Imputation helper)
+
+    Parameters
+    ----------
+    input_params : list(Tuple)
+        The inputs of the model as a list of ColumnName-Type tuples.
+        .. note:: The column&#39;s provided type must be one of the following:
+            float, int, or one-hot
+
+    &gt;&gt;&gt; x = [(&#39;A&#39;, &#39;Col A&#39;, &#39;int&#39;), (&#39;B&#39;, &#39;Bee&#39;, &#39;one-hot&#39;)]
+
+    output_params : list(Tuple)
+        The outputs of the model as a list of ColumnName-Type tuples.
+        .. note:: The column&#39;s provided type must be one of the following:
+            float, int, or one-hot
+
+    &gt;&gt;&gt; [(&#39;C&#39;, &#39;Cee&#39;, &#39;int&#39;), (&#39;D&#39;, &#39;D col&#39;, &#39;one-hot&#39;)]
+
+    output_data_columns : list(string)
+        List (length will = 1) of columns to be the output columns
+
+    Returns
+    -------
+    list
+        Input parameters
+    list
+        Output parameters
+
+    &#34;&#34;&#34;
+
+    ins = input_params.copy()
+    ins.extend(output_params.copy())
+    # outs: fill in outputs
+    outs = [(colname, ptxt, rep) for colname, ptxt, rep in ins if colname in output_data_columns]
+    # ins: filter out outputs
+    ins = [inp for inp in ins if inp not in outs]
+    return ins, outs</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="utils.data.Utils.analyze_data_quality"><code class="name flex">
+<span>def <span class="ident">analyze_data_quality</span></span>(<span>sources: list, thresh=0.5, injected_headers=None, preprocessing_fn=None, evaluation_frame_filter_fn=None, injected_filenames=None, data_format='csv', relevent_columns_configs=[], parse_tkns=[',', '\n'], drop_scarce_columns=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Analyzes the data quality of the data sources.</p>
+<p>Constructs a report that will return the following for each data source:</p>
+<pre><code> { 'name': 'Source Name',
+   'quality_evaluations': [{'name': 'IO Config A', 'quality': 0.34}, {'name': 'IO Config B', 'quality': 0.56}, ...],
+   'missing': {'colA': 0.12, 'colB': 0.34, ... },
+   'data': [[...],[...],...] # Unclean
+ }
+</code></pre>
+<p>Process (per source):
+- Convert (source + peripheral info) =&gt; DataFrame
+- TEMPORARY: Small DataFrame adjustment
+- Get Data Absence ( = Missing )
+- For each config, copy &amp; clean the DataFrame,
+then Save the size difference between the two DataFrames ( = Quality Evaluation )</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>sources</code></strong> :&ensp;<code>list</code></dt>
+<dd>The data sources. Supported sources thus far are all those in :func:<code>~Tiny_utils.dfs_from_sources</code><pre><code>raw_data = [
+    ['a',    1,      2.0,    3     ],
+    ['b',    4,      5.0,    np.nan],
+    ['c',    6,      np.nan, np.nan],
+    ['d',    np.nan, np.nan, np.nan],
+    [np.nan, np.nan, np.nan, np.nan]
+]
+</code></pre>
+</dd>
+</dl>
+<pre><code class="python">&gt;&gt;&gt; sources  = [raw_data,...]
+</code></pre>
+<dl>
+<dt><strong><code>thresh</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>The impute threshold, or, in this case, the threshold at which columns will be cut off the DataFrame.</dd>
+<dt><strong><code>injected_headers</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>The headers for the data set, to be used if the sources are raw data, not parsed.
+:note:: CSV Data must have headers in the data set at the moment.
+This option is primarily for the <code>raw</code> data type.</dd>
+</dl>
+<pre><code class="python">&gt;&gt;&gt; injected_headers = ['A', 'B', 'C', 'D']
+</code></pre>
+<dl>
+<dt><strong><code>preprocessing_fn</code></strong> :&ensp;<code>function( Pandas.DataFrame )</code>, optional</dt>
+<dd>
+<div class="admonition note">
+<p class="admonition-title">Note:&ensp;All changed must be done <strong>inplace</strong>, the return value will not be considered.</p>
+</div>
+<p>Example:</p>
+<pre><code>def double(df: pd.DataFrame):
+    df['A'] *= 2
+    df['B'] *= 2
+    df['C'] *= 2
+    df['D'] *= 2
+</code></pre>
+</dd>
+<dt><strong><code>evaluation_frame_filter_fn</code></strong> :&ensp;<code>function ( Pandas.DataFrame )</code></dt>
+<dd>Useful to filter out (in-place) data you do not want considered in the analysis.</dd>
+<dt><strong><code>injected_filenames</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>The file names of the sources, useful if they are <code>raw</code> sources, which do not have file names</dd>
+<dt><strong><code>data_format</code></strong> :&ensp;<code>str</code></dt>
+<dd>The data's format, amongst the covered circumstances. Has a default value, but must be set.</dd>
+<dt><strong><code>relevent_columns_configs</code></strong> :&ensp;<code>list</code></dt>
+<dd>
+<p>The list of input/output column configurations to be assessed. An IO configuration being some permutation
+of the DataFrame's columns where each column is either an input param, output param, or neither.</p>
+<pre><code>configs = [
+    {
+        'name': 'Config 1',
+        'columns': ['A', 'B', 'C', 'D']
+    },
+    {
+        'name': 'Config 2',
+        'columns': ['A', 'B', 'D']
+    }
+]
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note:&ensp;Different than <code>injected_headers</code>.</p>
+<p>If this sounds similar <code>injected_headers</code>, note that Injected Headers are simply "plopped" on top of
+the data frames as the column names. These configurations deal with which columns are relevant to the
+dataframe, and, if it's defined, columns omitted will be deleted.</p>
+</div>
+</dd>
+<dt><strong><code>parse_tkns</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>The parse tokens for parsing a JSON response's data. The first token representing the outermost parse token,
+the second being the next (and innermost, by definition) token.</dd>
+<dt><strong><code>drop_scarce_columns</code></strong> :&ensp;<code>bool</code></dt>
+<dd>
+<div class="admonition warning">
+<p class="admonition-title">Warning:&ensp;This is a "blind drop" in that id <strong>does not protect input/output nor relevent columns</strong></p>
+</div>
+</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>An analysis for each data source, with the following:
+- Its parsed data (unclean)
+- A quality evaluation for each IO Column configuration ( How much data can be used )
+- The missing data % per row</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def analyze_data_quality(sources: list, thresh=0.5, injected_headers=None, preprocessing_fn=None,
+                         evaluation_frame_filter_fn=None, injected_filenames=None, data_format=&#39;csv&#39;,
+                         relevent_columns_configs=[], parse_tkns=[&#39;,&#39;, &#39;\n&#39;], drop_scarce_columns=False):
+    &#34;&#34;&#34;Analyzes the data quality of the data sources.
+
+    Constructs a report that will return the following for each data source:
+
+         { &#39;name&#39;: &#39;Source Name&#39;,
+           &#39;quality_evaluations&#39;: [{&#39;name&#39;: &#39;IO Config A&#39;, &#39;quality&#39;: 0.34}, {&#39;name&#39;: &#39;IO Config B&#39;, &#39;quality&#39;: 0.56}, ...],
+           &#39;missing&#39;: {&#39;colA&#39;: 0.12, &#39;colB&#39;: 0.34, ... },
+           &#39;data&#39;: [[...],[...],...] # Unclean
+         }
+
+
+    Process (per source):
+        - Convert (source + peripheral info) =&gt; DataFrame
+        - TEMPORARY: Small DataFrame adjustment
+        - Get Data Absence ( = Missing )
+        - For each config, copy &amp; clean the DataFrame,
+        then Save the size difference between the two DataFrames ( = Quality Evaluation )
+
+
+    Parameters
+    ----------
+    sources : list
+        The data sources. Supported sources thus far are all those in :func:`~Tiny_utils.dfs_from_sources`
+
+            raw_data = [
+                [&#39;a&#39;,    1,      2.0,    3     ],
+                [&#39;b&#39;,    4,      5.0,    np.nan],
+                [&#39;c&#39;,    6,      np.nan, np.nan],
+                [&#39;d&#39;,    np.nan, np.nan, np.nan],
+                [np.nan, np.nan, np.nan, np.nan]
+            ]
+    &gt;&gt;&gt; sources  = [raw_data,...]
+
+    thresh : float, optional
+        The impute threshold, or, in this case, the threshold at which columns will be cut off the DataFrame.
+
+    injected_headers : list, optional
+        The headers for the data set, to be used if the sources are raw data, not parsed.
+        :note:: CSV Data must have headers in the data set at the moment.
+        This option is primarily for the `raw` data type.
+
+    &gt;&gt;&gt; injected_headers = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+
+    preprocessing_fn : function( Pandas.DataFrame ), optional
+        Apply any adjustment to the DataFrame with this function.
+        ..note:: All changed must be done **inplace**, the return value will not be considered.
+
+        Example:
+
+            def double(df: pd.DataFrame):
+                df[&#39;A&#39;] *= 2
+                df[&#39;B&#39;] *= 2
+                df[&#39;C&#39;] *= 2
+                df[&#39;D&#39;] *= 2
+
+    evaluation_frame_filter_fn : function ( Pandas.DataFrame )
+        Useful to filter out (in-place) data you do not want considered in the analysis.
+
+    injected_filenames : list, optional
+        The file names of the sources, useful if they are `raw` sources, which do not have file names
+
+    data_format : str
+        The data&#39;s format, amongst the covered circumstances. Has a default value, but must be set.
+
+    relevent_columns_configs : list
+        The list of input/output column configurations to be assessed. An IO configuration being some permutation
+        of the DataFrame&#39;s columns where each column is either an input param, output param, or neither.
+
+            configs = [
+                {
+                    &#39;name&#39;: &#39;Config 1&#39;,
+                    &#39;columns&#39;: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+                },
+                {
+                    &#39;name&#39;: &#39;Config 2&#39;,
+                    &#39;columns&#39;: [&#39;A&#39;, &#39;B&#39;, &#39;D&#39;]
+                }
+            ]
+
+        .. note:: Different than `injected_headers`.
+
+            If this sounds similar `injected_headers`, note that Injected Headers are simply &#34;plopped&#34; on top of
+            the data frames as the column names. These configurations deal with which columns are relevant to the
+            dataframe, and, if it&#39;s defined, columns omitted will be deleted.
+
+
+    parse_tkns : list, optional
+        The parse tokens for parsing a JSON response&#39;s data. The first token representing the outermost parse token,
+        the second being the next (and innermost, by definition) token.
+
+    drop_scarce_columns: bool
+        Drop columns that are scarce? (Presence &lt; Impute threshold)
+        .. WARNING:: This is a &#34;blind drop&#34; in that id **does not protect input/output nor relevent columns**
+
+
+    Returns
+    -------
+    list
+        An analysis for each data source, with the following:
+            - Its parsed data (unclean)
+            - A quality evaluation for each IO Column configuration ( How much data can be used )
+            - The missing data % per row
+
+    &#34;&#34;&#34;
+
+    if not isinstance(relevent_columns_configs, list):
+        raise ValueError(&#39;Rel cols should be list!&#39;)
+
+    res = []
+    k = 0
+    for loc in sources:
+
+        # ---------
+        # | Setup |
+        # ---------
+
+        # Grab filename (for ref later)
+
+        if injected_filenames is not None:
+            try:
+                fname = injected_filenames[k]
+            except:
+                fname = &#39;File_&#39; + str(k)
+        else:
+            # Trim path from filename result (if exists)
+            try:
+                if isinstance(loc, str):
+                    fname = loc[loc.rindex(&#39;/&#39;) + 1:]
+                else:
+                    fname = &#39;File_&#39; + str(k)
+            except:
+                fname = loc
+
+        # --------
+        # | Core |
+        # --------
+
+        # File/Data -&gt; DataFrame
+
+        df = dfs_from_sources([loc], data_format, injected_headers, parse_tkns)
+
+        # Check  -  Verify not list
+        if isinstance(df, list):
+            df = df[0]
+
+        print(&#39;DataFrame (&#39; + str(len(df.index)) + &#39;) rows&#39;)
+
+        #  * Clean *  DataFrame + Get Data-absence
+        full_reference_df = df.copy()
+
+        if evaluation_frame_filter_fn is not None:
+            evaluation_frame_filter_fn(full_reference_df)
+
+        ttl_rows = rows(full_reference_df)
+
+        absences = data_absence(full_reference_df, as_map=True)
+        missings = {item: round(value, 2) for item, value in
+                    list(absences.items())}  # mapmax(absences, 5, inplace=True) -&gt; Take 5 most absent columns
+
+        qualities = []
+
+        for column_config in relevent_columns_configs:
+            name = column_config[&#39;name&#39;]
+            config = column_config[&#39;columns&#39;]
+            # Wash the DataFrame
+            df_clone = df_power_wash(df.copy(), addtl_heuristic_fn=preprocessing_fn, impute_threshold=thresh,
+                                     relevent_columns_override=config, drop_scarce_columns=drop_scarce_columns)
+
+            good_rows = rows(df_clone)
+            quality = round(good_rows / ttl_rows, 2)
+
+            qualities.append({&#39;name&#39;: name, &#39;quality&#39;: quality})
+
+        res.append({&#39;name&#39;: fname, &#39;quality_evaluations&#39;: qualities, &#39;missing&#39;: missings, &#39;data&#39;: df.values.tolist()})
+
+        k += 1
+
+
+    return res</code></pre>
+</details>
+</dd>
+<dt id="utils.data.Utils.build_boundaries_for"><code class="name flex">
+<span>def <span class="ident">build_boundaries_for</span></span>(<span>df: pandas.core.frame.DataFrame)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>build scalers for each numerical column of the dataframe
+:param df: pandas dataframe
+:return: {col_1: (min, max), col_2: None, col_k: (min, max),
+&hellip; }</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def build_boundaries_for(df: pd.DataFrame):
+    &#34;&#34;&#34;
+        build scalers for each numerical column of the dataframe
+    :param df: pandas dataframe
+    :return: {col_1: (min, max), col_2: None, col_k: (min, max),  ... }
+    &#34;&#34;&#34;
+    res = {}
+    if rows(df) == 0:
+        print(&#39;build_boundaries_for() WARN. DataFrame is empty. Not generating boundaries.&#39;)
+        return res
+    colnames_numerics_only = df.select_dtypes(include=np.number).columns.tolist()
+    for col in df.columns:
+        if col in colnames_numerics_only:
+            G = df[col].ravel()
+            _min = G.min()
+            _max = G.max()
+            res[preprocess_df_header(col)] = (_min, _max)
+        else:
+            res[preprocess_df_header(col)] = None
+
+    return res</code></pre>
+</details>
+</dd>
+<dt id="utils.data.Utils.build_dictionary_for"><code class="name flex">
+<span>def <span class="ident">build_dictionary_for</span></span>(<span>df: pandas.core.frame.DataFrame)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>build dictionary of uniques for each column of the dataframe
+:param df: pandas dataframe
+:return: {col_1: <data values set>, col_2: None, col_k: <data values set>,
+&hellip; }</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def build_dictionary_for(df: pd.DataFrame):
+    &#34;&#34;&#34;
+        build dictionary of uniques for each column of the dataframe
+    :param df: pandas dataframe
+    :return: {col_1: &lt;data values set&gt;, col_2: None, col_k: &lt;data values set&gt;,  ... }
+    &#34;&#34;&#34;
+    res = {}
+    if rows(df) == 0:
+        print(&#39;build_dictionary_for() WARN. DataFrame is empty. Not generating dictionary.&#39;)
+        return res
+    colnames_numerics_only = df.select_dtypes(include=np.number).columns.tolist()
+    for col in df.columns:
+        if col in colnames_numerics_only:
+            res[preprocess_df_header(col)] = None
+        else:
+            un = [val for val in df[col].unique() if val == val and val is not None]  # filter out NaN
+            res[preprocess_df_header(col)] = un
+    return res</code></pre>
+</details>
+</dd>
+<dt id="utils.data.Utils.data_absence"><code class="name flex">
+<span>def <span class="ident">data_absence</span></span>(<span>df: pandas.core.frame.DataFrame, threshold=1.0, as_map=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retrieves all elements who have less than 'threshold' % of complete data</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>Pandas.DataFrame</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>threshold</code></strong> :&ensp;<code>float</code></dt>
+<dd>The threshold at which a column's data presence % must exceed</dd>
+<dt><strong><code>as_map</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Result formatted as a dictionary? If not, it will be a list.</dd>
+</dl>
+<h2 id="returns">Returns</h2></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def data_absence(df: pd.DataFrame, threshold=1.0, as_map=False):
+    &#34;&#34;&#34;Retrieves all elements who have less than &#39;threshold&#39; % of complete data
+
+    Parameters
+    ----------
+    df : Pandas.DataFrame
+    threshold : float
+        The threshold at which a column&#39;s data presence % must exceed
+    as_map : bool
+        Result formatted as a dictionary? If not, it will be a list.
+
+    Returns
+    -------
+
+    &#34;&#34;&#34;
+    absences = []
+    if as_map:
+        absences = {}
+    for col in df.columns:
+        pct_missing = np.mean(df[col].isnull())
+        pct_present = 1 - pct_missing
+        if (pct_present &lt; threshold):
+            if as_map:
+                absences[col] = pct_missing
+            else:
+                absences.append(col)
+    return absences</code></pre>
+</details>
+</dd>
+<dt id="utils.data.Utils.df_encode_and_scale_columns"><code class="name flex">
+<span>def <span class="ident">df_encode_and_scale_columns</span></span>(<span>df, _list, dictionary, boundaries)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Transforms dataframe columns via Encoding and Scaling</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>Pandas.DataFrame</code></dt>
+<dd>The DataFrame to be transformed</dd>
+<dt><strong><code>_list</code></strong> :&ensp;<code>list(Tuple)</code></dt>
+<dd>
+<div class="admonition note">
+<p class="admonition-title">Note:&ensp;The column's provided type must be one of the following:</p>
+float, int, or one-hot</div>
+</dd>
+<dt><strong><code>dictionary</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Maps each categorical DataFrame column to it's unique possible outcomes.
+Should contain None for numerical columns</dd>
+</dl>
+<pre><code class="python">&gt;&gt;&gt; dictionary = {'name': ['Jerry', 'Berry', 'Carry'], 'number': None}
+</code></pre>
+<dl>
+<dt><strong><code>boundaries</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Maps each numerical DataFrame column to it's <strong>min</strong> and <strong>max</strong> possible values.
+Should contain None for categorical columns</dd>
+</dl>
+<pre><code class="python">&gt;&gt;&gt; boundaries = {'name': None, 'number': (1, 1000)}
+</code></pre>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list(list(&hellip;))</code></dt>
+<dd>The transformed dataframe's data from the provided columns as a matrix.</dd>
+<dt><code>dict</code></dt>
+<dd>The encoders (LabelEncoder) used for the dataframe's categorical data</dd>
+<dt><code>dict</code></dt>
+<dd>The scalers (MinMaxScaler) used for the dataframe's numerical data</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def df_encode_and_scale_columns(df, _list, dictionary, boundaries):
+    &#34;&#34;&#34;Transforms dataframe columns via Encoding and Scaling
+
+    Parameters
+    ----------
+    df : Pandas.DataFrame
+        The DataFrame to be transformed
+    _list : list(Tuple)
+        The list of ColumnName-Type tuples to be transformed
+        .. note:: The column&#39;s provided type must be one of the following:
+            float, int, or one-hot
+    dictionary : dict
+        Maps each categorical DataFrame column to it&#39;s unique possible outcomes.
+        Should contain None for numerical columns
+
+    &gt;&gt;&gt; dictionary = {&#39;name&#39;: [&#39;Jerry&#39;, &#39;Berry&#39;, &#39;Carry&#39;], &#39;number&#39;: None}
+
+    boundaries : dict
+        Maps each numerical DataFrame column to it&#39;s **min** and **max** possible values.
+        Should contain None for categorical columns
+
+    &gt;&gt;&gt; boundaries = {&#39;name&#39;: None, &#39;number&#39;: (1, 1000)}
+
+    Returns
+    -------
+    list(list(...))
+        The transformed dataframe&#39;s data from the provided columns as a matrix.
+    dict
+        The encoders (LabelEncoder) used for the dataframe&#39;s categorical data
+    dict
+        The scalers (MinMaxScaler) used for the dataframe&#39;s numerical data
+
+    &#34;&#34;&#34;
+    X = None
+    encoders = {}
+    scalers = {}
+    for colname, encode_as in _list:
+        # reshape column as array
+        G = df[colname].ravel()
+        # Encode G
+        if encode_as == &#39;float&#39;:
+            # Ensure float
+            G = G.astype(float)
+            encoders[colname] = None
+            # Scale
+            try:
+                bounds = boundaries[colname]
+            except:
+                exc_string = &#39;Cuz-handled Error. No boundaries generated for column (&#39; + colname + &#39;).&#39;
+                raise Exception(exc_string)
+            scaler = custom_scaler(bounds[0], bounds[1])
+            G = scaler.transform([G])[0]  # Put into &amp; take out of a list (to fit transform)
+            scalers[colname] = scaler
+        elif encode_as == &#39;int&#39;:
+            # Ensure float
+            G = G.astype(int)
+            encoders[colname] = None
+            # Scale
+            try:
+                bounds = boundaries[colname]
+            except:
+                exc_string = &#39;Cuz-handled Error. No boundaries generated for column (&#39; + colname + &#39;).&#39;
+                raise Exception(exc_string)
+            scaler = custom_scaler(bounds[0], bounds[1])
+            G = scaler.transform([G])[0]  # Put into &amp; take out of a list (to fit transform)
+            scalers[colname] = scaler
+        elif encode_as == &#39;one-hot&#39;:
+            # convert integers to dummy variables (i.e. one hot encoded)
+            if dictionary is not None:
+                try:
+                    uniques = dictionary[colname]
+                except:
+                    exc_string = &#39;Cuz-handled Error. No dictionary generated for column (&#39; + colname + &#39;).&#39;
+                    raise Exception(exc_string)
+                # encode class values as integers
+                encoder = LabelEncoder()
+                encoder.fit(uniques)
+                dummy_y = np_utils.to_categorical(encoder.transform(G), len(uniques))
+                encoders[colname] = encoder
+                scalers[colname] = None
+            else:
+                # encode class values as integers
+                encoder = LabelEncoder()
+                encoder.fit(G)
+                encoded_G = encoder.transform(G)
+                encoders[colname] = encoder
+                dummy_y = np_utils.to_categorical(encoded_G)
+                scalers[colname] = None
+            G = dummy_y
+            # elif encode_as == &#39;embedded&#39;:
+            #   G = ds[:, _min: _max].astype(int)
+            # Append G
+        else:
+            exc_string = &#39;Provided invalid column type to df_encode_and_scale_columns() (&#39; + encode_as + &#39;)&#39;
+            raise Exception(exc_string)
+        if X is None:
+            X = G
+        else:
+            X = np.column_stack((X, G))
+    return X, encoders, scalers</code></pre>
+</details>
+</dd>
+<dt id="utils.data.Utils.df_power_wash"><code class="name flex">
+<span>def <span class="ident">df_power_wash</span></span>(<span>df: pandas.core.frame.DataFrame, input_params=[], output_params=[], addtl_heuristic_fn=None, impute_threshold=0.5, relevent_columns_override=None, dont_remove_cols=[], drop_scarce_columns=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Cleans a dataframe.</p>
+<h2 id="process">Process</h2>
+<h2 id="abstract">Abstract</h2>
+<ul>
+<li>(1/2) Prepare the DataFrame ( Format, Drop unnecessary columns )</li>
+<li>Allow for a user-defined heuristic</li>
+<li>(2/2) Prepare the DataFrame ( Headers )</li>
+<li>Clean the DataFrame</li>
+<li>Double check the DataFrame</li>
+</ul>
+<h2 id="complete">Complete</h2>
+<ul>
+<li>Replace empty cells with NaN</li>
+<li>Drop unused/irrelevent columns ( will not drop <code>dont_remove_cols</code> )</li>
+<li>Apply additional trimming/cleaning heuristic</li>
+<li>Pre-process DataFrame headers</li>
+<li>Trim<ul>
+<li>bad cols (data presence &lt; impute threshold), pending value of <code>drop_scarce_columns</code></li>
+<li>bad rows (contains an Empty cell)</li>
+</ul>
+</li>
+<li>Confirm nothing important was dropped</li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>Pandas.DataFrame</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>input_params</code></strong> :&ensp;<code>list(Tuple)</code></dt>
+<dd>
+<div class="admonition note">
+<p class="admonition-title">Note:&ensp;The column's provided type must be one of the following:</p>
+float, int, or one-hot</div>
+</dd>
+</dl>
+<pre><code class="python">&gt;&gt;&gt; input_params = [('A', 'Col A', 'int'), ('B', 'Bee', 'one-hot')]
+</code></pre>
+<dl>
+<dt><strong><code>output_params</code></strong> :&ensp;<code>list(Tuple)</code></dt>
+<dd>
+<div class="admonition note">
+<p class="admonition-title">Note:&ensp;The column's provided type must be one of the following:</p>
+float, int, or one-hot</div>
+</dd>
+</dl>
+<pre><code class="python">&gt;&gt;&gt; output_params = [('C', 'Cee', 'int'), ('D', 'D col', 'one-hot'), ...]
+</code></pre>
+<dl>
+<dt><strong><code>addtl_heuristic_fn</code></strong> :&ensp;<code>function( Pandas.DataFrame )</code></dt>
+<dd>
+<div class="admonition note">
+<p class="admonition-title">Note:&ensp;All changed must be done <strong>inplace</strong>, the return value will not be considered.</p>
+</div>
+</dd>
+<dt>impute_threshold : The threshold at which a column's data must be present, or it will be removed entirely.</dt>
+<dt><strong><code>relevent_columns_override</code></strong> :&ensp;<code>list</code></dt>
+<dd>The relevent columns to the data set (overriding the input/output parameter as the default)
+This is used when you don't want certain columns to be removed, despite them not being an input or output.</dd>
+<dt><strong><code>dont_remove_cols</code></strong> :&ensp;<code>list</code></dt>
+<dd>The columns to protect before going into the heuristic function. This is useful when there is a scarce,
+yet important column, that you'd like filled out in the heuristic function.</dd>
+<dt><strong><code>drop_scarce_columns</code></strong> :&ensp;<code>bool</code></dt>
+<dd>
+<div class="admonition warning">
+<p class="admonition-title">Warning:&ensp;This is a "blind drop" in that id <strong>does not protect input/output nor relevent columns</strong></p>
+</div>
+</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Pandas.DataFrame</code> or <code>Pandas.DataFrame, list(Tuple), list(Tuple)</code></dt>
+<dd>If overriding the input/output parameters, just the DataFrame will be returned.
+Otherwise, both the DataFrame and the new input/output parameters will be returned
+(because relevent columns could have been dropped, so they may have changed).</dd>
+</dl>
+<h2 id="sample-usage">Sample Usage</h2>
+<p>Setup</p>
+<pre><code>inputs  = [('A', 'Col A', 'one-hot')]
+outputs = [('C', 'Cee', 'float'), ('D', 'Dee', 'int')]
+columns = ['A', 'B', 'C', 'D']
+
+'''        80%     60%     40%     0%   '''
+data = [['a',    1,      2.0,    3     ],
+        ['b',    4,      5.0,    np.nan],
+        ['c',    6,      np.nan, np.nan],
+        ['d',    np.nan, np.nan, np.nan],
+        [np.nan, np.nan, np.nan, np.nan]
+    ]
+
+frame = pd.DataFrame(data, columns=columns)
+
+def double(df: pd.DataFrame):
+    df['A'] *= 2
+    df['B'] *= 2
+    df['C'] *= 2
+    df['D'] *= 2
+</code></pre>
+<p>Execute</p>
+<pre><code class="python">&gt;&gt;&gt; df_power_wash(frame, inputs, outputs, double, relevent_columns_override=columns, drop_scarce_columns=True)
+Pandas.DataFrame ([
+        ['aa', 2.0],
+        ['bb', 8.0],
+        ['cc', 12.0]
+    ])
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def df_power_wash(df: pd.DataFrame, input_params=[], output_params=[], addtl_heuristic_fn=None,
+                  impute_threshold=0.5, relevent_columns_override=None, dont_remove_cols=[],
+                  drop_scarce_columns=False):
+    &#34;&#34;&#34;Cleans a dataframe.
+
+    Process
+    -------
+
+    Abstract:
+        - (1/2) Prepare the DataFrame ( Format, Drop unnecessary columns )
+        - Allow for a user-defined heuristic
+        - (2/2) Prepare the DataFrame ( Headers )
+        - Clean the DataFrame
+        - Double check the DataFrame
+
+    Complete:
+        - Replace empty cells with NaN
+        - Drop unused/irrelevent columns ( will not drop `dont_remove_cols` )
+        - Apply additional trimming/cleaning heuristic
+        - Pre-process DataFrame headers
+        - Trim
+            - bad cols (data presence &lt; impute threshold), pending value of `drop_scarce_columns`
+            - bad rows (contains an Empty cell)
+        - Confirm nothing important was dropped
+
+
+    Parameters
+    ----------
+    df : Pandas.DataFrame
+    input_params : list(Tuple)
+        The inputs of the model as a list of ColumnName-Type tuples.
+        .. note:: The column&#39;s provided type must be one of the following:
+            float, int, or one-hot
+
+    &gt;&gt;&gt; input_params = [(&#39;A&#39;, &#39;Col A&#39;, &#39;int&#39;), (&#39;B&#39;, &#39;Bee&#39;, &#39;one-hot&#39;)]
+
+    output_params : list(Tuple)
+        The outputs of the model as a list of ColumnName-Type tuples.
+        .. note:: The column&#39;s provided type must be one of the following:
+            float, int, or one-hot
+
+
+    &gt;&gt;&gt; output_params = [(&#39;C&#39;, &#39;Cee&#39;, &#39;int&#39;), (&#39;D&#39;, &#39;D col&#39;, &#39;one-hot&#39;), ...]
+
+    addtl_heuristic_fn : function( Pandas.DataFrame )
+        Apply any adjustment to the DataFrame with this function.
+        ..note:: All changed must be done **inplace**, the return value will not be considered.
+    impute_threshold : The threshold at which a column&#39;s data must be present, or it will be removed entirely.
+    relevent_columns_override : list
+        The relevent columns to the data set (overriding the input/output parameter as the default)
+        This is used when you don&#39;t want certain columns to be removed, despite them not being an input or output.
+    dont_remove_cols : list
+        The columns to protect before going into the heuristic function. This is useful when there is a scarce,
+        yet important column, that you&#39;d like filled out in the heuristic function.
+    drop_scarce_columns: bool
+        Drop columns that are scarce? (Presence &lt; Impute threshold)
+        .. WARNING::  This is a &#34;blind drop&#34; in that id **does not protect input/output nor relevent columns**
+
+    Returns
+    -------
+    Pandas.DataFrame or Pandas.DataFrame, list(Tuple), list(Tuple)
+        If overriding the input/output parameters, just the DataFrame will be returned.
+        Otherwise, both the DataFrame and the new input/output parameters will be returned
+        (because relevent columns could have been dropped, so they may have changed).
+
+
+    Sample Usage
+    ------------
+
+    Setup
+
+        inputs  = [(&#39;A&#39;, &#39;Col A&#39;, &#39;one-hot&#39;)]
+        outputs = [(&#39;C&#39;, &#39;Cee&#39;, &#39;float&#39;), (&#39;D&#39;, &#39;Dee&#39;, &#39;int&#39;)]
+        columns = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+
+        &#39;&#39;&#39;        80%     60%     40%     0%   &#39;&#39;&#39;
+        data = [[&#39;a&#39;,    1,      2.0,    3     ],
+                [&#39;b&#39;,    4,      5.0,    np.nan],
+                [&#39;c&#39;,    6,      np.nan, np.nan],
+                [&#39;d&#39;,    np.nan, np.nan, np.nan],
+                [np.nan, np.nan, np.nan, np.nan]
+            ]
+
+        frame = pd.DataFrame(data, columns=columns)
+
+        def double(df: pd.DataFrame):
+            df[&#39;A&#39;] *= 2
+            df[&#39;B&#39;] *= 2
+            df[&#39;C&#39;] *= 2
+            df[&#39;D&#39;] *= 2
+
+    Execute
+
+    &gt;&gt;&gt; df_power_wash(frame, inputs, outputs, double, relevent_columns_override=columns, drop_scarce_columns=True)
+    Pandas.DataFrame ([
+            [&#39;aa&#39;, 2.0],
+            [&#39;bb&#39;, 8.0],
+            [&#39;cc&#39;, 12.0]
+        ])
+
+
+    &#34;&#34;&#34;
+
+    # Empties -&gt; NaN
+
+    df.replace(&#39;&#39;, np.nan, inplace=True)
+
+    # Drop Irrelevent Columns
+
+    if relevent_columns_override is None:
+        Dropper.drop_unused_columns(df, input_params, output_params, dont_remove_cols=dont_remove_cols)
+    else:
+        Dropper.drop_irrelevent_columns(df, relevent_columns_override, dont_remove_cols=dont_remove_cols)
+
+    print(&#39;Power wash : trimming DataFrame below. \n&#39;, df)
+
+    # 1. Apply an additional trimming/cleaning heuristic
+    if (addtl_heuristic_fn is not None):
+        addtl_heuristic_fn(df)
+        df.reset_index(drop=True, inplace=True)
+
+    print(&#39;Power wash : preprocessing headers for DataFrame below. \n&#39;, df)
+
+    # 2. Pre-process  (headers)
+    preprocess_df_headers(df)
+
+    # 3. Trim  (bad rows, bad cols)
+
+    if drop_scarce_columns:
+        Dropper.drop_bad_cols(df, impute_threshold)
+    Dropper.drop_k_plus_nans(df, 1)
+
+    # Ensure all is well
+    # &amp; Return
+
+    print(&#39;df after adjustment:\n&#39;, df)
+
+    if relevent_columns_override is None:
+        # Confirm nothing important was dropped
+        input_params, output_params = Dropper.check_droppings(df, impute_threshold, input_params, output_params)
+        return df, input_params, output_params
+    else:
+        return df</code></pre>
+</details>
+</dd>
+<dt id="utils.data.Utils.mapmax"><code class="name flex">
+<span>def <span class="ident">mapmax</span></span>(<span>mapping, k=1, inplace=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets highest-value elements from dictionary</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>mapping</code></strong> :&ensp;<code>dictionary</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>k</code></strong> :&ensp;<code>int</code></dt>
+<dd>How many maxes to pull out</dd>
+<dt><strong><code>inplace</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Should we modify the dictionary itself?
+If not, the highest-value keys will be returned as a list</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int/dict</code></dt>
+<dd>The highest-value elements</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<p>Inline changes ON</p>
+<pre><code class="python">&gt;&gt;&gt; mapmax({'a':4,'b':3,'c':5}, 2, True)
+{'a':4,'c':5}
+</code></pre>
+<p>Inline changes OFF</p>
+<pre><code class="python">&gt;&gt;&gt; mapmax({'a':4,'b':3,'c':5}, 2, False)
+[('a',4),('c',5)]
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mapmax(mapping, k=1, inplace=False):
+    &#34;&#34;&#34;Gets highest-value elements from dictionary
+
+    Parameters
+    ----------
+    mapping : dictionary
+    k : int
+        How many maxes to pull out
+    inplace: bool
+        Should we modify the dictionary itself?
+        If not, the highest-value keys will be returned as a list
+
+    Returns
+    -------
+    int/dict
+        The highest-value elements
+
+    Examples
+    --------
+
+    Inline changes ON
+
+    &gt;&gt;&gt; mapmax({&#39;a&#39;:4,&#39;b&#39;:3,&#39;c&#39;:5}, 2, True)
+    {&#39;a&#39;:4,&#39;c&#39;:5}
+
+    Inline changes OFF
+
+    &gt;&gt;&gt; mapmax({&#39;a&#39;:4,&#39;b&#39;:3,&#39;c&#39;:5}, 2, False)
+    [(&#39;a&#39;,4),(&#39;c&#39;,5)]
+
+    &#34;&#34;&#34;
+    if not inplace:
+        return nlargest(k, mapping, key=mapping.get)
+    else:
+        all_keys = list(mapping.keys())
+        largest_value_keys = nlargest(k, mapping, key=mapping.get)
+        del_keys = [key for key in all_keys if key not in largest_value_keys]
+        for key in del_keys:
+            del mapping[key]</code></pre>
+</details>
+</dd>
+<dt id="utils.data.Utils.mc"><code class="name flex">
+<span>def <span class="ident">mc</span></span>(<span>df, col)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the average value of the dataframe column.</p>
+<p>Numerical
+- mean
+Categorical - Mode</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mc(df, col):
+    &#34;&#34;&#34;Get the average value of the dataframe column.
+
+        Numerical   - mean
+        Categorical - Mode
+
+    &#34;&#34;&#34;
+    if df.dtypes[col].name.find(&#39;int&#39;) &gt;= 0 or df.dtypes[col].name.find(&#39;float&#39;) &gt;= 0:
+        mn = mean(df[col].ravel())
+        return mn
+    else:
+        md = mode(df[col].ravel())
+        return md</code></pre>
+</details>
+</dd>
+<dt id="utils.data.Utils.missing_data_splits"><code class="name flex">
+<span>def <span class="ident">missing_data_splits</span></span>(<span>df: pandas.core.frame.DataFrame, input_params: list, output_params: list)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Formats the columns with missing data rows as the outputs for use in regression (imputation helper)</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>Pandas.DataFrame</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>input_params</code></strong> :&ensp;<code>list(Tuple)</code></dt>
+<dd>
+<div class="admonition note">
+<p class="admonition-title">Note:&ensp;The column's provided type must be one of the following:</p>
+float, int, or one-hot</div>
+</dd>
+</dl>
+<pre><code class="python">&gt;&gt;&gt; a = [('A', 'Col A', 'int'), ('B', 'Bee', 'one-hot')]
+</code></pre>
+<dl>
+<dt><strong><code>output_params</code></strong> :&ensp;<code>list(Tuple)</code></dt>
+<dd>
+<div class="admonition note">
+<p class="admonition-title">Note:&ensp;The column's provided type must be one of the following:</p>
+float, int, or one-hot</div>
+</dd>
+</dl>
+<pre><code class="python">&gt;&gt;&gt; a = [('A', 'Col A', 'int'), ('B', 'Bee', 'one-hot')]
+</code></pre>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list(list(list)))</code></dt>
+<dd>An array of input param (list) / output param (list) tuples (formatted as arrays)</dd>
+</dl>
+<pre><code class="python">&gt;&gt;&gt; [  [[inp_params],[output_param]], [[inp_params],[output_param]],... ]
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def missing_data_splits(df: pd.DataFrame, input_params: list, output_params: list):
+    &#34;&#34;&#34;Formats the columns with missing data rows as the outputs for use in regression (imputation helper)
+
+    Parameters
+    ----------
+    df : Pandas.DataFrame
+    input_params : list(Tuple)
+        The inputs of the model as a list of ColumnName-Type tuples.
+        .. note:: The column&#39;s provided type must be one of the following:
+            float, int, or one-hot
+
+    &gt;&gt;&gt; a = [(&#39;A&#39;, &#39;Col A&#39;, &#39;int&#39;), (&#39;B&#39;, &#39;Bee&#39;, &#39;one-hot&#39;)]
+
+    output_params : list(Tuple)
+        The outputs of the model as a list of ColumnName-Type tuples.
+        .. note:: The column&#39;s provided type must be one of the following:
+            float, int, or one-hot
+
+    &gt;&gt;&gt; a = [(&#39;A&#39;, &#39;Col A&#39;, &#39;int&#39;), (&#39;B&#39;, &#39;Bee&#39;, &#39;one-hot&#39;)]
+
+    Returns
+    -------
+    list(list(list)))
+        An array of input param (list) / output param (list) tuples (formatted as arrays)
+
+    &gt;&gt;&gt; [  [[inp_params],[output_param]], [[inp_params],[output_param]],... ]
+
+
+    &#34;&#34;&#34;
+
+    # get any missing data
+    missing_columns = data_absence(df)
+
+    # filter to only relevent
+
+    #  Make list of all relevent column names
+    allcols = input_params.copy()
+    allcols.extend(output_params)
+    allcols = [colname for colname, _, _ in allcols]
+    # filter to only those
+    missing_columns = [missing for missing in missing_columns if missing in allcols]
+
+    # for each missing output, construct an input-output split where the missing index is the only output
+    splits = [__ins_outs_split(input_params, output_params, [column]) for column in missing_columns]
+    return splits</code></pre>
+</details>
+</dd>
+<dt id="utils.data.Utils.one_hot"><code class="name flex">
+<span>def <span class="ident">one_hot</span></span>(<span>number, _range)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>One-hot encode a number</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>number</code></strong> :&ensp;<code>int</code></dt>
+<dd>The number to generate the encoding of</dd>
+<dt><strong><code>_range</code></strong> :&ensp;<code>int</code></dt>
+<dd>The maximum possible value ( = the length of the encoding )</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list(int)</code></dt>
+<dd>The one-hot encoding</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def one_hot(number, _range):
+    &#34;&#34;&#34;One-hot encode a number
+
+    Parameters
+    ----------
+    number : int
+        The number to generate the encoding of
+    _range : int
+        The maximum possible value ( = the length of the encoding )
+
+    Returns
+    -------
+    list(int)
+        The one-hot encoding
+
+    &#34;&#34;&#34;
+    nlist = [0 for _ in range(_range)]
+    nlist[number] = 1
+    return nlist</code></pre>
+</details>
+</dd>
+<dt id="utils.data.Utils.preprocess_df_header"><code class="name flex">
+<span>def <span class="ident">preprocess_df_header</span></span>(<span>_string: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def preprocess_df_header(_string: str):
+    if _string == &#39;&#39;:
+        return np.nan
+    return _string.strip().replace(&#34; &#34;, &#34;_&#34;).replace(&#34;#&#34;, &#34;NUM&#34;).replace(&#34;/&#34;, &#34;_&#34;)</code></pre>
+</details>
+</dd>
+<dt id="utils.data.Utils.preprocess_df_headers"><code class="name flex">
+<span>def <span class="ident">preprocess_df_headers</span></span>(<span>dataframe: pandas.core.frame.DataFrame)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Preprocess a Pandas DataFrame headers so they will be keras-compliant</p>
+<p>Also will replace all blank cells with an NaN value (Numpy)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def preprocess_df_headers(dataframe: pd.DataFrame):
+    &#34;&#34;&#34;Preprocess a Pandas DataFrame headers so they will be keras-compliant
+
+        Also will replace all blank cells with an NaN value (Numpy)
+    &#34;&#34;&#34;
+    dataframe.columns = dataframe.columns.str.strip()
+    dataframe.columns = dataframe.columns.str.replace(&#34; &#34;, &#34;_&#34;)
+    dataframe.columns = dataframe.columns.str.replace(&#34;#&#34;, &#34;NUM&#34;)
+    dataframe.columns = dataframe.columns.str.replace(&#34;/&#34;, &#34;_&#34;)
+    dataframe.replace(&#39;&#39;, np.nan, inplace=True)</code></pre>
+</details>
+</dd>
+<dt id="utils.data.Utils.rows"><code class="name flex">
+<span>def <span class="ident">rows</span></span>(<span>df: pandas.core.frame.DataFrame)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Counts the rows in the pandas dataframe</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rows(df: pd.DataFrame):
+    &#34;&#34;&#34;Counts the rows in the pandas dataframe&#34;&#34;&#34;
+    return len(df.index)</code></pre>
+</details>
+</dd>
+<dt id="utils.data.Utils.split_and_encode_data"><code class="name flex">
+<span>def <span class="ident">split_and_encode_data</span></span>(<span>df: pandas.core.frame.DataFrame, input_params, output_params, dictionary, boundaries)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Splits a dataframe into Input and Output data and returns, along with the data,
+a suite of useful information on the Input and Output columns</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>Pandas.DataFrame</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>input_params</code></strong> :&ensp;<code>list(Tuple)</code></dt>
+<dd>
+<div class="admonition note">
+<p class="admonition-title">Note:&ensp;The column's provided type must be one of the following:</p>
+float, int, or one-hot</div>
+</dd>
+</dl>
+<pre><code class="python">&gt;&gt;&gt; input_params = [('A', 'Col A', 'int'), ('B', 'Bee', 'one-hot')]
+</code></pre>
+<dl>
+<dt><strong><code>output_params</code></strong> :&ensp;<code>list(Tuple)</code></dt>
+<dd>
+<div class="admonition note">
+<p class="admonition-title">Note:&ensp;The column's provided type must be one of the following:</p>
+float, int, or one-hot</div>
+</dd>
+</dl>
+<pre><code class="python">&gt;&gt;&gt; output_params = [('C', 'Cee', 'int'), ('D', 'D col', 'one-hot'), ...]
+</code></pre>
+<dl>
+<dt><strong><code>dictionary</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Maps each categorical DataFrame column to it's unique possible outcomes.
+Should contain None for numerical columns</dd>
+</dl>
+<pre><code class="python">&gt;&gt;&gt; dictionary = {'name': ['Jerry', 'Berry', 'Carry'], 'number': None}
+</code></pre>
+<dl>
+<dt><strong><code>boundaries</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Maps each numerical DataFrame column to it's <strong>min</strong> and <strong>max</strong> possible values.
+Should contain None for categorical columns</dd>
+</dl>
+<pre><code class="python">&gt;&gt;&gt; boundaries = {'name': None, 'number': (1, 1000)}
+</code></pre>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<pre><code class="python">&gt;&gt;&gt; {  'data': (X, Y),
+&gt;&gt;&gt;    'encoders': (input_encoders, output_encoders),
+&gt;&gt;&gt;    'shapes': (input_shape, output_shapes),
+&gt;&gt;&gt;    'df_index_lists': (in_col_df_indices, out_col_df_indices),
+&gt;&gt;&gt;    'column_names': (input_column_names, output_column_names),
+&gt;&gt;&gt;    'scalers': (input_scalers, output_scalers)
+&gt;&gt;&gt; }
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def split_and_encode_data(df: pd.DataFrame, input_params, output_params, dictionary, boundaries):
+    &#34;&#34;&#34;Splits a dataframe into Input and Output data and returns, along with the data,
+    a suite of useful information on the Input and Output columns
+
+    Parameters
+    ----------
+    df : Pandas.DataFrame
+    input_params : list(Tuple)
+        The inputs of the model as a list of ColumnName-Type tuples.
+        .. note:: The column&#39;s provided type must be one of the following:
+            float, int, or one-hot
+
+    &gt;&gt;&gt; input_params = [(&#39;A&#39;, &#39;Col A&#39;, &#39;int&#39;), (&#39;B&#39;, &#39;Bee&#39;, &#39;one-hot&#39;)]
+
+    output_params : list(Tuple)
+        The outputs of the model as a list of ColumnName-Type tuples.
+        .. note:: The column&#39;s provided type must be one of the following:
+            float, int, or one-hot
+
+
+    &gt;&gt;&gt; output_params = [(&#39;C&#39;, &#39;Cee&#39;, &#39;int&#39;), (&#39;D&#39;, &#39;D col&#39;, &#39;one-hot&#39;), ...]
+
+    dictionary : dict
+        Maps each categorical DataFrame column to it&#39;s unique possible outcomes.
+        Should contain None for numerical columns
+
+    &gt;&gt;&gt; dictionary = {&#39;name&#39;: [&#39;Jerry&#39;, &#39;Berry&#39;, &#39;Carry&#39;], &#39;number&#39;: None}
+
+    boundaries : dict
+        Maps each numerical DataFrame column to it&#39;s **min** and **max** possible values.
+        Should contain None for categorical columns
+
+    &gt;&gt;&gt; boundaries = {&#39;name&#39;: None, &#39;number&#39;: (1, 1000)}
+
+    Returns
+    -------
+    dict
+
+    &gt;&gt;&gt; {  &#39;data&#39;: (X, Y),
+    &gt;&gt;&gt;    &#39;encoders&#39;: (input_encoders, output_encoders),
+    &gt;&gt;&gt;    &#39;shapes&#39;: (input_shape, output_shapes),
+    &gt;&gt;&gt;    &#39;df_index_lists&#39;: (in_col_df_indices, out_col_df_indices),
+    &gt;&gt;&gt;    &#39;column_names&#39;: (input_column_names, output_column_names),
+    &gt;&gt;&gt;    &#39;scalers&#39;: (input_scalers, output_scalers)
+    &gt;&gt;&gt; }
+
+
+    &#34;&#34;&#34;
+
+    print(&#39;split_and_encode_data() inputs:&#39;)
+    print(&#39;Dictionary: &#39;, dictionary)
+    print(&#39;Boundaries: &#39;, boundaries)
+    print(&#39;DataFrame : \n&#39;, df)
+
+    # Get names &amp; formal column indices for each input/output column
+    output_column_names = [col for col, _, _ in output_params]
+    input_column_names = [col for col, _, _ in input_params]
+    in_col_df_indices = [df.columns.get_loc(colname) for colname in input_column_names]
+    out_col_df_indices = [df.columns.get_loc(colname) for colname in output_column_names]
+
+    &#34;&#34;&#34;
+    (2/2) Prepare &amp; encode inputs
+    &#34;&#34;&#34;
+    # Trim input params from 3-tuple to 2-tuple
+    #      to comply with &#39;df_encode_and_scale_columns()&#39;
+    shortened_input_params = [(colname, rep) for colname, _, rep in input_params]
+    # Encode each input column, get the data and each encoder
+    X, input_encoders, input_scalers = df_encode_and_scale_columns(df, shortened_input_params, dictionary, boundaries)
+    # Store the shape of the input column
+    input_shape = X.shape[1]
+
+    Y = {}
+    # Stores each of the encoders used for the outputs
+    output_encoders = {}
+    output_scalers = {}
+    for colname, _, rep in output_params:
+        # Encode the individual column, get it&#39;s data and it&#39;s encoder
+        data, enc, scaler = df_encode_and_scale_columns(df, [(colname, rep)], dictionary, boundaries)
+        Y[colname] = data
+        for name, value in enc.items():
+            output_encoders[name] = value
+        for name, value in scaler.items():
+            output_scalers[name] = value
+
+    &#34;&#34;&#34;
+       Finish data preparation (network info, etc)
+    &#34;&#34;&#34;
+    # Store the shape used for each output column
+    output_shapes = {}
+    for name, enc in Y.items():
+        if len(enc.shape) &gt; 1:
+            output_shapes[name] = enc.shape[1]
+        else:
+            output_shapes[name] = 1
+
+    &#34;&#34;&#34;
+        Store in a clean result
+    &#34;&#34;&#34;
+    result = {
+        &#39;data&#39;: (X, Y),
+        &#39;encoders&#39;: (input_encoders, output_encoders),
+        &#39;shapes&#39;: (input_shape, output_shapes),
+        &#39;df_index_lists&#39;: (in_col_df_indices, out_col_df_indices),
+        &#39;column_names&#39;: (input_column_names, output_column_names),
+        &#39;scalers&#39;: (input_scalers, output_scalers)
+    }
+
+    return result</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="utils.data" href="index.html">utils.data</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="utils.data.Utils.analyze_data_quality" href="#utils.data.Utils.analyze_data_quality">analyze_data_quality</a></code></li>
+<li><code><a title="utils.data.Utils.build_boundaries_for" href="#utils.data.Utils.build_boundaries_for">build_boundaries_for</a></code></li>
+<li><code><a title="utils.data.Utils.build_dictionary_for" href="#utils.data.Utils.build_dictionary_for">build_dictionary_for</a></code></li>
+<li><code><a title="utils.data.Utils.data_absence" href="#utils.data.Utils.data_absence">data_absence</a></code></li>
+<li><code><a title="utils.data.Utils.df_encode_and_scale_columns" href="#utils.data.Utils.df_encode_and_scale_columns">df_encode_and_scale_columns</a></code></li>
+<li><code><a title="utils.data.Utils.df_power_wash" href="#utils.data.Utils.df_power_wash">df_power_wash</a></code></li>
+<li><code><a title="utils.data.Utils.mapmax" href="#utils.data.Utils.mapmax">mapmax</a></code></li>
+<li><code><a title="utils.data.Utils.mc" href="#utils.data.Utils.mc">mc</a></code></li>
+<li><code><a title="utils.data.Utils.missing_data_splits" href="#utils.data.Utils.missing_data_splits">missing_data_splits</a></code></li>
+<li><code><a title="utils.data.Utils.one_hot" href="#utils.data.Utils.one_hot">one_hot</a></code></li>
+<li><code><a title="utils.data.Utils.preprocess_df_header" href="#utils.data.Utils.preprocess_df_header">preprocess_df_header</a></code></li>
+<li><code><a title="utils.data.Utils.preprocess_df_headers" href="#utils.data.Utils.preprocess_df_headers">preprocess_df_headers</a></code></li>
+<li><code><a title="utils.data.Utils.rows" href="#utils.data.Utils.rows">rows</a></code></li>
+<li><code><a title="utils.data.Utils.split_and_encode_data" href="#utils.data.Utils.split_and_encode_data">split_and_encode_data</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.8.4</a>.</p>
+</footer>
+</body>
+</html>

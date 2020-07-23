@@ -7,7 +7,7 @@ initialize_app(cred, {
     'storageBucket': 'hudpred.appspot.com'
 })
 import hudl_server.helpers as helpers
-from src.main.core.ai.utils.data.hn import hx
+from src.main.core.ai.utils.data.hn import hx, odk_filter
 from uuid import uuid4 as gen_id
 
 qp = QuickParams()
@@ -79,7 +79,7 @@ def qa(name, names, datum, headers, client_id):
         .inject_filenames(names) \
         .declare_relevent_columns(column_configs) \
         .eval_bulk(datum) \
-        .analyze_data_quality(hx)
+        .analyze_data_quality(hx, evaluation_frame_filter_fn=odk_filter)
 
     print('Completed Data Quality Analysis.\n')
     print(analysis)

@@ -1,5 +1,5 @@
 from src.main.core.ai.utils.data.Input import InputChef
-from src.main.core.ai.utils.data.Utils import apply_heuristic, build_dictionary_for
+from src.main.core.ai.utils.data.Utils import build_dictionary_for
 import pandas as pd
 import unittest
 
@@ -24,6 +24,10 @@ true_test_mp = {
     'inputs': 2,
     'outputs': [ ('B', 1, 'linear', 'mean_squared_error'), ('C', 3, 'softmax', 'categorical_crossentropy')  ]
 }
+
+def apply_heuristic(df):
+    df.replace('iz', 'izr', inplace=True)
+    return df
 
 class Tester(unittest.TestCase):
 
