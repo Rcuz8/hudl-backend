@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import math
+from src.main.util.io import info, err, warn
 
 class Dropper:
 
@@ -31,8 +32,8 @@ class Dropper:
     def drop_irrelevent_columns(cls, df:pd.DataFrame, relevent_columns,dont_remove_cols=[]):
         if relevent_columns is None or len(relevent_columns) == 0:
             raise ValueError('Didnt provide relevent columns to be dropped.')
-        print('drop_irrelevent_columns() should not drop the following relevent columns: ', relevent_columns)
-        print('                             or the following protected columns         : ', dont_remove_cols)
+        print('drop_irrelevent_columns() should not drop the following relevent columns : ', relevent_columns)
+        print('                                      or the following protected columns : ', dont_remove_cols)
         drp = []
         for header in df.columns:
             if header not in relevent_columns and header not in dont_remove_cols:
@@ -60,14 +61,14 @@ class Dropper:
                 raise ValueError('Dropper filtered out a relevant column! Either adjust impute_threshold,'
                                 ' turn off impute, or disable \'throw_if_dropped_relevant_column\'.')
             else:
-                print('WARNING: Dropper filtered out a relevant column! Either adjust impute_threshold,'
+                warn('Dropper filtered out a relevant column! Either adjust impute_threshold,'
                                 ' turn off impute, or disable \'throw_if_dropped_relevant_column\'.')
         if (new_out_params != output_params and throw_if_dropped_relevant_column):
             if throw_if_dropped_relevant_column:
                 raise ValueError('Dropper filtered out a relevant column! Either adjust impute_threshold,'
                                 ' turn off impute, or disable \'throw_if_dropped_relevant_column\'.')
             else:
-                print('WARNING: Dropper filtered out a relevant column! Either adjust impute_threshold,'
+                warn('Dropper filtered out a relevant column! Either adjust impute_threshold,'
                                 ' turn off impute, or disable \'throw_if_dropped_relevant_column\'.')
         return new_in_params, new_out_params
 
@@ -90,23 +91,23 @@ class Dropper:
             colname, _, _ = input_params[i]
             if colname not in df1.columns or colname not in df2.columns:
                 input_params.pop(i)
-                print('WARNING: (Handled by dropping column) Dropper filtered out a relevant column (' + colname + ')! Either adjust impute_threshold,'
+                warn(' (Handled by dropping column) Dropper filtered out a relevant column (' + colname + ')! Either adjust impute_threshold,'
                                      ' turn off impute, or disable \'throw_if_dropped_relevant_column\'.')
         for i in range(len(output_params)-1):
             colname, _, _ = output_params[i]
             if colname not in df1.columns or colname not in df2.columns:
                 output_params.pop(i)
-                print('WARNING: (Handled by dropping column) Dropper filtered out a relevant column (' + colname + ')! Either adjust impute_threshold,'
+                warn(' (Handled by dropping column) Dropper filtered out a relevant column (' + colname + ')! Either adjust impute_threshold,'
                                      ' turn off impute, or disable \'throw_if_dropped_relevant_column\'.')
 
     @classmethod
     def drop_cols(cls, df: pd.DataFrame, cols):
-        print('dropper drop_cols() attempting to drop: ', cols)
+        info('dropper drop_cols() attempting to drop: ', cols)
         for col in cols:
             try:
                 df.drop(columns=[col], inplace=True)
             except:
-                print('WARN (soft): DataFrame could not drop column ',col)
+                warn(' (soft): DataFrame could not drop column ',col)
                 pass
 
     # Utils
@@ -145,7 +146,7 @@ class Dropper:
         old_cols = df.columns.copy()
         must_have = cls.normal_round(impute_threshold * len(df.index)) # rows
         df.dropna(axis=1, thresh=must_have, subset=None, inplace=True)
-        print('Dropper drop_bad_cols() dropped : ', [col for col in old_cols if col not in df.columns], 'thresh:',
+        info('Dropper drop_bad_cols() dropped : ', [col for col in old_cols if col not in df.columns], 'thresh:',
               impute_threshold, '( ' + str(must_have) + ' rows )')
         # print('Remaining columns : ', df.columns)
         df.reset_index(drop=True, inplace=True)

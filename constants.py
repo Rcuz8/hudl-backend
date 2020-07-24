@@ -155,7 +155,7 @@ class cols(Enum):
 
 # Data
 sample_data = [
-[18, 'O', 1.0, 10.0, 'L', -27.0, 'run', np.nan, 6.0, 'DASH', 'HOUSTON', np.nan, np.nan, np.nan, np.nan,np.nan, np.nan, np.nan, np.nan],
+ [18, 'O', 1.0, 10.0, 'L', -27.0, 'run', np.nan, 6.0, 'DASH', 'HOUSTON', np.nan, np.nan, np.nan, np.nan,np.nan, np.nan, np.nan, np.nan],
  [19, 'O', 2.0, 5.0, 'L', -33.0, 'Run', np.nan, 2.0, np.nan, 'XEROX', np.nan, np.nan, np.nan, np.nan, np.nan,np.nan, np.nan, 2],
  [20, 'O', 3.0, 3.0, 'L', -35.0, 'FG', 'xpm', 0.0, 'DOUBLES', np.nan, np.nan, np.nan, np.nan, np.nan,np.nan, np.nan, np.nan, np.nan],
  [21, 'K', 4.0, 3.0, 'L', 35.0, 'Punt', np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan,np.nan, np.nan],

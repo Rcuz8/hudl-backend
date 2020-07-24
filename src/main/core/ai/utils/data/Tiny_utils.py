@@ -58,7 +58,6 @@ def nones_to_nans(df: pd.DataFrame):
     df.fillna(np.nan, inplace=True)
 
 def dfs_from_raw(datalist:list, headers):
-    print('DFs from raw source..')
     if not isinstance(datalist[0][0], list):
         datalist = [datalist]
     return [pd.DataFrame(data=data, columns=headers) for data in datalist]

@@ -1,12 +1,15 @@
 
 from flask import Flask, request, flash,json
 from flask_cors import CORS
-from hudl_server.fb import user_info,new_client,get_clients, qa, get_games, generate_model
+from hudl_server.core_functions import user_info,new_client,get_clients, qa, get_games, generate_model
 from constants import TKN_3
 import phonenumbers
+import json
 app = Flask(__name__)
 CORS(app)
-import json
+
+if __name__ == '__main__':
+    app.run(threaded=False, processes=2)
 
 @app.route('/')
 def hello_world():

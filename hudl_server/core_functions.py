@@ -2,13 +2,30 @@ from constants import relevent_data_columns_configurations as column_configs, Qu
     model_gen_configs
 from src.main.core.ai.utils.data.Builder import huncho_data_bldr as bldr
 from firebase_admin import firestore, initialize_app, auth, get_app, credentials
-cred = credentials.Certificate('hudl_server/fbpk.json')
-initialize_app(cred, {
-    'storageBucket': 'hudpred.appspot.com'
-})
+try:
+    cred = credentials.Certificate('hudl_server/fbpk.json')
+    initialize_app(cred, {
+        'storageBucket': 'hudpred.appspot.com'
+    })
+    LOCAL = False
+except:
+    try:
+        cred = credentials.Certificate('fbpk.json')
+        initialize_app(cred, {
+            'storageBucket': 'hudpred.appspot.com'
+        })
+        LOCAL = True
+    except:
+        # From test directory -> svr
+        cred = credentials.Certificate('../../../../hudl_server/fbpk.json')
+        initialize_app(cred, {
+            'storageBucket': 'hudpred.appspot.com'
+        })
+        LOCAL = False
 import hudl_server.helpers as helpers
 from src.main.core.ai.utils.data.hn import hx, odk_filter
 from uuid import uuid4 as gen_id
+import json
 
 qp = QuickParams()
 
@@ -107,8 +124,14 @@ def qa(name, names, datum, headers, client_id):
     # Done
     return new_game_id
 
-def generate_model(game_id, test_film_index):
+def __update(fn, pct, msg):
+    if fn:
+        fn(pct, msg)
+
+def generate_model(game_id, test_film_index, on_progress=None, data_override=None, nodeploy=False):
     db = firestore.client()
+
+    __update(on_progress, 0, 'Collecting Data..')
 
     # 1. Get the train/test data (query db using the game id)
     '''
@@ -126,34 +149,58 @@ def generate_model(game_id, test_film_index):
                         
     
     '''
-    data = db.collection('games_data').document(game_id).get().to_dict()  # Query
+    if not data_override:
+        data = __fetch_game(game_id)
+    else:
+        data = data_override
     data = data['data']  # Unbox
     data = [item['data'] for item in data]  # Unbox
     data = helpers.fb_data_to_matrix(data)  # Unbox (data itself)
 
     print('Successfully unboxed firestore game data.')
+    __update(on_progress, 10, 'Building first Model..')
 
     # Now let's split train/test
     test = data.pop(test_film_index)
     train = data
 
     # Compile the data      ===> TODO: Per-file h(n) for their vs. our film
-
-    # Build the models
-    model_1 = helpers.bldr_make(model_gen_configs.pre_align_form, train, test)
-    model_2 = helpers.bldr_make(model_gen_configs.post_align_pt, train, test)
-    model_3 = helpers.bldr_make(model_gen_configs.post_align_play, train, test)
+    model_1, model_2, model_3 = helpers.tri_build(train, test, on_progress, 10, 85)
 
     print('Successfully built all models.')
 
-    game_id = ''.join(game_id.split('-'))
-    # Deploy the models
-    helpers.deploy_model(model_1.get_keras_model(), game_id, 'prealignform')
-    helpers.deploy_model(model_2.get_keras_model(), game_id, 'postalignpt')
-    helpers.deploy_model(model_3.get_keras_model(), game_id, 'postalignplay')
+    if not nodeploy:
+        game_id = ''.join(game_id.split('-'))
+        # Deploy the models
+        helpers.deploy_model(model_1.get_keras_model(), game_id, 'prealignform')
+        __update(on_progress, 90, 'Deploying second Model.')
+        helpers.deploy_model(model_2.get_keras_model(), game_id, 'postalignpt')
+        __update(on_progress, 95, 'Deploying third Model.')
+        helpers.deploy_model(model_3.get_keras_model(), game_id, 'postalignplay')
 
     print('Successfully deployed all models.')
+    __update(on_progress, 100, 'Done.')
     return 'OK'
+
+def __fetch_game(id, save_to=None):
+    db = firestore.client()
+    game = db.collection('games_data').document(id).get().to_dict()  # Query
+    if save_to:
+        __save_json(game, 'hudl_server/dbdata.json')
+    return game
+
+
+def __save_json(data : dict, path: str, local_check=True):
+    if local_check:
+        if LOCAL:
+            path = path.replace('hudl_server/', '')
+    with open(path, 'w+') as fp:
+        json.dump(data, fp)
+
+
+# fetch_game('2ceaf5db-41b7-4010-8cde-15a6c6f36d33', save_to='hudl_server/dbdata.json')
+
+
 
 
 

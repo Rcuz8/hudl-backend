@@ -9,7 +9,7 @@ import keras
 from src.main.core.ai.utils.model.Predictor import Predictor
 
 
-class Modeler:
+class EZModel:
 
     def __init__(self, db:huncho_data_bldr):
         self.output_column_names = db.output_column_names
@@ -124,20 +124,20 @@ class Modeler:
             return cl[0:cl.find('_loss')]
         raise Exception('Modeler label_for() : Cannot find label for ', col)
 
-    def train(self, epochs=1000, plot=True, batch_size=8,
-              notif_every=50):
+    def train(self, epochs=1000, plot=False, batch_size=8,
+              notif_every=50, on_update=None):
+        print('BEGIN TRAINING:')
+        print()
 
-        print('Keras model:\n', self.mb.model)
-        print('Keras model metrix:\n', self.mb.model.metrics_names)
-
-        callback = CustomCallbacks.ProgressCallback(epochs, k=notif_every) \
-            .add_test_info(self.mb.model, self.test_x, self.test_y)
-
+        callback = CustomCallbacks.ProgressCallback(epochs, k=notif_every, batch_size=batch_size) \
+            .add_test_info(self.mb.model, self.test_x, self.test_y)\
+            .add_progress_update_fn(on_update)
 
         repeats = 3
         folds = 5
 
-        self.mb.fit(self.train_x, self.train_y,callback,epochs=epochs,
+
+        self.mb.fit(self.train_x, self.train_y,callback=callback,epochs=epochs,
                     repeats=repeats, folds=folds, batch_size=batch_size)
 
         if (plot):

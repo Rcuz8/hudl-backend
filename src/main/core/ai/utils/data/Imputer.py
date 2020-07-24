@@ -1,5 +1,5 @@
 from src.main.core.ai.utils.data.Aggregator import DataHandler
-from src.main.core.ai.utils.data.Input import InputChef
+from src.main.core.ai.utils.data.Input import Input
 from src.main.core.ai.utils.data.Dropper import Dropper
 from src.main.core.ai.utils.data.Sanitizer import sanitize_output
 import src.main.core.ai.utils.data.Utils as du
@@ -68,7 +68,7 @@ class Imputer:
             se_result = du.split_and_encode_data(handing_df, split_input_params, split_output_params,
                                                  dictionary, boundaries)
             # Generate model params
-            new_model_params = InputChef.model_params(split_input_params, split_output_params, dictionary)
+            new_model_params = Input.model_params(split_input_params, split_output_params, dictionary)
             # Build model
             mb = MB(new_model_params, is_auxilary_process=True)\
                 .construct()\

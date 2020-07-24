@@ -1,9 +1,11 @@
 import numpy as np
 from src.main.core.ai.utils.data.Builder import huncho_data_bldr as bldr
-from src.main.core.ai.utils.model.EZModel import Modeler as network
+from src.main.core.ai.utils.model.EZModel import EZModel as network
 from firebase_admin import ml
-from constants import data_headers_transformed, data_columns_KEEP
+from constants import data_headers_transformed, data_columns_KEEP, model_gen_configs
 from src.main.core.ai.utils.data.hn import hx
+from src.main.util.io import info, warn, ok
+
 
 
 def db_npNans_to_Nones(games):
@@ -31,6 +33,7 @@ def db_nones_to_npNans(games):
                     if row['0'][i] == None:
                         row['0'][i] = np.nan
 
+
 # Matrix storage in firestore
 
 def matrix_to_fb_data(matrix):
@@ -42,25 +45,55 @@ def fb_data_to_matrix(fb_data):
     return [[row['0'] for row in data] for data in fb_data]
 
 
-def bldr_make(config, train, test):
+def partial_update(params, pct, msg=''):
+    """Implements a partial update of a parent process, from a child process.
+
+    Receives the parameters of its parent update process as well as the percentage completion
+    of the current child process.
+
+    Updates the parent process.
+
+    Parameters
+    ----------
+    params : 3-Tuple
+        Should contain the following:
+            - Parent Update function
+            - Parent process start status
+            - Parent process end status)
+    pct : float
+        Percentage completion of the current child process.
+    msg : str, optional
+        Message to go with the update
+
+    """
+    update_fn, update_from, update_to = params
+    dist = update_to - update_from
+    gain = dist * pct
+    end = update_from + round(gain, 2)
+    update_fn(end, msg)
+
+
+def bldr_make(config, train, test, update_params, update_msg):
     if not isinstance(train, list):
         train = [train]
     if not isinstance(test, list):
         test = [test]
-    data_bldr = bldr(config.io.inputs.eval(), config.io.outputs.eval(),
-                     thresh=0.1) \
-        .of_type('raw') \
-        .add_tr_file_hn(hx).add_tst_file_hn(hx)\
-        .inject_headers(data_headers_transformed) \
-        .dont_remove_columns(data_columns_KEEP)\
-        .train_bulk(train) \
-        .eval_bulk(test).prepare(impute=False)
+
+    handle_update = lambda pct: partial_update(update_params, pct, update_msg)
+
+    data_bldr = bldr(config.io.inputs.eval(), config.io.outputs.eval()) \
+        .with_type('raw') \
+        .with_iterating_adjuster(hx) \
+        .with_heads(data_headers_transformed) \
+        .with_protected_columns(data_columns_KEEP) \
+        .and_train(train) \
+        .and_eval(test) \
+        .prepare(impute=False)
 
     nn = network(data_bldr) \
         .build(custom=True, custom_layers=config.keras.dimensions.eval(),
                optimizer=config.keras.learn_params.eval()[0]) \
-        .summarize() \
-        .train(config.keras.learn_params.eval()[1], batch_size=5)
+        .train(config.keras.learn_params.eval()[1], batch_size=5, on_update=handle_update)
 
     return nn
 
@@ -79,3 +112,24 @@ def deploy_model(keras_model, game_id, model_name=''):
     # Add the model to your Firebase project and publish it
     new_model = ml.create_model(model)
     ml.publish_model(new_model.model_id)
+
+
+def tri_build(train, test, on_update, status_start, status_end):
+    interval = (status_end - status_start) / 3
+    intervals = [status_start,  status_start + (1 * interval),
+                 status_start + (2 * interval),  status_start + (3 * interval)]
+    print('tri_build() should notify at intervals: ', intervals)
+    on_update(status_start, 'Building first Model..')
+    # Build the models
+    model_1 = bldr_make(model_gen_configs.pre_align_form, train, test,
+                        [on_update, intervals[0], intervals[1]],
+                        'Building second Model..')
+    model_2 = bldr_make(model_gen_configs.post_align_pt, train, test,
+                        [on_update, intervals[1], intervals[2]],
+                        'Built third Model.')
+    model_3 = bldr_make(model_gen_configs.post_align_play, train, test,
+                        [on_update, intervals[2], intervals[3]],
+                        'Deploying first Model.')
+
+    return model_1, model_2, model_3
+

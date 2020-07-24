@@ -1,5 +1,4 @@
 
-from src.main.core.ai.utils.model.CustomCallbacks import ProgressCallback
 from keras.layers import Dense, Dropout, LeakyReLU, ReLU
 from sklearn.model_selection import RepeatedKFold
 from matplotlib import pyplot
@@ -112,13 +111,14 @@ class MB:
         epochs_for_fold = [epf for _ in range(folds)]
         epochs_for_fold[-1] += int(rem / repeats)
 
+        callbacks = None
+        if callback is not None:
+            callbacks = [callback]
+
         # create repeated k fold
         kf = RepeatedKFold(n_splits=folds, n_repeats=repeats)
 
         j = 0
-
-
-
 
         for train_index, test_index in kf.split(X):
             # Get x data
@@ -134,26 +134,9 @@ class MB:
                     y_train[output_name] = output_data[train_index]
                     y_test[output_name] = output_data[test_index]
 
-            '''
-                # Each output category
-                cats = [item[0] for item in Y.items()]
-                # Length of y data
-                datalen_test = len(y_test_full[cats[0]])
-                # for every index in the data,
-                # 	make an complete entry for that index
-                y_test = [{cat: y_test_full[cat][i] for cat in cats} for i in range(datalen_test)]
-            '''
-
             # val_data = [(X_test[i], y_test[i]) for i in range(len(X_test))]
             val_data = (X_test,y_test)
 
-            # print('About to fit with the following dimensions: ')
-            # print('Training:\t\tX: ', len(X_train), '\tY: ', [len(data) for y,data in y_train.items()] )
-            # print('Test    :\t\tX: ', len(X_test), '\tY: ', [len(data) for y,data in y_test.items()] )
-
-            callbacks = None
-            if callback is not None:
-                callbacks = [callback]
             self.model.fit(X_train, y_train, validation_data=val_data, batch_size=batch_size,
                            epochs=epochs_for_fold[j % folds], verbose=0, callbacks=callbacks
                            )

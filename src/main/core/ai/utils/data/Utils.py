@@ -8,6 +8,7 @@ import numpy as np
 
 from src.main.core.ai.utils.data.Tiny_utils import custom_scaler, dfs_from_sources
 from src.main.core.ai.utils.data.Dropper import Dropper
+from src.main.util.io import info, err, warn
 
 
 #  -----------------------
@@ -63,10 +64,10 @@ def split_and_encode_data(df: pd.DataFrame, input_params, output_params, diction
 
     """
 
-    print('split_and_encode_data() inputs:')
-    print('Dictionary: ', dictionary)
-    print('Boundaries: ', boundaries)
-    print('DataFrame : \n', df)
+    # print('split_and_encode_data() inputs:')
+    # print('Dictionary: ', dictionary)
+    # print('Boundaries: ', boundaries)
+    # print('DataFrame : \n', df)
 
     # Get names & formal column indices for each input/output column
     output_column_names = [col for col, _, _ in output_params]
@@ -171,7 +172,8 @@ def df_power_wash(df: pd.DataFrame, input_params=[], output_params=[], addtl_heu
     addtl_heuristic_fn : function( Pandas.DataFrame )
         Apply any adjustment to the DataFrame with this function.
         ..note:: All changed must be done **inplace**, the return value will not be considered.
-    impute_threshold : The threshold at which a column's data must be present, or it will be removed entirely.
+    impute_threshold : float
+        The threshold at which a column's data must be present, or it will be removed entirely.
     relevent_columns_override : list
         The relevent columns to the data set (overriding the input/output parameter as the default)
         This is used when you don't want certain columns to be removed, despite them not being an input or output.
@@ -238,14 +240,16 @@ def df_power_wash(df: pd.DataFrame, input_params=[], output_params=[], addtl_heu
     else:
         Dropper.drop_irrelevent_columns(df, relevent_columns_override, dont_remove_cols=dont_remove_cols)
 
-    print('Power wash : trimming DataFrame below. \n', df)
+    info('df_power_wash() : Dropped unused/irrelevent columns')
+    info('df_power_wash() : Received DataFrame of size (', len(df.columns), 'x', rows(df), ')')
 
     # 1. Apply an additional trimming/cleaning heuristic
     if (addtl_heuristic_fn is not None):
         addtl_heuristic_fn(df)
         df.reset_index(drop=True, inplace=True)
 
-    print('Power wash : preprocessing headers for DataFrame below. \n', df)
+    info('df_power_wash() : Applied bulk heuristic')
+    info('df_power_wash() : Preprocessing headers for DataFrame of size (', len(df.columns), 'x', rows(df), ')')
 
     # 2. Pre-process  (headers)
     preprocess_df_headers(df)
@@ -259,7 +263,7 @@ def df_power_wash(df: pd.DataFrame, input_params=[], output_params=[], addtl_heu
     # Ensure all is well
     # & Return
 
-    print('df after adjustment:\n', df)
+    info('df_power_wash() : Process Complete. Returning DataFrame of size (', len(df.columns), 'x', rows(df), ')')
 
     if relevent_columns_override is None:
         # Confirm nothing important was dropped
@@ -417,7 +421,7 @@ def analyze_data_quality(sources: list, thresh=0.5, injected_headers=None, prepr
         if isinstance(df, list):
             df = df[0]
 
-        print('DataFrame (' + str(len(df.index)) + ') rows')
+        # print('DataFrame (' + str(len(df.index)) + ') rows')
 
         #  * Clean *  DataFrame + Get Data-absence
         full_reference_df = df.copy()
@@ -707,7 +711,7 @@ def build_dictionary_for(df: pd.DataFrame):
     """
     res = {}
     if rows(df) == 0:
-        print('build_dictionary_for() WARN. DataFrame is empty. Not generating dictionary.')
+        warn('build_dictionary_for() : DataFrame is empty. Not generating dictionary.')
         return res
     colnames_numerics_only = df.select_dtypes(include=np.number).columns.tolist()
     for col in df.columns:
@@ -727,7 +731,7 @@ def build_boundaries_for(df: pd.DataFrame):
     """
     res = {}
     if rows(df) == 0:
-        print('build_boundaries_for() WARN. DataFrame is empty. Not generating boundaries.')
+        warn('build_boundaries_for() : DataFrame is empty. Not generating boundaries.')
         return res
     colnames_numerics_only = df.select_dtypes(include=np.number).columns.tolist()
     for col in df.columns:
