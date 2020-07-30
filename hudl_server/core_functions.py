@@ -1,31 +1,17 @@
+
+# Firebase Init
+from hudl_server.Cloud import bucket, LOCAL
+from firebase_admin import firestore, initialize_app, auth, get_app, credentials, storage
+
+
 from constants import relevent_data_columns_configurations as column_configs, QuickParams, \
     model_gen_configs
 from src.main.core.ai.utils.data.Builder import huncho_data_bldr as bldr
-from firebase_admin import firestore, initialize_app, auth, get_app, credentials
-try:
-    cred = credentials.Certificate('hudl_server/fbpk.json')
-    initialize_app(cred, {
-        'storageBucket': 'hudpred.appspot.com'
-    })
-    LOCAL = False
-except:
-    try:
-        cred = credentials.Certificate('fbpk.json')
-        initialize_app(cred, {
-            'storageBucket': 'hudpred.appspot.com'
-        })
-        LOCAL = True
-    except:
-        # From test directory -> svr
-        cred = credentials.Certificate('../../../../hudl_server/fbpk.json')
-        initialize_app(cred, {
-            'storageBucket': 'hudpred.appspot.com'
-        })
-        LOCAL = False
 import hudl_server.helpers as helpers
 from src.main.core.ai.utils.data.hn import hx, odk_filter
 from uuid import uuid4 as gen_id
 import json
+import datetime
 
 qp = QuickParams()
 
@@ -115,7 +101,7 @@ def qa(name, names, datum, headers, client_id):
 
     # Create game info object
     db.collection('games_info').document(new_game_id).set({'name': name, 'owner': client_id,
-                                                           'created': firestore.SERVER_TIMESTAMP,
+                                                           'created': datetime.datetime.now().isoformat(),
                                                            'films': analysis_info_sections})
 
     db.collection('games_data').document(new_game_id) \
@@ -124,30 +110,30 @@ def qa(name, names, datum, headers, client_id):
     # Done
     return new_game_id
 
-def __update(fn, pct, msg):
+async def __update(fn, pct, msg):
     if fn:
         fn(pct, msg)
 
-def generate_model(game_id, test_film_index, on_progress=None, data_override=None, nodeploy=False):
+async def generate_model(game_id, test_film_index, on_progress=None, data_override=None, nodeploy=False):
     db = firestore.client()
 
-    __update(on_progress, 0, 'Collecting Data..')
+    await __update(on_progress, 0, 'Collecting Data..')
 
     # 1. Get the train/test data (query db using the game id)
     '''
-    
+
     Structure must be unboxed. Looks like this:
-    
+
     games
         id
-            data       
+            data
                 [
                     { data:
                         ... (fb-structured matrix data)
                     },
                     ...
-                        
-    
+
+
     '''
     if not data_override:
         data = __fetch_game(game_id)
@@ -158,28 +144,27 @@ def generate_model(game_id, test_film_index, on_progress=None, data_override=Non
     data = helpers.fb_data_to_matrix(data)  # Unbox (data itself)
 
     print('Successfully unboxed firestore game data.')
-    __update(on_progress, 10, 'Building first Model..')
+    await __update(on_progress, 10, 'Building first Model..')
 
     # Now let's split train/test
     test = data.pop(test_film_index)
     train = data
 
     # Compile the data      ===> TODO: Per-file h(n) for their vs. our film
-    model_1, model_2, model_3 = helpers.tri_build(train, test, on_progress, 10, 85)
+    model_1, model_2, model_3 = await  helpers.tri_build(train, test, on_progress, 10, 85)
 
     print('Successfully built all models.')
 
-    if not nodeploy:
-        game_id = ''.join(game_id.split('-'))
-        # Deploy the models
-        helpers.deploy_model(model_1.get_keras_model(), game_id, 'prealignform')
-        __update(on_progress, 90, 'Deploying second Model.')
-        helpers.deploy_model(model_2.get_keras_model(), game_id, 'postalignpt')
-        __update(on_progress, 95, 'Deploying third Model.')
-        helpers.deploy_model(model_3.get_keras_model(), game_id, 'postalignplay')
+    game_id = ''.join(game_id.split('-'))
+    # Deploy the models
+    helpers.deploy_model(model_1.get_keras_model(), game_id, 'prealignform', nodeploy)
+    await __update(on_progress, 90, 'Deploying second Model.')
+    helpers.deploy_model(model_2.get_keras_model(), game_id, 'postalignpt', nodeploy)
+    await __update(on_progress, 95, 'Deploying third Model.')
+    helpers.deploy_model(model_3.get_keras_model(), game_id, 'postalignplay', nodeploy)
 
     print('Successfully deployed all models.')
-    __update(on_progress, 100, 'Done.')
+    await __update(on_progress, 100, 'Done.')
     return 'OK'
 
 def __fetch_game(id, save_to=None):
@@ -196,6 +181,9 @@ def __save_json(data : dict, path: str, local_check=True):
             path = path.replace('hudl_server/', '')
     with open(path, 'w+') as fp:
         json.dump(data, fp)
+
+# def fetch_model(id: str):
+#     return storage.storag
 
 
 # fetch_game('2ceaf5db-41b7-4010-8cde-15a6c6f36d33', save_to='hudl_server/dbdata.json')

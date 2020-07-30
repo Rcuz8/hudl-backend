@@ -1,6 +1,8 @@
 
-from keras.layers import Dense, Dropout, LeakyReLU, ReLU
+from keras.layers import Dense, Dropout, LeakyReLU, ReLU, Input
+from keras.models import Sequential
 from sklearn.model_selection import RepeatedKFold
+from src.main.util.io import warn, info
 from matplotlib import pyplot
 import seaborn as sns
 import pandas as pd
@@ -26,7 +28,7 @@ class MB:
                   metrics=['accuracy'],
                   minHiddens= 1, maxHiddens= 3, hidden_width_min=12,hidden_width_max=120,
                   dropout_min=0.1,dropout_max=0.3,
-                  lr_min = 2e-4, lr_max=1e-2
+                  lr_min = 2e-4, lr_max=1e-2, sequentialOverride=False
                   ):
         """
             Construct a keras model
@@ -35,69 +37,167 @@ class MB:
         :return: the model
         """
 
-        # Form input layer
-        inp = keras.Input(shape=(self.model_params['inputs'],))
+        model = None
 
-        if trial is not None:
+        if not sequentialOverride:
 
-            nlayers = trial.suggest_int("n_layers", minHiddens, maxHiddens)
+            # Form input layer
+            inp = keras.Input(shape=(self.model_params['inputs'],))
 
-            num_hidden = int(trial.suggest_loguniform("n_units_l0", hidden_width_min, hidden_width_max))
-            hidden = Dense(num_hidden, kernel_regularizer=keras.regularizers.l1_l2())(inp)
-            hidden = ReLU()(hidden)
-            if (nlayers - 1 > 0):
-                for i in range(nlayers-1):
-                    # DEPRE: Restrict # hiddens to max of prev # hiddens
-                    dropout = trial.suggest_uniform("dropout_l{}".format(i), dropout_min, dropout_max)
-                    num_hidden = int(trial.suggest_loguniform("n_units_l{}".format(i+1), hidden_width_min, hidden_width_max))
-                    hidden = Dropout(dropout)(hidden)
-                    hidden = Dense(num_hidden, kernel_regularizer=keras.regularizers.l1_l2())(hidden)
-                    hidden = ReLU()(hidden)
+            if trial is not None:
 
-            # We compile our model with a sampled learning rate.
-            optimizer.learning_rate = trial.suggest_loguniform("lr", lr_min, lr_max)
+                nlayers = trial.suggest_int("n_layers", minHiddens, maxHiddens)
 
-        else:
-            # Form hiddens
-            if (custom):
-                if len(custom_layers) == 0:
-                    raise ValueError('Cannot contruct a custom model with no layers!')
-                act = custom_layers[0][1]
-                hidden = Dense(custom_layers[0][0], kernel_regularizer=keras.regularizers.l1_l2())(inp)
-                if act == 'lrelu':
-                    hidden = LeakyReLU()(hidden)
-                else:
-                    hidden = ReLU()(hidden)
-                for layer in custom_layers[1:]:
-                    act = layer[1]
-                    hidden = Dropout(layer[2])(hidden)
-                    hidden = Dense(layer[0],kernel_regularizer=keras.regularizers.l1_l2())(hidden)
+                num_hidden = int(trial.suggest_loguniform("n_units_l0", hidden_width_min, hidden_width_max))
+                hidden = Dense(num_hidden, kernel_regularizer=keras.regularizers.l1_l2())(inp)
+                hidden = ReLU()(hidden)
+                if (nlayers - 1 > 0):
+                    for i in range(nlayers-1):
+                        # DEPRE: Restrict # hiddens to max of prev # hiddens
+                        dropout = trial.suggest_uniform("dropout_l{}".format(i), dropout_min, dropout_max)
+                        num_hidden = int(trial.suggest_loguniform("n_units_l{}".format(i+1), hidden_width_min, hidden_width_max))
+                        hidden = Dropout(dropout)(hidden)
+                        hidden = Dense(num_hidden, kernel_regularizer=keras.regularizers.l1_l2())(hidden)
+                        hidden = ReLU()(hidden)
+
+                # We compile our model with a sampled learning rate.
+                optimizer.learning_rate = trial.suggest_loguniform("lr", lr_min, lr_max)
+
+            else:
+                # Form hiddens
+                if custom:
+                    if len(custom_layers) == 0:
+                        raise ValueError('Cannot contruct a custom model with no layers!')
+                    act = custom_layers[0][1]
+                    hidden = Dense(custom_layers[0][0], kernel_regularizer=keras.regularizers.l1_l2())(inp)
                     if act == 'lrelu':
                         hidden = LeakyReLU()(hidden)
                     else:
                         hidden = ReLU()(hidden)
+                    for layer in custom_layers[1:]:
+                        act = layer[1]
+                        hidden = Dropout(layer[2])(hidden)
+                        hidden = Dense(layer[0],kernel_regularizer=keras.regularizers.l1_l2())(hidden)
+                        if act == 'lrelu':
+                            hidden = LeakyReLU()(hidden)
+                        else:
+                            hidden = ReLU()(hidden)
+                else:
+                    hidden = Dense(128, activation=activation,kernel_regularizer=keras.regularizers.l1_l2())(inp)
+                    while (nlayers > 1):
+                        hidden = Dropout(dropout_min)(hidden)
+                        hidden = Dense(128, activation=activation, kernel_regularizer=keras.regularizers.l1_l2())(hidden)
+                        nlayers -= 1
+
+            # Form output layers (independent)
+            outlayers = [Dense(layer[1], activation=layer[2], name=layer[0])(hidden) for layer in self.model_params['outputs']]
+
+            # build model
+            model = keras.Model(inputs=inp, outputs=outlayers)
+
+            # Get loss names & weights
+            lossnames = {name: item_entropy for name, _, _, item_entropy in self.model_params['outputs']}
+            lossweights = {name: 1.0 for name, _, _, _ in self.model_params['outputs']}
+
+            # Compile
+            model.compile(optimizer=optimizer, loss=lossnames, loss_weights=lossweights,
+                          metrics=[keras.metrics.Accuracy()])
+        else:
+
+            if trial is not None:
+
+                nlayers = trial.suggest_int("n_layers", minHiddens, maxHiddens)
+                num_hidden = int(trial.suggest_loguniform("n_units_l0", hidden_width_min, hidden_width_max))
+                model_layers = [
+                    Input(shape=(self.model_params['inputs'],)),
+                    Dense(num_hidden, kernel_regularizer=keras.regularizers.l1_l2()),
+                    ReLU()
+                ]
+                if nlayers - 1 > 0:
+                    for i in range(nlayers - 1):
+                        dropout = trial.suggest_uniform("dropout_l{}".format(i), dropout_min, dropout_max)
+                        num_hidden = int(
+                            trial.suggest_loguniform("n_units_l{}".format(i + 1), hidden_width_min, hidden_width_max))
+                        model_layers.append(Dropout(dropout))
+                        model_layers.append(Dense(num_hidden, kernel_regularizer=keras.regularizers.l1_l2()))
+                        model_layers.append(ReLU())
+
+                # We compile our model with a sampled learning rate.
+                optimizer.learning_rate = trial.suggest_loguniform("lr", lr_min, lr_max)
+
+                if len(self.model_params['outputs']) > 1:
+                    warn('Building Sequential model for multi-output problem. '
+                         'Will likely have undefined behavior.')
+
+                output = self.model_params['outputs'][0]
+
+                # Add output layer
+                outlayer = Dense(output[1], activation=output[2], name=output[0])
+                model_layers.append(outlayer)
+                # Loss
+                lossnames = output[3]
+
+                # build model
+                model = Sequential(model_layers)
+
+                # Compile
+                model.compile(optimizer=optimizer, loss=lossnames,  metrics=[keras.metrics.Accuracy()])
+
+
             else:
-                hidden = Dense(128, activation=activation,kernel_regularizer=keras.regularizers.l1_l2())(inp)
-                while (nlayers > 1):
-                    hidden = Dropout(dropout_min)(hidden)
-                    hidden = Dense(128, activation=activation,kernel_regularizer=keras.regularizers.l1_l2())(hidden)
-                    nlayers -= 1
 
-        # Form output layers (independent)
-        outlayers = [Dense(layer[1], activation=layer[2], name=layer[0])(hidden) for layer in self.model_params['outputs']]
+                # Form hiddens
+                if custom:
+                    if len(custom_layers) == 0:
+                        raise ValueError('Cannot contruct a custom model with no layers!')
+                    act = custom_layers[0][1]
+                    model_layers = [
+                        Input(shape=(self.model_params['inputs'],)),
+                        Dense(custom_layers[0][0], kernel_regularizer=keras.regularizers.l1_l2())
+                    ]
+                    if act == 'lrelu':
+                        model_layers.append(LeakyReLU())
+                    else:
+                        model_layers.append(ReLU())
+                    for layer in custom_layers[1:]:
+                        act = layer[1]
+                        model_layers.append(Dropout(layer[2]))
+                        model_layers.append(Dense(layer[0], kernel_regularizer=keras.regularizers.l1_l2()))
+                        if act == 'lrelu':
+                            model_layers.append(LeakyReLU())
+                        else:
+                            model_layers.append(ReLU())
+                else:
+                    model_layers = [
+                        Input(shape=(self.model_params['inputs'],)),
+                        Dense(128, kernel_regularizer=keras.regularizers.l1_l2())
+                    ]
+                    while nlayers > 1:
+                        model_layers.append(Dropout(dropout_min))
+                        model_layers.append(
+                            Dense(128, activation=activation, kernel_regularizer=keras.regularizers.l1_l2()))
+                        nlayers -= 1
 
-        # build model
-        model = keras.Model(inputs=inp, outputs=outlayers)
 
-        # Get loss names & weights
-        lossnames = {name: item_entropy for name, _, _, item_entropy in self.model_params['outputs']}
-        lossweights = {name: 1.0 for name, _, _, _ in self.model_params['outputs']}
+                if len(self.model_params['outputs']) > 1:
+                    warn('Building Sequential model for multi-output problem. '
+                         'Will likely have undefined behavior.')
 
-        # Compile
-        model.compile(optimizer=optimizer, loss=lossnames, loss_weights=lossweights,
-                      metrics=[keras.metrics.Accuracy()])
+                output = self.model_params['outputs'][0]
 
-        print('Builder generated model with metrics:', model.metrics_names)
+                # Add output layer
+                outlayer = Dense(output[1], activation=output[2], name=output[0])
+                model_layers.append(outlayer)
+                # Loss
+                lossnames = output[3]
+
+                # build model
+                model = Sequential(model_layers)
+
+                # Compile
+                model.compile(optimizer=optimizer, loss=lossnames, metrics=[keras.metrics.Accuracy()])
+
+        info('Builder generated model.')
 
         self.model = model
         return self

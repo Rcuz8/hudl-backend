@@ -38,7 +38,7 @@ class EZModel:
 
     def build(self, use_optimized_dimensions=True, nlayers=7, lr=None, activation='relu', custom=False,
               custom_layers=[(128, 'relu', 0.25),(64, 'relu', 0.25)],
-              optimizer=keras.optimizers.Adam(learning_rate=0.002)
+              optimizer=keras.optimizers.Adam(learning_rate=0.002), forceSequential=False
               ):
         if (lr is not None):
             optimizer.learning_rate = lr
@@ -51,7 +51,7 @@ class EZModel:
         # Build model
         self.mb = MB(mp) \
             .construct(nlayers=nlayers, activation=activation, custom=custom,
-                       custom_layers=custom_layers, optimizer=optimizer)
+                       custom_layers=custom_layers, optimizer=optimizer, sequentialOverride=forceSequential)
 
         return self
 

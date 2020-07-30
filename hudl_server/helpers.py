@@ -2,9 +2,12 @@ import numpy as np
 from src.main.core.ai.utils.data.Builder import huncho_data_bldr as bldr
 from src.main.core.ai.utils.model.EZModel import EZModel as network
 from firebase_admin import ml
+import tensorflowjs as tfjs
 from constants import data_headers_transformed, data_columns_KEEP, model_gen_configs
 from src.main.core.ai.utils.data.hn import hx
 from src.main.util.io import info, warn, ok
+import keras
+from hudl_server.Cloud import bucket
 
 
 
@@ -73,7 +76,7 @@ def partial_update(params, pct, msg=''):
     update_fn(end, msg)
 
 
-def bldr_make(config, train, test, update_params, update_msg):
+async def bldr_make(config, train, test, update_params, update_msg):
     if not isinstance(train, list):
         train = [train]
     if not isinstance(test, list):
@@ -92,44 +95,59 @@ def bldr_make(config, train, test, update_params, update_msg):
 
     nn = network(data_bldr) \
         .build(custom=True, custom_layers=config.keras.dimensions.eval(),
-               optimizer=config.keras.learn_params.eval()[0]) \
+               optimizer=config.keras.learn_params.eval()[0],forceSequential=True) \
         .train(config.keras.learn_params.eval()[1], batch_size=5, on_update=handle_update)
 
     return nn
 
 
-def deploy_model(keras_model, game_id, model_name=''):
-    game_id += model_name
-    # Keras -> firebase-compatible
-    source = ml.TFLiteGCSModelSource.from_keras_model(keras_model)
-    # Create the model object
-    tflite_format = ml.TFLiteFormat(source)
-    model = ml.Model(
-        display_name=game_id,  # This is the name you use from your app to load the model.
-        tags=[game_id],  # Optional tags for easier management.
-        model_format=tflite_format)
+def deploy_model(keras_model : keras.Model, game_id, model_name='', nodeploy=False):
 
-    # Add the model to your Firebase project and publish it
-    new_model = ml.create_model(model)
-    ml.publish_model(new_model.model_id)
+    if not nodeploy:
+        tfjs.converters.save_keras_model(keras_model, model_name)
+        # bucket().adjust_paths(dir_path=model_name, model_id=game_id, model_name=model_name)
+        bucket().upload_model(model_name, model_name, game_id)  # async ? if model hasnt saved could be issue
+
+        # # Keras -> firebase-compatible
+        #
+        # source = ml.TFLiteGCSModelSource.from_keras_model(keras_model)
+        # # Create the model object
+        # tflite_format = ml.TFLiteFormat(source)
+        # model = ml.Model(
+        #     display_name=game_id,  # This is the name you use from your app to load the model.
+        #     tags=[game_id],  # Optional tags for easier management.
+        #     model_format=tflite_format)
+        #
+        # # Add the model to your Firebase project and publish it
+        # new_model = ml.create_model(model)
+        # ml.publish_model(new_model.model_id)
+    else:
+        '''print('Model = ', model_name)
+        print('- Layer Weights -')
+        for layer in keras_model.layers:
+            print('Layer: ', layer.name, '\nConfig: ', layer.get_config(), '\nWeights: ', layer.get_weights())'''
+        # tfjs.converters.save_keras_model(keras_model, model_name)
+        # bucket().upload_model(model_name, model_name, game_id) # async ? if model hasnt saved could be issue
+
+        # keras_model.save(model_name, save_format='tf')  # creates a TF file
 
 
-def tri_build(train, test, on_update, status_start, status_end):
+async def tri_build(train, test, on_update, status_start, status_end):
     interval = (status_end - status_start) / 3
     intervals = [status_start,  status_start + (1 * interval),
                  status_start + (2 * interval),  status_start + (3 * interval)]
     print('tri_build() should notify at intervals: ', intervals)
     on_update(status_start, 'Building first Model..')
     # Build the models
-    model_1 = bldr_make(model_gen_configs.pre_align_form, train, test,
+    model_1 = await bldr_make(model_gen_configs.pre_align_form, train, test,
                         [on_update, intervals[0], intervals[1]],
-                        'Building second Model..')
-    model_2 = bldr_make(model_gen_configs.post_align_pt, train, test,
+                        'Building first Model..')
+    model_2 = await bldr_make(model_gen_configs.post_align_pt, train, test,
                         [on_update, intervals[1], intervals[2]],
-                        'Built third Model.')
-    model_3 = bldr_make(model_gen_configs.post_align_play, train, test,
+                        'Building second Model.')
+    model_3 = await bldr_make(model_gen_configs.post_align_play, train, test,
                         [on_update, intervals[2], intervals[3]],
-                        'Deploying first Model.')
+                        'Building third Model.')
 
     return model_1, model_2, model_3
 

@@ -51,7 +51,7 @@ def __contains(_list:list, item):
 
 class SGDParams(Enum):
     xl     = (kSGD(1e-4, 0.5, True), 20000)
-    long   = (kSGD(5e-4, 0.5, True), 12000 if not TEST_MODE else 200)
+    long   = (kSGD(5e-4, 0.5, True), 12000 if not TEST_MODE else 100)
     med    = (kSGD(5e-4, 0.5, True), 10000)
     short  = (kSGD(1e-3, 0.5, True), 6000 )
     xs     = (kSGD(1e-3, 0.5, True), 2000 )

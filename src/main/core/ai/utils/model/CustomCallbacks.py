@@ -113,34 +113,34 @@ def get_model():
     )
     return model
 
-(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
-x_train = x_train.reshape(-1, 784).astype("float32") / 255.0
-x_test = x_test.reshape(-1, 784).astype("float32") / 255.0
-
-# Limit the data to 1000 samples
-x_train = x_train[:1000]
-y_train = y_train[:1000]
-x_test = x_test[:1000]
-y_test = y_test[:1000]
-
-
-model = get_model()
-EPOCHS = 25
-def cb(x):
-    print(x)
-model.fit(
-    x_train,
-    y_train,
-    batch_size=128,
-    epochs=EPOCHS,
-    verbose=0,
-    validation_split=0.5,
-    callbacks=[ProgressCallback(epochs=EPOCHS,k=4,batch_size=8)],
-)
+# (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+# x_train = x_train.reshape(-1, 784).astype("float32") / 255.0
+# x_test = x_test.reshape(-1, 784).astype("float32") / 255.0
 #
-# res = model.evaluate(
-#     x_test, y_test, batch_size=128, verbose=0, callbacks=[CustomCallback()]
+# # Limit the data to 1000 samples
+# x_train = x_train[:1000]
+# y_train = y_train[:1000]
+# x_test = x_test[:1000]
+# y_test = y_test[:1000]
+#
+#
+# model = get_model()
+# EPOCHS = 25
+# def cb(x):
+#     print(x)
+# model.fit(
+#     x_train,
+#     y_train,
+#     batch_size=128,
+#     epochs=EPOCHS,
+#     verbose=0,
+#     validation_split=0.5,
+#     callbacks=[ProgressCallback(epochs=EPOCHS,k=4,batch_size=8)],
 # )
-#
-# res = model.predict(x_test, batch_size=128, callbacks=[CustomCallback()])
+# #
+# # res = model.evaluate(
+# #     x_test, y_test, batch_size=128, verbose=0, callbacks=[CustomCallback()]
+# # )
+# #
+# # res = model.predict(x_test, batch_size=128, callbacks=[CustomCallback()])
 

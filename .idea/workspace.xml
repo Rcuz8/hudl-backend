@@ -1,36 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/core/ai/utils/model/Builder.py" line="140" mnemonic="9" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5e18e173-fe61-4d53-8c9c-6a58ddf881e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/unit/svr/test_core_functions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/unit/svr/test_helpers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/unit/utils/model/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hudl_server/cors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hudl_server/file_data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hudl_server/prealignform/group1-shard1of1.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hudl_server/prealignform/model.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socket_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hudl_server/fb.py" beforeDir="false" afterPath="$PROJECT_DIR$/hudl_server/core_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase_ml_model.tflite" beforeDir="false" afterPath="$PROJECT_DIR$/firebase_ml_model.tflite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hudl_server/core_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/hudl_server/core_functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hudl_server/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/hudl_server/helpers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hudl_server/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/hudl_server/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample_test/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/scratch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample_test/x.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/core/ai/utils/data/Builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/core/ai/utils/data/Builder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/core/ai/utils/data/Dropper.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/core/ai/utils/data/Dropper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/core/ai/utils/data/Imputer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/core/ai/utils/data/Imputer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/core/ai/utils/data/Input.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/core/ai/utils/data/Input.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/core/ai/utils/data/Tiny_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/core/ai/utils/data/Tiny_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/core/ai/utils/data/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/core/ai/utils/data/Utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/core/ai/utils/model/Builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/core/ai/utils/model/Builder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/core/ai/utils/model/CustomCallbacks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/core/ai/utils/model/CustomCallbacks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/core/ai/utils/model/EZModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/core/ai/utils/model/EZModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/util/io.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/util/io.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/fb.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/unit/utils/CustomCallbacks.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/unit/utils/InputChef.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/unit/utils/data/test_input.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/unit/utils/Modeler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/unit/utils/model/EZModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/unit/utils/datum/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/unit/utils/data/test_builder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/unit/utils/datum/aggregator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/unit/utils/data/test_aggregator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/unit/utils/datum/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/unit/utils/data/test_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/test_core_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/unit/svr/test_core_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/test_helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/unit/svr/test_helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/utils/data/test_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/unit/utils/data/test_builder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/hudl_server/Cloud.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,19 +37,21 @@
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_DataUtils_Tester.coverage" NAME="Unittests for DataUtils.Tester Coverage Results" MODIFIED="1595478156686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/utils" />
     <SUITE FILE_PATH="coverage/hudl_server$Test__sample_test.coverage" NAME="Test: sample_test Coverage Results" MODIFIED="1595531283620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_in_DataHandler_py.coverage" NAME="Unittests in DataHandler.py Coverage Results" MODIFIED="1595480421659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/utils" />
+    <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_test_core_functions_Tester.coverage" NAME="Unittests for test_core_functions.Tester Coverage Results" MODIFIED="1595869363888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/svr" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_in_test_builder_py.coverage" NAME="Unittests in test_builder.py Coverage Results" MODIFIED="1595597538128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/utils/data" />
     <SUITE FILE_PATH="coverage/hudl_server$fb.coverage" NAME="fb Coverage Results" MODIFIED="1595001240244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hudl_server" />
-    <SUITE FILE_PATH="coverage/hudl_server$Test__src_test_unit.coverage" NAME="Test: src.test.unit Coverage Results" MODIFIED="1595626232553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/hudl_server$Test__src_test_unit.coverage" NAME="Test: src.test.unit Coverage Results" MODIFIED="1595627350505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/hudl_server$constants.coverage" NAME="constants Coverage Results" MODIFIED="1595001336060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/hudl_server$Flask.coverage" NAME="Flask Coverage Results" MODIFIED="1595016874444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hudl_server$Doctests_in_test_builder__1_.coverage" NAME="Doctests in test_builder (1) Coverage Results" MODIFIED="1595804069225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/utils/data" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_test_input_Tester_test_model_params.coverage" NAME="Unittests for test_input.Tester.test_model_params Coverage Results" MODIFIED="1595539569972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/utils/data" />
+    <SUITE FILE_PATH="coverage/hudl_server$Flask.coverage" NAME="Flask Coverage Results" MODIFIED="1595633361193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hudl_server$io.coverage" NAME="io Coverage Results" MODIFIED="1595612459210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/main/util" />
     <SUITE FILE_PATH="coverage/hudl_server$Dropper.coverage" NAME="Dropper Coverage Results" MODIFIED="1594407013330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/main/core/ai/utils/data" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_helpers_db_helpers_tester.coverage" NAME="Unittests for helpers.db_helpers_tester Coverage Results" MODIFIED="1595018112791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hudl_server/test" />
-    <SUITE FILE_PATH="coverage/hudl_server$Test_Suite___Data.coverage" NAME="Test Suite - Data Coverage Results" MODIFIED="1595602021904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/hudl_server$Test_Suite___Data.coverage" NAME="Test Suite - Data Coverage Results" MODIFIED="1595804589479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/hudl_server$utils.coverage" NAME="utils Coverage Results" MODIFIED="1595528970948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_utils_Test_test_df_power_wash.coverage" NAME="Unittests for utils.Test.test_df_power_wash Coverage Results" MODIFIED="1595518641675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/utils/data" />
-    <SUITE FILE_PATH="coverage/hudl_server$server.coverage" NAME="server Coverage Results" MODIFIED="1594963511453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hudl_server" />
+    <SUITE FILE_PATH="coverage/hudl_server$server.coverage" NAME="server Coverage Results" MODIFIED="1595627859411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hudl_server" />
     <SUITE FILE_PATH="coverage/hudl_server$x.coverage" NAME="x Coverage Results" MODIFIED="1595535246679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hudl_server$CustomCallbacks.coverage" NAME="CustomCallbacks Coverage Results" MODIFIED="1595622634397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/main/core/ai/utils/model" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_helpers_db_helpers_tester_test_extract_data_from_fb.coverage" NAME="Unittests for helpers.db_helpers_tester.test_extract_data_from_fb Coverage Results" MODIFIED="1595002738576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hudl_server/test" />
@@ -67,19 +61,24 @@
     <SUITE FILE_PATH="coverage/hudl_server$Test__src_test_unit_utils_datum.coverage" NAME="Test: src.test.unit.utils.datum Coverage Results" MODIFIED="1595530753225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_core_functions_Tester.coverage" NAME="Unittests for core_functions.Tester Coverage Results" MODIFIED="1595624165033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/svr" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_fb_db_helpers_tester.coverage" NAME="Unittests for fb.db_helpers_tester Coverage Results" MODIFIED="1594668667725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/svr" />
-    <SUITE FILE_PATH="coverage/hudl_server$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1595531895434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/hudl_server$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1595619501709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hudl_server$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1595634142731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/hudl_server$Test__hudl_server__1_.coverage" NAME="Test: hudl_server (1) Coverage Results" MODIFIED="1595461005080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/hudl_server$Doctests_in_test_builder.coverage" NAME="Doctests in test_builder Coverage Results" MODIFIED="1595803990062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/utils/data" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_test_input_Tester.coverage" NAME="Unittests for test_input.Tester Coverage Results" MODIFIED="1595538515225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/utils/data" />
-    <SUITE FILE_PATH="coverage/hudl_server$core_functions.coverage" NAME="core_functions Coverage Results" MODIFIED="1595618493523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hudl_server" />
     <SUITE FILE_PATH="coverage/hudl_server$Test__src_test_unit_svr.coverage" NAME="Test: src.test.unit.svr Coverage Results" MODIFIED="1595624493878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/hudl_server$core_functions.coverage" NAME="core_functions Coverage Results" MODIFIED="1595964966774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hudl_server" />
+    <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_test_helpers_Tester.coverage" NAME="Unittests for test_helpers.Tester Coverage Results" MODIFIED="1595869275964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/svr" />
+    <SUITE FILE_PATH="coverage/hudl_server$test_core_functions.coverage" NAME="test_core_functions Coverage Results" MODIFIED="1596041045783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/svr" />
+    <SUITE FILE_PATH="coverage/hudl_server$Cloud.coverage" NAME="Cloud Coverage Results" MODIFIED="1596031780347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hudl_server" />
     <SUITE FILE_PATH="coverage/hudl_server$helpers.coverage" NAME="helpers Coverage Results" MODIFIED="1595612535600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/svr" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_helpers_Tester.coverage" NAME="Unittests for helpers.Tester Coverage Results" MODIFIED="1595620111761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/svr" />
+    <SUITE FILE_PATH="coverage/hudl_server$socket_test.coverage" NAME="socket_test Coverage Results" MODIFIED="1595803978097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hudl_server$Tiny_utils.coverage" NAME="Tiny_utils Coverage Results" MODIFIED="1595528614106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/main/core/ai/utils/data" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_test_builder_Tester.coverage" NAME="Unittests for test_builder.Tester Coverage Results" MODIFIED="1595553464466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/utils/data" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="374" />
+    <option name="myElementSize" value="359" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -106,32 +105,32 @@
     <session id="-1921398973">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="3" />
-          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="96" />
-          <entry key="json" value="1" />
+          <entry key="dummy" value="107" />
+          <entry key="json" value="25" />
           <entry key="md" value="73" />
-          <entry key="py" value="44432" />
+          <entry key="py" value="48811" />
           <entry key="yml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="1" />
+          <entry key="JSON" value="25" />
           <entry key="Markdown" value="61" />
-          <entry key="PLAIN_TEXT" value="96" />
-          <entry key="Python" value="44432" />
+          <entry key="PLAIN_TEXT" value="107" />
+          <entry key="Python" value="48811" />
           <entry key="Scratch" value="12" />
           <entry key="YAML" value="2" />
         </counts>
@@ -140,11 +139,12 @@
         <counts>
           <entry key="DjangoModelDependency/#hudl_server" value="1" />
           <entry key="JavaScript-modules-diagram//Users/Ryan/Desktop/Dev/Python/hudl_server/src/main/core/ai/utils/data" value="1" />
+          <entry key="bin" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="2" />
-          <entry key="json" value="8" />
+          <entry key="json" value="18" />
           <entry key="md" value="5" />
-          <entry key="py" value="245" />
+          <entry key="py" value="287" />
           <entry key="tiny_utils" value="1" />
           <entry key="yml" value="1" />
         </counts>
@@ -152,10 +152,10 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="2" />
-          <entry key="JSON" value="8" />
+          <entry key="JSON" value="18" />
           <entry key="Markdown" value="4" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="244" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="286" />
           <entry key="Scratch" value="1" />
           <entry key="UML" value="4" />
           <entry key="YAML" value="1" />
@@ -164,7 +164,22 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/constants.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="224" column="30" selection-start-line="224" selection-start-column="30" selection-end-line="224" selection-end-column="30" />
+              <folding>
+                <element signature="e#358#367#0" expanded="true" />
+                <element signature="e#560#899#0" />
+                <element signature="e#7415#9112#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -176,21 +191,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>helpers.</find>
-      <find>Recei</find>
-      <find>warn</find>
-      <find>dropped</find>
-      <find>empty</find>
-      <find>generate_aggregate_dataframe() Applied iterating heuristic.</find>
-      <find>gen_con</find>
-      <find>generate_a</find>
-      <find>print</find>
-      <find>\n</find>
-      <find>Received U</find>
-      <find>hand</find>
-      <find>trigg</find>
-      <find>done</find>
-      <find>add_</find>
       <find>--</find>
       <find>200</find>
       <find>update(</find>
@@ -206,13 +206,29 @@
       <find>.run</find>
       <find>run</find>
       <find>.fit</find>
+      <find>phonenumbers</find>
+      <find>return</find>
+      <find>\ndef</find>
+      <find>time</find>
+      <find>dateti</find>
+      <find>da</find>
+      <find>games</find>
+      <find>filedata</find>
+      <find>Tra</find>
+      <find>json</find>
+      <find>.json</find>
+      <find>layer</find>
+      <find>pat</find>
+      <find>weightsM</find>
+      <find>d2e</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/main</dir>
       <dir>$PROJECT_DIR$/src/main/core/ai/utils/data</dir>
       <dir>$PROJECT_DIR$/src/main/core/ai/utils</dir>
-      <dir>$PROJECT_DIR$/hudl_server</dir>
       <dir>$PROJECT_DIR$/src</dir>
+      <dir>$PROJECT_DIR$/hudl_server/test</dir>
+      <dir>$PROJECT_DIR$/hudl_server</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -242,7 +258,6 @@
         <option value="$PROJECT_DIR$/tests.py" />
         <option value="$PROJECT_DIR$/x.py" />
         <option value="$PROJECT_DIR$/src/test/unit/utils/data/test_input.py" />
-        <option value="$PROJECT_DIR$/src/test/unit/utils/data/test_builder.py" />
         <option value="$PROJECT_DIR$/src/main/core/ai/utils/data/Tiny_utils.py" />
         <option value="$PROJECT_DIR$/src/test/utils.py" />
         <option value="$PROJECT_DIR$/src/main/core/ai/utils/data/Dropper.py" />
@@ -253,17 +268,23 @@
         <option value="$PROJECT_DIR$/src/test/unit/svr/helpers.py" />
         <option value="$PROJECT_DIR$/hudl_server/dbdata.json" />
         <option value="$PROJECT_DIR$/scratch.py" />
-        <option value="$PROJECT_DIR$/hudl_server/core_functions.py" />
         <option value="$PROJECT_DIR$/src/test/unit/svr/core_functions.py" />
         <option value="$PROJECT_DIR$/src/main/core/ai/utils/model/utils.py" />
-        <option value="$PROJECT_DIR$/hudl_server/helpers.py" />
-        <option value="$PROJECT_DIR$/src/main/core/ai/utils/model/Builder.py" />
-        <option value="$PROJECT_DIR$/constants.py" />
-        <option value="$PROJECT_DIR$/src/main/core/ai/utils/model/EZModel.py" />
-        <option value="$PROJECT_DIR$/src/main/core/ai/utils/model/CustomCallbacks.py" />
         <option value="$PROJECT_DIR$/src/test/unit/utils/model/EZModel.py" />
-        <option value="$PROJECT_DIR$/src/test/unit/svr/test_core_functions.py" />
+        <option value="$PROJECT_DIR$/src/main/core/ai/utils/model/CustomCallbacks.py" />
         <option value="$PROJECT_DIR$/hudl_server/server.py" />
+        <option value="$PROJECT_DIR$/socket_test.py" />
+        <option value="$PROJECT_DIR$/src/test/unit/utils/data/test_builder.py" />
+        <option value="$PROJECT_DIR$/src/test/unit/svr/test_helpers.py" />
+        <option value="$PROJECT_DIR$/constants.py" />
+        <option value="$PROJECT_DIR$/hudl_server/file_data.json" />
+        <option value="$PROJECT_DIR$/hudl_server/core_functions.py" />
+        <option value="$PROJECT_DIR$/hudl_server/cors.json" />
+        <option value="$PROJECT_DIR$/src/main/core/ai/utils/model/Builder.py" />
+        <option value="$PROJECT_DIR$/src/main/core/ai/utils/model/EZModel.py" />
+        <option value="$PROJECT_DIR$/hudl_server/Cloud.py" />
+        <option value="$PROJECT_DIR$/src/test/unit/svr/test_core_functions.py" />
+        <option value="$PROJECT_DIR$/hudl_server/helpers.py" />
       </list>
     </option>
   </component>
@@ -273,10 +294,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1" />
-    <option name="y" value="24" />
-    <option name="width" value="1028" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -296,7 +316,58 @@
             <path>
               <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
               <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
+              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
+              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
+              <item name="mymodel2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
@@ -309,16 +380,20 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/Ryan/Desktop/Dev/Python/hudl_server/hudl_server/server.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Markdown" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyCoverageOptionsProvider">
     <option name="myUseBundledCoveragePy" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hudl_server" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/unit/utils/model" />
       <recent name="$PROJECT_DIR$/src/test/unit/utils/data" />
@@ -337,7 +412,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Django tests.Test: src.test.unit">
+  <component name="RunManager" selected="Python.test_core_functions">
     <configuration name="Test: hudl_server" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <module name="hudl_server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -358,7 +433,7 @@
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: src.test.unit" type="DjangoTestsConfigurationType" factoryName="Django tests" temporary="true">
+    <configuration name="Cloud" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="hudl_server" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -366,19 +441,21 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hudl_server" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="src.test.unit" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hudl_server/Cloud.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: src.test.unit.svr" type="DjangoTestsConfigurationType" factoryName="Django tests" temporary="true">
+    <configuration name="core_functions" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="hudl_server" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -386,19 +463,21 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hudl_server" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="src.test.unit.svr" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hudl_server/core_functions.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="CustomCallbacks" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test_core_functions" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="hudl_server" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -406,12 +485,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/core/ai/utils/model" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/unit/svr" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/core/ai/utils/model/CustomCallbacks.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/test/unit/svr/test_core_functions.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -461,6 +540,23 @@
       <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
+    <configuration name="Unnamed" type="Python.FlaskServer" factoryName="Flask server">
+      <option name="additionalOptions" value="" />
+      <option name="application" value="" />
+      <module name="hudl_server" />
+      <option name="target" value="$PROJECT_DIR$/socket_test.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test Suite - Data" type="tests" factoryName="Unittests">
       <module name="hudl_server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -477,36 +573,6 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for src.test.unit.svr.test_core_functions.Tester" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="hudl_server" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/unit/svr" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;src.test.unit.svr.test_core_functions.Tester&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for src.test.unit.svr.test_helpers.Tester" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="hudl_server" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/unit/svr" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;src.test.unit.svr.test_helpers.Tester&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Unittests for src.test.unit.utils.datum.utils" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="hudl_server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -520,6 +586,36 @@
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;src.test.unit.utils.datum.utils&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_core_functions.Tester" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="hudl_server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/unit/svr" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_core_functions.Tester&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_helpers.Tester" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="hudl_server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/unit/svr" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_helpers.Tester&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -543,21 +639,23 @@
       <item itemvalue="Django server.hudl_server" />
       <item itemvalue="Django tests.Test: hudl_server" />
       <item itemvalue="Flask server.Flask" />
+      <item itemvalue="Flask server.Unnamed" />
       <item itemvalue="Python tests.Unnamed" />
       <item itemvalue="Python tests.Test Suite - Data" />
-      <item itemvalue="Python tests.Unittests for src.test.unit.svr.test_helpers.Tester" />
-      <item itemvalue="Python tests.Unittests for src.test.unit.svr.test_core_functions.Tester" />
-      <item itemvalue="Python.CustomCallbacks" />
-      <item itemvalue="Django tests.Test: src.test.unit" />
-      <item itemvalue="Django tests.Test: src.test.unit.svr" />
+      <item itemvalue="Python tests.Unittests for src.test.unit.utils.datum.utils" />
+      <item itemvalue="Python tests.Unittests for test_helpers.Tester" />
+      <item itemvalue="Python tests.Unittests for test_core_functions.Tester" />
+      <item itemvalue="Python.test_core_functions" />
+      <item itemvalue="Python.core_functions" />
+      <item itemvalue="Python.Cloud" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Django tests.Test: src.test.unit" />
-        <item itemvalue="Django tests.Test: src.test.unit.svr" />
-        <item itemvalue="Python tests.Unittests for src.test.unit.svr.test_core_functions.Tester" />
-        <item itemvalue="Python.CustomCallbacks" />
-        <item itemvalue="Python tests.Unittests for src.test.unit.svr.test_helpers.Tester" />
+        <item itemvalue="Python.test_core_functions" />
+        <item itemvalue="Python.Cloud" />
+        <item itemvalue="Python.core_functions" />
+        <item itemvalue="Python tests.Unittests for test_core_functions.Tester" />
+        <item itemvalue="Python tests.Unittests for test_helpers.Tester" />
       </list>
     </recent_temporary>
   </component>
@@ -575,46 +673,47 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test__src_test_unit - 2020.07.24 at 17h 05m 22s.xml">
-      <configuration name="Test: src.test.unit" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__src_test_unit - 2020.07.24 at 17h 05m 41s.xml">
-      <configuration name="Test: src.test.unit" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__src_test_unit - 2020.07.24 at 17h 06m 44s.xml">
-      <configuration name="Test: src.test.unit" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__src_test_unit - 2020.07.24 at 17h 08m 40s.xml">
-      <configuration name="Test: src.test.unit" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__src_test_unit - 2020.07.24 at 17h 09m 49s.xml">
-      <configuration name="Test: src.test.unit" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__src_test_unit - 2020.07.24 at 17h 12m 04s.xml">
-      <configuration name="Test: src.test.unit" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__src_test_unit - 2020.07.24 at 17h 14m 34s.xml">
-      <configuration name="Test: src.test.unit" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__src_test_unit - 2020.07.24 at 17h 17m 11s.xml">
-      <configuration name="Test: src.test.unit" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__src_test_unit - 2020.07.24 at 17h 29m 05s.xml">
-      <configuration name="Test: src.test.unit" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
     <history-entry file="Test__src_test_unit - 2020.07.24 at 17h 36m 27s.xml">
       <configuration name="Test: src.test.unit" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
+    <history-entry file="Test__src_test_unit - 2020.07.24 at 17h 49m 13s.xml">
+      <configuration name="Test: src.test.unit" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+    <history-entry file="Doctests_in_test_builder - 2020.07.26 at 18h 53m 18s.xml">
+      <configuration name="Doctests in test_builder" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Doctests_in_test_builder_(1) - 2020.07.26 at 18h 54m 35s.xml">
+      <configuration name="Doctests in test_builder (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Test_Suite_-_Data - 2020.07.26 at 18h 57m 22s.xml">
+      <configuration name="Test Suite - Data" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Test_Suite_-_Data - 2020.07.26 at 19h 03m 15s.xml">
+      <configuration name="Test Suite - Data" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_helpers_Tester - 2020.07.27 at 12h 59m 35s.xml">
+      <configuration name="Unittests for test_helpers.Tester" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_helpers_Tester - 2020.07.27 at 13h 01m 20s.xml">
+      <configuration name="Unittests for test_helpers.Tester" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.07.27 at 13h 01m 57s.xml">
+      <configuration name="Unittests for test_core_functions.Tester" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.07.27 at 13h 02m 52s.xml">
+      <configuration name="Unittests for test_core_functions.Tester" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="24" width="1437" height="877" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18924731" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20600858" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299363" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.87267524" weight="0.45477706" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.87267524" weight="0.40764332" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -665,111 +764,18 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/test/unit/utils/data/test_builder.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/exportToHTML/fb.py.html" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="23">
-            <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://DjangoModelDependency/#hudl_server">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DjangoModelDependency</ID>
-          <OriginalElement>#hudl_server</OriginalElement>
-          <nodes />
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="569.0" y="367.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JavaScript-modules-diagram//Users/Ryan/Desktop/Dev/Python/hudl_server/src/main/core/ai/utils/data">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JavaScript-modules-diagram</ID>
-          <OriginalElement>$PROJECT_DIR$/src/main/core/ai/utils/data</OriginalElement>
-          <nodes />
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="569.0" y="367.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>All</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>Details</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://Python/#/Users/Ryan/Desktop/Dev/Python/hudl_server/src/main/core/ai/utils/data/Input.py">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>Python</ID>
-          <OriginalElement>#/Users/Ryan/Desktop/Dev/Python/hudl_server/src/main/core/ai/utils/data/Input.py</OriginalElement>
-          <nodes>
-            <node x="" y="">src.main.core.ai.utils.data.Input.InputChefHelpers</node>
-            <node x="" y="">object</node>
-            <node x="" y="">src.main.core.ai.utils.data.Input.InputChef</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="332.0" y="54.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://Python/#/Users/Ryan/Desktop/Dev/Python/hudl_server/src/main/core/ai/utils/data/Aggregator.py">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>Python</ID>
-          <OriginalElement>#/Users/Ryan/Desktop/Dev/Python/hudl_server/src/main/core/ai/utils/data/Aggregator.py</OriginalElement>
-          <nodes>
-            <node x="" y="">object</node>
-            <node x="" y="">src.main.core.ai.utils.data.Aggregator.DataHandler</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="176.0" y="54.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/pdoc/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/about.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-507" />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2433" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mkdocs.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/index.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -792,40 +798,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/hn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-          <folding>
-            <marker date="1595525567245" expanded="true" signature="737:818" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/unit/utils/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/unit/utils/data/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/sample_test/x.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/unit/utils/data/some.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_test/x.py" />
+    <entry file="file://$PROJECT_DIR$/src/test/unit/utils/data/some.py" />
     <entry file="file://$PROJECT_DIR$/src/test/unit/utils/data/test_aggregator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#0#60#0" expanded="true" />
-            <element signature="e#3694#6225#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -836,23 +820,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/x.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret lean-forward="true" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/x.py" />
     <entry file="file://$PROJECT_DIR$/src/test/unit/utils/data/test_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
-          <folding>
-            <element signature="e#0#85#0" expanded="true" />
-            <element signature="e#480#1266#0" />
-            <element signature="e#1311#2311#0" />
-            <element signature="e#2116#2202#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -860,12 +832,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="60" selection-start-line="60" selection-end-line="60" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-            <marker date="1595596374816" expanded="true" signature="1692:1866" ph="..." />
-            <marker date="1595596374816" expanded="true" signature="1902:1907" ph="..." />
-            <marker date="1595596374816" expanded="true" signature="1902:1940" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -873,11 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-            <marker date="1595539606029" expanded="true" signature="148:229" ph="..." />
-            <marker date="1595539606029" expanded="true" signature="288:1162" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -892,70 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1426">
           <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <marker date="1595611964005" expanded="true" signature="400:449" ph="..." />
-            <marker date="1595611964005" expanded="true" signature="944:1394" ph="..." />
-            <marker date="1595611964005" expanded="true" signature="1425:2043" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/Utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="533" column="30" selection-start-line="533" selection-start-column="30" selection-end-line="533" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-            <element signature="e#344#370#0" />
-            <element signature="e#528#2147#1" />
-            <marker date="1595612774488" expanded="false" signature="16701:16702" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/Dropper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="14" selection-start-line="3" selection-end-line="4" />
-          <folding>
-            <element signature="e#72#108#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/unit/utils/data/test_builder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="46" column="39" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-            <element signature="e#273#670#1" />
-            <element signature="e#1253#2315#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/Input.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="112" column="55" selection-start-line="112" selection-start-column="55" selection-end-line="112" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/Builder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1404">
-          <caret line="98" column="16" selection-start-line="98" selection-start-column="14" selection-end-line="98" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#62#0" expanded="true" />
-            <element signature="e#440#791#0" />
-            <element signature="e#6011#6448#0" />
-            <marker date="1595614344980" expanded="true" signature="1656:1657" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -966,9 +863,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hudl_server/dbdataa.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/hudl_server/dbdataa.json" />
     <entry file="file://$PROJECT_DIR$/hudl_server/dbdata.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -979,88 +874,11 @@
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/hudl_server/core_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="167" selection-start-line="167" selection-end-line="167" />
-          <folding>
-            <marker date="1595619675309" expanded="true" signature="4065:4099" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/model/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="53" column="68" selection-start-line="53" selection-start-column="68" selection-end-line="53" selection-end-column="68" />
-          <folding>
-            <element signature="e#358#367#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/unit/utils/model/CustomCallbacks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#0#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/unit/svr/fb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/model/utils.py" />
+    <entry file="file://$PROJECT_DIR$/src/test/unit/utils/model/CustomCallbacks.py" />
+    <entry file="file://$PROJECT_DIR$/src/test/unit/svr/fb.py" />
     <entry file="file://$PROJECT_DIR$/src/test/unit/svr/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/unit/svr/test_core_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <marker date="1595624748566" expanded="true" signature="256:932" ph="..." />
-            <marker date="1595624748566" expanded="true" signature="930:932" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hudl_server/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-522">
-          <caret line="13" column="15" lean-forward="true" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
-          <folding>
-            <element signature="e#1#45#0" expanded="true" />
-            <element signature="e#386#1321#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/unit/svr/test_helpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/unit/utils/model/EZModel.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1069,52 +887,214 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/model/CustomCallbacks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <element signature="e#1474#1478#0" />
+            <marker date="1595627404730" expanded="false" signature="867:930" ph="..." />
+            <marker date="1595627404730" expanded="false" signature="1465:1466" ph="..." />
+            <marker date="1595627404730" expanded="true" signature="4135:4151" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/Dropper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/Builder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1519">
+          <caret line="98" column="16" selection-start-line="98" selection-start-column="14" selection-end-line="98" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#62#0" expanded="true" />
+            <marker date="1595614344980" expanded="true" signature="1656:1657" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/Input.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="27" column="17" lean-forward="true" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/Utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1144">
+          <caret line="194" column="8" lean-forward="true" selection-start-line="194" selection-start-column="8" selection-end-line="194" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/socket_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="79" column="15" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/unit/utils/data/test_builder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#273#739#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/unit/svr/postalignplay.json" />
+    <entry file="file://$PROJECT_DIR$/src/test/unit/svr/postalignplay/model.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hudl_server/file_data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hudl_server/prealignform/model.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hudl_server/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1288">
+          <caret line="56" column="19" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hudl_server/cors.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/unit/svr/postalignplay/group1-shard1of1.bin">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hudl_server/core_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+          <folding>
+            <marker date="1595965722692" expanded="true" signature="3581:3615" ph="..." />
+            <marker date="1595965722692" expanded="true" signature="5854:5857" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/unit/svr/test_helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hudl_server/mymodel2/model.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1991" selection-start-column="1983" selection-end-column="1991" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hudl_server/mymodel/model.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2298" selection-start-column="2283" selection-end-column="2298" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hudl_server/helpers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="133" column="36" selection-start-line="133" selection-start-column="36" selection-end-line="133" selection-end-column="36" />
+        <state relative-caret-position="184">
+          <caret line="107" column="37" selection-start-line="107" selection-end-line="108" />
           <folding>
-            <marker date="1595623754217" expanded="true" signature="4172:4752" ph="..." />
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1596041045764" expanded="true" signature="5164:5764" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/unit/svr/test_core_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="657">
+          <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hudl_server/Cloud.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="106" column="24" lean-forward="true" selection-start-line="106" selection-end-line="107" />
+          <folding>
+            <element signature="e#17#53#0" expanded="true" />
+            <element signature="e#955#1399#0" />
+            <element signature="e#1449#1719#0" />
+            <marker date="1596032721367" expanded="true" signature="1970:1979" ph="..." />
+            <marker date="1596032721367" expanded="true" signature="1970:2855" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database.rules.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/model/Builder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding>
+            <element signature="e#1#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/data/hn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="815">
+          <caret line="356" column="58" selection-start-line="356" selection-start-column="55" selection-end-line="356" selection-end-column="58" />
+          <folding>
+            <marker date="1595525567245" expanded="true" signature="737:818" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/model/EZModel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="142" selection-start-line="142" selection-end-line="142" />
+        <state relative-caret-position="278">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
             <element signature="e#388#1430#0" />
-            <element signature="e#1699#2254#0" />
-            <element signature="e#2517#4346#0" />
-            <element signature="e#4671#5046#0" />
-            <element signature="e#9208#9990#0" />
-            <marker date="1595624165025" expanded="true" signature="4491:4526" ph="..." />
+            <element signature="e#1722#2313#0" />
+            <marker date="1595986813563" expanded="true" signature="4550:4585" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/model/CustomCallbacks.py">
+    <entry file="file://$PROJECT_DIR$/constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="145">
+          <caret line="224" column="30" selection-start-line="224" selection-start-column="30" selection-end-line="224" selection-end-column="30" />
           <folding>
-            <element signature="e#1474#1478#0" />
-            <marker date="1595624284805" expanded="false" signature="867:930" ph="..." />
-            <marker date="1595624284805" expanded="false" signature="1465:1466" ph="..." />
-            <marker date="1595624284805" expanded="true" signature="4110:4124" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/core/ai/utils/model/Builder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="786">
-          <caret line="134" column="65" selection-start-line="134" selection-start-column="65" selection-end-line="134" selection-end-column="65" />
-          <folding>
-            <element signature="e#1#57#0" expanded="true" />
-            <element signature="e#6963#7632#0" />
+            <element signature="e#358#367#0" expanded="true" />
+            <element signature="e#560#899#0" />
+            <element signature="e#7415#9112#0" />
           </folding>
         </state>
       </provider>

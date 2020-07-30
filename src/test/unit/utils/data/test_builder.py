@@ -60,6 +60,8 @@ class Tester(u.TestCase):
             .prepare() \
             .data()
 
+        print('Train Y\n', trainy)
+
         exp_trainx = exp_testx = [
             [1],
             [1]

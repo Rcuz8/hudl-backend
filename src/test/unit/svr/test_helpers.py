@@ -11,8 +11,8 @@ data = sample_data * 5
 
 class Tester(Test):
 
-    def test_tri_build(self):
-        models = fn.tri_build(data, data, updated, 20, 40)
+    async def test_tri_build(self):
+        models = await fn.tri_build(data, data, updated, 20, 40)
         print(models)
         self.assertEqual(len(models), 3, 'Builds all models.')
 
