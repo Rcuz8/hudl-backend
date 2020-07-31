@@ -201,13 +201,6 @@ def hx_cop(df: pd.DataFrame):
 
 def hx_score_diff(df: pd.DataFrame):
 
-    # for col in ['OFF STR', 'PLAY DIR', 'GAP', 'PASS ZONE', 'DEF FRONT', 'COVERAGE', 'BLITZ']:
-    #     try:
-    #         if df.columns.index(col) >= 0:
-    #             df.drop(columns=[col], inplace=True)
-    #     except:
-    #         pass
-
     we_score_conditions = [
         (df['ODK'] == 'o') & ((df['RESULT'] == 'touchdown') | (df['RESULT'] == 'td')),
         # touchdown
@@ -232,9 +225,9 @@ def hx_score_diff(df: pd.DataFrame):
         (df['PLAY_TYPE'] == 'ko') & (df['RESULT'] == 'rtd'),  # punt return for TD
         (df['PLAY_TYPE'] == 'fg block') & (df['DN'] != 0) & (df['RESULT'] == 'good'),  # field goal
     ]
-    score_choices = [6, 1, 2, 2, 6, 6, 6, 6, 3]
-    df['OUR_SCORE'] = np.select(we_score_conditions, score_choices, default=0)
-    df['THEIR_SCORE'] = np.select(they_score_conditions, score_choices, default=0)
+    score_choices = [6.0, 1.0, 2.0, 2.0, 6.0, 6.0, 6.0, 6.0, 3.0]
+    df['OUR_SCORE'] = np.select(we_score_conditions, score_choices, default=0.0)
+    df['THEIR_SCORE'] = np.select(they_score_conditions, score_choices, default=0.0)
     df['OUR_SCORE'] = df['OUR_SCORE'].cumsum()
     df['THEIR_SCORE'] = df['THEIR_SCORE'].cumsum()
     df['SCORE_DIFF'] = df['OUR_SCORE'] - df['THEIR_SCORE']
@@ -373,8 +366,9 @@ def hx(df: pd.DataFrame):
         df['QTR'] = df['QTR'].cumsum()
 
     except:
-        print('WARNING: Incomplete QTR entries. Deleting the column.')
-        df.drop(columns=['QTR'], inplace=True)
+        print('WARNING: Incomplete QTR entries. Filling with 0s. (Keeping the column).')
+        df['QTR'] = 0.0
+        # df.drop(columns=['QTR'], inplace=True)
 
     # print('Step 4: -> df=..\n', df)
 

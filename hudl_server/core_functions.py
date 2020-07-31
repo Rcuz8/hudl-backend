@@ -10,6 +10,7 @@ from src.main.core.ai.utils.data.Builder import huncho_data_bldr as bldr
 import hudl_server.helpers as helpers
 from src.main.core.ai.utils.data.hn import hx, odk_filter
 from uuid import uuid4 as gen_id
+from src.main.util.io import info, ok
 import json
 import datetime
 
@@ -87,7 +88,7 @@ def qa(name, names, datum, headers, client_id):
     print('Completed Data Quality Analysis.\n')
     print(analysis)
     db = firestore.client()
-    new_game_id = str(gen_id())
+    new_game_id = str(gen_id()).replace('-', '')
 
     for item in analysis:
         item['data'] = helpers.matrix_to_fb_data(item['data'])
@@ -143,7 +144,7 @@ async def generate_model(game_id, test_film_index, on_progress=None, data_overri
     data = [item['data'] for item in data]  # Unbox
     data = helpers.fb_data_to_matrix(data)  # Unbox (data itself)
 
-    print('Successfully unboxed firestore game data.')
+    ok('Successfully unboxed firestore game data.')
     await __update(on_progress, 10, 'Building first Model..')
 
     # Now let's split train/test
@@ -151,20 +152,23 @@ async def generate_model(game_id, test_film_index, on_progress=None, data_overri
     train = data
 
     # Compile the data      ===> TODO: Per-file h(n) for their vs. our film
-    model_1, model_2, model_3 = await  helpers.tri_build(train, test, on_progress, 10, 85)
+    models = await  helpers.tri_build(train, test, on_progress, 10, 85)
+    model_names = ['prealignform', 'postalignpt', 'postalignplay']
+    progress_pcts = [90, 95, 100]
+    progress_msgs = ['Deploying second Model..', 'Deploying third Model..', 'Done.']
 
-    print('Successfully built all models.')
+    ok('Successfully built all models.')
 
     game_id = ''.join(game_id.split('-'))
-    # Deploy the models
-    helpers.deploy_model(model_1.get_keras_model(), game_id, 'prealignform', nodeploy)
-    await __update(on_progress, 90, 'Deploying second Model.')
-    helpers.deploy_model(model_2.get_keras_model(), game_id, 'postalignpt', nodeploy)
-    await __update(on_progress, 95, 'Deploying third Model.')
-    helpers.deploy_model(model_3.get_keras_model(), game_id, 'postalignplay', nodeploy)
 
-    print('Successfully deployed all models.')
-    await __update(on_progress, 100, 'Done.')
+    # Deploy the models
+    for i in range(len(models)):
+        helpers.deploy_model(models[i].get_keras_model(), game_id, model_names[i],
+                             nodeploy, models[i].output_dictionary(), models[i].training_accuracies())
+        await __update(on_progress, progress_pcts[i], progress_msgs[i])
+
+    ok('Successfully deployed all models.')
+
     return 'OK'
 
 def __fetch_game(id, save_to=None):

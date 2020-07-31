@@ -4,6 +4,7 @@ from src.main.core.ai.utils.data.Imputer import Imputer
 from src.main.core.ai.utils.data.Input import Input
 from src.main.core.ai.utils.data.Utils import analyze_data_quality, rows
 from src.main.util.io import info
+import pandas as pd
 
 
 class huncho_data_bldr:
@@ -75,6 +76,19 @@ class huncho_data_bldr:
 
     def __compile_data(self, drop_non_io=True):
         info("-- Compiling Data --")
+        # Catch raw data mis-formatting
+        if self.data_format == 'raw' and \
+            self.training_files and len(self.training_files) > 0 and \
+            (not isinstance(self.training_files, list) or
+             not isinstance(self.training_files[0], list) or
+             not isinstance(self.training_files[0][0], list)):
+            raise Exception('builder.__compile_data() error Incorrect data formatting (Train Data).')
+        if self.data_format == 'raw' and \
+            self.test_files and len(self.test_files) > 0 and \
+            (not isinstance(self.test_files, list) or
+             not isinstance(self.test_files[0], list) or
+             not isinstance(self.test_files[0][0], list)):
+            raise Exception('builder.__compile_data() error Incorrect data formatting (Test Data).')
         self.training, in_params, out_params = self.data_gen_fn(
             self.training_files, self.input_params,self.output_params,
             self.parse_heuristic_fn,self.parse_tkns, self.impute_threshold, self.data_format,
@@ -82,11 +96,14 @@ class huncho_data_bldr:
             dont_remove_cols=self.protect_columns)
         # NOTE: Params CAN change here, may be an issue if data's getting deleted here too
         # NOTE UPDATE: Handled via ensure_column_compatibility(), although it's not ideal
-        self.test, self.input_params, self.output_params = self.data_gen_fn(
-            self.test_files, in_params, out_params,
-            self.parse_heuristic_fn,self.parse_tkns, self.impute_threshold,self.data_format,
-            self.per_file_heuristic_fn_test, injected_headers=self.injected_headers,
-            dont_remove_cols=self.protect_columns)
+        if self.test_files and len(self.test_files) > 0:
+            self.test, self.input_params, self.output_params = self.data_gen_fn(
+                self.test_files, in_params, out_params,
+                self.parse_heuristic_fn,self.parse_tkns, self.impute_threshold,self.data_format,
+                self.per_file_heuristic_fn_test, injected_headers=self.injected_headers,
+                dont_remove_cols=self.protect_columns)
+        else:
+            self.test = pd.DataFrame([], columns=self.training.columns)
 
         # Drop columns that are not IO (Optional)
         #   This step ensures the data will be keras-ready & not contain any extra columns
@@ -117,10 +134,10 @@ class huncho_data_bldr:
     # ================================
 
     def encoders(self):
-        training_input_encoders = self.training_result['encoders'][0]
-        training_output_encoders = self.training_result['encoders'][1]
-        test_input_encoders = self.test_result['encoders'][0]
-        test_output_encoders = self.test_result['encoders'][1]
+        training_input_encoders = self.training_result['encoders'][0] if self.training_result else None
+        training_output_encoders = self.training_result['encoders'][1] if self.training_result else None
+        test_input_encoders = self.test_result['encoders'][0] if self.test_result else None
+        test_output_encoders = self.test_result['encoders'][1] if self.test_result else None
         return \
             {
                 'train': (training_input_encoders, training_output_encoders),
@@ -128,10 +145,10 @@ class huncho_data_bldr:
             }
 
     def scalers(self):
-        training_input_scalers = self.training_result['scalers'][0]
-        training_output_scalers = self.training_result['scalers'][1]
-        test_input_scalers = self.test_result['scalers'][0]
-        test_output_scalers = self.test_result['scalers'][1]
+        training_input_scalers = self.training_result['scalers'][0] if self.training_result else None
+        training_output_scalers = self.training_result['scalers'][1] if self.training_result else None
+        test_input_scalers = self.test_result['scalers'][0] if self.test_result else None
+        test_output_scalers = self.test_result['scalers'][1] if self.test_result else None
         return \
             {
                 'train':  (training_input_scalers, training_output_scalers),
@@ -139,10 +156,10 @@ class huncho_data_bldr:
             }
 
     def relevent_dataframe_indices(self):
-        training_in_col_df_indices = self.training_result['df_index_lists'][0]
-        training_out_col_df_indices = self.training_result['df_index_lists'][1]
-        test_in_col_df_indices = self.test_result['df_index_lists'][0]
-        test_out_col_df_indices = self.test_result['df_index_lists'][1]
+        training_in_col_df_indices = self.training_result['df_index_lists'][0] if self.training_result else None
+        training_out_col_df_indices = self.training_result['df_index_lists'][1] if self.training_result else None
+        test_in_col_df_indices = self.test_result['df_index_lists'][0] if self.test_result else None
+        test_out_col_df_indices = self.test_result['df_index_lists'][1] if self.test_result else None
         return \
             {
                 'train': (training_in_col_df_indices, training_out_col_df_indices),
@@ -153,8 +170,11 @@ class huncho_data_bldr:
         return self.dataframe_columns
 
     def data(self):
-        return self.training_result['data'][0], self.training_result['data'][1], \
-               self.test_result['data'][0], self.test_result['data'][1]
+        return \
+            self.training_result['data'][0] if self.training_result else None, \
+            self.training_result['data'][1] if self.training_result else None, \
+            self.test_result['data'][0] if self.test_result else None, \
+            self.test_result['data'][1] if self.test_result else None
 
     def model_params(self):
         return Input.model_params(self.input_params, self.output_params, self.dictionary)
@@ -186,18 +206,22 @@ class huncho_data_bldr:
         return self
 
     def __train_on(self, filename):
+        # if len(self.training_files) > 0:
+        #     filename = [filename]
         self.training_files.append(filename)
         self.didCompile = False
         return self
 
     def and_train(self, filenames: list):
-        if not isinstance(filenames, list):
-            filenames = [filenames]
+        # if not isinstance(filenames, list):
+        #     filenames = [filenames]
         for file in filenames:
             self.__train_on(file)
         return self
 
     def __eval_on(self, filename):
+        # if len(self.test_files) > 0:
+        #     filename = [filename]
         self.test_files.append(filename)
         self.didCompile = False
         return self

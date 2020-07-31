@@ -31,7 +31,10 @@ class DataHandler:
         # Split & Encode data
         # NOTE: These are DENSE results, treat them with care
         training_result = du.split_and_encode_data(training_df, input_params,output_params, dictionary, boundaries)
-        test_result = du.split_and_encode_data(test_df, input_params,output_params, dictionary, boundaries)
+        if len(test_df) > 0:
+            test_result = du.split_and_encode_data(test_df, input_params, output_params, dictionary, boundaries)
+        else:
+            test_result = None
         return training_result, test_result, dictionary
 
 

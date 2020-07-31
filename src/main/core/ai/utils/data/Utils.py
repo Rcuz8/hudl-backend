@@ -660,8 +660,14 @@ def df_encode_and_scale_columns(df, _list, dictionary, boundaries):
             except:
                 exc_string = 'Cuz-handled Error. No boundaries generated for column (' + colname + ').'
                 raise Exception(exc_string)
-            scaler = custom_scaler(bounds[0], bounds[1])
-            G = scaler.transform([G])[0]  # Put into & take out of a list (to fit transform)
+            try:
+                scaler = custom_scaler(bounds[0], bounds[1])
+                G = scaler.transform([G])[0]  # Put into & take out of a list (to fit transform)
+            except:
+                msg = 'Failed to create scaler for (' + colname +')\n' + \
+                    'Boundaries=' + str(boundaries)
+                raise Exception(msg)
+
             scalers[colname] = scaler
         elif encode_as == 'one-hot':
             # convert integers to dummy variables (i.e. one hot encoded)

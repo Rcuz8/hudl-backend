@@ -34,6 +34,7 @@ class EZModel:
         self.optimal_layers = None
         self.optimal_lr = None
         self.predictor = None
+        self.__training_accuracies = None
 
 
     def build(self, use_optimized_dimensions=True, nlayers=7, lr=None, activation='relu', custom=False,
@@ -99,14 +100,19 @@ class EZModel:
         return self
 
 
-    # summarize the model
-
     def summarize(self):
         print(self.mb.model.summary())
         return self
 
     def get_keras_model(self):
         return self.mb.model
+
+    def output_dictionary(self):
+        """Dictionary for each output. For numerical, would need a similar output_scalers() function.
+        """
+        print('Outputs: ', self.output_column_names)
+        print('Dict   : ', self.dictionary)
+        return {col: self.dictionary[col] for col in self.output_column_names}
 
     @classmethod
     def __k_for(cls, epochs, num_notifications):
@@ -139,6 +145,8 @@ class EZModel:
 
         self.mb.fit(self.train_x, self.train_y,callback=callback,epochs=epochs,
                     repeats=repeats, folds=folds, batch_size=batch_size)
+
+        self.__training_accuracies = callback.accuracies()
 
         if (plot):
 
@@ -189,6 +197,13 @@ class EZModel:
         columns             = self.df_columns
         self.predictor = Predictor(model, input_encoders, output_encoders, input_scalers, output_scalers,
                                    in_col_df_indices, out_col_df_indices, dictionary, columns=columns)
+        return self
+
+    def training_accuracies(self):
+        return self.__training_accuracies
+
+    def set_training_accuracies(self, to):
+        self.__training_accuracies = to
         return self
 
     def eval(self):

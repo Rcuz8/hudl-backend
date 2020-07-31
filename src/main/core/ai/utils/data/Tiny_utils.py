@@ -60,7 +60,12 @@ def nones_to_nans(df: pd.DataFrame):
 def dfs_from_raw(datalist:list, headers):
     if not isinstance(datalist[0][0], list):
         datalist = [datalist]
-    return [pd.DataFrame(data=data, columns=headers) for data in datalist]
+
+    dfs = []
+    for data in datalist:
+        dfs.append(pd.DataFrame(data=data, columns=headers))
+
+    return dfs
 
 def dfs_from_sources(sources:list, src_data_type, injected_headers=None,json_parse_tkns=[',', '\n']):
     if src_data_type == 'json':

@@ -61,15 +61,14 @@ class Dropper:
                 raise ValueError('Dropper filtered out a relevant column! Either adjust impute_threshold,'
                                 ' turn off impute, or disable \'throw_if_dropped_relevant_column\'.')
             else:
-                warn('Dropper filtered out a relevant column! Either adjust impute_threshold,'
-                                ' turn off impute, or disable \'throw_if_dropped_relevant_column\'.')
+                warn('Dropper filtered out a relevant column! To avoid this, lower impute_threshold,')
         if (new_out_params != output_params and throw_if_dropped_relevant_column):
             if throw_if_dropped_relevant_column:
                 raise ValueError('Dropper filtered out a relevant column! Either adjust impute_threshold,'
                                 ' turn off impute, or disable \'throw_if_dropped_relevant_column\'.')
             else:
-                warn('Dropper filtered out a relevant column! Either adjust impute_threshold,'
-                                ' turn off impute, or disable \'throw_if_dropped_relevant_column\'.')
+                warn('Dropper filtered out a relevant column! To avoid this, lower impute_threshold,')
+
         return new_in_params, new_out_params
 
     @classmethod
@@ -91,14 +90,15 @@ class Dropper:
             colname, _, _ = input_params[i]
             if colname not in df1.columns or colname not in df2.columns:
                 input_params.pop(i)
-                warn(' (Handled by dropping column) Dropper filtered out a relevant column (' + colname + ')! Either adjust impute_threshold,'
-                                     ' turn off impute, or disable \'throw_if_dropped_relevant_column\'.')
+                warn('Dropper.ensure_column_compatibility() safely filtered out a relevant column (' + colname +
+                     ')! To avoid this, lower impute_threshold.')
+
         for i in range(len(output_params)-1):
             colname, _, _ = output_params[i]
             if colname not in df1.columns or colname not in df2.columns:
                 output_params.pop(i)
-                warn(' (Handled by dropping column) Dropper filtered out a relevant column (' + colname + ')! Either adjust impute_threshold,'
-                                     ' turn off impute, or disable \'throw_if_dropped_relevant_column\'.')
+                warn('Dropper.ensure_column_compatibility() safely filtered out a relevant column (' + colname +
+                     ')! To avoid this, lower impute_threshold.')
 
     @classmethod
     def drop_cols(cls, df: pd.DataFrame, cols):

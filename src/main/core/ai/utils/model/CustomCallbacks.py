@@ -34,11 +34,56 @@ class ProgressCallback(tf.keras.callbacks.Callback):
         self.test_y = test_y
         return self
 
-    def add_col(self,col):
+    def add_col(self,col): # Add ROW
         if self.evals is None:
-            self.evals = pd.DataFrame(columns=self.model_.metrics_names)
+            self.evals = pd.DataFrame(columns=['epoch'] + self.model_.metrics_names)
             info('Created callbacks attribute "evals" = (DataFrame)')
-        self.evals.loc[len(self.evals.index)] = col
+        self.evals.loc[len(self.evals.index)] = [self.n] + col
+
+    def accuracies(self):
+        """Gets the accuracies.
+
+        Example/Test:
+
+            import pandas as pd
+
+            class X:
+                def __init__(self):
+                    self.evals = pd.DataFrame({'epoch': [1,2,3], 'test_accuracy': [4,5,6], 'shouldNotInclude': [7,8,9]})
+                def accuracies(self):
+                    acc_cols = [col for col in self.evals.columns if col.lower().find('accuracy') >= 0]
+
+                    accs = {'epoch': self.evals['epoch'].values.tolist()}
+                    for col in acc_cols:
+                        accs[col] = self.evals[col].values.tolist()
+
+                    return accs
+
+            print(X().accuracies()) # {'epoch': [1, 2, 3], 'test_accuracy': [4, 5, 6]}
+
+        """
+        try:
+            acc_cols = [col for col in self.evals.columns if col.lower().find('accuracy') >= 0]
+        except:
+            return None # No test data
+
+        accs = {'epoch': self.evals['epoch']}
+        for col in acc_cols:
+            accs[col] = self.evals[col]
+
+        return accs
+
+    def __label_for(self, col):
+        cl = col.lower()
+        if cl == 'accuracy':
+            return 'Total Accuracy'
+        if cl == 'loss':
+            return 'Total Loss'
+        if cl.find('_accuracy') >= 0:
+            return cl[0:cl.find('_accuracy')]
+        if cl.find('_loss') >= 0:
+            return cl[0:cl.find('_loss')]
+        raise Exception('Modeler label_for() : Cannot find label for ', col)
 
     def dismiss_k(self):
         self.use_k = False
