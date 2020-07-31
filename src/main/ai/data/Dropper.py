@@ -21,7 +21,7 @@ class Dropper:
         :param input_params: [('A', 'Col A', 'int'), ('B', 'Bee', 'one-hot'), ...]
         :param output_params: [('C', 'Cee', 'int'), ('D', 'D col', 'one-hot'), ...]
         '''
-        print('drop_unused_columns() Protected columns: ', dont_remove_cols)
+        info('drop_unused_columns() Protected columns: ', dont_remove_cols)
 
         relevent_columns = [colname for colname, ptxtname, enc in input_params]
         relevent_columns.extend([colname for colname, ptxtname, enc in output_params])
@@ -32,8 +32,8 @@ class Dropper:
     def drop_irrelevent_columns(cls, df:pd.DataFrame, relevent_columns,dont_remove_cols=[]):
         if relevent_columns is None or len(relevent_columns) == 0:
             raise ValueError('Didnt provide relevent columns to be dropped.')
-        print('drop_irrelevent_columns() should not drop the following relevent columns : ', relevent_columns)
-        print('                                      or the following protected columns : ', dont_remove_cols)
+        info('drop_irrelevent_columns() should not drop the following relevent columns : ', relevent_columns)
+        info('                                      or the following protected columns : ', dont_remove_cols)
         drp = []
         for header in df.columns:
             if header not in relevent_columns and header not in dont_remove_cols:

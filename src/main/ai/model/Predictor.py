@@ -1,7 +1,7 @@
 import numpy as np
 import keras
-import src.main.core.ai.utils.data.Utils as du
-from heapq import nlargest
+import src.main.ai.data.Utils as du
+
 
 class Predictor:
 

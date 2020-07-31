@@ -1,16 +1,13 @@
 
 # Firebase Init
-from hudl_server.Cloud import bucket, LOCAL
-from firebase_admin import firestore, initialize_app, auth, get_app, credentials, storage
-
-
-from constants import relevent_data_columns_configurations as column_configs, QuickParams, \
-    model_gen_configs
-from src.main.core.ai.utils.data.Builder import huncho_data_bldr as bldr
+from hudl_server.Cloud import LOCAL
+from firebase_admin import firestore, auth, get_app
+from constants import relevent_data_columns_configurations as column_configs, QuickParams
+from src.main.ai.data.Builder import huncho_data_bldr as bldr
 import hudl_server.helpers as helpers
-from src.main.core.ai.utils.data.hn import hx, odk_filter
+from src.main.ai.data.hn import hx, odk_filter
 from uuid import uuid4 as gen_id
-from src.main.util.io import info, ok
+from src.main.util.io import ok
 import json
 import datetime
 
@@ -185,6 +182,21 @@ def __save_json(data : dict, path: str, local_check=True):
             path = path.replace('hudl_server/', '')
     with open(path, 'w+') as fp:
         json.dump(data, fp)
+
+def sv():
+    import keras
+    model = keras.models.Sequential(
+        [
+            keras.layers.Dense(128,input_shape=(10,)),
+            keras.layers.ReLU(),
+            keras.layers.Dropout(0.2),
+            keras.layers.Dense(64),
+            keras.layers.ReLU(),
+            keras.layers.Dense(20)
+        ])
+    model.compile(loss='mse')
+    # model.fit([[1,2,3]] * 10, [[1,2,3]] * 10, batch_size=2)
+    helpers.sv(model, 'prealignform')
 
 # def fetch_model(id: str):
 #     return storage.storag

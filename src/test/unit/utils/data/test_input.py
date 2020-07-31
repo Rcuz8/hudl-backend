@@ -1,8 +1,7 @@
-from src.main.core.ai.utils.data.Input import Input as inp
+from src.main.ai.data.Input import Input as inp
 import unittest as u
 import src.test.utils as test
 import pandas as pd
-import numpy as np
 
 
 class Aux:

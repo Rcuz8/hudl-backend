@@ -1,12 +1,12 @@
-from src.main.core.ai.utils.model import CustomCallbacks
-from src.main.core.ai.utils.data.Builder import huncho_data_bldr
-from src.main.core.ai.utils.model.Builder import MB
+from src.main.ai.model import CustomCallbacks
+from src.main.ai.data.Builder import huncho_data_bldr
+from src.main.ai.model.Builder import MB
 import matplotlib.pyplot as pyplot
-import numpy as np
+from src.main.util.io import info, ok
 import optuna
 import keras
 
-from src.main.core.ai.utils.model.Predictor import Predictor
+from src.main.ai.model.Predictor import Predictor
 
 
 class EZModel:
@@ -110,8 +110,6 @@ class EZModel:
     def output_dictionary(self):
         """Dictionary for each output. For numerical, would need a similar output_scalers() function.
         """
-        print('Outputs: ', self.output_column_names)
-        print('Dict   : ', self.dictionary)
         return {col: self.dictionary[col] for col in self.output_column_names}
 
     @classmethod
@@ -132,8 +130,7 @@ class EZModel:
 
     def train(self, epochs=1000, plot=False, batch_size=8,
               notif_every=50, on_update=None):
-        print('BEGIN TRAINING:')
-        print()
+        info('\nBegin Training.')
 
         callback = CustomCallbacks.ProgressCallback(epochs, k=notif_every, batch_size=batch_size) \
             .add_test_info(self.mb.model, self.test_x, self.test_y)\

@@ -1,6 +1,6 @@
 import numpy  as np
 import pandas as pd
-
+from src.main.util.io import warn, info
 import constants
 
 THEIR_FILMS_TR = constants.THEIR_FILMS_TR
@@ -366,7 +366,7 @@ def hx(df: pd.DataFrame):
         df['QTR'] = df['QTR'].cumsum()
 
     except:
-        print('WARNING: Incomplete QTR entries. Filling with 0s. (Keeping the column).')
+        warn('Incomplete (QTR) entries. Filling with 0s. (Keeping the column).')
         df['QTR'] = 0.0
         # df.drop(columns=['QTR'], inplace=True)
 

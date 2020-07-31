@@ -1,6 +1,5 @@
 from constants import sample_data as data, model_gen_configs as configs, data_headers
-import src.main.core.ai.utils.data.Utils as utils
-import src.main.core.ai.utils.data.Tiny_utils as tiny
+import src.main.ai.data.Tiny_utils as tiny
 import src.test.utils as test
 import unittest as u
 import pandas as pd
@@ -8,8 +7,8 @@ import numpy as np
 
 config = configs.post_align_play.io
 frame = pd.DataFrame(data, columns=data_headers)
-data_dict = utils.build_dictionary_for(frame)
-data_bounds = utils.build_boundaries_for(frame)
+data_dict = Utils.build_dictionary_for(frame)
+data_bounds = Utils.build_boundaries_for(frame)
 
 class TestUtils(u.TestCase):
 
@@ -23,7 +22,7 @@ class TestUtils(u.TestCase):
         in_params = [('A', 'Col A', 'int')]
         out_params = [('B', 'Col B', 'int'), ('C', 'Col C', 'one-hot')]
 
-        splits = utils.missing_data_splits(tr, in_params, out_params)
+        splits = Utils.missing_data_splits(tr, in_params, out_params)
         self.assertEqual(len(splits), 2, 'There are 2 in/out split sets for 2 missing-data columns')
 
         ins, outs = splits[0]
@@ -38,7 +37,7 @@ class TestUtils(u.TestCase):
 
         # Drop Scarce Columns
 
-        actual = utils.df_power_wash(test.frame.copy(), test.inputs.copy(), test.outputs.copy(), test.double,
+        actual = Utils.df_power_wash(test.frame.copy(), test.inputs.copy(), test.outputs.copy(), test.double,
                                      relevent_columns_override=test.columns.copy(), drop_scarce_columns=False)
 
         expected = pd.DataFrame ([['aa',    2.0,       4.0,     6.0]], columns=test.columns)
@@ -47,7 +46,7 @@ class TestUtils(u.TestCase):
 
         # Don't Drop Scarce Columns
 
-        actual = utils.df_power_wash(test.frame, test.inputs, test.outputs, test.double,
+        actual = Utils.df_power_wash(test.frame, test.inputs, test.outputs, test.double,
                                      relevent_columns_override=test.columns, drop_scarce_columns=True)
 
         expected_columns = test.columns.copy()
@@ -66,7 +65,7 @@ class TestUtils(u.TestCase):
 
         # Dropping columns
 
-        actual = utils.analyze_data_quality(
+        actual = Utils.analyze_data_quality(
             sources=[test.data.copy()],
             injected_headers=test.columns,
             preprocessing_fn=test.double,
@@ -91,7 +90,7 @@ class TestUtils(u.TestCase):
 
          # Not dropping columns
 
-        actual = utils.analyze_data_quality(
+        actual = Utils.analyze_data_quality(
             sources=[test.data.copy()],
             injected_headers=test.columns,
             preprocessing_fn=test.double,

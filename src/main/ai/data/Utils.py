@@ -6,9 +6,9 @@ from heapq import nlargest
 import pandas as pd
 import numpy as np
 
-from src.main.core.ai.utils.data.Tiny_utils import custom_scaler, dfs_from_sources
-from src.main.core.ai.utils.data.Dropper import Dropper
-from src.main.util.io import info, err, warn
+from src.main.ai.data.Tiny_utils import custom_scaler, dfs_from_sources
+from src.main.ai.data.Dropper import Dropper
+from src.main.util.io import info, warn
 
 
 #  -----------------------

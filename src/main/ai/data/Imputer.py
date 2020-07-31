@@ -1,9 +1,9 @@
-from src.main.core.ai.utils.data.Aggregator import DataHandler
-from src.main.core.ai.utils.data.Input import Input
-from src.main.core.ai.utils.data.Dropper import Dropper
-from src.main.core.ai.utils.data.Sanitizer import sanitize_output
-import src.main.core.ai.utils.data.Utils as du
-from src.main.core.ai.utils.model.Builder import MB
+from src.main.ai.data.Aggregator import DataHandler
+from src.main.ai.data.Input import Input
+from src.main.ai.data.Dropper import Dropper
+from src.main.ai.data.Sanitizer import sanitize_output
+import src.main.ai.data.Utils as du
+from src.main.ai.model.Builder import MB
 import pandas as pd
 
 

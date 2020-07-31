@@ -1,9 +1,6 @@
-from src.main.core.ai.utils.data.Input import Input as inp
-from src.main.core.ai.utils.data.Builder import huncho_data_bldr as bldr
+from src.main.ai.data.Builder import huncho_data_bldr as bldr
 import unittest as u
 import src.test.utils as test
-import pandas as pd
-import numpy as np
 
 
 def matrix_to_keras_output(matrix, outputs):

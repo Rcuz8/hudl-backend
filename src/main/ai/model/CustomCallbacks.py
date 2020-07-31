@@ -2,14 +2,18 @@ import tensorflow as tf
 from tqdm import tqdm
 import pandas as pd
 from constants import experiment
-from src.main.util.io import info, ok, err
+from src.main.util.io import info, ok, err, get_log_level
 
 class ProgressCallback(tf.keras.callbacks.Callback):
 
     def __init__(self, epochs, cb=None, k=20, is_auxilary=False, batch_size=8):
         self.epochs = epochs
         self.n = 0
-        self.pbar = tqdm(total=epochs) if not is_auxilary else None
+        if get_log_level() > 0:
+            self.pbar = tqdm(total=epochs) if not is_auxilary else None
+        else:
+            # print('Omitting Training Feedback. (log='+str(get_log_level())+')')
+            self.pbar = None
         if self.pbar is not None:
             self.pbar.set_description('\nTraining Model.       ')
         self.k = k
@@ -113,11 +117,11 @@ class ProgressCallback(tf.keras.callbacks.Callback):
             if (epoch % self.k == 0 or epoch == self.epochs):
                 if self.pbar is not None:
                     self.pbar.update(self.k)
-                    self.trigger_update_fn()
+                self.trigger_update_fn(done=(self.epochs == epoch))
                 if (self.cb is not None and not self.is_auxilary):
                     self.cb(epoch)
                 if self.test_x is not None:
-                    evaluation = self.model_.evaluate(self.test_x,self.test_y,verbose=2)
+                    evaluation = self.model_.evaluate(self.test_x,self.test_y,verbose=0)
                     self.eval_results.append(evaluation)
 
                     self.add_col(evaluation)
@@ -127,7 +131,7 @@ class ProgressCallback(tf.keras.callbacks.Callback):
         else:
             if self.pbar is not None:
                 self.pbar.update(self.k)
-                self.trigger_update_fn()
+            self.trigger_update_fn(done=(self.epochs == epoch))
             if (self.cb is not None and not self.is_auxilary):
                 self.cb(epoch)
             if self.test_x is not None:
@@ -135,10 +139,10 @@ class ProgressCallback(tf.keras.callbacks.Callback):
                 if (experiment is not None):
                     experiment.log_metrics(evaluation,epoch=epoch)
                     self.eval_results.append(evaluation)
-        if abs(self.epochs - epoch) <= 2:
+
+        if self.epochs == epoch:
             if self.pbar is not None:
                 self.pbar.update(self.k)
-                self.trigger_update_fn(done=True)
                 self.pbar.set_description('\nCompleted Training.   ')
                 self.pbar.close()
                 self.model.stop_training = True

@@ -1,12 +1,13 @@
 import hudl_server.core_functions as core
 from unittest import TestCase as Test
-from src.main.util.io import info, ok
+from src.main.util.io import info, ok, set_log_level
 import asyncio
 def updated(pct, msg):
-    note = '\nReceived Update Notification (' + str(round(pct))+'%' + ') ' + msg
+    note = ' (' + str(round(pct))+'%' + ') ' + msg
     ok(note)
 
-
+# Set Log Level
+set_log_level(0)
 
 class Tester(Test):
 
@@ -33,6 +34,11 @@ class Tester(Test):
                 loop.run_until_complete(
                     core.generate_model(game_id, nfilms - 1, updated, data_override=data, nodeploy=True))
                 print('Done')
+
+    def test_sv(self):
+        core.sv()
+
+
 
 
 # async def test_generate_model():
@@ -62,9 +68,9 @@ class Tester(Test):
 
 
 
-#
-# import tensorflowjs as tfjs
-# model = tfjs.converters.load_keras_model('postalignplay/model.json')
+
+
+
 # print(model.summary())
 # for layer in model.layers:
 #     print('Layer: ', layer.name)

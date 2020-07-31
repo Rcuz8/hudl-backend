@@ -1,4 +1,4 @@
-import src.main.core.ai.utils.data.Aggregator as DataHandler
+import src.main.ai.data.Aggregator as DataHandler
 import unittest
 import pandas as pd
 import numpy as np

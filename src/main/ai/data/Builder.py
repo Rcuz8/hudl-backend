@@ -1,8 +1,8 @@
-from src.main.core.ai.utils.data.Aggregator import DataHandler
-from src.main.core.ai.utils.data.Dropper import Dropper
-from src.main.core.ai.utils.data.Imputer import Imputer
-from src.main.core.ai.utils.data.Input import Input
-from src.main.core.ai.utils.data.Utils import analyze_data_quality, rows
+from src.main.ai.data.Aggregator import DataHandler
+from src.main.ai.data.Dropper import Dropper
+from src.main.ai.data.Imputer import Imputer
+from src.main.ai.data.Input import Input
+from src.main.ai.data.Utils import analyze_data_quality, rows
 from src.main.util.io import info
 import pandas as pd
 
@@ -114,10 +114,10 @@ class huncho_data_bldr:
 
         self.didCompile = True
         info("-- Done Compiling Data --")
-        print('Quick Compile metrics:')
-        print('\tTrain data: ', rows(self.training), 'rows')
+        info('Quick Compile metrics:')
+        info('\tTrain data: ', rows(self.training), 'rows')
         # print(self.training)
-        print('\tTest data : ', rows(self.test), 'rows')
+        info('\tTest data : ', rows(self.test), 'rows')
         # print(self.test)
         return self
 

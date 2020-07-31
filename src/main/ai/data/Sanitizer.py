@@ -1,5 +1,5 @@
-from src.main.core.ai.utils.model.Predictor import Predictor
-from src.main.core.ai.utils.data.Utils import mc
+from src.main.ai.model.Predictor import Predictor
+from src.main.ai.data.Utils import mc
 import pandas as pd
 
 def sanitize_output(old_df:pd.DataFrame, curr_df:pd.DataFrame, model, se_result, output_params, dictionary):

@@ -1,4 +1,4 @@
-import src.main.core.ai.utils.data.Utils as du
+import src.main.ai.data.Utils as du
 import pandas as pd
 
 class DataHandler:

@@ -1,6 +1,5 @@
-import src.main.core.ai.utils.data.Utils as du
-import src.main.core.ai.utils.data.Tiny_utils as tu
-from src.main.core.ai.utils.data.Dropper import Dropper
+import src.main.ai.data.Utils as du
+import src.main.ai.data.Tiny_utils as tu
 from src.main.util.io import info
 import pandas as pd
 
@@ -163,7 +162,7 @@ class Input:
                     item_unique_values = len(value)  # Get item's unique values
 
                 if name not in inputs:
-                    print('Getting activation for (', name, ')')
+                    info('Getting activation for (', name, ')')
                     try:
                         item_activation = activation[name]  # Get item's activation
                     except:
