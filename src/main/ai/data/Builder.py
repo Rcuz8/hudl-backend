@@ -2,6 +2,7 @@ from src.main.ai.data.Aggregator import DataHandler
 from src.main.ai.data.Dropper import Dropper
 from src.main.ai.data.Imputer import Imputer
 from src.main.ai.data.Input import Input
+from src.main.ai.data.Utils import build_boundaries_for, build_dictionary_for
 from src.main.ai.data.Utils import analyze_data_quality, rows
 from src.main.util.io import info
 import pandas as pd
@@ -22,6 +23,7 @@ class huncho_data_bldr:
         self.training = None
         self.test = None
         self.dictionary = None
+        self.boundaries = None
         self.training_result = None
         self.test_result = None
         self.training_files = []
@@ -53,7 +55,7 @@ class huncho_data_bldr:
 
         Dropper.ensure_column_compatibility(self.training, self.test, self.input_params, self.output_params)
         training_result, test_result, dictionary = DataHandler.split_and_encode(self.training, self.test,
-                self.input_params, self.output_params, self.dictionary)
+                self.input_params, self.output_params, self.dictionary, self.boundaries)
         self.training_result = training_result
         self.test_result = test_result
         self.dictionary = dictionary
@@ -68,6 +70,30 @@ class huncho_data_bldr:
                                         preprocessing_fn=preprocessing_fn,
                                         relevent_columns_configs=self.relevent_columns_override,
                                         data_format=self.data_format)
+
+    def build_full_dict_and_scalers_only(self):
+        # Catch raw data mis-formatting
+        if self.data_format == 'raw' and \
+                self.training_files and len(self.training_files) > 0 and \
+                (not isinstance(self.training_files, list) or
+                 not isinstance(self.training_files[0], list) or
+                 not isinstance(self.training_files[0][0], list)):
+            self.training_files = [self.training_files]
+        if self.data_format == 'raw' and \
+                self.test_files and len(self.test_files) > 0 and \
+                (not isinstance(self.test_files, list) or
+                 not isinstance(self.test_files[0], list) or
+                 not isinstance(self.test_files[0][0], list)):
+            self.test_files = [self.test_files]
+
+
+        frame = self.data_gen_fn(
+            self.training_files + self.test_files, self.input_params, self.output_params,
+            self.parse_heuristic_fn, self.parse_tkns, self.impute_threshold, self.data_format,
+            self.per_file_heuristic_fn_train, injected_headers=self.injected_headers,
+            dont_remove_cols=self.protect_columns,skip_clean=True)
+
+        return build_dictionary_for(frame), build_boundaries_for(frame)
 
 
     # ==============================
@@ -94,8 +120,6 @@ class huncho_data_bldr:
             self.parse_heuristic_fn,self.parse_tkns, self.impute_threshold, self.data_format,
             self.per_file_heuristic_fn_train, injected_headers=self.injected_headers,
             dont_remove_cols=self.protect_columns)
-        # NOTE: Params CAN change here, may be an issue if data's getting deleted here too
-        # NOTE UPDATE: Handled via ensure_column_compatibility(), although it's not ideal
         if self.test_files and len(self.test_files) > 0:
             self.test, self.input_params, self.output_params = self.data_gen_fn(
                 self.test_files, in_params, out_params,
@@ -244,6 +268,14 @@ class huncho_data_bldr:
 
     def with_parse_tkns(self, to):
         self.parse_tkns = to
+        return self
+
+    def with_dict(self, dictionary):
+        self.dictionary = dictionary
+        return self
+
+    def with_bounds(self, boundaries):
+        self.boundaries = boundaries
         return self
 
 

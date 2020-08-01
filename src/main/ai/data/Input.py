@@ -1,6 +1,6 @@
 import src.main.ai.data.Utils as du
 import src.main.ai.data.Tiny_utils as tu
-from src.main.util.io import info
+from src.main.util.io import info, warn
 import pandas as pd
 
 
@@ -36,7 +36,7 @@ class Input:
                    addtl_heuristic_fn=None, parse_tkns=[',', '!!!'],
                    impute_threshold=0.5,data_format='json', per_file_heuristic_fn=None,
                    injected_headers=None, relevent_columns_override=None,
-                   dont_remove_cols=[], drop_scarce_columns=False):
+                   dont_remove_cols=[], drop_scarce_columns=False, skip_clean=False):
         """Generates one clean DataFrame from all the source's data.
 
         Parameters
@@ -98,20 +98,21 @@ class Input:
         # 2. Merge  (all dataframes)
         df = pd.concat(dfs)
 
+        if not skip_clean:
+            result = du.df_power_wash(df=df,
+                                    input_params=input_params,
+                                    output_params=output_params,
+                                    addtl_heuristic_fn=addtl_heuristic_fn,
+                                    impute_threshold=impute_threshold,
+                                    relevent_columns_override=relevent_columns_override,
+                                    dont_remove_cols=dont_remove_cols,
+                                    drop_scarce_columns=drop_scarce_columns
+                                    )
+            info('-- Done Generating aggregate dataframe --')
+            return result
+        else:
+            return df
 
-        result = du.df_power_wash(df=df,
-                                input_params=input_params,
-                                output_params=output_params,
-                                addtl_heuristic_fn=addtl_heuristic_fn,
-                                impute_threshold=impute_threshold,
-                                relevent_columns_override=relevent_columns_override,
-                                dont_remove_cols=dont_remove_cols,
-                                drop_scarce_columns=drop_scarce_columns
-                                )
-
-        info('-- Done Generating aggregate dataframe --')
-
-        return result
 
 
     @classmethod
@@ -136,6 +137,7 @@ class Input:
         """
 
         inputs = [col for col, _, _ in input_params]
+        outputs = [col for col, _, _ in output_params]
 
         # 2. Get each column's activation fn
         activation = Helper.activationize(output_params)
@@ -158,6 +160,12 @@ class Input:
                 name = item[0]  # column name
                 value = item[1]  # column uniques
                 item_unique_values = 1
+
+                warn('NEW: Added dictionary=Superset of params handling in Input.gen_agg(). '
+                     'This may F stuff up somewhere.')
+                if name not in inputs and name not in outputs:
+                    continue
+
                 if value is not None:
                     item_unique_values = len(value)  # Get item's unique values
 

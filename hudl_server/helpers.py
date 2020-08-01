@@ -16,28 +16,35 @@ import time
 # |      CORE - PRIVATE      |
 # ============================
 
-def __dual_builders(config, train, test):
+def dbld(config, train, test, dictionary=None, boundaries=None):
+    return bldr(config.io.inputs.eval(), config.io.outputs.eval()) \
+        .with_type('raw') \
+        .with_iterating_adjuster(hx) \
+        .with_heads(data_headers_transformed) \
+        .with_protected_columns(data_columns_KEEP) \
+        .with_dict(dictionary)\
+        .with_bounds(boundaries)\
+        .and_train(train) \
+        .and_eval(test) \
+        .prepare(impute=False)
+
+def __dual_builders(config, train, test, dictionary=None, boundaries=None):
     """Returns both compiled configs ( Train + Test ) & ( Train-only ) """
-    val1 = bldr(config.io.inputs.eval(), config.io.outputs.eval()) \
-            .with_type('raw') \
-            .with_iterating_adjuster(hx) \
-            .with_heads(data_headers_transformed) \
-            .with_protected_columns(data_columns_KEEP) \
-            .and_train(train) \
-            .and_eval(test) \
-            .prepare(impute=False)
-    val2 = bldr(config.io.inputs.eval(), config.io.outputs.eval()) \
-            .with_type('raw') \
-            .with_iterating_adjuster(hx) \
-            .with_heads(data_headers_transformed) \
-            .with_protected_columns(data_columns_KEEP) \
-            .and_train(train) \
-            .and_train(test) \
-            .prepare(impute=False)
+    val1 = dbld(config, train, test, dictionary, boundaries)
+    val2 = dbld(config, train, test, dictionary, boundaries)
+
     return val1, val2
 
+def __get_dictionary_and_bounds(train, test):
+    return bldr.empty().with_type('raw') \
+        .with_iterating_adjuster(hx) \
+        .with_heads(data_headers_transformed) \
+        .with_protected_columns(data_columns_KEEP) \
+        .and_train(train) \
+        .and_eval(test) \
+        .build_full_dict_and_scalers_only()
 
-async def __build_dual_model(config, train, test, update_params, update_msg):
+async def __build_dual_model(config, train, test, update_params, update_msg, dictionary=None, boundaries=None):
     if not isinstance(train, list) or not isinstance(train[0], list) or not isinstance(train[0][0], list):
         train = [train]
     if not isinstance(test, list) or not isinstance(test[0], list) or not isinstance(test[0][0], list):
@@ -54,7 +61,7 @@ async def __build_dual_model(config, train, test, update_params, update_msg):
     handle_production_update = lambda pct: partial_update(prod_update_params, pct, update_msg + '  ( 2/2 )')
 
     # Build the data
-    train_test_bldr, train_only_bldr = __dual_builders(config, train, test)
+    train_test_bldr, train_only_bldr = __dual_builders(config, train, test, dictionary, boundaries)
 
     info('Compiling Training/Evaluation Build.')
     tic = time.perf_counter()
@@ -115,16 +122,18 @@ async def tri_build(train, test, on_update, status_start, status_end):
     interval = (status_end - status_start) / 3
     intervals = [status_start, status_start + (1 * interval),
                  status_start + (2 * interval), status_start + (3 * interval)]
+    # Build dictionary
+    full_dictionary, full_bounds = __get_dictionary_and_bounds(train, test)
     # Build the models ( 3 x 2 )
     model_1 = await __build_dual_model(model_gen_configs.pre_align_form, train, test,
                               [on_update, intervals[0], intervals[1]],
-                              'Building first Model..')
+                              'Building first Model..',full_dictionary, full_bounds)
     model_2 = await __build_dual_model(model_gen_configs.post_align_pt, train, test,
                               [on_update, intervals[1], intervals[2]],
-                              'Building second Model.')
+                              'Building second Model.', full_dictionary, full_bounds)
     model_3 = await __build_dual_model(model_gen_configs.post_align_play, train, test,
                               [on_update, intervals[2], intervals[3]],
-                              'Building third Model. ')
+                              'Building third Model. ', full_dictionary, full_bounds)
 
     return model_1, model_2, model_3
 
@@ -145,6 +154,9 @@ def sv(model: keras.Model, model_name):
     # if temp.exists() and temp.is_dir():
     #     delete(temp)
     ok(' Saved model.')
+
+
+
 
 
 # ============================
