@@ -28,13 +28,17 @@ def purple(*args):
 def pink(*args):
     __fore_print(95, args)
 
+def grn(*args):
+    __fore_print(92, args)
+
 def err(*args):
     s = ''
     for arg in args:
         s += str(arg) + ' '
     print(Fore.RED + 'ERR: ' + s)
 
-ok = lgtblue
+ok = grn
+
 def info(*args):
     global __log_lvl
     if __log_lvl > 1:
@@ -54,6 +58,9 @@ def __fore_print(code, args):
     s = ''
     for arg in args:
         s += str(arg) + ' '
-    print('\33[{}m'.format(code) + s)
+
+    # print('\u001b[32;1m' + 'hi')
+    print('\33[{};1m'.format(code) + s)
+    # print('\33[{}m'.format(code) + s)
 
 

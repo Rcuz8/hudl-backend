@@ -20,12 +20,20 @@ except:
         })
         LOCAL = True
     except:
-        # From test directory -> svr
-        cred = credentials.Certificate('../../../../hudl_server/fbpk.json')
-        initialize_app(cred, {
-            'storageBucket': 'hudpred.appspot.com'
-        })
-        LOCAL = False
+        try:
+            # From test directory -> svr
+            cred = credentials.Certificate('../../../../hudl_server/fbpk.json')
+            initialize_app(cred, {
+                'storageBucket': 'hudpred.appspot.com'
+            })
+            LOCAL = False
+        except:
+            # From test directory -> svr
+            cred = credentials.Certificate('../../../../../hudl_server/fbpk.json')
+            initialize_app(cred, {
+                'storageBucket': 'hudpred.appspot.com'
+            })
+            LOCAL = False
 
 # App
 

@@ -2,13 +2,15 @@ import numpy as np
 from src.main.ai.data.Builder import huncho_data_bldr as bldr
 from src.main.ai.model.EZModel import EZModel as network
 import tensorflowjs as tfjs
+from firebase_admin import firestore
 from constants import data_headers_transformed, data_columns_KEEP, model_gen_configs
 from src.main.ai.data.hn import hx
-from src.main.util.io import info
+from src.main.util.io import info, ok, get_log_level
+from hudl_server.Cloud import bucket
 import keras
 import random
 import string
-
+import time
 
 # ============================
 # |      CORE - PRIVATE      |
@@ -55,18 +57,23 @@ async def __build_dual_model(config, train, test, update_params, update_msg):
     train_test_bldr, train_only_bldr = __dual_builders(config, train, test)
 
     info('Compiling Training/Evaluation Build.')
+    tic = time.perf_counter()
     training_network = network(train_test_bldr) \
         .build(custom=True, custom_layers=config.keras.dimensions.eval(),
                optimizer=config.keras.learn_params.eval()[0], forceSequential=True) \
-        .train(config.keras.learn_params.eval()[1], batch_size=5, notif_every=10,on_update=handle_training_update)
-
+        .train(config.keras.learn_params.eval()[1], batch_size=5, notif_every=20,on_update=handle_training_update)
+    toc = time.perf_counter()
+    info('Model trained in ', round(toc - tic, 2), 'seconds.')
     training_accuracies = training_network.training_accuracies()
 
     info('Compiling Production Build.')
+    tic = time.perf_counter()
     production_network = network(train_only_bldr) \
         .build(custom=True, custom_layers=config.keras.dimensions.eval(),
                optimizer=config.keras.learn_params.eval()[0], forceSequential=True) \
-        .train(config.keras.learn_params.eval()[1], batch_size=5, notif_every=10, on_update=handle_production_update)
+        .train(config.keras.learn_params.eval()[1], batch_size=5, notif_every=20, on_update=handle_production_update)
+    toc = time.perf_counter()
+    info('Model trained in ', round(toc - tic, 2), 'seconds.')
 
     production_network.set_training_accuracies(training_accuracies)
 
@@ -81,38 +88,27 @@ async def __build_dual_model(config, train, test, update_params, update_msg):
 def deploy_model(keras_model: keras.Model, game_id, model_name='', nodeploy=False,
                  withDictionary=None, withTrainingAccuracies=None):
     if not nodeploy:
+
+        # Save Model
         sv(keras_model, model_name)
-        # print('Deploying..')
-        # print('Keras model:')
-        # print(keras_model.summary())
-        # print('Model Name:', model_name)
-        #
-        # path = model_name + get_random_string(10)
-        # dirpath = Path(path)
-        # if dirpath.exists() and dirpath.is_dir():
-        #     info('PATH (',model_name,') exists. Contents: ')
-        #     info(os.listdir(model_name))
-        #     info('Removing..')
-        #     shutil.rmtree(dirpath)
-        #     info('Done.')
-        # tfjs.converters.save_keras_model(keras_model, path)
-            # bucket().adjust_paths(dir_path=model_name, model_id=game_id, model_name=model_name)
-        # bucket().upload_model(model_name, model_name, game_id)  # async ? if model hasnt saved could be issue
 
-        # # Upload Dictionary
-        # info('Uploading the following dictionary: ', withDictionary)
-        #
-        # if withDictionary:
-        #     firestore.client().collection('games_info').document(game_id).update(
-        #         __nest_update(withDictionary, 'dictionary'))
-        # if withTrainingAccuracies:
-        #     firestore.client().collection('games_info').document(game_id).update(
-        #         __nest_update(withTrainingAccuracies, 'training_info'))
+        ''' bucket().adjust_paths(dir_path=model_name, model_id=game_id, model_name=model_name) '''
+
+        # Upload Model
+        bucket().upload_model(model_name, model_name, game_id)  # note: if model hasnt saved, may throw an error
+
+        # Upload Dictionary
+        info('Uploading the following dictionary: ', withDictionary)
+
+        if withDictionary:
+            firestore.client().collection('games_info').document(game_id).update(
+                __nest_update(withDictionary, 'dictionary'))
+        if withTrainingAccuracies:
+            firestore.client().collection('games_info').document(game_id).update(
+                __nest_update(withTrainingAccuracies, 'training_info.'+model_name))
 
 
-        # dirpath = Path(model_name)
-        # if dirpath.exists() and dirpath.is_dir():
-        #     shutil.rmtree(dirpath)
+
 
 
 async def tri_build(train, test, on_update, status_start, status_end):
@@ -133,13 +129,22 @@ async def tri_build(train, test, on_update, status_start, status_end):
     return model_1, model_2, model_3
 
 def sv(model: keras.Model, model_name):
-    print('\nSaving..')
-    print('Keras model:')
-    print(model.summary())
-    print('Model Name:', model_name)
-    tfjs.converters.save_keras_model(model, model_name)
+    info('\nSaving..')
+    info('Keras model:')
+    if get_log_level() > 0:
+        model.summary()
+    info('Model Name:', model_name)
+    model.save('temp')
+    model_copy = keras.models.load_model('temp')
+    tfjs.converters.save_keras_model(model_copy, model_name)
 
-
+    # from pathlib import Path
+    # from shutil import rmtree as delete
+    #
+    # temp = Path('temp')
+    # if temp.exists() and temp.is_dir():
+    #     delete(temp)
+    ok(' Saved model.')
 
 
 # ============================
@@ -220,3 +225,6 @@ def partial_update(params, pct, msg=''):
     gain = dist * pct
     end = update_from + round(gain, 2)
     update_fn(end, msg)
+
+
+

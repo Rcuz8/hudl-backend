@@ -3,6 +3,7 @@ from tqdm import tqdm
 import pandas as pd
 from constants import experiment
 from src.main.util.io import info, ok, err, get_log_level
+import keras
 
 class ProgressCallback(tf.keras.callbacks.Callback):
 
@@ -32,13 +33,15 @@ class ProgressCallback(tf.keras.callbacks.Callback):
         self.progress_update_fn = fn
         return self
 
-    def add_test_info(self, model, test_x, test_y):
+    def add_test_info(self, model:keras.Model, test_x, test_y, isSequential=False):
         self.model_ = model
         self.test_x = test_x
+        if isSequential and test_y:
+            test_y = list(test_y.items())[0][1]
         self.test_y = test_y
         return self
 
-    def add_col(self,col): # Add ROW
+    def add_row(self,col):
         if self.evals is None:
             self.evals = pd.DataFrame(columns=['epoch'] + self.model_.metrics_names)
             info('Created callbacks attribute "evals" = (DataFrame)')
@@ -71,9 +74,9 @@ class ProgressCallback(tf.keras.callbacks.Callback):
         except:
             return None # No test data
 
-        accs = {'epoch': self.evals['epoch']}
+        accs = {'epoch': self.evals['epoch'].tolist()}
         for col in acc_cols:
-            accs[col] = self.evals[col]
+            accs[col] = self.evals[col].tolist()
 
         return accs
 
@@ -121,10 +124,10 @@ class ProgressCallback(tf.keras.callbacks.Callback):
                 if (self.cb is not None and not self.is_auxilary):
                     self.cb(epoch)
                 if self.test_x is not None:
-                    evaluation = self.model_.evaluate(self.test_x,self.test_y,verbose=0)
+                    evaluation = self.model_.evaluate(self.test_x, self.test_y, verbose=0)
                     self.eval_results.append(evaluation)
 
-                    self.add_col(evaluation)
+                    self.add_row(evaluation)
                     if (epoch >= self.epochs):
                         self.model.stop_training = True
 
@@ -146,50 +149,4 @@ class ProgressCallback(tf.keras.callbacks.Callback):
                 self.pbar.set_description('\nCompleted Training.   ')
                 self.pbar.close()
                 self.model.stop_training = True
-
-
-
-
-import keras
-
-def get_model():
-    model = keras.Sequential()
-    model.add(keras.layers.Dense(1, input_dim=784))
-    model.compile(
-        optimizer=keras.optimizers.RMSprop(learning_rate=0.1),
-        loss="mean_squared_error",
-        metrics=["mean_absolute_error"],
-    )
-    return model
-
-# (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
-# x_train = x_train.reshape(-1, 784).astype("float32") / 255.0
-# x_test = x_test.reshape(-1, 784).astype("float32") / 255.0
-#
-# # Limit the data to 1000 samples
-# x_train = x_train[:1000]
-# y_train = y_train[:1000]
-# x_test = x_test[:1000]
-# y_test = y_test[:1000]
-#
-#
-# model = get_model()
-# EPOCHS = 25
-# def cb(x):
-#     print(x)
-# model.fit(
-#     x_train,
-#     y_train,
-#     batch_size=128,
-#     epochs=EPOCHS,
-#     verbose=0,
-#     validation_split=0.5,
-#     callbacks=[ProgressCallback(epochs=EPOCHS,k=4,batch_size=8)],
-# )
-# #
-# # res = model.evaluate(
-# #     x_test, y_test, batch_size=128, verbose=0, callbacks=[CustomCallback()]
-# # )
-# #
-# # res = model.predict(x_test, batch_size=128, callbacks=[CustomCallback()])
 

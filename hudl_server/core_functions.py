@@ -137,9 +137,8 @@ async def generate_model(game_id, test_film_index, on_progress=None, data_overri
         data = __fetch_game(game_id)
     else:
         data = data_override
-    data = data['data']  # Unbox
-    data = [item['data'] for item in data]  # Unbox
-    data = helpers.fb_data_to_matrix(data)  # Unbox (data itself)
+
+    data = unbox(data)
 
     ok('Successfully unboxed firestore game data.')
     await __update(on_progress, 10, 'Building first Model..')
@@ -175,6 +174,16 @@ def __fetch_game(id, save_to=None):
         __save_json(game, 'hudl_server/dbdata.json')
     return game
 
+def strip_game_hyphens(id):
+    db = firestore.client()
+    data = __fetch_game(id)
+    info = db.collection('games_info').document(id).get().to_dict()  # Query
+    newid = ''.join(id.split('-'))
+    db.collection('games_data').document(newid).set(data)
+    db.collection('games_info').document(newid).set(info)
+    db.collection('games_data').document(id).delete()
+    db.collection('games_info').document(id).delete()
+
 
 def __save_json(data : dict, path: str, local_check=True):
     if local_check:
@@ -183,11 +192,11 @@ def __save_json(data : dict, path: str, local_check=True):
     with open(path, 'w+') as fp:
         json.dump(data, fp)
 
-def sv():
+def mock_model():
     import keras
     model = keras.models.Sequential(
         [
-            keras.layers.Dense(128,input_shape=(10,)),
+            keras.layers.Dense(128, input_shape=(10,)),
             keras.layers.ReLU(),
             keras.layers.Dropout(0.2),
             keras.layers.Dense(64),
@@ -195,8 +204,18 @@ def sv():
             keras.layers.Dense(20)
         ])
     model.compile(loss='mse')
+    return model
+
+def sv():
+    model = mock_model()
     # model.fit([[1,2,3]] * 10, [[1,2,3]] * 10, batch_size=2)
     helpers.sv(model, 'prealignform')
+
+def unbox(response):
+    data = response['data']  # Unbox
+    data = [item['data'] for item in data]  # Unbox
+    data = helpers.fb_data_to_matrix(data)  # Unbox (data itself)
+    return data
 
 # def fetch_model(id: str):
 #     return storage.storag

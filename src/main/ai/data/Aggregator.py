@@ -30,7 +30,8 @@ class DataHandler:
             boundaries = cls.build_aggregate_boundaries(training_df, test_df)
         # Split & Encode data
         # NOTE: These are DENSE results, treat them with care
-        training_result = du.split_and_encode_data(training_df, input_params,output_params, dictionary, boundaries)
+        training_result = du.split_and_encode_data(training_df, input_params,output_params,
+                                                   dictionary, boundaries)
         if len(test_df) > 0:
             test_result = du.split_and_encode_data(test_df, input_params, output_params, dictionary, boundaries)
         else:

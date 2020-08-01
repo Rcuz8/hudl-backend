@@ -11,68 +11,44 @@ set_log_level(0)
 
 class Tester(Test):
 
-    def test_generate_model(self):
-        # game_id = 'id1243onjun29'
-        game_id = '2ceaf5db-41b7-4010-8cde-15a6c6f36d33'
+    # def test_generate_model(self):
+    #     game_id = '2ceaf5db41b740108cde15a6c6f36d33'
+    #     nfilms = 3
+    #
+    #     try:  # Local
+    #         f = open('../../../../hudl_server/dbdata.json')
+    #     except:  # Unit
+    #         try:
+    #             f = open('hudl_server/dbdata.json')
+    #         except:
+    #             raise Exception('core test : Could not open test data file!')
+    #
+    #     import json
+    #     data = json.load(f)
+    #     loop = asyncio.new_event_loop()
+    #     asyncio.set_event_loop(loop)
+    #     loop.run_until_complete(
+    #         core.generate_model(game_id, nfilms - 1, updated, data_override=data, nodeploy=True))
+    #     f.close()
+    #     loop.close()
+    #
+    #     ok('\nDone')
+
+
+    def test_live_generate_model(self):
+        game_id = '2ceaf5db41b740108cde15a6c6f36d33'
         nfilms = 3
-        try:  # Local
-            import json
-            with open('../../../../hudl_server/dbdata.json') as f:
-                data = json.load(f)
-                loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(loop)
-                loop.run_until_complete(
-                    core.generate_model(game_id, nfilms - 1, updated, data_override=data, nodeploy=False))
 
-                print('Done')
-        except:  # Unit
-            import json
-            with open('hudl_server/dbdata.json') as f:
-                data = json.load(f)
-                loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(loop)
-                loop.run_until_complete(
-                    core.generate_model(game_id, nfilms - 1, updated, data_override=data, nodeploy=True))
-                print('Done')
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        loop.run_until_complete(
+            core.generate_model(game_id, nfilms - 1, updated, data_override=None, nodeploy=False))
+        loop.close()
 
-    def test_sv(self):
-        core.sv()
+        ok('\nDone')
 
 
-
-
-# async def test_generate_model():
-#     game_id = 'id1243onjun29'
-#     # game_id = '2ceaf5db-41b7-4010-8cde-15a6c6f36d33'
-#     nfilms = 3
-#     try: # Local
-#         import json
-#         with open('../../../../hudl_server/dbdata.json') as f:
-#             data = json.load(f)
-#             await core.generate_model(game_id, nfilms-1,updated, data_override=data, nodeploy=False)
-#     except: # Unit
-#         import json
-#         with open('hudl_server/dbdata.json') as f:
-#             data = json.load(f)
-#             await core.generate_model(game_id, nfilms - 1, updated, data_override=data, nodeploy=False)
-
-
-# loop = asyncio.new_event_loop()
-# asyncio.set_event_loop(loop)
-# result = loop.run_until_complete(test_generate_model())
-# print('Done')
-
-
-
-
-
-
-
-
-
-
-# print(model.summary())
-# for layer in model.layers:
-#     print('Layer: ', layer.name)
-#     print('Weights: ', layer.weights)
+    # def test_strip_game_hyphens(self):
+    #     id = '2ceaf5db-41b7-4010-8cde-15a6c6f36d33'
+    #     core.strip_game_hyphens(id)
 

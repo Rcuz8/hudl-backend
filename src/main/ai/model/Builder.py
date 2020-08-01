@@ -101,7 +101,7 @@ class MB:
 
             # Compile
             model.compile(optimizer=optimizer, loss=lossnames, loss_weights=lossweights,
-                          metrics=[keras.metrics.Accuracy()])
+                          metrics=metrics)
         else:
 
             if trial is not None:
@@ -141,7 +141,7 @@ class MB:
                 model = Sequential(model_layers)
 
                 # Compile
-                model.compile(optimizer=optimizer, loss=lossnames,  metrics=[keras.metrics.Accuracy()])
+                model.compile(optimizer=optimizer, loss=lossnames,  metrics=metrics)
 
 
             else:
@@ -195,7 +195,7 @@ class MB:
                 model = Sequential(model_layers)
 
                 # Compile
-                model.compile(optimizer=optimizer, loss=lossnames, metrics=[keras.metrics.Accuracy()])
+                model.compile(optimizer=optimizer, loss=lossnames, metrics=metrics)
 
         info('Builder generated model.')
 
@@ -203,7 +203,7 @@ class MB:
         return self
 
     # train the model
-    def fit(self, X, Y, callback, epochs=100, batch_size=8, folds=6, repeats=3):
+    def fit(self, X, Y, callback, epochs=100, batch_size=8, folds=6, repeats=3, isSequential=False):
 
         # quick maths
         epf = round(round(epochs / folds) / repeats)
@@ -233,6 +233,10 @@ class MB:
                 except:
                     y_train[output_name] = output_data[train_index]
                     y_test[output_name] = output_data[test_index]
+
+            if isSequential:
+                y_train = list(y_train.items())[0][1]
+                y_test = list(y_test.items())[0][1]
 
             # val_data = [(X_test[i], y_test[i]) for i in range(len(X_test))]
             val_data = (X_test,y_test)

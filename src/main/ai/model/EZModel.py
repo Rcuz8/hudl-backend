@@ -35,11 +35,13 @@ class EZModel:
         self.optimal_lr = None
         self.predictor = None
         self.__training_accuracies = None
+        self.isSequential = False
 
 
     def build(self, use_optimized_dimensions=True, nlayers=7, lr=None, activation='relu', custom=False,
               custom_layers=[(128, 'relu', 0.25),(64, 'relu', 0.25)],
-              optimizer=keras.optimizers.Adam(learning_rate=0.002), forceSequential=False
+              optimizer=keras.optimizers.Adam(learning_rate=0.002), forceSequential=False,
+              metrics=['categorical_accuracy']
               ):
         if (lr is not None):
             optimizer.learning_rate = lr
@@ -52,8 +54,9 @@ class EZModel:
         # Build model
         self.mb = MB(mp) \
             .construct(nlayers=nlayers, activation=activation, custom=custom,
-                       custom_layers=custom_layers, optimizer=optimizer, sequentialOverride=forceSequential)
-
+                       custom_layers=custom_layers, optimizer=optimizer, sequentialOverride=forceSequential,
+                       metrics=metrics)
+        self.isSequential = forceSequential
         return self
 
     def optimize(self, minHiddens= 1, maxHiddens= 3, hidden_width_min=10,hidden_width_max=120,
@@ -133,7 +136,7 @@ class EZModel:
         info('\nBegin Training.')
 
         callback = CustomCallbacks.ProgressCallback(epochs, k=notif_every, batch_size=batch_size) \
-            .add_test_info(self.mb.model, self.test_x, self.test_y)\
+            .add_test_info(self.mb.model, self.test_x, self.test_y, self.isSequential)\
             .add_progress_update_fn(on_update)
 
         repeats = 3
@@ -141,7 +144,7 @@ class EZModel:
 
 
         self.mb.fit(self.train_x, self.train_y,callback=callback,epochs=epochs,
-                    repeats=repeats, folds=folds, batch_size=batch_size)
+                    repeats=repeats, folds=folds, batch_size=batch_size, isSequential=self.isSequential)
 
         self.__training_accuracies = callback.accuracies()
 
