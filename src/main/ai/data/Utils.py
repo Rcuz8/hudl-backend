@@ -725,6 +725,7 @@ def build_dictionary_for(df: pd.DataFrame):
             res[preprocess_df_header(col)] = None
         else:
             un = [val for val in df[col].unique() if val == val and val is not None]  # filter out NaN
+            un.sort()
             res[preprocess_df_header(col)] = un
     return res
 

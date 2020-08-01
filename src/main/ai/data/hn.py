@@ -36,6 +36,7 @@ def hx_setup(df: pd.DataFrame):
     df['PLAY_TYPE'].fillna('none', inplace=True)
     df['DN'].fillna(0, inplace=True)
 
+
     # Make case-insensitive
     df['RESULT'] = df['RESULT'].str.lower()
     df['ODK'] = df['ODK'].str.lower()
@@ -382,8 +383,13 @@ def hx(df: pd.DataFrame):
     # For now, we don't need Gain/Loss
     df.drop(columns=['GN/LS'], inplace=True)
 
+    # We don't want prev play types other than run/pass
+    df['PREV_PLAY_TYPE'] = np.select(
+        [(df['PREV_PLAY_TYPE'].str.lower() != 'none') & (df['PREV_PLAY_TYPE'].str.lower() != 'run') & (
+                    df['PREV_PLAY_TYPE'].str.lower() != 'pass')],
+        ['none'], default=df['PREV_PLAY_TYPE'])
 
-    df.query('ODK == "o"', inplace=True)
+    df.query("ODK == 'o' & (PLAY_TYPE == 'run' | PLAY_TYPE == 'pass' | PLAY_TYPE == 'none')", inplace=True)
 
     # print('hx return:\n', df)
 

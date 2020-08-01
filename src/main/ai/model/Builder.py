@@ -198,7 +198,6 @@ class MB:
                 model.compile(optimizer=optimizer, loss=lossnames, metrics=metrics)
 
         info('Builder generated model.')
-
         self.model = model
         return self
 

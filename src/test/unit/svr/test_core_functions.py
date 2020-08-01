@@ -11,6 +11,18 @@ set_log_level(0)
 
 class Tester(Test):
 
+    def test_live_generate_model(self):
+        game_id = '2ceaf5db41b740108cde15a6c6f36d33'
+        nfilms = 3
+
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        loop.run_until_complete(
+            core.generate_model(game_id, nfilms - 1, updated, data_override=None, nodeploy=False))
+        loop.close()
+
+        ok('\nDone')
+
     # def test_generate_model(self):
     #     game_id = '2ceaf5db41b740108cde15a6c6f36d33'
     #     nfilms = 3
@@ -35,17 +47,6 @@ class Tester(Test):
     #     ok('\nDone')
 
 
-    def test_live_generate_model(self):
-        game_id = '2ceaf5db41b740108cde15a6c6f36d33'
-        nfilms = 3
-
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        loop.run_until_complete(
-            core.generate_model(game_id, nfilms - 1, updated, data_override=None, nodeploy=False))
-        loop.close()
-
-        ok('\nDone')
 
 
     # def test_strip_game_hyphens(self):

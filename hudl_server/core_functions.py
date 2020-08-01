@@ -160,7 +160,7 @@ async def generate_model(game_id, test_film_index, on_progress=None, data_overri
     # Deploy the models
     for i in range(len(models)):
         helpers.deploy_model(models[i].get_keras_model(), game_id, model_names[i],
-                             nodeploy, models[i].output_dictionary(), models[i].training_accuracies())
+                             nodeploy, models[i].dictionary, models[i].training_accuracies())
         await __update(on_progress, progress_pcts[i], progress_msgs[i])
 
     ok('Successfully deployed all models.')

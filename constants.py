@@ -227,6 +227,8 @@ class model_gen_configs(Enum):
     class pre_align_form(Enum):
         @skip
         class io(Enum):
+            #       1       1           1           3           2               1           1
+
             inputs = [
                 cols.dn, cols.dst, cols.d2e, cols.hash, cols.prev_play_type, cols.qtr, cols.scorediff
             ]
