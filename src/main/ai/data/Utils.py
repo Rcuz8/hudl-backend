@@ -442,7 +442,8 @@ def analyze_data_quality(sources: list, thresh=0.5, injected_headers=None, prepr
             config = column_config['columns']
             # Wash the DataFrame
             df_clone = df_power_wash(df.copy(), addtl_heuristic_fn=preprocessing_fn, impute_threshold=thresh,
-                                     relevent_columns_override=config, drop_scarce_columns=drop_scarce_columns)
+                                     relevent_columns_override=config, dont_remove_cols=config,
+                                     drop_scarce_columns=drop_scarce_columns)
 
             good_rows = rows(df_clone)
             quality = round(good_rows / ttl_rows, 2)

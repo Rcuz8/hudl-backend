@@ -1,7 +1,157 @@
+
+import svr.core_functions as core
+from constants import TKN_3
+from aiohttp import web
+from src.main.util.io import set_log_level
+import phonenumbers
+import socketio
+import asyncio
+import json
+import nest_asyncio
+nest_asyncio.apply()
+sio = socketio.AsyncServer(cors_allowed_origins='*')
+app = web.Application()
+sio.attach(app)
+
+set_log_level(0)
+
+@sio.event
+async def svr_test(sid, testA, atestB, btestC):
+    print('testA=', testA)
+    print('atestB=', atestB)
+    print('btestC=', btestC)
+    sio.emit('reply',' [testA, atestB, btestC]')
+
+@sio.event
+async def svr_user_info(sid, uid):
+    info = core.user_info(uid)
+    print('Getting user info for uid',uid, 'Response=', info)
+    await sio.emit('reply', info)
+
+@sio.event
+async def svr_clients(sid):
+    clients = core.get_clients()
+    print('Found Clients: \n', clients)
+    await sio.emit('reply', {'data': clients})
+
+
+@sio.event
+async def svr_games(sid, client_id):
+    games = core.get_games(client_id)
+    print('Serving Games for uid (', client_id, ')..  :\n', games)
+    await sio.emit('games', {'data': games})
+
+@sio.event
+async def svr_new_client(sid, email, password, name, phone, hudl_email, hudl_pass, team_name):
+
+    if not (email and password and name and phone and hudl_email and hudl_pass and team_name):
+        await sio.emit('exception', json.dumps({"error": 'Bad Information for new client (null)'}))
+
+    if len(phone) == 10:
+        phone = phonenumbers.parse(phone, "US")
+    else:
+        try:
+            phone = phonenumbers.parse(phone, None)
+        except:
+            await sio.emit('exception', json.dumps({"error": 'Bad Information for new client (phone)'}))
+
+    phone_number = phonenumbers.format_number(phone, phonenumbers.PhoneNumberFormat.E164)
+
+    client = core.new_client(email, password, name, phone_number, hudl_email, hudl_pass, team_name)
+
+    if client is not None:
+        print(client)
+        await sio.emit('reply', {'uid': client.uid, 'display_name': client.display_name,
+                'phone_number': client.phone_number, email: client.email})
+    else:
+        await sio.emit('exception', json.dumps({"error": 'Unknown submission error'}))
+
+
+async def emit(pct, msg):
+    stat = {'pct': pct, 'msg': msg}
+    print('Should emit: ', stat)
+    await sio.emit('model_status', stat)
+    await sio.sleep(0.5)
+
+
+
+@sio.event
+async def svr_gen_model(sid, game_id, test_film_index):
+    print('New Model Creation Request:')
+
+    try:
+        test_film_index = int(test_film_index)
+    except:
+        await sio.emit('exception', 'invalid film index')
+
+    print('\tGame ID            :', game_id)
+    print('\tIndex of test film :', test_film_index, '(', type(test_film_index), ')')
+
+    await core.generate_model(game_id, test_film_index, emit)
+
+
+@sio.event
+async def svr_perform_qa(sid, name, names, data, headers, client_id):
+    print('New QA Analysis Request:')
+    print('\tName:       ', type(name), name)
+    print('\tFilm names: ', type(names), names)
+    print('\tData:       ', type(data), data)
+    print('\tHeaders:    ', type(headers), headers)
+    print('\tClient ID:  ', type(client_id), client_id)
+
+    # Check valid
+    if not (name and names and data and headers and client_id):
+        print('\tFailed!')
+        await sio.emit('exception', 'invalid input')
+
+    datum = data.split(TKN_3)
+
+    await sio.emit('reply', core.qa(name, names, datum, headers, client_id))
+
+
+
+@sio.event
+async def connect(sid, environ):
+    print("connect ", sid)
+
+@sio.event
+async def disconnect(sid):
+    print('disconnect ', sid)
+
+@sio.event
+async def chat_message(sid, data):
+    print("message ", data)
+    await sio.emit('reply', {'hi':'there'})
+
+if __name__ == '__main__':
+    web.run_app(app)
+
+
+
+
+
+
+
+
+
+
+# async def index(request):
+#     """Serve the client-side application."""
+#     with open('index.html') as f:
+#         return web.Response(text=f.read(), content_type='text/html')
+#
+# app.router.add_get('/', index)
+
+
+
+
+
+
+
 # from flask import Flask, request, flash, json
 # from flask_cors import CORS
 # from flask_socketio import SocketIO
-# from hudl_server.core_functions import user_info, new_client, get_clients, qa, get_games, generate_model
+# from svr.core_functions import user_info, new_client, get_clients, qa, get_games, generate_model
 # from constants import TKN_3
 # import phonenumbers
 # import json

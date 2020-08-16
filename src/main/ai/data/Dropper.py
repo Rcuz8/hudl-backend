@@ -40,6 +40,7 @@ class Dropper:
                 drp.append(header)
         if len(drp) > 0:
             df.drop(columns=drp, inplace=True)
+            info('drop_irrelevent_columns() dropped : ', drp)
 
         df.reset_index(drop=True, inplace=True)
 

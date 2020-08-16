@@ -1,13 +1,12 @@
-
 # Firebase Init
-from hudl_server.Cloud import LOCAL
+from svr.Cloud import LOCAL
 from firebase_admin import firestore, auth, get_app
 from constants import relevent_data_columns_configurations as column_configs, QuickParams
 from src.main.ai.data.Builder import huncho_data_bldr as bldr
-import hudl_server.helpers as helpers
+import svr.helpers as helpers
 from src.main.ai.data.hn import hx, odk_filter
 from uuid import uuid4 as gen_id
-from src.main.util.io import ok
+from src.main.util.io import ok, warn
 import json
 import datetime
 
@@ -18,11 +17,15 @@ app = get_app()
 
 def user_info(uid):
     db = firestore.client()
-    doc = db.collection('users').document(uid).get().to_dict()
-    info = doc['info']
-    return info
+    try:
+        doc = db.collection('clients').document(uid).get().to_dict()
+        return doc
+    except:
+        warn('User Info document doesnt exist.')
+        return {}
 
-def new_client(email, password, name, phone_number, hudl_email, hudl_pass):
+
+def new_client(email, password, name, phone_number, hudl_email, hudl_pass, team_name):
     print('Creating new client with: ')
     print('\tEmail: ', email)
     print('\tPass:  ', password)
@@ -39,11 +42,15 @@ def new_client(email, password, name, phone_number, hudl_email, hudl_pass):
         print('Created new client with uid:', client.uid)
         db = firestore.client()
         db.collection('clients').document(client.uid) \
-            .set({'name': client.display_name, 'hudl_email': hudl_email, 'hudl_pass': hudl_pass})
+            .set({'name': client.display_name,
+                  'hudl_email': hudl_email,
+                  'hudl_pass': hudl_pass,
+                  'team_name': team_name})
         return client
 
     except:
         return None
+
 
 def get_clients():
     result = firestore.client().collection('clients').get()
@@ -57,6 +64,7 @@ def get_clients():
         clients.append(client)
 
     return clients
+
 
 def get_games(client_id):
     docs = firestore.client().collection('games_info') \
@@ -72,14 +80,15 @@ def get_games(client_id):
     Dropper.drop_cols(df, ['BLITZ', 'COVERAGE', 'DEF FRONT', 'GAP', 'PLAY DIR', 'PASS ZONE'])
 '''
 
-def qa(name, names, datum, headers, client_id):
 
+def qa(name, names, datum, headers, client_id, nodeploy=False):
     analysis = bldr.empty() \
-        .of_type('string') \
-        .inject_headers(headers) \
-        .inject_filenames(names) \
-        .declare_relevent_columns(column_configs) \
-        .eval_bulk(datum) \
+        .with_type('string') \
+        .with_heads(headers) \
+        .with_filenames(names) \
+        .with_protected_columns(column_configs) \
+        .with_important_columns(column_configs) \
+        .and_eval(datum) \
         .analyze_data_quality(hx, evaluation_frame_filter_fn=odk_filter)
 
     print('Completed Data Quality Analysis.\n')
@@ -97,25 +106,27 @@ def qa(name, names, datum, headers, client_id):
 
     # Document the new analysis
 
-    # Create game info object
-    db.collection('games_info').document(new_game_id).set({'name': name, 'owner': client_id,
-                                                           'created': datetime.datetime.now().isoformat(),
-                                                           'films': analysis_info_sections})
+    if not nodeploy:
 
-    db.collection('games_data').document(new_game_id) \
-        .set({'data': analysis_data_sections})
+        # Create game info object
+        db.collection('games_info').document(new_game_id).set({'name': name, 'owner': client_id,
+                                                               'created': datetime.datetime.now().isoformat(),
+                                                               'films': analysis_info_sections})
+
+        db.collection('games_data').document(new_game_id) \
+            .set({'data': analysis_data_sections})
 
     # Done
     return new_game_id
 
+
 async def __update(fn, pct, msg):
     if fn:
-        fn(pct, msg)
+        await fn(pct, msg)
+
 
 async def generate_model(game_id, test_film_index, on_progress=None, data_override=None, nodeploy=False):
-    db = firestore.client()
-
-    await __update(on_progress, 0, 'Collecting Data..')
+    await on_progress(0, 'Collecting Data..')
 
     # 1. Get the train/test data (query db using the game id)
     '''
@@ -167,30 +178,33 @@ async def generate_model(game_id, test_film_index, on_progress=None, data_overri
 
     return 'OK'
 
-def __fetch_game(id, save_to=None):
+
+def __fetch_game(gid, save_to=None):
     db = firestore.client()
-    game = db.collection('games_data').document(id).get().to_dict()  # Query
+    game = db.collection('games_data').document(gid).get().to_dict()  # Query
     if save_to:
-        __save_json(game, 'hudl_server/dbdata.json')
+        __save_json(game, 'svr/dbdata.json')
     return game
 
-def strip_game_hyphens(id):
+
+def strip_game_hyphens(gid):
     db = firestore.client()
-    data = __fetch_game(id)
-    info = db.collection('games_info').document(id).get().to_dict()  # Query
-    newid = ''.join(id.split('-'))
+    data = __fetch_game(gid)
+    info = db.collection('games_info').document(gid).get().to_dict()  # Query
+    newid = ''.join(gid.split('-'))
     db.collection('games_data').document(newid).set(data)
     db.collection('games_info').document(newid).set(info)
-    db.collection('games_data').document(id).delete()
-    db.collection('games_info').document(id).delete()
+    db.collection('games_data').document(gid).delete()
+    db.collection('games_info').document(gid).delete()
 
 
-def __save_json(data : dict, path: str, local_check=True):
+def __save_json(data: dict, path: str, local_check=True):
     if local_check:
         if LOCAL:
-            path = path.replace('hudl_server/', '')
+            path = path.replace('svr/', '')
     with open(path, 'w+') as fp:
         json.dump(data, fp)
+
 
 def mock_model():
     import keras
@@ -206,10 +220,12 @@ def mock_model():
     model.compile(loss='mse')
     return model
 
+
 def sv():
     model = mock_model()
     # model.fit([[1,2,3]] * 10, [[1,2,3]] * 10, batch_size=2)
     helpers.sv(model, 'prealignform')
+
 
 def unbox(response):
     data = response['data']  # Unbox
@@ -221,9 +237,13 @@ def unbox(response):
 #     return storage.storag
 
 
-# fetch_game('2ceaf5db-41b7-4010-8cde-15a6c6f36d33', save_to='hudl_server/dbdata.json')
+# fetch_game('2ceaf5db-41b7-4010-8cde-15a6c6f36d33', save_to='svr/dbdata.json')
 
 
-
-
-
+# analysis = bldr.empty() \
+#     .of_type('string') \
+#     .inject_headers(headers) \
+#     .inject_filenames(names) \
+#     .declare_relevent_columns(column_configs) \
+#     .eval_bulk(datum) \
+#     .analyze_data_quality(hx, evaluation_frame_filter_fn=odk_filter)

@@ -1,21 +1,235 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/ai/model/Builder.py" line="140" mnemonic="9" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="5e18e173-fe61-4d53-8c9c-6a58ddf881e6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hudl_server/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/hudl_server/helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ai/data/Builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/data/Builder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ai/data/Input.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/data/Input.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/postalignplay/group1-shard1of1.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/unit/svr/postalignplay/group1-shard1of1.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/postalignplay/model.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/unit/svr/postalignplay/model.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/postalignpt/group1-shard1of1.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/unit/svr/postalignpt/group1-shard1of1.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/prealignform/group1-shard1of1.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/unit/svr/prealignform/group1-shard1of1.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/temp/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/unit/svr/temp/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/temp/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/unit/svr/temp/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/temp/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/unit/svr/temp/variables/variables.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/about.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase_ml_model.tflite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hudl_server/Cloud.py" beforeDir="false" afterPath="$PROJECT_DIR$/svr/Cloud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hudl_server/core_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/svr/core_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hudl_server/dbdata.json" beforeDir="false" afterPath="$PROJECT_DIR$/svr/dbdata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hudl_server/fbpk.json" beforeDir="false" afterPath="$PROJECT_DIR$/svr/fbpk.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hudl_server/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/svr/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hudl_server/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/svr/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hudl_server/test/firebase_ml_model.tflite" beforeDir="false" afterPath="$PROJECT_DIR$/svr/test/firebase_ml_model.tflite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hudl_server/test/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/svr/test/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ai/data/Dropper.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/data/Dropper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ai/data/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/data/Utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ai/data/hn.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/data/hn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ai/model/CustomCallbacks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/model/CustomCallbacks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-141316/train/events.out.tfevents.1591467197.Ryan-Cocuzzos-Laptop.local.95594.1475.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-141316/train/events.out.tfevents.1591467197.Ryan-Cocuzzos-Laptop.local.95594.1475.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-141541/train/events.out.tfevents.1591467342.Ryan-Cocuzzos-Laptop.local.95646.1475.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-141541/train/events.out.tfevents.1591467342.Ryan-Cocuzzos-Laptop.local.95646.1475.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-141541/train/events.out.tfevents.1591467342.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-141541/train/events.out.tfevents.1591467342.Ryan-Cocuzzos-Laptop.local.profile-empty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-141541/train/plugins/profile/2020_06_06_14_15_42/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-141541/train/plugins/profile/2020_06_06_14_15_42/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-141541/train/plugins/profile/2020_06_06_14_15_42/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-141541/train/plugins/profile/2020_06_06_14_15_42/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-141541/train/plugins/profile/2020_06_06_14_15_42/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-141541/train/plugins/profile/2020_06_06_14_15_42/Ryan-Cocuzzos-Laptop.local.overview_page.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-141541/train/plugins/profile/2020_06_06_14_15_42/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-141541/train/plugins/profile/2020_06_06_14_15_42/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-141541/train/plugins/profile/2020_06_06_14_15_42/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-141541/train/plugins/profile/2020_06_06_14_15_42/Ryan-Cocuzzos-Laptop.local.trace.json.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-141541/validation/events.out.tfevents.1591467342.Ryan-Cocuzzos-Laptop.local.95646.1623.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-141541/validation/events.out.tfevents.1591467342.Ryan-Cocuzzos-Laptop.local.95646.1623.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-142806/train/events.out.tfevents.1591468087.Ryan-Cocuzzos-Laptop.local.95856.1475.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-142806/train/events.out.tfevents.1591468087.Ryan-Cocuzzos-Laptop.local.95856.1475.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-142806/train/events.out.tfevents.1591468087.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-142806/train/events.out.tfevents.1591468087.Ryan-Cocuzzos-Laptop.local.profile-empty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-142806/train/plugins/profile/2020_06_06_14_28_07/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-142806/train/plugins/profile/2020_06_06_14_28_07/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-142806/train/plugins/profile/2020_06_06_14_28_07/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-142806/train/plugins/profile/2020_06_06_14_28_07/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-142806/train/plugins/profile/2020_06_06_14_28_07/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-142806/train/plugins/profile/2020_06_06_14_28_07/Ryan-Cocuzzos-Laptop.local.overview_page.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-142806/train/plugins/profile/2020_06_06_14_28_07/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-142806/train/plugins/profile/2020_06_06_14_28_07/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-142806/train/plugins/profile/2020_06_06_14_28_07/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-142806/train/plugins/profile/2020_06_06_14_28_07/Ryan-Cocuzzos-Laptop.local.trace.json.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-142806/validation/events.out.tfevents.1591468087.Ryan-Cocuzzos-Laptop.local.95856.1623.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-142806/validation/events.out.tfevents.1591468087.Ryan-Cocuzzos-Laptop.local.95856.1623.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-144255/train/events.out.tfevents.1591468976.Ryan-Cocuzzos-Laptop.local.96156.1475.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-144255/train/events.out.tfevents.1591468976.Ryan-Cocuzzos-Laptop.local.96156.1475.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-144310/train/events.out.tfevents.1591468991.Ryan-Cocuzzos-Laptop.local.96172.1475.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-144310/train/events.out.tfevents.1591468991.Ryan-Cocuzzos-Laptop.local.96172.1475.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-144310/train/events.out.tfevents.1591468991.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-144310/train/events.out.tfevents.1591468991.Ryan-Cocuzzos-Laptop.local.profile-empty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-144310/train/plugins/profile/2020_06_06_14_43_11/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-144310/train/plugins/profile/2020_06_06_14_43_11/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-144310/train/plugins/profile/2020_06_06_14_43_11/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-144310/train/plugins/profile/2020_06_06_14_43_11/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-144310/train/plugins/profile/2020_06_06_14_43_11/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-144310/train/plugins/profile/2020_06_06_14_43_11/Ryan-Cocuzzos-Laptop.local.overview_page.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-144310/train/plugins/profile/2020_06_06_14_43_11/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-144310/train/plugins/profile/2020_06_06_14_43_11/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-144310/train/plugins/profile/2020_06_06_14_43_11/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-144310/train/plugins/profile/2020_06_06_14_43_11/Ryan-Cocuzzos-Laptop.local.trace.json.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-144310/validation/events.out.tfevents.1591468992.Ryan-Cocuzzos-Laptop.local.96172.1623.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-144310/validation/events.out.tfevents.1591468992.Ryan-Cocuzzos-Laptop.local.96172.1623.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-144727/train/events.out.tfevents.1591469247.Ryan-Cocuzzos-Laptop.local.96266.1475.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-144727/train/events.out.tfevents.1591469247.Ryan-Cocuzzos-Laptop.local.96266.1475.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-144727/train/events.out.tfevents.1591469248.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-144727/train/events.out.tfevents.1591469248.Ryan-Cocuzzos-Laptop.local.profile-empty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-144727/train/plugins/profile/2020_06_06_14_47_28/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-144727/train/plugins/profile/2020_06_06_14_47_28/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-144727/train/plugins/profile/2020_06_06_14_47_28/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-144727/train/plugins/profile/2020_06_06_14_47_28/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-144727/train/plugins/profile/2020_06_06_14_47_28/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-144727/train/plugins/profile/2020_06_06_14_47_28/Ryan-Cocuzzos-Laptop.local.overview_page.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-144727/train/plugins/profile/2020_06_06_14_47_28/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-144727/train/plugins/profile/2020_06_06_14_47_28/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-144727/train/plugins/profile/2020_06_06_14_47_28/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-144727/train/plugins/profile/2020_06_06_14_47_28/Ryan-Cocuzzos-Laptop.local.trace.json.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-144727/validation/events.out.tfevents.1591469248.Ryan-Cocuzzos-Laptop.local.96266.1623.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-144727/validation/events.out.tfevents.1591469248.Ryan-Cocuzzos-Laptop.local.96266.1623.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145003/train/events.out.tfevents.1591469404.Ryan-Cocuzzos-Laptop.local.96317.1475.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145003/train/events.out.tfevents.1591469404.Ryan-Cocuzzos-Laptop.local.96317.1475.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145003/train/events.out.tfevents.1591469404.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145003/train/events.out.tfevents.1591469404.Ryan-Cocuzzos-Laptop.local.profile-empty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145003/train/plugins/profile/2020_06_06_14_50_04/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145003/train/plugins/profile/2020_06_06_14_50_04/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145003/train/plugins/profile/2020_06_06_14_50_04/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145003/train/plugins/profile/2020_06_06_14_50_04/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145003/train/plugins/profile/2020_06_06_14_50_04/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145003/train/plugins/profile/2020_06_06_14_50_04/Ryan-Cocuzzos-Laptop.local.overview_page.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145003/train/plugins/profile/2020_06_06_14_50_04/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145003/train/plugins/profile/2020_06_06_14_50_04/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145003/train/plugins/profile/2020_06_06_14_50_04/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145003/train/plugins/profile/2020_06_06_14_50_04/Ryan-Cocuzzos-Laptop.local.trace.json.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145003/validation/events.out.tfevents.1591469405.Ryan-Cocuzzos-Laptop.local.96317.1623.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145003/validation/events.out.tfevents.1591469405.Ryan-Cocuzzos-Laptop.local.96317.1623.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145133/train/events.out.tfevents.1591469493.Ryan-Cocuzzos-Laptop.local.96348.1684.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145133/train/events.out.tfevents.1591469493.Ryan-Cocuzzos-Laptop.local.96348.1684.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145133/train/events.out.tfevents.1591469494.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145133/train/events.out.tfevents.1591469494.Ryan-Cocuzzos-Laptop.local.profile-empty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145133/train/plugins/profile/2020_06_06_14_51_34/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145133/train/plugins/profile/2020_06_06_14_51_34/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145133/train/plugins/profile/2020_06_06_14_51_34/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145133/train/plugins/profile/2020_06_06_14_51_34/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145133/train/plugins/profile/2020_06_06_14_51_34/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145133/train/plugins/profile/2020_06_06_14_51_34/Ryan-Cocuzzos-Laptop.local.overview_page.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145133/train/plugins/profile/2020_06_06_14_51_34/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145133/train/plugins/profile/2020_06_06_14_51_34/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145133/train/plugins/profile/2020_06_06_14_51_34/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145133/train/plugins/profile/2020_06_06_14_51_34/Ryan-Cocuzzos-Laptop.local.trace.json.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145133/validation/events.out.tfevents.1591469494.Ryan-Cocuzzos-Laptop.local.96348.1832.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145133/validation/events.out.tfevents.1591469494.Ryan-Cocuzzos-Laptop.local.96348.1832.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145504/train/events.out.tfevents.1591469705.Ryan-Cocuzzos-Laptop.local.96406.1684.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145504/train/events.out.tfevents.1591469705.Ryan-Cocuzzos-Laptop.local.96406.1684.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145504/train/events.out.tfevents.1591469705.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145504/train/events.out.tfevents.1591469705.Ryan-Cocuzzos-Laptop.local.profile-empty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145504/train/plugins/profile/2020_06_06_14_55_05/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145504/train/plugins/profile/2020_06_06_14_55_05/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145504/train/plugins/profile/2020_06_06_14_55_05/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145504/train/plugins/profile/2020_06_06_14_55_05/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145504/train/plugins/profile/2020_06_06_14_55_05/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145504/train/plugins/profile/2020_06_06_14_55_05/Ryan-Cocuzzos-Laptop.local.overview_page.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145504/train/plugins/profile/2020_06_06_14_55_05/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145504/train/plugins/profile/2020_06_06_14_55_05/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145504/train/plugins/profile/2020_06_06_14_55_05/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145504/train/plugins/profile/2020_06_06_14_55_05/Ryan-Cocuzzos-Laptop.local.trace.json.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145504/validation/events.out.tfevents.1591469705.Ryan-Cocuzzos-Laptop.local.96406.1832.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145504/validation/events.out.tfevents.1591469705.Ryan-Cocuzzos-Laptop.local.96406.1832.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145921/train/events.out.tfevents.1591469962.Ryan-Cocuzzos-Laptop.local.96472.1684.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145921/train/events.out.tfevents.1591469962.Ryan-Cocuzzos-Laptop.local.96472.1684.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145921/train/events.out.tfevents.1591469962.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145921/train/events.out.tfevents.1591469962.Ryan-Cocuzzos-Laptop.local.profile-empty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145921/train/plugins/profile/2020_06_06_14_59_22/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145921/train/plugins/profile/2020_06_06_14_59_22/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145921/train/plugins/profile/2020_06_06_14_59_22/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145921/train/plugins/profile/2020_06_06_14_59_22/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145921/train/plugins/profile/2020_06_06_14_59_22/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145921/train/plugins/profile/2020_06_06_14_59_22/Ryan-Cocuzzos-Laptop.local.overview_page.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145921/train/plugins/profile/2020_06_06_14_59_22/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145921/train/plugins/profile/2020_06_06_14_59_22/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145921/train/plugins/profile/2020_06_06_14_59_22/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145921/train/plugins/profile/2020_06_06_14_59_22/Ryan-Cocuzzos-Laptop.local.trace.json.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-145921/validation/events.out.tfevents.1591469962.Ryan-Cocuzzos-Laptop.local.96472.1832.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145921/validation/events.out.tfevents.1591469962.Ryan-Cocuzzos-Laptop.local.96472.1832.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-150543/train/events.out.tfevents.1591470344.Ryan-Cocuzzos-Laptop.local.96575.1684.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-150543/train/events.out.tfevents.1591470344.Ryan-Cocuzzos-Laptop.local.96575.1684.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-150543/train/events.out.tfevents.1591470344.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-150543/train/events.out.tfevents.1591470344.Ryan-Cocuzzos-Laptop.local.profile-empty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-150543/train/plugins/profile/2020_06_06_15_05_44/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-150543/train/plugins/profile/2020_06_06_15_05_44/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-150543/train/plugins/profile/2020_06_06_15_05_44/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-150543/train/plugins/profile/2020_06_06_15_05_44/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-150543/train/plugins/profile/2020_06_06_15_05_44/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-150543/train/plugins/profile/2020_06_06_15_05_44/Ryan-Cocuzzos-Laptop.local.overview_page.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-150543/train/plugins/profile/2020_06_06_15_05_44/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-150543/train/plugins/profile/2020_06_06_15_05_44/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-150543/train/plugins/profile/2020_06_06_15_05_44/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-150543/train/plugins/profile/2020_06_06_15_05_44/Ryan-Cocuzzos-Laptop.local.trace.json.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-150543/validation/events.out.tfevents.1591470344.Ryan-Cocuzzos-Laptop.local.96575.1832.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-150543/validation/events.out.tfevents.1591470344.Ryan-Cocuzzos-Laptop.local.96575.1832.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-151040/train/events.out.tfevents.1591470640.Ryan-Cocuzzos-Laptop.local.96658.1788.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151040/train/events.out.tfevents.1591470640.Ryan-Cocuzzos-Laptop.local.96658.1788.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-151040/train/events.out.tfevents.1591470641.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151040/train/events.out.tfevents.1591470641.Ryan-Cocuzzos-Laptop.local.profile-empty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-151040/train/plugins/profile/2020_06_06_15_10_41/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151040/train/plugins/profile/2020_06_06_15_10_41/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-151040/train/plugins/profile/2020_06_06_15_10_41/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151040/train/plugins/profile/2020_06_06_15_10_41/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-151040/train/plugins/profile/2020_06_06_15_10_41/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151040/train/plugins/profile/2020_06_06_15_10_41/Ryan-Cocuzzos-Laptop.local.overview_page.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-151040/train/plugins/profile/2020_06_06_15_10_41/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151040/train/plugins/profile/2020_06_06_15_10_41/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-151040/train/plugins/profile/2020_06_06_15_10_41/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151040/train/plugins/profile/2020_06_06_15_10_41/Ryan-Cocuzzos-Laptop.local.trace.json.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-151040/validation/events.out.tfevents.1591470641.Ryan-Cocuzzos-Laptop.local.96658.1968.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151040/validation/events.out.tfevents.1591470641.Ryan-Cocuzzos-Laptop.local.96658.1968.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-151223/train/events.out.tfevents.1591470743.Ryan-Cocuzzos-Laptop.local.96690.1788.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151223/train/events.out.tfevents.1591470743.Ryan-Cocuzzos-Laptop.local.96690.1788.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-151223/train/events.out.tfevents.1591470744.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151223/train/events.out.tfevents.1591470744.Ryan-Cocuzzos-Laptop.local.profile-empty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-151223/train/plugins/profile/2020_06_06_15_12_24/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151223/train/plugins/profile/2020_06_06_15_12_24/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-151223/train/plugins/profile/2020_06_06_15_12_24/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151223/train/plugins/profile/2020_06_06_15_12_24/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-151223/train/plugins/profile/2020_06_06_15_12_24/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151223/train/plugins/profile/2020_06_06_15_12_24/Ryan-Cocuzzos-Laptop.local.overview_page.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-151223/train/plugins/profile/2020_06_06_15_12_24/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151223/train/plugins/profile/2020_06_06_15_12_24/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-151223/train/plugins/profile/2020_06_06_15_12_24/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151223/train/plugins/profile/2020_06_06_15_12_24/Ryan-Cocuzzos-Laptop.local.trace.json.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-151223/validation/events.out.tfevents.1591470744.Ryan-Cocuzzos-Laptop.local.96690.1968.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151223/validation/events.out.tfevents.1591470744.Ryan-Cocuzzos-Laptop.local.96690.1968.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-181445/train/events.out.tfevents.1591481685.Ryan-Cocuzzos-Laptop.local.99394.1684.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-181445/train/events.out.tfevents.1591481685.Ryan-Cocuzzos-Laptop.local.99394.1684.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-181445/train/events.out.tfevents.1591481686.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-181445/train/events.out.tfevents.1591481686.Ryan-Cocuzzos-Laptop.local.profile-empty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-181445/train/plugins/profile/2020_06_06_18_14_46/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-181445/train/plugins/profile/2020_06_06_18_14_46/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-181445/train/plugins/profile/2020_06_06_18_14_46/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-181445/train/plugins/profile/2020_06_06_18_14_46/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-181445/train/plugins/profile/2020_06_06_18_14_46/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-181445/train/plugins/profile/2020_06_06_18_14_46/Ryan-Cocuzzos-Laptop.local.overview_page.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-181445/train/plugins/profile/2020_06_06_18_14_46/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-181445/train/plugins/profile/2020_06_06_18_14_46/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-181445/train/plugins/profile/2020_06_06_18_14_46/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-181445/train/plugins/profile/2020_06_06_18_14_46/Ryan-Cocuzzos-Laptop.local.trace.json.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-181445/validation/events.out.tfevents.1591481686.Ryan-Cocuzzos-Laptop.local.99394.1832.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-181445/validation/events.out.tfevents.1591481686.Ryan-Cocuzzos-Laptop.local.99394.1832.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191236/train/events.out.tfevents.1591485156.Ryan-Cocuzzos-Laptop.local.514.1493.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191236/train/events.out.tfevents.1591485156.Ryan-Cocuzzos-Laptop.local.514.1493.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191236/train/events.out.tfevents.1591485157.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191236/train/events.out.tfevents.1591485157.Ryan-Cocuzzos-Laptop.local.profile-empty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191236/train/plugins/profile/2020_06_06_19_12_37/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191236/train/plugins/profile/2020_06_06_19_12_37/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191236/train/plugins/profile/2020_06_06_19_12_37/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191236/train/plugins/profile/2020_06_06_19_12_37/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191236/train/plugins/profile/2020_06_06_19_12_37/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191236/train/plugins/profile/2020_06_06_19_12_37/Ryan-Cocuzzos-Laptop.local.overview_page.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191236/train/plugins/profile/2020_06_06_19_12_37/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191236/train/plugins/profile/2020_06_06_19_12_37/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191236/train/plugins/profile/2020_06_06_19_12_37/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191236/train/plugins/profile/2020_06_06_19_12_37/Ryan-Cocuzzos-Laptop.local.trace.json.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191236/validation/events.out.tfevents.1591485157.Ryan-Cocuzzos-Laptop.local.514.1641.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191236/validation/events.out.tfevents.1591485157.Ryan-Cocuzzos-Laptop.local.514.1641.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191438/train/events.out.tfevents.1591485279.Ryan-Cocuzzos-Laptop.local.578.1493.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191438/train/events.out.tfevents.1591485279.Ryan-Cocuzzos-Laptop.local.578.1493.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191438/train/events.out.tfevents.1591485279.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191438/train/events.out.tfevents.1591485279.Ryan-Cocuzzos-Laptop.local.profile-empty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191438/train/plugins/profile/2020_06_06_19_14_39/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191438/train/plugins/profile/2020_06_06_19_14_39/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191438/train/plugins/profile/2020_06_06_19_14_39/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191438/train/plugins/profile/2020_06_06_19_14_39/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191438/train/plugins/profile/2020_06_06_19_14_39/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191438/train/plugins/profile/2020_06_06_19_14_39/Ryan-Cocuzzos-Laptop.local.overview_page.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191438/train/plugins/profile/2020_06_06_19_14_39/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191438/train/plugins/profile/2020_06_06_19_14_39/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191438/train/plugins/profile/2020_06_06_19_14_39/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191438/train/plugins/profile/2020_06_06_19_14_39/Ryan-Cocuzzos-Laptop.local.trace.json.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191438/validation/events.out.tfevents.1591485279.Ryan-Cocuzzos-Laptop.local.578.1641.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191438/validation/events.out.tfevents.1591485279.Ryan-Cocuzzos-Laptop.local.578.1641.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191526/train/events.out.tfevents.1591485327.Ryan-Cocuzzos-Laptop.local.648.1493.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191526/train/events.out.tfevents.1591485327.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191526/train/plugins/profile/2020_06_06_19_15_27/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191526/train/plugins/profile/2020_06_06_19_15_27/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191526/train/plugins/profile/2020_06_06_19_15_27/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191526/train/plugins/profile/2020_06_06_19_15_27/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191526/train/plugins/profile/2020_06_06_19_15_27/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191526/train/plugins/profile/2020_06_06_19_15_27/Ryan-Cocuzzos-Laptop.local.overview_page.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191526/train/plugins/profile/2020_06_06_19_15_27/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191526/train/plugins/profile/2020_06_06_19_15_27/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191526/train/plugins/profile/2020_06_06_19_15_27/Ryan-Cocuzzos-Laptop.local.trace.json.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191526/validation/events.out.tfevents.1591485327.Ryan-Cocuzzos-Laptop.local.648.1641.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191748/train/events.out.tfevents.1591485469.Ryan-Cocuzzos-Laptop.local.715.1493.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191748/train/events.out.tfevents.1591485469.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191748/train/plugins/profile/2020_06_06_19_17_49/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191748/train/plugins/profile/2020_06_06_19_17_49/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191748/train/plugins/profile/2020_06_06_19_17_49/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191748/train/plugins/profile/2020_06_06_19_17_49/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191748/train/plugins/profile/2020_06_06_19_17_49/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-191748/validation/events.out.tfevents.1591485469.Ryan-Cocuzzos-Laptop.local.715.1641.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-193740/train/events.out.tfevents.1591486661.Ryan-Cocuzzos-Laptop.local.1103.1498.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-193740/train/events.out.tfevents.1591486661.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-193740/train/plugins/profile/2020_06_06_19_37_41/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-193740/train/plugins/profile/2020_06_06_19_37_41/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-193740/train/plugins/profile/2020_06_06_19_37_41/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-193740/train/plugins/profile/2020_06_06_19_37_41/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-193740/train/plugins/profile/2020_06_06_19_37_41/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-193740/validation/events.out.tfevents.1591486661.Ryan-Cocuzzos-Laptop.local.1103.1646.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-203809/train/events.out.tfevents.1591490290.Ryan-Cocuzzos-Laptop.local.1482.1493.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-203809/train/events.out.tfevents.1591490290.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-203809/train/plugins/profile/2020_06_06_20_38_10/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-203809/train/plugins/profile/2020_06_06_20_38_10/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-203809/train/plugins/profile/2020_06_06_20_38_10/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-203809/train/plugins/profile/2020_06_06_20_38_10/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-203809/train/plugins/profile/2020_06_06_20_38_10/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-203809/validation/events.out.tfevents.1591490290.Ryan-Cocuzzos-Laptop.local.1482.1641.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204215/train/events.out.tfevents.1591490536.Ryan-Cocuzzos-Laptop.local.1550.1493.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204215/train/events.out.tfevents.1591490536.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204215/train/plugins/profile/2020_06_06_20_42_16/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204215/train/plugins/profile/2020_06_06_20_42_16/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204215/train/plugins/profile/2020_06_06_20_42_16/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204215/train/plugins/profile/2020_06_06_20_42_16/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204215/train/plugins/profile/2020_06_06_20_42_16/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204215/validation/events.out.tfevents.1591490536.Ryan-Cocuzzos-Laptop.local.1550.1627.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204459/train/events.out.tfevents.1591490700.Ryan-Cocuzzos-Laptop.local.1610.1493.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204459/train/events.out.tfevents.1591490700.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204459/train/plugins/profile/2020_06_06_20_45_00/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204459/train/plugins/profile/2020_06_06_20_45_00/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204459/train/plugins/profile/2020_06_06_20_45_00/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204459/train/plugins/profile/2020_06_06_20_45_00/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204459/train/plugins/profile/2020_06_06_20_45_00/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204459/validation/events.out.tfevents.1591490700.Ryan-Cocuzzos-Laptop.local.1610.1627.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204529/train/events.out.tfevents.1591490730.Ryan-Cocuzzos-Laptop.local.1627.1493.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204529/train/events.out.tfevents.1591490730.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204529/train/plugins/profile/2020_06_06_20_45_30/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204529/train/plugins/profile/2020_06_06_20_45_30/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204529/train/plugins/profile/2020_06_06_20_45_30/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204529/train/plugins/profile/2020_06_06_20_45_30/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204529/train/plugins/profile/2020_06_06_20_45_30/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204529/validation/events.out.tfevents.1591490730.Ryan-Cocuzzos-Laptop.local.1627.1627.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204609/train/events.out.tfevents.1591490770.Ryan-Cocuzzos-Laptop.local.1647.1493.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204609/train/events.out.tfevents.1591490770.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204609/train/plugins/profile/2020_06_06_20_46_10/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204609/train/plugins/profile/2020_06_06_20_46_10/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204609/train/plugins/profile/2020_06_06_20_46_10/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204609/train/plugins/profile/2020_06_06_20_46_10/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204609/train/plugins/profile/2020_06_06_20_46_10/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-204609/validation/events.out.tfevents.1591490770.Ryan-Cocuzzos-Laptop.local.1647.1627.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-212655/train/events.out.tfevents.1591493216.Ryan-Cocuzzos-Laptop.local.2584.1702.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-212655/train/events.out.tfevents.1591493216.Ryan-Cocuzzos-Laptop.local.profile-empty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-212655/train/plugins/profile/2020_06_06_21_26_56/Ryan-Cocuzzos-Laptop.local.input_pipeline.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-212655/train/plugins/profile/2020_06_06_21_26_56/Ryan-Cocuzzos-Laptop.local.kernel_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-212655/train/plugins/profile/2020_06_06_21_26_56/Ryan-Cocuzzos-Laptop.local.overview_page.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-212655/train/plugins/profile/2020_06_06_21_26_56/Ryan-Cocuzzos-Laptop.local.tensorflow_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-212655/train/plugins/profile/2020_06_06_21_26_56/Ryan-Cocuzzos-Laptop.local.trace.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/logs/fit/20200606-212655/validation/events.out.tfevents.1591493216.Ryan-Cocuzzos-Laptop.local.2584.1850.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/other/ai.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/other/lab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/other/simple2in2out.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/svr/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/postalignplay/group1-shard1of1.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/postalignplay/model.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/postalignpt/group1-shard1of1.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/postalignpt/model.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/prealignform/group1-shard1of1.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/prealignform/model.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/temp/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/temp/saved_model.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/temp/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/temp/variables/variables.data-00000-of-00001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/temp/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/temp/variables/variables.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/test_core_functions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/svr/test_helpers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/utils/data/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/utils/data/test_aggregator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/utils/data/test_builder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/utils/data/test_input.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/utils/data/test_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/utils/model/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/utils/model/test_builder.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +245,7 @@
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_DataUtils_Tester.coverage" NAME="Unittests for DataUtils.Tester Coverage Results" MODIFIED="1595478156686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/utils" />
     <SUITE FILE_PATH="coverage/hudl_server$Test__sample_test.coverage" NAME="Test: sample_test Coverage Results" MODIFIED="1595531283620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_in_DataHandler_py.coverage" NAME="Unittests in DataHandler.py Coverage Results" MODIFIED="1595480421659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/utils" />
-    <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_test_core_functions_Tester.coverage" NAME="Unittests for test_core_functions.Tester Coverage Results" MODIFIED="1596295745961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/svr" />
+    <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_test_core_functions_Tester.coverage" NAME="Unittests for test_core_functions.Tester Coverage Results" MODIFIED="1597512340191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/svr" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_in_test_builder_py.coverage" NAME="Unittests in test_builder.py Coverage Results" MODIFIED="1596270886787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/utils/model" />
     <SUITE FILE_PATH="coverage/hudl_server$fb.coverage" NAME="fb Coverage Results" MODIFIED="1595001240244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hudl_server" />
     <SUITE FILE_PATH="coverage/hudl_server$Test__src_test_unit.coverage" NAME="Test: src.test.unit Coverage Results" MODIFIED="1595627350505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -45,7 +259,7 @@
     <SUITE FILE_PATH="coverage/hudl_server$Test_Suite___Data.coverage" NAME="Test Suite - Data Coverage Results" MODIFIED="1595804589479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/hudl_server$utils.coverage" NAME="utils Coverage Results" MODIFIED="1595528970948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_utils_Test_test_df_power_wash.coverage" NAME="Unittests for utils.Test.test_df_power_wash Coverage Results" MODIFIED="1595518641675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/utils/data" />
-    <SUITE FILE_PATH="coverage/hudl_server$server.coverage" NAME="server Coverage Results" MODIFIED="1595627859411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hudl_server" />
+    <SUITE FILE_PATH="coverage/hudl_server$server.coverage" NAME="server Coverage Results" MODIFIED="1597461375381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
     <SUITE FILE_PATH="coverage/hudl_server$x.coverage" NAME="x Coverage Results" MODIFIED="1595535246679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hudl_server$CustomCallbacks.coverage" NAME="CustomCallbacks Coverage Results" MODIFIED="1595622634397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/main/core/ai/utils/model" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_helpers_db_helpers_tester_test_extract_data_from_fb.coverage" NAME="Unittests for helpers.db_helpers_tester.test_extract_data_from_fb Coverage Results" MODIFIED="1595002738576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hudl_server/test" />
@@ -61,14 +275,15 @@
     <SUITE FILE_PATH="coverage/hudl_server$Doctests_in_test_builder.coverage" NAME="Doctests in test_builder Coverage Results" MODIFIED="1595803990062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/utils/data" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_test_input_Tester.coverage" NAME="Unittests for test_input.Tester Coverage Results" MODIFIED="1595538515225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/utils/data" />
     <SUITE FILE_PATH="coverage/hudl_server$Test__src_test_unit_svr.coverage" NAME="Test: src.test.unit.svr Coverage Results" MODIFIED="1595624493878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/hudl_server$core_functions.coverage" NAME="core_functions Coverage Results" MODIFIED="1595964966774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hudl_server" />
+    <SUITE FILE_PATH="coverage/hudl_server$core_functions.coverage" NAME="core_functions Coverage Results" MODIFIED="1597082516669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hudl_server" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_test_builder_TestModelBuilder.coverage" NAME="Unittests for test_builder.TestModelBuilder Coverage Results" MODIFIED="1596270487470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/utils/model" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_test_helpers_Tester.coverage" NAME="Unittests for test_helpers.Tester Coverage Results" MODIFIED="1595869275964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/svr" />
-    <SUITE FILE_PATH="coverage/hudl_server$test_core_functions.coverage" NAME="test_core_functions Coverage Results" MODIFIED="1596271043712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/svr" />
+    <SUITE FILE_PATH="coverage/hudl_server$test_core_functions.coverage" NAME="test_core_functions Coverage Results" MODIFIED="1597461240195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/svr" />
+    <SUITE FILE_PATH="coverage/hudl_server$server__1_.coverage" NAME="server (1) Coverage Results" MODIFIED="1597543499809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/svr" />
     <SUITE FILE_PATH="coverage/hudl_server$Cloud.coverage" NAME="Cloud Coverage Results" MODIFIED="1596031780347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hudl_server" />
     <SUITE FILE_PATH="coverage/hudl_server$helpers.coverage" NAME="helpers Coverage Results" MODIFIED="1595612535600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/svr" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_helpers_Tester.coverage" NAME="Unittests for helpers.Tester Coverage Results" MODIFIED="1595620111761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/svr" />
-    <SUITE FILE_PATH="coverage/hudl_server$socket_test.coverage" NAME="socket_test Coverage Results" MODIFIED="1596295954953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hudl_server$socket_test.coverage" NAME="socket_test Coverage Results" MODIFIED="1597243069710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hudl_server$Tiny_utils.coverage" NAME="Tiny_utils Coverage Results" MODIFIED="1595528614106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/main/core/ai/utils/data" />
     <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_test_builder_Tester.coverage" NAME="Unittests for test_builder.Tester Coverage Results" MODIFIED="1596245447633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/utils/model" />
   </component>
@@ -100,24 +315,24 @@
     <session id="-1921398973">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="16" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.4" value="5" />
-          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.4" value="6" />
+          <entry key="project.open.time.5" value="4" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="132" />
+          <entry key="dummy" value="143" />
           <entry key="json" value="25" />
           <entry key="md" value="73" />
-          <entry key="py" value="57504" />
+          <entry key="py" value="60161" />
           <entry key="yml" value="2" />
         </counts>
       </usages-collector>
@@ -125,8 +340,8 @@
         <counts>
           <entry key="JSON" value="25" />
           <entry key="Markdown" value="61" />
-          <entry key="PLAIN_TEXT" value="132" />
-          <entry key="Python" value="57504" />
+          <entry key="PLAIN_TEXT" value="143" />
+          <entry key="Python" value="60161" />
           <entry key="Scratch" value="12" />
           <entry key="YAML" value="2" />
         </counts>
@@ -138,9 +353,9 @@
           <entry key="bin" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="2" />
-          <entry key="json" value="24" />
+          <entry key="json" value="25" />
           <entry key="md" value="5" />
-          <entry key="py" value="424" />
+          <entry key="py" value="475" />
           <entry key="tiny_utils" value="1" />
           <entry key="yml" value="1" />
         </counts>
@@ -148,10 +363,10 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="2" />
-          <entry key="JSON" value="24" />
+          <entry key="JSON" value="25" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="423" />
+          <entry key="Python" value="474" />
           <entry key="Scratch" value="1" />
           <entry key="UML" value="4" />
           <entry key="YAML" value="1" />
@@ -161,21 +376,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/unit/svr/test_core_functions.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/svr/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+            <state relative-caret-position="455">
+              <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
-                <marker date="1596295740430" expanded="true" signature="269:270" ph="..." />
-                <marker date="1596295740430" expanded="true" signature="289:290" ph="..." />
-                <marker date="1596295740430" expanded="true" signature="289:291" ph="..." />
-                <marker date="1596295740430" expanded="true" signature="289:295" ph="..." />
-                <marker date="1596295740430" expanded="true" signature="289:661" ph="..." />
-                <marker date="1596295740430" expanded="true" signature="655:656" ph="..." />
-                <marker date="1596295740430" expanded="true" signature="655:661" ph="..." />
+                <element signature="e#1#34#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/svr/helpers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-57">
+              <caret line="94" column="33" lean-forward="true" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/constants.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-109">
+              <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -192,47 +421,47 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>training_in</find>
-      <find>training_info</find>
-      <find>games_da</find>
-      <find>every</find>
-      <find>dual</find>
-      <find>du</find>
-      <find>__bui</find>
-      <find>const</find>
-      <find>tri_b</find>
-      <find>config</find>
-      <find>isinstan</find>
-      <find>fit</find>
-      <find>isSequen</find>
-      <find>isSequent</find>
-      <find>sequen</find>
-      <find>.evalua</find>
-      <find>compile</find>
-      <find>metrics=</find>
-      <find>.fit</find>
-      <find>add_col</find>
-      <find>serv</find>
-      <find>prev_play_t</find>
-      <find>fillna</find>
-      <find>outp</find>
-      <find>build_di</find>
-      <find>diction</find>
-      <find>self.diction</find>
-      <find>__get_dictionary</find>
-      <find>get_dic</find>
-      <find>self.bound</find>
+      <find>relev</find>
+      <find>Serving gam</find>
+      <find>def em</find>
+      <find>on_progress</find>
+      <find>asyncio.new_event_loop</find>
+      <find>asyn</find>
+      <find>update_fn</find>
+      <find>should em</find>
+      <find>emit</find>
+      <find>emit)</find>
+      <find>set_log</find>
+      <find>async</find>
+      <find>partial_up</find>
+      <find>should upd</find>
+      <find>About to update to 77!</find>
+      <find>build_</find>
+      <find>tri</find>
+      <find>run</find>
+      <find>log</find>
+      <find>await</find>
+      <find>await em</find>
+      <find>awa</find>
+      <find>deplo</find>
+      <find>open</find>
+      <find>parti</find>
+      <find>buildin</find>
+      <find>firs</find>
+      <find>first mod</find>
+      <find>New Model Creation Request</find>
+      <find>notif</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/main</dir>
       <dir>$PROJECT_DIR$/src/main/core/ai/utils/data</dir>
       <dir>$PROJECT_DIR$/src/main/core/ai/utils</dir>
       <dir>$PROJECT_DIR$/hudl_server/test</dir>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/src/main/ai</dir>
-      <dir>$PROJECT_DIR$/hudl_server</dir>
       <dir>$PROJECT_DIR$/src/test</dir>
+      <dir>$PROJECT_DIR$/hudl_server</dir>
       <dir>$PROJECT_DIR$/src</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -241,14 +470,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/unit/utils/DataUtils.py" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/hudl_server/fb.py" />
-        <option value="$PROJECT_DIR$/src/test/unit/svr/fb.py" />
-        <option value="$PROJECT_DIR$/src/test/unit/utils/data/aggregator.py" />
-        <option value="$PROJECT_DIR$/src/test/unit/utils/data/utils.py" />
-        <option value="$PROJECT_DIR$/src/test/unit/utils/data/__init__.py" />
-        <option value="$PROJECT_DIR$/sample_test/x.py" />
         <option value="$PROJECT_DIR$/tests.py" />
         <option value="$PROJECT_DIR$/x.py" />
         <option value="$PROJECT_DIR$/src/test/unit/utils/data/test_input.py" />
@@ -273,25 +494,33 @@
         <option value="$PROJECT_DIR$/src/main/core/ai/utils/data/Builder.py" />
         <option value="$PROJECT_DIR$/src/main/core/ai/utils/model/CustomCallbacks.py" />
         <option value="$PROJECT_DIR$/src/main/ai/data/Imputer.py" />
-        <option value="$PROJECT_DIR$/src/main/ai/data/Dropper.py" />
         <option value="$PROJECT_DIR$/src/main/util/io.py" />
         <option value="$PROJECT_DIR$/scratch.py" />
         <option value="$PROJECT_DIR$/src/test/unit/utils/model/EZModel.py" />
         <option value="$PROJECT_DIR$/hudl_server/Cloud.py" />
         <option value="$PROJECT_DIR$/src/main/ai/data/Aggregator.py" />
         <option value="$PROJECT_DIR$/src/test/unit/utils/model/test_builder.py" />
-        <option value="$PROJECT_DIR$/src/main/ai/model/EZModel.py" />
-        <option value="$PROJECT_DIR$/src/main/ai/model/CustomCallbacks.py" />
-        <option value="$PROJECT_DIR$/socket_test.py" />
-        <option value="$PROJECT_DIR$/constants.py" />
-        <option value="$PROJECT_DIR$/src/main/ai/data/hn.py" />
-        <option value="$PROJECT_DIR$/hudl_server/core_functions.py" />
-        <option value="$PROJECT_DIR$/src/main/ai/data/Utils.py" />
         <option value="$PROJECT_DIR$/src/main/ai/model/Builder.py" />
-        <option value="$PROJECT_DIR$/hudl_server/helpers.py" />
         <option value="$PROJECT_DIR$/src/main/ai/data/Builder.py" />
         <option value="$PROJECT_DIR$/src/main/ai/data/Input.py" />
+        <option value="$PROJECT_DIR$/src/main/ai/data/Dropper.py" />
+        <option value="$PROJECT_DIR$/src/main/ai/data/Utils.py" />
+        <option value="$PROJECT_DIR$/src/main/ai/data/hn.py" />
+        <option value="$PROJECT_DIR$/hudl_server/helpers.py" />
+        <option value="$PROJECT_DIR$/socket_test.py" />
+        <option value="$PROJECT_DIR$/hudl_server/core_functions.py" />
+        <option value="$PROJECT_DIR$/server/server.py" />
         <option value="$PROJECT_DIR$/src/test/unit/svr/test_core_functions.py" />
+        <option value="$PROJECT_DIR$/server/helpers.py" />
+        <option value="$PROJECT_DIR$/server/__init__.py" />
+        <option value="$PROJECT_DIR$/src/main/ai/model/EZModel.py" />
+        <option value="$PROJECT_DIR$/src/main/ai/model/CustomCallbacks.py" />
+        <option value="$PROJECT_DIR$/svr/Cloud.py" />
+        <option value="$PROJECT_DIR$/src/test/svr/test_core_functions.py" />
+        <option value="$PROJECT_DIR$/svr/core_functions.py" />
+        <option value="$PROJECT_DIR$/svr/server.py" />
+        <option value="$PROJECT_DIR$/constants.py" />
+        <option value="$PROJECT_DIR$/svr/helpers.py" />
       </list>
     </option>
   </component>
@@ -301,7 +530,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
@@ -322,75 +551,7 @@
             <path>
               <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
               <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
-              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="ai" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="ai" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="unit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="unit" type="462c0819:PsiDirectoryNode" />
               <item name="svr" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="unit" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hudl_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="unit" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hudl_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
           </expand>
           <select />
@@ -411,16 +572,17 @@
     <option name="myUseBundledCoveragePy" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main" />
-      <recent name="$PROJECT_DIR$/src/main/core/ai" />
-      <recent name="$PROJECT_DIR$/src/test/unit/utils/model" />
-      <recent name="$PROJECT_DIR$/src/test/unit/utils/data" />
-      <recent name="$PROJECT_DIR$/src/test/unit/utils/datum" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$/src/test/unit/svr" />
       <recent name="$PROJECT_DIR$/hudl_server" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test" />
+      <recent name="$PROJECT_DIR$/src/test/unit/svr" />
+      <recent name="$PROJECT_DIR$/src/test/other" />
+      <recent name="$PROJECT_DIR$/src/main" />
+      <recent name="$PROJECT_DIR$/src/main/core/ai" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -435,7 +597,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.socket_test">
+  <component name="RunManager" selected="Python.server (1)">
     <configuration name="Test: hudl_server" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <module name="hudl_server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -454,6 +616,50 @@
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="server (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="hudl_server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/svr" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/svr/server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="hudl_server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server/server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration name="socket_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -528,7 +734,7 @@
       <option name="additionalOptions" value="" />
       <option name="application" value="" />
       <module name="hudl_server" />
-      <option name="target" value="$PROJECT_DIR$/hudl_server/server.py" />
+      <option name="target" value="$PROJECT_DIR$/svr/server.py" />
       <option name="targetType" value="PATH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -570,22 +776,22 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/src/test/unit/utils/data&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/src/test/utils/data&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_builder.TestModelBuilder" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for src.test.svr.test_core_functions.Tester" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="hudl_server" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/unit/utils/model" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/svr" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_builder.TestModelBuilder&quot;" />
+      <option name="_new_target" value="&quot;src.test.svr.test_core_functions.Tester&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -594,7 +800,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/unit/svr" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/svr" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -602,21 +808,6 @@
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_core_functions.Tester&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests in test_builder.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="hudl_server" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/unit/utils/model" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/src/test/unit/utils/model/test_builder.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Unnamed" type="tests" factoryName="Unittests">
@@ -642,19 +833,20 @@
       <item itemvalue="Flask server.Unnamed" />
       <item itemvalue="Python tests.Unnamed" />
       <item itemvalue="Python tests.Test Suite - Data" />
+      <item itemvalue="Python tests.Unittests for src.test.svr.test_core_functions.Tester" />
       <item itemvalue="Python tests.Unittests for test_core_functions.Tester" />
       <item itemvalue="Python.test_core_functions" />
       <item itemvalue="Python.socket_test" />
-      <item itemvalue="Python tests.Unittests for test_builder.TestModelBuilder" />
-      <item itemvalue="Python tests.Unittests in test_builder.py" />
+      <item itemvalue="Python.server" />
+      <item itemvalue="Python.server (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.socket_test" />
+        <item itemvalue="Python.server (1)" />
         <item itemvalue="Python tests.Unittests for test_core_functions.Tester" />
+        <item itemvalue="Python.server" />
         <item itemvalue="Python.test_core_functions" />
-        <item itemvalue="Python tests.Unittests in test_builder.py" />
-        <item itemvalue="Python tests.Unittests for test_builder.TestModelBuilder" />
+        <item itemvalue="Python tests.Unittests for src.test.svr.test_core_functions.Tester" />
       </list>
     </recent_temporary>
   </component>
@@ -672,46 +864,46 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.01 at 10h 39m 42s.xml">
+    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.15 at 09h 03m 54s.xml">
       <configuration name="Unittests for test_core_functions.Tester" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.01 at 10h 41m 38s.xml">
+    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.15 at 09h 04m 27s.xml">
       <configuration name="Unittests for test_core_functions.Tester" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.01 at 10h 42m 19s.xml">
+    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.15 at 09h 05m 18s.xml">
       <configuration name="Unittests for test_core_functions.Tester" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.01 at 11h 16m 45s.xml">
+    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.15 at 09h 05m 53s.xml">
       <configuration name="Unittests for test_core_functions.Tester" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.01 at 11h 17m 09s.xml">
+    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.15 at 09h 06m 52s.xml">
       <configuration name="Unittests for test_core_functions.Tester" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.01 at 11h 18m 55s.xml">
+    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.15 at 09h 19m 20s.xml">
       <configuration name="Unittests for test_core_functions.Tester" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.01 at 11h 22m 06s.xml">
+    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.15 at 09h 24m 30s.xml">
       <configuration name="Unittests for test_core_functions.Tester" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.01 at 11h 26m 07s.xml">
+    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.15 at 09h 25m 11s.xml">
       <configuration name="Unittests for test_core_functions.Tester" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.01 at 11h 29m 03s.xml">
+    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.15 at 13h 24m 14s.xml">
       <configuration name="Unittests for test_core_functions.Tester" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.01 at 11h 29m 50s.xml">
+    <history-entry file="Unittests_for_test_core_functions_Tester - 2020.08.15 at 13h 26m 06s.xml">
       <configuration name="Unittests for test_core_functions.Tester" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21745351" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17238913" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299363" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.87267524" weight="0.4789809" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.87267524" visible="true" weight="0.4789809" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5745223" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -720,7 +912,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.12732475" side_tool="true" weight="0.5388535" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3299363" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3299363" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3299363" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.3299363" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -731,13 +923,13 @@
       <window_info anchor="right" id="Coverage" order="5" sideWeight="0.50063694" side_tool="true" weight="0.33189964" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21173105" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16809729" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299363" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.87267524" weight="0.4789809" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.7044586" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.87267524" visible="true" weight="0.4789809" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5745223" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -766,7 +958,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/test/unit/utils/data/test_builder.py</url>
+          <url>file://$PROJECT_DIR$/src/test/utils/data/test_builder.py</url>
           <line>61</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
@@ -774,27 +966,15 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/unit/utils/data/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_test/x.py" />
-    <entry file="file://$PROJECT_DIR$/src/test/unit/utils/data/some.py" />
-    <entry file="file://$PROJECT_DIR$/src/test/unit/utils/data/test_aggregator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/x.py" />
-    <entry file="file://$PROJECT_DIR$/src/test/unit/utils/data/test_utils.py">
+    <entry file="file://$PROJECT_DIR$/src/test/utils/data/test_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/unit/utils/data/test_input.py">
+    <entry file="file://$PROJECT_DIR$/src/test/utils/data/test_input.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
@@ -821,13 +1001,13 @@
     <entry file="file://$PROJECT_DIR$/src/test/unit/svr/fb.py" />
     <entry file="file://$PROJECT_DIR$/src/test/unit/svr/postalignplay.json" />
     <entry file="file://$PROJECT_DIR$/hudl_server/prealignform/model.json" />
-    <entry file="file://$PROJECT_DIR$/src/test/unit/svr/postalignplay/group1-shard1of1.bin" />
+    <entry file="file://$PROJECT_DIR$/src/test/svr/postalignplay/group1-shard1of1.bin" />
     <entry file="file://$PROJECT_DIR$/hudl_server/mymodel2/model.json" />
     <entry file="file://$PROJECT_DIR$/hudl_server/mymodel/model.json" />
     <entry file="file://$PROJECT_DIR$/database.rules.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/unit/svr/test_helpers.py">
+    <entry file="file://$PROJECT_DIR$/src/test/svr/test_helpers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
@@ -841,25 +1021,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ai/data/Tiny_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="64" column="25" lean-forward="true" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/unit/svr/postalignplay/model.json" />
+    <entry file="file://$PROJECT_DIR$/src/test/svr/postalignplay/model.json" />
     <entry file="file://$PROJECT_DIR$/firebase.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/hudl_server/file_data.json" />
     <entry file="file://$PROJECT_DIR$/hudl_server/cors.json" />
-    <entry file="file://$PROJECT_DIR$/hudl_server/test/helpers.py">
+    <entry file="file://$PROJECT_DIR$/svr/test/helpers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-516" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/other/ai.py">
+    <entry file="file://$PROJECT_DIR$/src/test/svr/other/ai.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="112" column="8" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="8" />
@@ -870,108 +1043,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
-          <folding>
-            <marker date="1596216720019" expanded="true" signature="80:572" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/hudl_server/Cloud.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
-          <folding>
-            <element signature="e#17#53#0" expanded="true" />
-            <marker date="1596227602056" expanded="true" signature="2278:2287" ph="..." />
-            <marker date="1596227602056" expanded="true" signature="2278:3163" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/ai/data/Imputer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
           <caret line="67" column="27" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/unit/utils/data/test_builder.py">
+    <entry file="file://$PROJECT_DIR$/src/test/utils/data/test_builder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
           <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ai/model/CustomCallbacks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="17" lean-forward="true" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#1700#2737#0" />
-            <element signature="e#3716#5247#0" />
-            <marker date="1596245907056" expanded="true" signature="1056:1119" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hudl_server/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="56" column="19" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hudl_server/dbdata.json">
+    <entry file="file://$PROJECT_DIR$/svr/dbdata.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="72" selection-start-column="26" selection-end-column="72" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ai/data/hn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="390" column="4" selection-start-line="390" selection-start-column="4" selection-end-line="390" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#9714#11897#1" />
-            <marker date="1596266501258" expanded="true" signature="776:857" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2473">
-          <caret line="230" lean-forward="true" selection-start-line="230" selection-end-line="230" />
-          <folding>
-            <element signature="e#358#367#0" expanded="true" />
-            <element signature="e#560#899#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/unit/svr/__init__.py">
+    <entry file="file://$PROJECT_DIR$/src/test/svr/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/unit/utils/model/test_builder.py">
+    <entry file="file://$PROJECT_DIR$/src/test/utils/model/test_builder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61">
           <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/socket_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -979,17 +1084,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1029">
           <caret line="224" column="59" selection-start-line="224" selection-start-column="52" selection-end-line="224" selection-end-column="59" />
-          <folding>
-            <element signature="e#1#64#0" expanded="true" />
-            <element signature="e#1675#2753#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ai/data/Dropper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1000,124 +1094,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ai/data/Utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1253">
-          <caret line="127" column="4" selection-start-line="127" selection-start-column="4" selection-end-line="127" selection-end-column="4" />
-          <folding>
-            <element signature="e#546#2165#1" />
-            <element signature="e#18530#19223#0" />
-            <element signature="e#19307#19752#0" />
-            <element signature="e#20023#24101#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/ai/data/Input.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1230">
           <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#1428#3891#1" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ai/model/EZModel.py">
+    <entry file="file://$PROJECT_DIR$/src/main/ai/data/Tiny_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="159">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ai/data/Utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="448" column="43" selection-start-line="448" selection-start-column="43" selection-end-line="448" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/ai/data/Builder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="203" selection-start-line="203" selection-end-line="203" />
+        <state relative-caret-position="134">
+          <caret line="65" column="32" selection-start-line="65" selection-start-column="15" selection-end-line="65" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ai/data/Dropper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2520">
+          <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ai/data/hn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="483" column="8" lean-forward="true" selection-start-line="483" selection-start-column="8" selection-end-line="483" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/asyncio/base_events.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="509" selection-start-line="509" selection-end-line="509" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/socket_test.py" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/asyncio/tasks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="179" selection-start-line="179" selection-end-line="179" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firestore.indexes.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svr/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ai/model/EZModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="687">
+          <caret line="138" column="15" lean-forward="true" selection-start-line="138" selection-start-column="15" selection-end-line="138" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svr/core_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="200" column="18" selection-start-line="200" selection-start-column="18" selection-end-line="200" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/svr/test_core_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="692">
+          <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
           <folding>
-            <element signature="e#0#51#0" expanded="true" />
-            <element signature="e#1818#2576#0" />
-            <element signature="e#2678#3251#0" />
-            <marker date="1596295020057" expanded="true" signature="3426:4628" ph="..." />
-            <marker date="1596295020057" expanded="true" signature="11978:12042" ph="..." />
-            <marker date="1596295020057" expanded="true" signature="12035:12042" ph="..." />
+            <marker date="1597496741591" expanded="true" signature="375:389" ph="..." />
+            <marker date="1597496741591" expanded="true" signature="1182:1184" ph="..." />
+            <marker date="1597496741591" expanded="true" signature="1203:1951" ph="..." />
+            <marker date="1597496741591" expanded="false" signature="1975:1988" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hudl_server/helpers.py">
+    <entry file="file://$PROJECT_DIR$/svr/Cloud.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="69">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ai/model/CustomCallbacks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
           <folding>
-            <element signature="e#467#497#0" />
-            <element signature="e#607#1400#0" />
-            <element signature="e#3785#4567#0" />
-            <element signature="e#3811#4567#0" />
-            <element signature="e#4236#4366#0" />
-            <element signature="e#4414#4567#0" />
-            <element signature="e#4707#4831#0" />
-            <element signature="e#5587#6046#0" />
-            <element signature="e#5857#5883#0" />
-            <element signature="e#6180#6354#0" />
-            <element signature="e#6180#6283#1" />
-            <element signature="e#6392#6490#0" />
-            <element signature="e#6528#7061#0" />
-            <element signature="e#6528#6806#1" />
-            <element signature="e#6838#7061#0" />
-            <element signature="e#6896#7061#0" />
-            <element signature="e#6937#7061#0" />
-            <element signature="e#6988#7061#0" />
-            <element signature="e#7099#7386#0" />
-            <element signature="e#7099#7136#1" />
-            <element signature="e#7168#7386#0" />
-            <element signature="e#7226#7386#0" />
-            <element signature="e#7267#7386#0" />
-            <element signature="e#7318#7386#0" />
-            <element signature="e#7424#7461#0" />
-            <element signature="e#7500#7604#0" />
-            <element signature="e#7652#8411#0" />
-            <element signature="e#7652#8244#1" />
-            <marker date="1596294995967" expanded="true" signature="625:1015" ph="..." />
-            <marker date="1596294995967" expanded="true" signature="1592:1640" ph="..." />
-            <marker date="1596294995967" expanded="false" signature="6065:6532" ph="..." />
+            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#1717#2754#0" />
+            <element signature="e#1717#2435#1" />
+            <element signature="e#2796#3171#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hudl_server/core_functions.py">
+    <entry file="file://$PROJECT_DIR$/svr/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="161" column="43" selection-start-line="161" selection-start-column="43" selection-end-line="161" selection-end-column="43" />
+        <state relative-caret-position="455">
+          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
           <folding>
-            <element signature="e#17#52#0" expanded="true" />
-            <element signature="e#2199#3500#0" />
-            <element signature="e#3827#4077#1" />
-            <marker date="1596267642434" expanded="true" signature="3567:3569" ph="..." />
-            <marker date="1596267642434" expanded="true" signature="6074:6430" ph="..." />
-            <marker date="1596267642434" expanded="true" signature="6439:6759" ph="..." />
+            <element signature="e#1#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/unit/svr/test_core_functions.py">
+    <entry file="file://$PROJECT_DIR$/svr/helpers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        <state relative-caret-position="-57">
+          <caret line="94" column="33" lean-forward="true" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <marker date="1596295740430" expanded="true" signature="269:270" ph="..." />
-            <marker date="1596295740430" expanded="true" signature="289:290" ph="..." />
-            <marker date="1596295740430" expanded="true" signature="289:291" ph="..." />
-            <marker date="1596295740430" expanded="true" signature="289:295" ph="..." />
-            <marker date="1596295740430" expanded="true" signature="289:661" ph="..." />
-            <marker date="1596295740430" expanded="true" signature="655:656" ph="..." />
-            <marker date="1596295740430" expanded="true" signature="655:661" ph="..." />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-109">
+          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
         </state>
       </provider>
     </entry>

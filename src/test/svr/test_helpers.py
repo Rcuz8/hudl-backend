@@ -1,4 +1,4 @@
-import hudl_server.helpers as fn
+import svr.helpers as fn
 from unittest import TestCase as Test
 from constants import sample_data
 from src.main.util.io import info, ok

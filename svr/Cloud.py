@@ -7,7 +7,7 @@ import json
 from src.main.util import io
 
 try:
-    cred = credentials.Certificate('hudl_server/fbpk.json')
+    cred = credentials.Certificate('svr/fbpk.json')
     initialize_app(cred, {
         'storageBucket': 'hudpred.appspot.com'
     })
@@ -22,14 +22,14 @@ except:
     except:
         try:
             # From test directory -> svr
-            cred = credentials.Certificate('../../../../hudl_server/fbpk.json')
+            cred = credentials.Certificate('../../../svr/fbpk.json')
             initialize_app(cred, {
                 'storageBucket': 'hudpred.appspot.com'
             })
             LOCAL = False
         except:
             # From test directory -> svr
-            cred = credentials.Certificate('../../../../../hudl_server/fbpk.json')
+            cred = credentials.Certificate('../../../../svr/fbpk.json')
             initialize_app(cred, {
                 'storageBucket': 'hudpred.appspot.com'
             })

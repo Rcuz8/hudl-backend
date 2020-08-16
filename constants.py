@@ -17,10 +17,10 @@ import pandas as pd
 from aenum import Enum, skip
 from keras.optimizers import SGD as kSGD, RMSprop as kRMSprop, Adam as kAdam
 
-TEST_MODE = True
+TEST_MODE = False
 
 def setup():
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "hudl_server/fbpk.json"
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "svr/fbpk.json"
     os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
     pd.set_option('display.max_rows', 500)
     pd.set_option('display.max_columns', 500)

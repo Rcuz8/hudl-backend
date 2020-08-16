@@ -2,7 +2,7 @@ from constants import data_headers_transformed, data_columns_KEEP, model_gen_con
 from src.main.ai.data.Builder import huncho_data_bldr as bldr
 from src.main.ai.model.EZModel import EZModel as network
 from src.main.util.io import info, ok, set_log_level
-import hudl_server.core_functions as core
+import svr.core_functions as core
 from unittest import TestCase as Test
 from src.main.ai.data.hn import hx
 import json
@@ -20,7 +20,7 @@ class TestModelBuilder(Test):
         nfilms = 3
 
         # Load data
-        f = open('../../../../../hudl_server/dbdata.json')
+        f = open('../../../../../svr/dbdata.json')
         response = json.load(f)
         data = core.unbox(response)
 

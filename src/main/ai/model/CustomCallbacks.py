@@ -3,7 +3,9 @@ from tqdm import tqdm
 import pandas as pd
 from constants import experiment
 from src.main.util.io import info, ok, err, get_log_level
+
 import keras
+import asyncio
 
 class ProgressCallback(tf.keras.callbacks.Callback):
 
