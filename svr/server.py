@@ -8,6 +8,10 @@ import socketio
 import asyncio
 import json
 import nest_asyncio
+from os import environ as env
+
+PORT = env.get("PORT") or 8080
+print("Received PORT", env.get("PORT"), "Will run on port", PORT)
 nest_asyncio.apply()
 sio = socketio.AsyncServer(cors_allowed_origins='*')
 app = web.Application()
@@ -123,8 +127,14 @@ async def chat_message(sid, data):
     print("message ", data)
     await sio.emit('reply', {'hi':'there'})
 
+
+def start():
+    web.run_app(app, port=PORT)
+    print("Received PORT", env.get("PORT"), "Will run on port", PORT)
+
+
 if __name__ == '__main__':
-    web.run_app(app)
+    start()
 
 
 

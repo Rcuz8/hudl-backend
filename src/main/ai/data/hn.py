@@ -489,5 +489,7 @@ def hx(df: pd.DataFrame):
 
     hx_renullify(df)
 
+    '''info('DataFrame after custom heuristic:\n', df)'''
+
 
 

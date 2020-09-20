@@ -82,6 +82,9 @@ class ProgressCallback(tf.keras.callbacks.Callback):
 
         return accs
 
+    def training_report(self):
+        return self.evals
+
     def __label_for(self, col):
         cl = col.lower()
         if cl == 'accuracy':

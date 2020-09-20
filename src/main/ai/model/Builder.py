@@ -237,7 +237,6 @@ class MB:
                 y_train = list(y_train.items())[0][1]
                 y_test = list(y_test.items())[0][1]
 
-            # val_data = [(X_test[i], y_test[i]) for i in range(len(X_test))]
             val_data = (X_test,y_test)
 
             self.model.fit(X_train, y_train, validation_data=val_data, batch_size=batch_size,

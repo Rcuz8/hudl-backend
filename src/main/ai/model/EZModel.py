@@ -35,6 +35,7 @@ class EZModel:
         self.optimal_lr = None
         self.predictor = None
         self.__training_accuracies = None
+        self.__training_report = None
         self.isSequential = False
 
 
@@ -115,6 +116,9 @@ class EZModel:
         """
         return {col: self.dictionary[col] for col in self.output_column_names}
 
+    def data(self):
+        return self.train_x, self.train_y, self.test_x, self.test_y
+
     @classmethod
     def __k_for(cls, epochs, num_notifications):
         return epochs / num_notifications
@@ -139,6 +143,7 @@ class EZModel:
             .add_test_info(self.mb.model, self.test_x, self.test_y, self.isSequential)\
             .add_progress_update_fn(on_update)
 
+
         repeats = 3
         folds = 5
 
@@ -147,6 +152,7 @@ class EZModel:
                     repeats=repeats, folds=folds, batch_size=batch_size, isSequential=self.isSequential)
 
         self.__training_accuracies = callback.accuracies()
+        self.__training_report = callback.training_report()
 
         if (plot):
 
@@ -201,6 +207,9 @@ class EZModel:
 
     def training_accuracies(self):
         return self.__training_accuracies
+
+    def training_report(self):
+        return self.__training_report
 
     def set_training_accuracies(self, to):
         self.__training_accuracies = to

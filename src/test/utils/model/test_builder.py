@@ -20,7 +20,7 @@ class TestModelBuilder(Test):
         nfilms = 3
 
         # Load data
-        f = open('../../../../../svr/dbdata.json')
+        f = open('../../../../svr/dbdata.json')
         response = json.load(f)
         data = core.unbox(response)
 
@@ -44,6 +44,5 @@ class TestModelBuilder(Test):
             .train(config.keras.learn_params.eval()[1], batch_size=5, notif_every=20)
 
         print(training_network.training_accuracies())
-
 
         ok('\nDone')

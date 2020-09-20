@@ -49,7 +49,8 @@ def __get_dictionary_and_bounds(train, test):
         .build_full_dict_and_scalers_only()
 
 
-async def __build_dual_model(config, train, test, update_params, update_msg, dictionary=None, boundaries=None):
+async def __build_dual_model(config, train, test, update_params, update_msg,
+                             dictionary=None, boundaries=None, dual_build=True):
     if not isinstance(train, list) or not isinstance(train[0], list) or not isinstance(train[0][0], list):
         train = [train]
     if not isinstance(test, list) or not isinstance(test[0], list) or not isinstance(test[0][0], list):
@@ -73,29 +74,25 @@ async def __build_dual_model(config, train, test, update_params, update_msg, dic
         asyncio.set_event_loop(loop)
         loop.run_until_complete(partial_update(prod_update_params, pct, update_msg + '  ( 2/2 )'))
 
-    # await upd_fn(33, 'msg1')
-    # await handle_training_update(44)
-
-    # import asyncio
-    # loop = asyncio.new_event_loop()
-    # asyncio.set_event_loop(loop)
-    # loop.run_until_complete(handle_training_update(69))
-
     # Build the data
     train_test_bldr, train_only_bldr = __dual_builders(config, train, test, dictionary, boundaries)
 
-    info('Compiling Training/Evaluation Build.')
-    tic = time.perf_counter()
-    training_network = network(train_test_bldr) \
-        .build(custom=True, custom_layers=config.keras.dimensions.eval(),
-               optimizer=config.keras.learn_params.eval()[0], forceSequential=True) \
-        .train(config.keras.learn_params.eval()[1], batch_size=5, notif_every=100, on_update=handle_training_update)
-    toc = time.perf_counter()
+    if dual_build:
 
-    handle_production_update(0.0)
+        info('Compiling Training/Evaluation Build.')
+        tic = time.perf_counter()
+        training_network = network(train_test_bldr) \
+            .build(custom=True, custom_layers=config.keras.dimensions.eval(),
+                   optimizer=config.keras.learn_params.eval()[0], forceSequential=True) \
+            .train(config.keras.learn_params.eval()[1], batch_size=5, notif_every=100, on_update=handle_training_update)
+        toc = time.perf_counter()
 
-    info('Model trained in ', round(toc - tic, 2), 'seconds.')
-    training_accuracies = training_network.training_accuracies()
+        handle_production_update(0.0)
+
+        info('Model trained in ', round(toc - tic, 2), 'seconds.')
+        training_accuracies = training_network.training_accuracies()
+    else:
+        training_accuracies = None
 
     info('Compiling Production Build.')
     tic = time.perf_counter()
@@ -141,7 +138,7 @@ def deploy_model(keras_model: keras.Model, game_id, model_name='', nodeploy=Fals
                 __nest_update(withTrainingAccuracies, 'training_info.' + model_name))
 
 
-async def tri_build(train, test, on_update, status_start, status_end):
+async def tri_build(train, test, on_update, status_start, status_end, dual_build=True, skip=[]):
     interval = (status_end - status_start) / 3
     intervals = [status_start, status_start + (1 * interval),
                  status_start + (2 * interval), status_start + (3 * interval)]
@@ -150,28 +147,32 @@ async def tri_build(train, test, on_update, status_start, status_end):
 
     await on_update(11, 'Building first Model..')
 
+    model_1, model_2, model_3 = None, None, None
 
     # Build the models ( 3 x 2 )
-    model_1 = await __build_dual_model(model_gen_configs.pre_align_form, train, test,
-                                       [on_update, intervals[0], intervals[1]],
-                                       'Building first Model..', full_dictionary, full_bounds)
+    if 1 not in skip:
+        model_1 = await __build_dual_model(model_gen_configs.pre_align_form, train, test,
+                                           [on_update, intervals[0], intervals[1]],
+                                           'Building first Model..', full_dictionary, full_bounds, dual_build=dual_build)
 
-    await on_update(intervals[1], 'Building second Model..')
-    time.sleep(1)
+        await on_update(intervals[1], 'Building second Model..')
+        time.sleep(1)
 
-    model_2 = await __build_dual_model(model_gen_configs.post_align_pt, train, test,
-                                       [on_update, intervals[1], intervals[2]],
-                                       'Building second Model.', full_dictionary, full_bounds)
+    if 2 not in skip:
+        model_2 = await __build_dual_model(model_gen_configs.post_align_pt, train, test,
+                                           [on_update, intervals[1], intervals[2]],
+                                           'Building second Model.', full_dictionary, full_bounds, dual_build=dual_build)
 
-    await on_update(intervals[2], 'Building third Model..')
-    time.sleep(1)
+        await on_update(intervals[2], 'Building third Model..')
+        time.sleep(1)
 
-    model_3 = await __build_dual_model(model_gen_configs.post_align_play, train, test,
-                                       [on_update, intervals[2], intervals[3]],
-                                       'Building third Model. ', full_dictionary, full_bounds)
+    if 3 not in skip:
+        model_3 = await __build_dual_model(model_gen_configs.post_align_play, train, test,
+                                           [on_update, intervals[2], intervals[3]],
+                                           'Building third Model. ', full_dictionary, full_bounds, dual_build=dual_build)
 
-    await on_update(intervals[3], 'Completed model building..')
-    time.sleep(1)
+        await on_update(intervals[3], 'Completed model building..')
+        time.sleep(1)
 
     return model_1, model_2, model_3
 
