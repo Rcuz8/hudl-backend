@@ -1,12 +1,11 @@
-import pandas as pd
 import svr.helpers as helpers
-import constants as con
 import unittest
 import numpy as np
-from keras.models import Sequential as seq
-import keras.layers as layers
-
 from firebase_admin import initialize_app, credentials
+import tensorflow.keras as keras
+import numpy as np
+from tensorflow.keras.layers import ActivityRegularization
+
 cred = credentials.Certificate('../fbpk.json')
 initialize_app(cred, {
     'storageBucket': 'hudpred.appspot.com'
@@ -101,9 +100,6 @@ class db_helpers_tester(unittest.TestCase):
     #     self.assertIsNotNone(model, 'Model is OK')
 
     def test_deploy_model(self):
-        import keras
-        import numpy as np
-        from keras.layers import ActivityRegularization
 
         inputs = keras.Input(shape=(3,))
         outputs = ActivityRegularization()(inputs)

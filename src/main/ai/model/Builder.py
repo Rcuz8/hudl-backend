@@ -1,14 +1,16 @@
 
-from keras.layers import Dense, Dropout, LeakyReLU, ReLU, Input
-from keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout, LeakyReLU, ReLU, Input, Activation
+from tensorflow.keras.models import Sequential
 from sklearn.model_selection import RepeatedKFold
+from tensorflow.keras.regularizers import l2
+
 from src.main.util.io import warn, info
 from matplotlib import pyplot
 import seaborn as sns
 import pandas as pd
 import numpy as np
 import matplotlib
-import keras
+import tensorflow.keras as keras
 
 matplotlib.rcParams['figure.figsize'] = (12, 8)
 pyplot.style.use('ggplot')
@@ -49,7 +51,10 @@ class MB:
                 nlayers = trial.suggest_int("n_layers", minHiddens, maxHiddens)
 
                 num_hidden = int(trial.suggest_loguniform("n_units_l0", hidden_width_min, hidden_width_max))
-                hidden = Dense(num_hidden, kernel_regularizer=keras.regularizers.l1_l2())(inp)
+                hidden = Dense(num_hidden,
+                          kernel_regularizer=l2(0.01),
+                          bias_regularizer=l2(0.01),
+                          activity_regularizer=l2(0.01))(inp)
                 hidden = ReLU()(hidden)
                 if (nlayers - 1 > 0):
                     for i in range(nlayers-1):
@@ -57,7 +62,10 @@ class MB:
                         dropout = trial.suggest_uniform("dropout_l{}".format(i), dropout_min, dropout_max)
                         num_hidden = int(trial.suggest_loguniform("n_units_l{}".format(i+1), hidden_width_min, hidden_width_max))
                         hidden = Dropout(dropout)(hidden)
-                        hidden = Dense(num_hidden, kernel_regularizer=keras.regularizers.l1_l2())(hidden)
+                        hidden = Dense(num_hidden,
+                          kernel_regularizer=l2(0.01),
+                          bias_regularizer=l2(0.01),
+                          activity_regularizer=l2(0.01))(hidden)
                         hidden = ReLU()(hidden)
 
                 # We compile our model with a sampled learning rate.
@@ -69,7 +77,10 @@ class MB:
                     if len(custom_layers) == 0:
                         raise ValueError('Cannot contruct a custom model with no layers!')
                     act = custom_layers[0][1]
-                    hidden = Dense(custom_layers[0][0], kernel_regularizer=keras.regularizers.l1_l2())(inp)
+                    hidden = Dense(custom_layers[0][0],
+                          kernel_regularizer=l2(0.01),
+                          bias_regularizer=l2(0.01),
+                          activity_regularizer=l2(0.01))(inp)
                     if act == 'lrelu':
                         hidden = LeakyReLU()(hidden)
                     else:
@@ -77,16 +88,25 @@ class MB:
                     for layer in custom_layers[1:]:
                         act = layer[1]
                         hidden = Dropout(layer[2])(hidden)
-                        hidden = Dense(layer[0],kernel_regularizer=keras.regularizers.l1_l2())(hidden)
+                        hidden = Dense(layer[0],
+                          kernel_regularizer=l2(0.01),
+                          bias_regularizer=l2(0.01),
+                          activity_regularizer=l2(0.01))(hidden)
                         if act == 'lrelu':
                             hidden = LeakyReLU()(hidden)
                         else:
                             hidden = ReLU()(hidden)
                 else:
-                    hidden = Dense(128, activation=activation,kernel_regularizer=keras.regularizers.l1_l2())(inp)
+                    hidden = Dense(128, activation=activation,
+                          kernel_regularizer=l2(0.01),
+                          bias_regularizer=l2(0.01),
+                          activity_regularizer=l2(0.01))(inp)
                     while (nlayers > 1):
                         hidden = Dropout(dropout_min)(hidden)
-                        hidden = Dense(128, activation=activation, kernel_regularizer=keras.regularizers.l1_l2())(hidden)
+                        hidden = Dense(128, activation=activation,
+                          kernel_regularizer=l2(0.01),
+                          bias_regularizer=l2(0.01),
+                          activity_regularizer=l2(0.01))(hidden)
                         nlayers -= 1
 
             # Form output layers (independent)
@@ -110,7 +130,10 @@ class MB:
                 num_hidden = int(trial.suggest_loguniform("n_units_l0", hidden_width_min, hidden_width_max))
                 model_layers = [
                     Input(shape=(self.model_params['inputs'],)),
-                    Dense(num_hidden, kernel_regularizer=keras.regularizers.l1_l2()),
+                    Dense(num_hidden,
+                          kernel_regularizer=l2(0.01),
+                          bias_regularizer=l2(0.01),
+                          activity_regularizer=l2(0.01)),
                     ReLU()
                 ]
                 if nlayers - 1 > 0:
@@ -119,7 +142,10 @@ class MB:
                         num_hidden = int(
                             trial.suggest_loguniform("n_units_l{}".format(i + 1), hidden_width_min, hidden_width_max))
                         model_layers.append(Dropout(dropout))
-                        model_layers.append(Dense(num_hidden, kernel_regularizer=keras.regularizers.l1_l2()))
+                        model_layers.append(Dense(num_hidden,
+                          kernel_regularizer=l2(0.01),
+                          bias_regularizer=l2(0.01),
+                          activity_regularizer=l2(0.01)))
                         model_layers.append(ReLU())
 
                 # We compile our model with a sampled learning rate.
@@ -153,29 +179,45 @@ class MB:
                     act = custom_layers[0][1]
                     model_layers = [
                         Input(shape=(self.model_params['inputs'],)),
-                        Dense(custom_layers[0][0], kernel_regularizer=keras.regularizers.l1_l2())
+                        Dense(custom_layers[0][0],
+                          kernel_regularizer=l2(0.01),
+                          bias_regularizer=l2(0.01),
+                          activity_regularizer=l2(0.01))
                     ]
                     if act == 'lrelu':
                         model_layers.append(LeakyReLU())
-                    else:
+                    elif act == 'relu':
                         model_layers.append(ReLU())
+                    else:
+                        model_layers.append(Activation(act))
                     for layer in custom_layers[1:]:
                         act = layer[1]
                         model_layers.append(Dropout(layer[2]))
-                        model_layers.append(Dense(layer[0], kernel_regularizer=keras.regularizers.l1_l2()))
+                        model_layers.append(Dense(layer[0],
+                          kernel_regularizer=l2(0.01),
+                          bias_regularizer=l2(0.01),
+                          activity_regularizer=l2(0.01)))
                         if act == 'lrelu':
                             model_layers.append(LeakyReLU())
-                        else:
+                        elif act == 'relu':
                             model_layers.append(ReLU())
+                        else:
+                            model_layers.append(Activation(act))
                 else:
                     model_layers = [
                         Input(shape=(self.model_params['inputs'],)),
-                        Dense(128, kernel_regularizer=keras.regularizers.l1_l2())
+                        Dense(128,
+                          kernel_regularizer=l2(0.01),
+                          bias_regularizer=l2(0.01),
+                          activity_regularizer=l2(0.01))
                     ]
                     while nlayers > 1:
                         model_layers.append(Dropout(dropout_min))
                         model_layers.append(
-                            Dense(128, activation=activation, kernel_regularizer=keras.regularizers.l1_l2()))
+                            Dense(128, activation=activation,
+                          kernel_regularizer=l2(0.01),
+                          bias_regularizer=l2(0.01),
+                          activity_regularizer=l2(0.01)))
                         nlayers -= 1
 
 
@@ -198,6 +240,9 @@ class MB:
                 model.compile(optimizer=optimizer, loss=lossnames, metrics=metrics)
 
         info('Builder generated model.')
+
+        model.summary()
+
         self.model = model
         return self
 

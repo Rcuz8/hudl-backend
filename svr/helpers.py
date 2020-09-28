@@ -8,7 +8,7 @@ from src.main.ai.data.hn import hx
 from src.main.util.io import info, ok, get_log_level
 from svr.Cloud import bucket
 import asyncio
-import keras
+import tensorflow.keras as keras
 import random
 import string
 import time
@@ -39,7 +39,7 @@ def __dual_builders(config, train, test, dictionary=None, boundaries=None):
     return val1, val2
 
 
-def __get_dictionary_and_bounds(train, test):
+def get_dictionary_and_bounds(train, test):
     return bldr.empty().with_type('raw') \
         .with_iterating_adjuster(hx) \
         .with_heads(data_headers_transformed) \
@@ -143,7 +143,7 @@ async def tri_build(train, test, on_update, status_start, status_end, dual_build
     intervals = [status_start, status_start + (1 * interval),
                  status_start + (2 * interval), status_start + (3 * interval)]
     # Build dictionary
-    full_dictionary, full_bounds = __get_dictionary_and_bounds(train, test)
+    full_dictionary, full_bounds = get_dictionary_and_bounds(train, test)
 
     await on_update(11, 'Building first Model..')
 

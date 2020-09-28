@@ -5,6 +5,8 @@ import unittest as u
 import pandas as pd
 import numpy as np
 
+from src.main.ai.data import Utils
+
 config = configs.post_align_play.io
 frame = pd.DataFrame(data, columns=data_headers)
 data_dict = Utils.build_dictionary_for(frame)

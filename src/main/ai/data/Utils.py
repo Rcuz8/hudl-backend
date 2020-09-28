@@ -1,5 +1,5 @@
 from sklearn.preprocessing import LabelEncoder
-from keras.utils import np_utils
+from tensorflow.keras.utils import to_categorical
 from statistics import mode
 from statistics import mean
 from heapq import nlargest
@@ -681,7 +681,7 @@ def df_encode_and_scale_columns(df, _list, dictionary, boundaries):
                 # encode class values as integers
                 encoder = LabelEncoder()
                 encoder.fit(uniques)
-                dummy_y = np_utils.to_categorical(encoder.transform(G), len(uniques))
+                dummy_y = to_categorical(encoder.transform(G), len(uniques))
                 encoders[colname] = encoder
                 scalers[colname] = None
             else:
@@ -690,7 +690,7 @@ def df_encode_and_scale_columns(df, _list, dictionary, boundaries):
                 encoder.fit(G)
                 encoded_G = encoder.transform(G)
                 encoders[colname] = encoder
-                dummy_y = np_utils.to_categorical(encoded_G)
+                dummy_y = to_categorical(encoded_G)
                 scalers[colname] = None
             G = dummy_y
             # elif encode_as == 'embedded':

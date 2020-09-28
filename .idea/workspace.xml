@@ -1,10 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5e18e173-fe61-4d53-8c9c-6a58ddf881e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scratch2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/NOTES - Changes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ur_asu.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ur_au.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ur_cw.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ur_ec.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ur_rpi.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfiles/Final_Test" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/scratch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scratch2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ai/data/Input.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/data/Input.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ai/data/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/data/Utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ai/model/Builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/model/Builder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ai/model/CustomCallbacks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/model/CustomCallbacks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ai/model/EZModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/model/EZModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ai/model/Predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/model/Predictor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/svr/other/ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/ai.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145133/train/events.out.tfevents.1591469493.Ryan-Cocuzzos-Laptop.local.96348.1684.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145504/train/events.out.tfevents.1591469705.Ryan-Cocuzzos-Laptop.local.96406.1684.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151223/train/events.out.tfevents.1591470743.Ryan-Cocuzzos-Laptop.local.96690.1788.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191438/train/events.out.tfevents.1591485279.Ryan-Cocuzzos-Laptop.local.578.1493.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191526/train/events.out.tfevents.1591485327.Ryan-Cocuzzos-Laptop.local.648.1493.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191748/train/events.out.tfevents.1591485469.Ryan-Cocuzzos-Laptop.local.715.1493.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-193740/train/events.out.tfevents.1591486661.Ryan-Cocuzzos-Laptop.local.1103.1498.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-212655/train/events.out.tfevents.1591493216.Ryan-Cocuzzos-Laptop.local.2584.1702.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/utils/data/test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/utils/data/test_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svr/Cloud.py" beforeDir="false" afterPath="$PROJECT_DIR$/svr/Cloud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svr/core_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/svr/core_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svr/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/svr/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svr/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/svr/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svr/test/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/svr/test/helpers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,23 +97,6 @@
     <SUITE FILE_PATH="coverage/hudl_server$test_core_functions.coverage" NAME="test_core_functions Coverage Results" MODIFIED="1597461240195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/unit/svr" />
     <SUITE FILE_PATH="coverage/hudl_server$socket_test.coverage" NAME="socket_test Coverage Results" MODIFIED="1597243069710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
-  <component name="CoverageViewManager">
-    <option name="myElementSize" value="357" />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
@@ -94,6 +110,17 @@
         <option value="Unit Test File (Python)" />
         <option value="Python Script" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
@@ -110,6 +137,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/Ryan/Desktop/Dev/Python/hudl_server/hudl_server/server.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Markdown" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -118,18 +146,13 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyCoverageOptionsProvider">
     <option name="myUseBundledCoveragePy" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/testfiles" />
-      <recent name="$PROJECT_DIR$/server" />
-      <recent name="$PROJECT_DIR$/src/test/unit/svr" />
-      <recent name="$PROJECT_DIR$/hudl_server" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test" />
       <recent name="$PROJECT_DIR$/src/test/unit/svr" />
@@ -137,8 +160,15 @@
       <recent name="$PROJECT_DIR$/src/main" />
       <recent name="$PROJECT_DIR$/src/main/core/ai" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/testfiles" />
+      <recent name="$PROJECT_DIR$/server" />
+      <recent name="$PROJECT_DIR$/src/test/unit/svr" />
+      <recent name="$PROJECT_DIR$/hudl_server" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.server">
+  <component name="RunManager" selected="Python.Final_Test">
     <configuration name="Test: hudl_server" type="DjangoTestsConfigurationType">
       <module name="hudl_server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -157,6 +187,28 @@
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Final_Test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="hudl_server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testfiles" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testfiles/Final_Test" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration name="Start Web Server" type="PythonConfigurationType" factoryName="Python">
@@ -203,7 +255,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="scratch2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="x" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="hudl_server" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -211,34 +263,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scratch2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="hudl_server" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/svr" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/svr/server.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/x.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -331,34 +361,34 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_helpers.Tester" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_builder.TestModelBuilder.test_generate_model" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="hudl_server" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/svr" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/utils/model" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_helpers.Tester&quot;" />
+      <option name="_new_target" value="&quot;test_builder.TestModelBuilder.test_generate_model&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_helpers.Tester.test_tri_build" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests in test_builder.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="hudl_server" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/svr" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/utils/model" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_helpers.Tester.test_tri_build&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/src/test/utils/model/test_builder.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Unnamed" type="tests" factoryName="Unittests">
@@ -387,18 +417,18 @@
       <item itemvalue="Python.scratch" />
       <item itemvalue="Python tests.Unnamed" />
       <item itemvalue="Python tests.Test Suite - Data" />
-      <item itemvalue="Python tests.Unittests for test_helpers.Tester" />
-      <item itemvalue="Python tests.Unittests for test_helpers.Tester.test_tri_build" />
-      <item itemvalue="Python.scratch2" />
-      <item itemvalue="Python.server" />
+      <item itemvalue="Python tests.Unittests in test_builder.py" />
+      <item itemvalue="Python tests.Unittests for test_builder.TestModelBuilder.test_generate_model" />
+      <item itemvalue="Python.Final_Test" />
+      <item itemvalue="Python.x" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.server" />
-        <item itemvalue="Python.scratch2" />
+        <item itemvalue="Python.Final_Test" />
         <item itemvalue="Python.scratch" />
-        <item itemvalue="Python tests.Unittests for test_helpers.Tester" />
-        <item itemvalue="Python tests.Unittests for test_helpers.Tester.test_tri_build" />
+        <item itemvalue="Python.x" />
+        <item itemvalue="Python tests.Unittests for test_builder.TestModelBuilder.test_generate_model" />
+        <item itemvalue="Python tests.Unittests in test_builder.py" />
       </list>
     </recent_temporary>
   </component>
@@ -413,50 +443,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1594312977992</updated>
-      <workItem from="1600638870118" duration="2708000" />
+      <workItem from="1600638870118" duration="3374000" />
+      <workItem from="1601282782854" duration="23351000" />
     </task>
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="Unittests_for_test_helpers_Tester - 2020.08.23 at 08h 07m 56s.xml">
-      <configuration name="Unittests for test_helpers.Tester" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_helpers_Tester - 2020.08.23 at 08h 30m 07s.xml">
-      <configuration name="Unittests for test_helpers.Tester" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_helpers_Tester - 2020.08.23 at 08h 31m 19s.xml">
-      <configuration name="Unittests for test_helpers.Tester" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_helpers_Tester - 2020.08.23 at 08h 32m 13s.xml">
-      <configuration name="Unittests for test_helpers.Tester" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_helpers_Tester - 2020.08.23 at 08h 32m 56s.xml">
-      <configuration name="Unittests for test_helpers.Tester" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_helpers_Tester - 2020.08.23 at 08h 34m 37s.xml">
-      <configuration name="Unittests for test_helpers.Tester" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_helpers_Tester - 2020.08.23 at 08h 39m 02s.xml">
-      <configuration name="Unittests for test_helpers.Tester" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_helpers_Tester - 2020.08.23 at 12h 24m 50s.xml">
-      <configuration name="Unittests for test_helpers.Tester" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_helpers_Tester - 2020.08.29 at 21h 23m 12s.xml">
-      <configuration name="Unittests for test_helpers.Tester" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_helpers_Tester - 2020.08.29 at 21h 24m 02s.xml">
-      <configuration name="Unittests for test_helpers.Tester" configurationId="tests" />
-    </history-entry>
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
@@ -465,22 +455,53 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1069" height="224" key="GridCell.Tab.0.bottom" timestamp="1600645926082">
-      <screen x="0" y="23" width="2560" height="1057" />
+    <state x="1573" y="370" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601311876741">
+      <screen x="0" y="23" width="2522" height="1057" />
     </state>
-    <state width="1069" height="224" key="GridCell.Tab.0.bottom/-1440.23.1440.877/0.23.2560.1057@0.23.2560.1057" timestamp="1600645926082" />
-    <state width="1069" height="224" key="GridCell.Tab.0.center" timestamp="1600645926082">
-      <screen x="0" y="23" width="2560" height="1057" />
+    <state x="1573" y="370" key="#com.intellij.fileTypes.FileTypeChooser/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601311876741" />
+    <state x="1624" y="460" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1601309495938">
+      <screen x="0" y="23" width="2522" height="1057" />
     </state>
-    <state width="1069" height="224" key="GridCell.Tab.0.center/-1440.23.1440.877/0.23.2560.1057@0.23.2560.1057" timestamp="1600645926082" />
-    <state width="1069" height="224" key="GridCell.Tab.0.left" timestamp="1600645926081">
-      <screen x="0" y="23" width="2560" height="1057" />
+    <state x="1624" y="460" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601309495938" />
+    <state width="1292" height="319" key="GridCell.Tab.0.bottom" timestamp="1601327796774">
+      <screen x="0" y="23" width="2522" height="1057" />
     </state>
-    <state width="1069" height="224" key="GridCell.Tab.0.left/-1440.23.1440.877/0.23.2560.1057@0.23.2560.1057" timestamp="1600645926081" />
-    <state width="1069" height="224" key="GridCell.Tab.0.right" timestamp="1600645926082">
-      <screen x="0" y="23" width="2560" height="1057" />
+    <state width="1292" height="319" key="GridCell.Tab.0.bottom/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601327796774" />
+    <state width="1069" height="224" key="GridCell.Tab.0.bottom/-1440.23.1440.877/0.23.2560.1057@0.23.2560.1057" timestamp="1600650834889" />
+    <state width="1069" height="512" key="GridCell.Tab.0.bottom/0.23.1402.877@0.23.1402.877" timestamp="1601283792684" />
+    <state width="1292" height="319" key="GridCell.Tab.0.center" timestamp="1601327796773">
+      <screen x="0" y="23" width="2522" height="1057" />
     </state>
-    <state width="1069" height="224" key="GridCell.Tab.0.right/-1440.23.1440.877/0.23.2560.1057@0.23.2560.1057" timestamp="1600645926082" />
+    <state width="1292" height="319" key="GridCell.Tab.0.center/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601327796773" />
+    <state width="1069" height="224" key="GridCell.Tab.0.center/-1440.23.1440.877/0.23.2560.1057@0.23.2560.1057" timestamp="1600650834888" />
+    <state width="1069" height="512" key="GridCell.Tab.0.center/0.23.1402.877@0.23.1402.877" timestamp="1601283792683" />
+    <state width="1292" height="319" key="GridCell.Tab.0.left" timestamp="1601327796771">
+      <screen x="0" y="23" width="2522" height="1057" />
+    </state>
+    <state width="1292" height="319" key="GridCell.Tab.0.left/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601327796771" />
+    <state width="1069" height="224" key="GridCell.Tab.0.left/-1440.23.1440.877/0.23.2560.1057@0.23.2560.1057" timestamp="1600650834887" />
+    <state width="1069" height="512" key="GridCell.Tab.0.left/0.23.1402.877@0.23.1402.877" timestamp="1601283792683" />
+    <state width="1292" height="319" key="GridCell.Tab.0.right" timestamp="1601327796773">
+      <screen x="0" y="23" width="2522" height="1057" />
+    </state>
+    <state width="1292" height="319" key="GridCell.Tab.0.right/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601327796773" />
+    <state width="1069" height="224" key="GridCell.Tab.0.right/-1440.23.1440.877/0.23.2560.1057@0.23.2560.1057" timestamp="1600650834888" />
+    <state width="1069" height="512" key="GridCell.Tab.0.right/0.23.1402.877@0.23.1402.877" timestamp="1601283792684" />
+    <state x="272" y="42" key="SettingsEditor" timestamp="1601310798450">
+      <screen x="0" y="23" width="2522" height="1057" />
+    </state>
+    <state x="272" y="42" key="SettingsEditor/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601310798450" />
+    <state x="850" y="129" key="SettingsEditor/-1440.23.1440.877/0.23.2560.1057@0.23.2560.1057" timestamp="1600648007070" />
+    <state x="151" y="39" key="SettingsEditor/0.23.1402.877@0.23.1402.877" timestamp="1601283789909" />
+    <state x="1032" y="245" width="654" height="490" key="find.popup" timestamp="1601312344118">
+      <screen x="0" y="23" width="2522" height="1057" />
+    </state>
+    <state x="1032" y="245" width="654" height="490" key="find.popup/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601312344118" />
+    <state x="1048" y="245" width="590" height="490" key="find.popup/-1440.23.1440.877/0.23.2560.1057@0.23.2560.1057" timestamp="1600647967292" />
+    <state x="1673" y="463" key="scopes" timestamp="1601309045808">
+      <screen x="0" y="23" width="2522" height="1057" />
+    </state>
+    <state x="1673" y="463" key="scopes/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601309045808" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -494,8 +515,13 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/hudl_server$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1601324974800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hudl_server$x.coverage" NAME="x Coverage Results" MODIFIED="1601314050922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/hudl_server$Unittests_for_test_builder_TestModelBuilder_test_generate_model.coverage" NAME="Unittests for test_builder.TestModelBuilder.test_generate_model Coverage Results" MODIFIED="1601310823391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/utils/model" />
     <SUITE FILE_PATH="coverage/hudl_server$server.coverage" NAME="server Coverage Results" MODIFIED="1600645926073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/svr" />
+    <SUITE FILE_PATH="coverage/hudl_server$Unittests_in_test_builder_py.coverage" NAME="Unittests in test_builder.py Coverage Results" MODIFIED="1601310519979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/utils/model" />
     <SUITE FILE_PATH="coverage/hudl_server$scratch2.coverage" NAME="scratch2 Coverage Results" MODIFIED="1600645518314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hudl_server$Start_Web_Server.coverage" NAME="Start Web Server Coverage Results" MODIFIED="1600645500754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hudl_server$Final_Test.coverage" NAME="Final_Test Coverage Results" MODIFIED="1601327796664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfiles" />
   </component>
 </project>

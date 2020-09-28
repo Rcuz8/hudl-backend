@@ -15,9 +15,9 @@ import sys
 import numpy as np
 import pandas as pd
 from aenum import Enum, skip
-from keras.optimizers import SGD as kSGD, RMSprop as kRMSprop, Adam as kAdam
+from tensorflow.keras.optimizers import SGD as kSGD, RMSprop as kRMSprop, Adam as kAdam
 
-TEST_MODE = True
+TEST_MODE = False
 
 
 def setup():
@@ -62,18 +62,17 @@ def __contains(_list: list, item):
 
 # -- Quick NN Params
 
-TEST_TRAIN_EPOCHS = 100
-
+TEST_TRAIN_EPOCHS = 12000
 
 class SGDParams(Enum):
-    xl = (kSGD(1e-4, 0.5, True), 20000 if not TEST_MODE else TEST_TRAIN_EPOCHS)
-    long = (kSGD(5e-4, 0.5, True), 12000 if not TEST_MODE else TEST_TRAIN_EPOCHS)
-    med = (kSGD(5e-4, 0.5, True), 10000 if not TEST_MODE else TEST_TRAIN_EPOCHS)
-    short = (kSGD(1e-3, 0.5, True), 6000 if not TEST_MODE else TEST_TRAIN_EPOCHS)
-    xs = (kSGD(1e-3, 0.5, True), 2000 if not TEST_MODE else TEST_TRAIN_EPOCHS)
+    momentum = 0.4
+    xl = (kSGD(1e-4, momentum, True, clipvalue=0.2), 20000 if not TEST_MODE else TEST_TRAIN_EPOCHS)
+    long = (kSGD(5e-4,momentum, True, clipvalue=0.2), 12000 if not TEST_MODE else TEST_TRAIN_EPOCHS)
+    med = (kSGD(5e-4,momentum, True, clipvalue=0.2), 10000 if not TEST_MODE else TEST_TRAIN_EPOCHS)
+    short = (kSGD(5e-3, momentum, True, clipvalue=0.2), 6000 if not TEST_MODE else TEST_TRAIN_EPOCHS)
+    xs = (kSGD(5e-3, momentum, True, clipvalue=0.2), 2000 if not TEST_MODE else TEST_TRAIN_EPOCHS)
 
-    na = (kSGD(1e-3, 0.5, True), 50 if not TEST_MODE else TEST_TRAIN_EPOCHS)
-
+    na = (kSGD(1e-3, momentum, True), 50 if not TEST_MODE else TEST_TRAIN_EPOCHS)
 
 class AdamParams(Enum):
     xl = (kAdam(1e-4), 13000)
@@ -92,54 +91,59 @@ class QuickParams():
 
 
 class QuickLayers(Enum):
+    dropout_normal = 0.1
     smega = [
-        (128, 'relu', 0.25),
-        (128, 'relu', 0.25),
-        (128, 'relu', 0.25),
-        (128, 'relu', 0.25),
-        (128, 'relu', 0.25),
-        (64, 'relu', 0.25),
-        (32, 'relu', 0.25),
+        (128, 'relu', dropout_normal),
+        (128, 'relu', dropout_normal),
+        (128, 'relu', dropout_normal),
+        (128, 'relu', dropout_normal),
+        (128, 'relu', dropout_normal),
+        (64, 'relu', dropout_normal),
+        (32, 'relu', dropout_normal),
     ]
     mega = [
-        (128, 'relu', 0.25),
-        (128, 'relu', 0.25),
-        (128, 'relu', 0.25),
-        (64, 'relu', 0.25),
-        (32, 'relu', 0.25),
+        (128, 'relu', dropout_normal),
+        (128, 'relu', dropout_normal),
+        (128, 'relu', dropout_normal),
+        (64, 'relu', dropout_normal),
+        (32, 'relu', dropout_normal),
     ]
     big = [
-        (128, 'relu', 0.25),
-        (128, 'relu', 0.25),
-        (64, 'relu', 0.25),
-        (32, 'relu', 0.25),
+        (128, 'relu', dropout_normal),
+        (128, 'relu', dropout_normal),
+        (64, 'relu', dropout_normal),
+        (32, 'relu', dropout_normal),
     ]
     fat = [
-        (128, 'relu', 0.25),
-        (128, 'relu', 0.25),
-        (64, 'relu', 0.25),
+        (128, 'relu', dropout_normal),
+        (128, 'relu', dropout_normal),
+        (64, 'relu', dropout_normal),
     ]
     super_fat = [
-        (128, 'relu', 0.25),
-        (128, 'relu', 0.25),
-        (128, 'relu', 0.25),
+        (128, 'relu', dropout_normal),
+        (128, 'relu', dropout_normal),
+        (128, 'relu', dropout_normal),
     ]
     long = [
-        (128, 'relu', 0.25),
-        (64, 'relu', 0.25),
-        (32, 'relu', 0.25),
+        (128, 'relu', dropout_normal),
+        (64, 'relu', dropout_normal),
+        (32, 'relu', dropout_normal),
     ]
     med = [
-        (128, 'relu', 0.25),
-        (64, 'relu', 0.25),
+        (128, 'relu', dropout_normal),
+        (64, 'relu', dropout_normal),
     ]
     small = [
-        (64, 'relu', 0.25),
-        (32, 'relu', 0.25)
+        (64, 'relu', dropout_normal),
+        (32, 'relu', dropout_normal)
     ]
     xs = [
-        (32, 'relu', 0.25),
-        (16, 'relu', 0.25)
+        (32, 'relu', dropout_normal),
+        (16, 'relu', dropout_normal)
+    ]
+    test = [
+        (40, 'relu', dropout_normal),
+        (20, 'relu', dropout_normal)
     ]
 
 
@@ -255,7 +259,7 @@ class KerasConfigs:
     train_length = qp.sgd.long
 
     class size:
-        form_out = QuickLayers.fat
+        form_out = QuickLayers.test
         pt_out = QuickLayers.small
         play_out = QuickLayers.med
 

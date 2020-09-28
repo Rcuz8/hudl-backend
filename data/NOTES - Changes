@@ -1,0 +1,11 @@
+
+ASU FGIC
+
+    PLAY # | REC AS | ACTUAL
+
+    2   GL=1    GL=2    RUN     DUCK    QB POWER RD
+    3                   PASS    TWINS
+    5   GL=17   GL=13
+    6   GL=47   GL=42
+    Play 98 - recorded as 13 yds, was INC
+    Play 99 - recorded as 2 yds, was INC

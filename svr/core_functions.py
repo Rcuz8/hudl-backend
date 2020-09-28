@@ -9,6 +9,7 @@ from uuid import uuid4 as gen_id
 from src.main.util.io import ok, warn
 import json
 import datetime
+from tensorflow import keras
 
 qp = QuickParams()
 
@@ -207,7 +208,6 @@ def __save_json(data: dict, path: str, local_check=True):
 
 
 def mock_model():
-    import keras
     model = keras.models.Sequential(
         [
             keras.layers.Dense(128, input_shape=(10,)),

@@ -9,7 +9,6 @@ import asyncio
 import json
 import nest_asyncio
 from os import environ as env
-
 PORT = env.get("PORT") or 8080
 print("Received PORT", env.get("PORT"), "Will run on port", PORT)
 nest_asyncio.apply()

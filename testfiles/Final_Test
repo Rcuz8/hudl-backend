@@ -1,0 +1,44 @@
+import pandas as pd
+# import numpy as np
+from src.main.ai.model.EZModel import EZModel as network
+from constants import model_gen_configs
+from svr.helpers import get_dictionary_and_bounds, dbld
+from src.main.util.io import set_log_level
+
+set_log_level(1)
+
+train = [pd.read_csv('../data/ur_asu.csv').values.tolist() + \
+      pd.read_csv('../data/ur_cw.csv').values.tolist() + \
+      pd.read_csv('../data/ur_au.csv').values.tolist()]
+test = [pd.read_csv('../data/ur_rpi.csv').values.tolist()]
+
+config = model_gen_configs.pre_align_form
+
+def build_data():
+
+      # Build aggregate info
+      dictionary, boundaries = get_dictionary_and_bounds(train, test)
+
+      return dbld(config, train, test, dictionary, boundaries)
+
+def build_model(bld):
+      net = network(bld) \
+            .build(custom=True, custom_layers=config.keras.dimensions.eval(),
+                   optimizer=config.keras.learn_params.eval()[0], forceSequential=True)\
+            \
+            .train(config.keras.learn_params.eval()[1], batch_size=6, notif_every=200, on_update=None, plot=True)
+
+      return net
+
+
+def get_test_data(bld):
+      return bld.data()[2], bld.data()[3]
+
+
+db = build_data()
+model = build_model(db)
+testX, testY = get_test_data(db)
+
+model.show_model_predictions(testX, testY)
+
+# print(model.training_report())

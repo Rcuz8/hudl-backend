@@ -161,8 +161,8 @@ class Input:
                 value = item[1]  # column uniques
                 item_unique_values = 1
 
-                warn('NEW: Added dictionary=Superset of params handling in Input.gen_agg(). '
-                     'This may F stuff up somewhere.')
+                # warn('NEW: Added dictionary=Superset of params handling in Input.gen_agg(). '
+                #      'This may F stuff up somewhere.')
                 if name not in inputs and name not in outputs:
                     continue
 

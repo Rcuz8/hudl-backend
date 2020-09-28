@@ -4,8 +4,6 @@ import pandas as pd
 from constants import experiment
 from src.main.util.io import info, ok, err, get_log_level
 
-import keras
-import asyncio
 
 class ProgressCallback(tf.keras.callbacks.Callback):
 
@@ -35,7 +33,7 @@ class ProgressCallback(tf.keras.callbacks.Callback):
         self.progress_update_fn = fn
         return self
 
-    def add_test_info(self, model:keras.Model, test_x, test_y, isSequential=False):
+    def add_test_info(self, model:tf.keras.Model, test_x, test_y, isSequential=False):
         self.model_ = model
         self.test_x = test_x
         if isSequential and test_y:
