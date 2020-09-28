@@ -18,7 +18,7 @@ from aenum import Enum, skip
 from tensorflow.keras.optimizers import SGD as kSGD, RMSprop as kRMSprop, Adam as kAdam
 
 TEST_MODE = False
-
+ 
 
 def setup():
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "svr/fbpk.json"

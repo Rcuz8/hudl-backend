@@ -5,40 +5,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e18e173-fe61-4d53-8c9c-6a58ddf881e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/NOTES - Changes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ur_asu.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ur_au.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ur_cw.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ur_ec.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ur_rpi.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testfiles/Final_Test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/scratch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scratch2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ai/data/Input.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/data/Input.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ai/data/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/data/Utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ai/model/Builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/model/Builder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ai/model/CustomCallbacks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/model/CustomCallbacks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ai/model/EZModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/model/EZModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ai/model/Predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ai/model/Predictor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/svr/other/ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/svr/other/ai.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145133/train/events.out.tfevents.1591469493.Ryan-Cocuzzos-Laptop.local.96348.1684.v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-145504/train/events.out.tfevents.1591469705.Ryan-Cocuzzos-Laptop.local.96406.1684.v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-151223/train/events.out.tfevents.1591470743.Ryan-Cocuzzos-Laptop.local.96690.1788.v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191438/train/events.out.tfevents.1591485279.Ryan-Cocuzzos-Laptop.local.578.1493.v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191526/train/events.out.tfevents.1591485327.Ryan-Cocuzzos-Laptop.local.648.1493.v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-191748/train/events.out.tfevents.1591485469.Ryan-Cocuzzos-Laptop.local.715.1493.v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-193740/train/events.out.tfevents.1591486661.Ryan-Cocuzzos-Laptop.local.1103.1498.v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/svr/other/logs/fit/20200606-212655/train/events.out.tfevents.1591493216.Ryan-Cocuzzos-Laptop.local.2584.1702.v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/utils/data/test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/utils/data/test_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svr/Cloud.py" beforeDir="false" afterPath="$PROJECT_DIR$/svr/Cloud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svr/core_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/svr/core_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svr/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/svr/helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svr/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/svr/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svr/test/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/svr/test/helpers.py" afterDir="false" />
-    </list>
+    <list default="true" id="5e18e173-fe61-4d53-8c9c-6a58ddf881e6" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -444,7 +411,7 @@
       <option name="presentableId" value="Default" />
       <updated>1594312977992</updated>
       <workItem from="1600638870118" duration="3374000" />
-      <workItem from="1601282782854" duration="23351000" />
+      <workItem from="1601282782854" duration="23741000" />
     </task>
     <servers />
   </component>
@@ -463,28 +430,28 @@
       <screen x="0" y="23" width="2522" height="1057" />
     </state>
     <state x="1624" y="460" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601309495938" />
-    <state width="1292" height="319" key="GridCell.Tab.0.bottom" timestamp="1601327796774">
+    <state width="1292" height="319" key="GridCell.Tab.0.bottom" timestamp="1601330586584">
       <screen x="0" y="23" width="2522" height="1057" />
     </state>
-    <state width="1292" height="319" key="GridCell.Tab.0.bottom/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601327796774" />
+    <state width="1292" height="319" key="GridCell.Tab.0.bottom/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601330586584" />
     <state width="1069" height="224" key="GridCell.Tab.0.bottom/-1440.23.1440.877/0.23.2560.1057@0.23.2560.1057" timestamp="1600650834889" />
     <state width="1069" height="512" key="GridCell.Tab.0.bottom/0.23.1402.877@0.23.1402.877" timestamp="1601283792684" />
-    <state width="1292" height="319" key="GridCell.Tab.0.center" timestamp="1601327796773">
+    <state width="1292" height="319" key="GridCell.Tab.0.center" timestamp="1601330586582">
       <screen x="0" y="23" width="2522" height="1057" />
     </state>
-    <state width="1292" height="319" key="GridCell.Tab.0.center/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601327796773" />
+    <state width="1292" height="319" key="GridCell.Tab.0.center/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601330586582" />
     <state width="1069" height="224" key="GridCell.Tab.0.center/-1440.23.1440.877/0.23.2560.1057@0.23.2560.1057" timestamp="1600650834888" />
     <state width="1069" height="512" key="GridCell.Tab.0.center/0.23.1402.877@0.23.1402.877" timestamp="1601283792683" />
-    <state width="1292" height="319" key="GridCell.Tab.0.left" timestamp="1601327796771">
+    <state width="1292" height="319" key="GridCell.Tab.0.left" timestamp="1601330586580">
       <screen x="0" y="23" width="2522" height="1057" />
     </state>
-    <state width="1292" height="319" key="GridCell.Tab.0.left/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601327796771" />
+    <state width="1292" height="319" key="GridCell.Tab.0.left/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601330586580" />
     <state width="1069" height="224" key="GridCell.Tab.0.left/-1440.23.1440.877/0.23.2560.1057@0.23.2560.1057" timestamp="1600650834887" />
     <state width="1069" height="512" key="GridCell.Tab.0.left/0.23.1402.877@0.23.1402.877" timestamp="1601283792683" />
-    <state width="1292" height="319" key="GridCell.Tab.0.right" timestamp="1601327796773">
+    <state width="1292" height="319" key="GridCell.Tab.0.right" timestamp="1601330586583">
       <screen x="0" y="23" width="2522" height="1057" />
     </state>
-    <state width="1292" height="319" key="GridCell.Tab.0.right/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601327796773" />
+    <state width="1292" height="319" key="GridCell.Tab.0.right/-1440.23.1440.877/0.23.2522.1057@0.23.2522.1057" timestamp="1601330586583" />
     <state width="1069" height="224" key="GridCell.Tab.0.right/-1440.23.1440.877/0.23.2560.1057@0.23.2560.1057" timestamp="1600650834888" />
     <state width="1069" height="512" key="GridCell.Tab.0.right/0.23.1402.877@0.23.1402.877" timestamp="1601283792684" />
     <state x="272" y="42" key="SettingsEditor" timestamp="1601310798450">
